@@ -1,0 +1,79 @@
+bibliografia
+szte
+
+nivel de fermi: 
+
+la masa efectiva es pesar distinto segun la direccion
+(perfil cristalografico)
+
+todo CI tiene base de cristal
+
+enegia de bandas: donde se mueven los portadores
+tipo de materiales (metal asilante semic)
+
+densidad de lineas(bandas) modifica la corriente
+
+bandas definen la aplicacion. silicio tiene banda indirecta
+interaccion estuimulada: no en el silicio
+
+silicio bandas directas e indirectas
+
+banda indirecta necesito phonones
+
+silicio dopado hacemos ingenieria (directa?)
+
+bandas de valencia y conduccion y gap
+
+portadores en banda de conduccion a TA, aplicar un campo y que haya corriente
+
+filmina 13 calcular y ver graficos
+
+
+DIRAC
+Title: The Strangest Man: The Hidden Life of Paul Dirac, Mystic of the Atom
+Author: Graham Farmelo
+Publisher: Basic Books
+Print Publication Date: 2009
+Logos Release Date: 2023
+Language: English
+Resources: 1
+Format: Digital › Ebook
+ISBNs: 9780465019922, 9780465018277, 0465018270, 0465019927
+
+FEYNMAN
+Author: Richard Feynman
+Genres: Biography, Autobiography, Humor
+ISBN: 0-393-01921-7 (US hardcover edition)
+
+concentracion de portadores
+valor intrinsico 10e-10cm-3
+
+dopar a nivel donor o aceptor
+huecos busco nivel aceptor y al reves con donor y portadores
+
+
+SRIM implantacion ionica
+
+modulacion de fermi - cambiar el flujo electrico
+donde esta el NF saber que cantidad de portadores tenemos (mediante un CE)
+
+el nivel de fermi me define cuanto puedo acercar dos diodos
+
+segun el dopaje tengo diferente juntura
+
+con los niveles de fermi modifico hfe
+
+gate acumula portadores segun el dopaje (depende de fermi)
+
+curva de capacidad es cuanto implantamos
+
+implantacion: memoria diferentes junturas
+
+---scaling---
+
+dimensiones disminuyen, deben disminuir las tensiones
+campo electrico
+
+ojo densidad de potencia queda = 1. la idea es mantener el mismo CE
+22nm de canal
+
