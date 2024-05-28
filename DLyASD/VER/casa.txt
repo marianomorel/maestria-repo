@@ -1,0 +1,119 @@
+module casa (
+    input clk,
+    input reset,
+    input [4:0] char_in,
+    output reg [2:0] state,
+  	output reg [7:0] count
+);
+
+parameter Q0 = 3'b000;
+parameter Q1 = 3'b001;
+parameter Q2 = 3'b010;
+parameter Q3 = 3'b011;
+parameter Q4 = 3'b100;
+parameter Q5 = 3'b101;
+parameter Q6 = 3'b110;
+
+// Valores binarios para 'c', 'a', 's' y espacio
+parameter c = 5'b00011;
+parameter a = 5'b00001;
+parameter s = 5'b10011;
+parameter SPACE = 5'b00000;
+
+always @(posedge clk or posedge reset) begin
+    if (reset) begin
+        state <= Q0;
+        count <= 0;
+    end else begin
+        case (state)
+            Q0: begin
+              if (char_in == c) begin
+                    state <= Q1;
+                end else begin
+                    state <= Q0;
+                end
+            end
+            Q1: begin
+              if (char_in == a) begin
+                    state <= Q2;
+                end else if (char_in == SPACE) begin
+                    state <= Q0;
+                end else begin
+                    state <= Q6;
+                end
+            end
+            Q2: begin
+              if (char_in == s) begin
+                    state <= Q3;
+                end else begin
+                    state <= Q6;
+                end
+            end
+            Q3: begin
+              if (char_in == a) begin
+                    state <= Q4;
+                end else begin
+                    state <= Q6;
+                end
+            end
+            Q4: begin
+                if (char_in == SPACE) begin
+                    state <= Q5;
+                  	count <= count + 1;
+                end else begin
+                    state <= Q6;
+                end
+            end
+            Q5: begin
+              if (char_in == c) begin
+                    state <= Q1;
+                end else begin
+                    state <= Q6;
+                end
+            end
+           Q6: begin
+                
+              if (char_in == SPACE) begin
+                    state <= Q0;
+                end else begin
+                    state <= Q6;
+                end
+            end          
+           /* default: begin
+                state <= Q6;
+            end*/
+        endcase
+    end
+end
+
+endmodule
+
+
+/*	Space      		00000        
+    a        		00001        
+    b        		00010        
+    c        		00011        
+    d        		00100        
+    e        		00101        
+    f        		00110        
+    g        		00111        
+    h        		01000        
+    i        		01001        
+    j        		01010        
+    k        		01011        
+    l        		01100        
+    m        		01101        
+    n        		01110        
+    o        		01111        
+    p        		10000        
+    q        		10001        
+    r        		10010        
+    s        		10011        
+    t        		10100        
+    u        		10101        
+    v        		10110        
+    w        		10111        
+    x        		11000        
+    y        		11001        
+    z        		11010        
+*/

@@ -1,0 +1,56 @@
+`timescale 1ns / 1ps
+
+module casa_tb;
+
+reg clk, reset;
+reg [4:0] char_in;
+wire [2:0] state;
+wire [7:0] count;
+
+casa dut (
+    .clk(clk),
+    .reset(reset),
+    .char_in(char_in),
+    .state(state),
+    .count(count)
+);
+
+initial begin
+    $dumpfile("casa_tb.vcd");
+    $dumpvars(0, casa_tb);
+    
+    clk = 0;
+    reset = 1;
+    char_in = 5'b00000; // Espacio para reset inicial
+    
+    #10 reset = 0;
+    
+    // Aquí ingresamos la frase "la casa casacasa casa "
+        char_in = 5'b01100; // l
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b00000; // espacio
+    #10 char_in = 5'b00011; // c
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b10011; // s
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b00000; // espacio
+    #10 char_in = 5'b00011; // c
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b10011; // s
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b00011; // c
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b10011; // s
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b00000; // espacio
+    #10 char_in = 5'b00011; // c 
+    #10 char_in = 5'b00001; // a
+    #10 char_in = 5'b10011; // s
+    #10 char_in = 5'b00001; // a 
+    #10 char_in = 5'b00000; // espacio*/
+    #10 $finish;
+end
+
+always #5 clk = ~clk;
+
+endmodule

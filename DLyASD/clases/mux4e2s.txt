@@ -1,0 +1,88 @@
+module mux4e #(parameter N = 10)
+  (
+  input wire [N-1:0] x0,
+  input wire [N-1:0] x1,
+  input wire [N-1:0] x2,
+  input wire [N-1:0] x3,
+  input wire [1:0] s,
+  output reg [N-1:0] y
+  );
+ 
+  always @(*) begin //lista de sensibilidad de un process
+    
+	case (s)
+      
+	  2'b00:   y = x0;
+	  2'b01:   y = x1;
+	  2'b10:   y = x2;
+	  default: y = x3;
+	
+	endcase
+    
+  end
+  
+endmodule
+
+
+------------------
+
+`timescale 1ns / 1ps // Definir la escala de tiempo
+
+module mux4eTB;
+  
+  localparam N=8;
+
+  // Definir los cables de entrada
+  reg [N-1:0] x0, x1, x2, x3;
+  reg [1:0] s;
+  
+  // Definir el cable de salida
+  wire [N-1:0] y;
+  
+  // Instanciar el módulo bajo prueba
+  
+  mux4e #(.N(N)) dut (
+    .x0(x0),
+    .x1(x1),
+    .x2(x2),
+    .x3(x3),
+    .s(s),
+    .y(y)
+  ); 
+  
+  
+  
+    // Inicializar las entradas
+  initial begin
+    
+      
+    $dumpfile("dump.vcd");
+  	$dumpvars;
+    
+   
+    //$display("Comenzando la simulación...");
+    
+    
+    x0=8'b10101010;
+    x1=8'b00000000;
+    x2=8'b11111111;
+    x3=8'b01010101;
+    s=2'b00;
+    
+    s=2'b00;
+    #10; // Esperar 10 unidades de tiempo
+    s=2'b01;
+    #10; // Esperar 10 unidades de tiempo
+    s=2'b10;
+    #10; // Esperar 10 unidades de tiempo
+    s=2'b11;
+    #10;
+    
+    
+    //$display("Fin de la simulación.");
+    //$finish; // Terminar la simulación
+  
+  end
+  
+  
+endmodule

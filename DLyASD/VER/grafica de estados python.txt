@@ -1,0 +1,45 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+def transicion(estado, caracter):
+    if estado == 0 and caracter == 'c':
+        return 1
+    elif estado == 1 and caracter == 'a':
+        return 2
+    elif estado == 2 and caracter == 's':
+        return 3
+    elif estado == 3 and caracter == 'a':
+        return 4
+    elif estado == 4 and caracter == ' ':
+        return 0
+    elif estado == 4 and caracter == 'c':
+        return 1
+    else:
+        return 0
+
+# Crear el grafo
+G = nx.DiGraph()
+
+# Agregar nodos
+for i in range(6):
+    G.add_node(i, label=str(i))
+
+# Agregar bordes con etiquetas
+for i in range(5):
+    G.add_edge(i, i+1, label='casa' if i == 4 else '')
+
+# Obtener posiciones de los nodos
+pos = nx.spring_layout(G)
+
+# Dibujar nodos y etiquetas de los nodos
+nx.draw_networkx_nodes(G, pos, node_size=1000, node_color='skyblue')
+nx.draw_networkx_labels(G, pos, font_size=12, font_family='sans-serif')
+
+# Dibujar bordes y etiquetas de los bordes
+nx.draw_networkx_edges(G, pos, width=2, alpha=0.5, arrows=True)
+edge_labels = nx.get_edge_attributes(G, 'label')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+
+# Mostrar el diagrama
+plt.axis('off')
+plt.show()

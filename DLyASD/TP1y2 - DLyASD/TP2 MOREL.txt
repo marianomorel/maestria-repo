@@ -1,0 +1,5 @@
+TP2 Verilog - Mariano Morel 
+Maestría en Ciencias de la Ingeniería
+
+Aquí el código: 
+https://www.edaplayground.com/x/vzuq

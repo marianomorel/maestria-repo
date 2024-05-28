@@ -1,0 +1,32 @@
+`timescale 1ns / 1ps // Definir la escala de tiempo
+
+module gate_and_tb;
+
+  // Definir los cables de entrada
+  reg x0, x1;
+  
+  // Definir el cable de salida
+  wire y;
+  
+  // Instanciar el módulo bajo prueba
+  gate_and dut (
+    .x0(x0),
+    .x1(x1),
+    .y(y)
+  );
+  
+  // Inicializar las entradas
+  initial begin
+    $display("Comenzando la simulación...");
+    x0 = 1'b0; // Asignar el valor a la entrada x0
+    x1 = 1'b0; // Asignar el valor a la entrada x1
+    #10; // Esperar 10 unidades de tiempo
+    x0 = 1'b1; // Cambiar el valor de x0
+    #10; // Esperar 10 unidades de tiempo
+    x1 = 1'b1; // Cambiar el valor de x1
+    #10; // Esperar 10 unidades de tiempo
+    $display("Fin de la simulación.");
+    $finish; // Terminar la simulación
+  end
+  
+endmodule

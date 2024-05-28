@@ -1,0 +1,73 @@
+`timescale 1ns / 1ps // Definir la escala de tiempo
+
+module ffdTB;
+  
+  localparam N = 6;
+
+  // Definir los cables de entrada
+  reg [N-1:0] d;
+  reg clk;
+  reg rst;
+  
+  // Definir el cable de salida
+  wire [N-1:0] q;
+  
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    
+    test();
+   
+    
+  end
+    
+    ffd #(.N(N)) dut 
+  (
+    .d(d),
+    .rst(rst),
+    .clk(clk),
+    .q(q)
+  ); 
+    
+    task test;
+      integer i;      
+      begin
+      clk = 1'b0;
+      d = 6'b001111;
+      rst = 1'b1;
+        for(i=0; i<10; i=i+1)
+          begin 
+          clk=~clk;
+          #5;
+          rst=1'b0;
+          end
+      end
+      endtask
+  
+endmodule
+
+------------
+
+module ffd #(   parameter N = 10  )
+ (input  wire [N-1:0] d,
+  input  wire         clk,
+  input  wire         rst,
+  output reg  [N-1:0] q
+  );
+    
+  always @(posedge clk, posedge rst) 
+    begin
+    if (rst) begin
+      q <= {N{1'b0}};
+    end
+    else 
+    begin
+      q <= d;
+    end
+    
+  end
+  
+endmodule
+
+
