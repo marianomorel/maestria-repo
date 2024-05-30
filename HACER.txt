@@ -17,8 +17,6 @@ simular lab opams
 
 reglas de matching ver
 
--------
 
-seguir con tiempo de transito
 
 

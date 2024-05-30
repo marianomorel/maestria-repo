@@ -1,0 +1,15 @@
+fermi se transforma en una dist. de boltzman 
+(no tiene intregral)
+
+en condiciones de neutralidad electrica
+
+silicio dopado degeneradamente (no se puede aproximar a 
+boltzman)
+
+impureza del p (boro)
+"                   n (fosforo)
+
+corriente de difusion hay siempre
+depende del gradiente 
+
+Ja no hay sin E
