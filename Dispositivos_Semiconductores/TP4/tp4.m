@@ -144,16 +144,77 @@ S2 = p2(1);
 % Pendiente de la regresión lineal para ID3 (VBS=-1.8V)
 S3 = p3(1);
 
-disp(['La pendiente de la regresión lineal para ID1 es: ', num2str(pendiente_1)]);
-disp(['La pendiente de la regresión lineal para ID2 es: ', num2str(pendiente_2)]);
-disp(['La pendiente de la regresión lineal para ID3 es: ', num2str(pendiente_3)]);
+disp(['La pendiente de la regresión lineal para ID1 es: ', num2str(S1)]);
+disp(['La pendiente de la regresión lineal para ID2 es: ', num2str(S2)]);
+disp(['La pendiente de la regresión lineal para ID3 es: ', num2str(S3)]);
 
-S1=S1/1000;
-S2=S2/1000;
-S3=S3/1000;
+S1=1/S1;
+S2=1/S2;
+S3=1/S3;
 
 m1=S1/(2.3*VTH);
 m2=S2/(2.3*VTH);
 m3=S3/(2.3*VTH);
 
 %m no puede ser menor que la unidad%
+
+%eje5%
+%con la ecuacion de saturacion dada%
+% Datos proporcionados
+VG = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8];
+ID1 = [-1.9763e-9, -1.1384e-9, 1.0156e-9, -2.0269e-9, -6.579e-10, 1.4791e-9, 2.7718e-9, 7.3839e-9, 3.6076e-8, 1.3365e-7, 4.069e-7, 9.8625e-7, 2.0127e-6, 3.4784e-6, 5.5149e-6, 8.1954e-6, 1.132e-5, 1.5126e-5, 1.9513e-5, 2.4673e-5, 3.0177e-5, 3.6297e-5, 4.3049e-5, 5.0315e-5, 5.8133e-5, 6.6733e-5, 7.5508e-5, 8.4619e-5, 9.4409e-5, 0.000104847, 0.00011516, 0.00012617, 0.00013752, 0.00014937, 0.00016153, 0.00017384, 0.00018608];
+ID2 = [-1.1167e-009, 1.945e-010, -1.1061e-009, 2.4815e-009, 9.517e-010, -1.0466e-009, 2.3574e-009, 2.4465e-009, 9.107e-010, -4.848e-010, 3.4505e-009, 1.2978e-008, 5.5512e-008, 2.0667e-007, 5.9589e-007, 1.3378e-006, 2.5358e-006, 4.283e-006, 6.5901e-006, 9.5862e-006, 1.2944e-005, 1.7215e-005, 2.18e-005, 2.7108e-005, 3.3124e-005, 3.9577e-005, 4.6375e-005, 5.3898e-005, 6.1892e-005, 7.0633e-005, 7.9511e-005, 8.8693e-005, 9.8509e-005, 0.000108667, 0.00011928, 0.00013017, 0.00014158];
+ID3 = [1.0605e-008, 1.0453e-008, 1.0296e-008, 1.0604e-008, 1.0578e-008, 1.0417e-008, 1.0323e-008, 1.0462e-008, 1.0576e-008, 1.0381e-008, 1.0329e-008, 1.0618e-008, 1.104e-008, 1.4237e-008, 2.9502e-008, 9.5081e-008, 3.0472e-007, 8.0617e-007, 1.6874e-006, 3.0772e-006, 5.0021e-006, 7.5064e-006, 1.05936e-005, 1.4356e-005, 1.8576e-005, 2.3539e-005, 2.8956e-005, 3.4853e-005, 4.1418e-005, 4.8553e-005, 5.6029e-005, 6.3927e-005, 7.2471e-005, 8.1448e-005, 9.0621e-005, 0.000100192, 0.000110346];
+
+% Filtrar los datos a partir de las muestras especificadas
+VG1 = VG(VG >= 0.65);
+ID1_filtered = ID1(VG >= 0.65);
+
+VG2 = VG(VG >= 0.8);
+ID2_filtered = ID2(VG >= 0.8);
+
+VG3 = VG(VG >= 0.9);
+ID3_filtered = ID3(VG >= 0.9);
+
+% Ajuste polinómico de segundo grado para ID1 a partir de 0.65
+pc1 = polyfit(VG1, ID1_filtered, 2);
+VG_fit1 = linspace(min(VG1), max(VG1), 500);
+ID1_fit = polyval(pc1, VG_fit1);
+
+% Ajuste polinómico de segundo grado para ID2 a partir de 0.8
+pc2 = polyfit(VG2, ID2_filtered, 2);
+VG_fit2 = linspace(min(VG2), max(VG2), 500);
+ID2_fit = polyval(pc2, VG_fit2);
+
+% Ajuste polinómico de segundo grado para ID3 a partir de 0.9
+pc3 = polyfit(VG3, ID3_filtered, 2);
+VG_fit3 = linspace(min(VG3), max(VG3), 500);
+ID3_fit = polyval(pc3, VG_fit3);
+
+% Graficar los datos originales y el ajuste para ID1, ID2 e ID3 en un mismo gráfico
+figure;
+plot(VG, ID1, 'bo', 'DisplayName', 'Datos originales ID1 VBS = 0V');
+hold on;
+plot(VG_fit1, ID1_fit, 'b-', 'DisplayName', 'Ajuste cuadrático ID1');
+plot(VG, ID2, 'go', 'DisplayName', 'Datos originales ID2 VBS = -0.9V');
+plot(VG_fit2, ID2_fit, 'g-', 'DisplayName', 'Ajuste cuadrático ID2');
+plot(VG, ID3, 'mo', 'DisplayName', 'Datos originales ID3 VBS = -1.8V');
+plot(VG_fit3, ID3_fit, 'm-', 'DisplayName', 'Ajuste cuadrático ID3');
+xlabel('VG');
+ylabel('ID');
+title('Ajuste Cuadrático a los Datos ID1, ID2 e ID3');
+legend('show');
+grid on;
+hold off;
+
+% Mostrar los coeficientes de los polinomios ajustados
+disp('Coeficientes del polinomio cuadrático ajustado para ID1: ');
+disp(pc1);
+disp('Coeficientes del polinomio cuadrático ajustado para ID2: ');
+disp(pc2);
+disp('Coeficientes del polinomio cuadrático ajustado para ID3: ');
+disp(pc3);
+
+%VT=0.406V ; Kn=1.243E-04
+%VT=0.612V ; Kn=1.253E-04
+%VT=0.764V ; Kn=1.580E-04
