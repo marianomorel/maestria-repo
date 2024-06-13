@@ -1,4 +1,4 @@
-%eje1%
+                                                  %EJE1%
 
 % Datos de las columnas VG e ID
 VG = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8];
@@ -18,7 +18,7 @@ title('Gráfico de VGS vs ID');
 grid on;
 legend('show');
 
-%eje2%
+                                                   %EJE2%
 
 % Crear el gráfico en escala semilogarítmica
 figure;
@@ -32,7 +32,7 @@ title('Gráfico de VGS vs ID (Escala Semilogarítmica)');
 grid on;
 legend('show');
 
-%eje3%
+                                                   %EJE3%
 
 % Valores de V_D
 VD = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8];
@@ -63,7 +63,7 @@ legend;
 grid on;
 hold off;
 
-%eje4%
+                                                %EJE4%
 
 q=1.6e-19;
 k=1.38e-23;
@@ -87,7 +87,7 @@ ylabel('ID (A)');
 title('Gráfico de VGS vs ID (Escala Semilogarítmica)');
 grid on;
 
-%fit_1%
+    %fit_1%
 
 % Obtener los índices de los puntos en el rango de VG de 0.35 a 0.5
 indice_inicio1 = find(VG == 0.35);
@@ -103,7 +103,10 @@ y_fit1 = exp(polyval(p1, VG(indice_inicio1:indice_fin1))); % calcular valores aj
 semilogy(VG(indice_inicio1:indice_fin1), y_fit1, '--', 'DisplayName', 'Regresión Lineal (VBS=0V)');
 legend('show');
 
-%fit_2%
+ID1_MIN = exp(polyval(p1, 0.35));
+ID1_MAX = exp(polyval(p1, 0.5));
+
+   %fit_2%
 
 % Obtener los índices de los puntos en el rango de VG de 0.5 a 0.65
 indice_inicio2 = find(VG == 0.5);
@@ -119,7 +122,10 @@ y_fit2 = exp(polyval(p2, VG(indice_inicio2:indice_fin2))); % calcular valores aj
 semilogy(VG(indice_inicio2:indice_fin2), y_fit2, '--', 'DisplayName', 'Regresión Lineal (VBS=-0.9V)');
 legend('show');
 
-%fit_3%
+ID2_MIN = exp(polyval(p2, 0.5));
+ID2_MAX = exp(polyval(p2, 0.65));
+
+   %fit_3%
 
 % Obtener los índices de los puntos en el rango de VG de 0.7 y 0.85
 indice_inicio3 = find(VG == 0.7);
@@ -135,28 +141,17 @@ y_fit3 = exp(polyval(p3, VG(indice_inicio3:indice_fin3))); % calcular valores aj
 semilogy(VG(indice_inicio3:indice_fin3), y_fit3, '--', 'DisplayName', 'Regresión Lineal (VBS=-1.8V)');
 legend('show');
 
-% Pendiente de la regresión lineal para ID1 (VBS=0V)
-S1 = p1(1);
+ID3_MIN = exp(polyval(p3, 0.7));
+ID3_MAX = exp(polyval(p3, 0.85));
 
-% Pendiente de la regresión lineal para ID2 (VBS=-0.9V)
-S2 = p2(1);
-
-% Pendiente de la regresión lineal para ID3 (VBS=-1.8V)
-S3 = p3(1);
-
-disp(['La pendiente de la regresión lineal para ID1 es: ', num2str(S1)]);
-disp(['La pendiente de la regresión lineal para ID2 es: ', num2str(S2)]);
-disp(['La pendiente de la regresión lineal para ID3 es: ', num2str(S3)]);
-
-S1=1/S1;
-S2=1/S2;
-S3=1/S3;
+S1=(0.5-0.35)/((log(ID1_MAX)-log(ID1_MIN))/log(10));
+S2=(0.65-0.5)/((log(ID2_MAX)-log(ID2_MIN))/log(10));
+S3=(0.85-0.7)/((log(ID3_MAX)-log(ID3_MIN))/log(10));
 
 m1=S1/(2.3*VTH);
 m2=S2/(2.3*VTH);
 m3=S3/(2.3*VTH);
 
-%m no puede ser menor que la unidad%
 
 %eje5%
 %con la ecuacion de saturacion dada%
@@ -215,6 +210,101 @@ disp(pc2);
 disp('Coeficientes del polinomio cuadrático ajustado para ID3: ');
 disp(pc3);
 
-%VT=0.406V ; Kn=1.243E-04
-%VT=0.612V ; Kn=1.253E-04
-%VT=0.764V ; Kn=1.580E-04
+      %valores de Kn y VT%
+
+%VT=0.406V ; Kn=2.863E-04
+%VT=0.612V ; Kn=2.885E-04
+%VT=0.764V ; Kn=3.639E-04
+
+
+%eje6%
+% Crear la figura y plotear las curvas
+figure;
+hold on;
+plot(VD, ID_VGS_0, '-o', 'DisplayName', 'V_{GS} = 0 V');
+plot(VD, ID_VGS_0_36, '-*', 'DisplayName', 'V_{GS} = 0.36 V');
+plot(VD, ID_VGS_0_72, '-s', 'DisplayName', 'V_{GS} = 0.72 V');
+plot(VD, ID_VGS_1_08, '-d', 'DisplayName', 'V_{GS} = 1.08 V');
+plot(VD, ID_VGS_1_44, '-^', 'DisplayName', 'V_{GS} = 1.44 V');
+plot(VD, ID_VGS_1_8, '-v', 'DisplayName', 'V_{GS} = 1.8 V');
+
+% Configuración de la gráfica
+xlabel('V_D (V)');
+ylabel('I_D (A)');
+title('Curvas V_D vs I_D para diferentes valores de V_{GS}');
+legend;
+grid on;
+
+% Calcular y marcar el primer punto donde la derivada es cercana a cero
+threshold = 1e-5; % Umbral para considerar la derivada cercana a cero
+
+curves = {ID_VGS_0, ID_VGS_0_36, ID_VGS_0_72, ID_VGS_1_08, ID_VGS_1_44, ID_VGS_1_8};
+VGS_values = {'0 V', '0.36 V', '0.72 V', '1.08 V', '1.44 V', '1.8 V'};
+markers = {'o', '*', 's', 'd', '^', 'v'};
+
+for i = 1:length(curves)
+    ID = curves{i};
+    dID_dVD = diff(ID) ./ diff(VD); % Calcular la derivada
+    idx = find(abs(dID_dVD) < threshold, 1); % Encontrar el primer índice donde la derivada es menor al umbral
+    if ~isempty(idx)
+        plot(VD(idx), ID(idx), 'ko', 'MarkerFaceColor', 'k', 'DisplayName', sprintf('V_{GS} = %s, V_{DS} = %.2f V', VGS_values{i}, VD(idx)));
+    end
+end
+
+hold off;
+
+% Crear la figura y plotear las curvas
+figure;
+hold on;
+plot(VD, ID_VGS_0, '-o', 'DisplayName', 'V_{GS} = 0 V');
+plot(VD, ID_VGS_0_36, '-*', 'DisplayName', 'V_{GS} = 0.36 V');
+plot(VD, ID_VGS_0_72, '-s', 'DisplayName', 'V_{GS} = 0.72 V');
+plot(VD, ID_VGS_1_08, '-d', 'DisplayName', 'V_{GS} = 1.08 V');
+plot(VD, ID_VGS_1_44, '-^', 'DisplayName', 'V_{GS} = 1.44 V');
+plot(VD, ID_VGS_1_8, '-v', 'DisplayName', 'V_{GS} = 1.8 V');
+
+% Configuración de la gráfica
+xlabel('V_D (V)');
+ylabel('I_D (A)');
+title('Curvas V_D vs I_D para diferentes valores de V_{GS}');
+legend;
+grid on;
+
+% Calcular y marcar el primer punto donde la derivada es cercana a cero
+threshold = 1e-5; % Umbral para considerar la derivada cercana a cero
+
+curves = {ID_VGS_0, ID_VGS_0_36, ID_VGS_0_72, ID_VGS_1_08, ID_VGS_1_44, ID_VGS_1_8};
+VGS_values = {'0 V', '0.36 V', '0.72 V', '1.08 V', '1.44 V', '1.8 V'};
+markers = {'o', '*', 's', 'd', '^', 'v'};
+
+% Estimación y plot de VA para cada curva
+VA_values = zeros(1, length(curves));
+
+for i = 1:length(curves)
+    ID = curves{i};
+    dID_dVD = diff(ID) ./ diff(VD); % Calcular la derivada
+    idx = find(abs(dID_dVD) < threshold, 1); % Encontrar el primer índice donde la derivada es menor al umbral
+    if ~isempty(idx)
+        % Selección de la región de saturación
+        saturation_region = idx:length(VD);
+        VD_sat = VD(saturation_region);
+        ID_sat = ID(saturation_region);
+        
+        % Realizar la regresión lineal
+        p = polyfit(VD_sat, ID_sat, 1);
+        slope = p(1);
+        intercept = p(2);
+        
+        % Calcular la intersección con el eje VD (VA)
+        VA = -intercept / slope;
+        VA_values(i) = VA;
+        
+        % Mostrar el valor de VA para esta curva en un recuadro
+        annotation('textbox', [0.65 0.85-(i-1)*0.1 0.2 0.1], 'String', sprintf('V_{GS} = %s\nVA = %.2f V', VGS_values{i}, VA), 'FitBoxToText', 'on', 'EdgeColor', 'none');
+        
+        % Mostrar el valor de VA para esta curva
+        fprintf('V_{GS} = %s, VA = %.2f V\n', VGS_values{i}, VA);
+    end
+end
+
+hold off; 
