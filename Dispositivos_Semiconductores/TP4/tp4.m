@@ -14,7 +14,7 @@ plot(VG, ID2, '-x', 'DisplayName', 'VBS = -0.9V');
 plot(VG, ID3, '-*', 'DisplayName', 'VBS = -1.8V'); 
 xlabel('VGS (volts)');
 ylabel('ID (A)');
-title('Gráfico de VGS vs ID');
+title('VGS vs ID');
 grid on;
 legend('show');
 
@@ -28,7 +28,7 @@ semilogy(VG, abs(ID2), '-x', 'DisplayName', 'VBS = -0.9V');
 semilogy(VG, abs(ID3), '-*', 'DisplayName', 'VBS = -1.8V'); 
 xlabel('VGS (V)');
 ylabel('ID (A)');
-title('Gráfico de VGS vs ID (Escala Semilogarítmica)');
+title('VGS vs ID (Semilogarítmica)');
 grid on;
 legend('show');
 
@@ -64,7 +64,6 @@ grid on;
 hold off;
 
                                                 %EJE4%
-
 q=1.6e-19;
 k=1.38e-23;
 T=300;
@@ -84,11 +83,10 @@ semilogy(VG, abs(ID2), '-x', 'DisplayName', 'VBS = -0.9V');
 semilogy(VG, abs(ID3), '-*', 'DisplayName', 'VBS = -1.8V'); 
 xlabel('VGS (V)');
 ylabel('ID (A)');
-title('Gráfico de VGS vs ID (Escala Semilogarítmica)');
+title('VGS vs ID (Semilogarítmica)');
 grid on;
 
-    %fit_1%
-
+% fit_1
 % Obtener los índices de los puntos en el rango de VG de 0.35 a 0.5
 indice_inicio1 = find(VG == 0.35);
 indice_fin1 = find(VG == 0.5);
@@ -100,60 +98,61 @@ p1 = polyfit(x1, log(y1), 1); % realizar regresión lineal en escala semilogarítm
 y_fit1 = exp(polyval(p1, VG(indice_inicio1:indice_fin1))); % calcular valores ajustados
 
 % Agregar la línea punteada de regresión lineal al gráfico
-semilogy(VG(indice_inicio1:indice_fin1), y_fit1, '--', 'DisplayName', 'Regresión Lineal (VBS=0V)');
+semilogy(VG(indice_inicio1:indice_fin1), y_fit1, '--k', 'LineWidth', 2, 'DisplayName', 'Regresión Lineal (VBS=0V)');
 legend('show');
 
 ID1_MIN = exp(polyval(p1, 0.35));
 ID1_MAX = exp(polyval(p1, 0.5));
 
-   %fit_2%
-
+% fit_2
 % Obtener los índices de los puntos en el rango de VG de 0.5 a 0.65
 indice_inicio2 = find(VG == 0.5);
 indice_fin2 = find(VG == 0.65);
 
-% Realizar la regresión lineal para ID1 entre VG de 0.5 y 0.65
+% Realizar la regresión lineal para ID2 entre VG de 0.5 y 0.65
 x2 = VG(indice_inicio2:indice_fin2); % valores de VG entre 0.5 y 0.65
 y2 = abs(ID2(indice_inicio2:indice_fin2)); % valores correspondientes de ID2
 p2 = polyfit(x2, log(y2), 1); % realizar regresión lineal en escala semilogarítmica
 y_fit2 = exp(polyval(p2, VG(indice_inicio2:indice_fin2))); % calcular valores ajustados
 
 % Agregar la línea punteada de regresión lineal al gráfico
-semilogy(VG(indice_inicio2:indice_fin2), y_fit2, '--', 'DisplayName', 'Regresión Lineal (VBS=-0.9V)');
+semilogy(VG(indice_inicio2:indice_fin2), y_fit2, '--k', 'LineWidth', 2, 'DisplayName', 'Regresión Lineal (VBS=-0.9V)');
 legend('show');
 
 ID2_MIN = exp(polyval(p2, 0.5));
 ID2_MAX = exp(polyval(p2, 0.65));
 
-   %fit_3%
-
+% fit_3
 % Obtener los índices de los puntos en el rango de VG de 0.7 y 0.85
 indice_inicio3 = find(VG == 0.7);
 indice_fin3 = find(VG == 0.85);
 
-% Realizar la regresión lineal para ID1 entre VG de 0.7 y 0.85
+% Realizar la regresión lineal para ID3 entre VG de 0.7 y 0.85
 x3 = VG(indice_inicio3:indice_fin3); % valores de VG entre 0.7 y 0.85
 y3 = abs(ID3(indice_inicio3:indice_fin3)); % valores correspondientes de ID3
 p3 = polyfit(x3, log(y3), 1); % realizar regresión lineal en escala semilogarítmica
 y_fit3 = exp(polyval(p3, VG(indice_inicio3:indice_fin3))); % calcular valores ajustados
 
 % Agregar la línea punteada de regresión lineal al gráfico
-semilogy(VG(indice_inicio3:indice_fin3), y_fit3, '--', 'DisplayName', 'Regresión Lineal (VBS=-1.8V)');
+semilogy(VG(indice_inicio3:indice_fin3), y_fit3, '--k', 'LineWidth', 2, 'DisplayName', 'Regresión Lineal (VBS=-1.8V)');
 legend('show');
 
 ID3_MIN = exp(polyval(p3, 0.7));
 ID3_MAX = exp(polyval(p3, 0.85));
 
-S1=(0.5-0.35)/((log(ID1_MAX)-log(ID1_MIN))/log(10));
-S2=(0.65-0.5)/((log(ID2_MAX)-log(ID2_MIN))/log(10));
-S3=(0.85-0.7)/((log(ID3_MAX)-log(ID3_MIN))/log(10));
+S1 = (0.5-0.35) / ((log(ID1_MAX) - log(ID1_MIN)) / log(10));
+S2 = (0.65-0.5) / ((log(ID2_MAX) - log(ID2_MIN)) / log(10));
+S3 = (0.85-0.7) / ((log(ID3_MAX) - log(ID3_MIN)) / log(10));
 
-m1=S1/(2.3*VTH);
-m2=S2/(2.3*VTH);
-m3=S3/(2.3*VTH);
+m1 = S1 / (2.3 * VTH);
+m2 = S2 / (2.3 * VTH);
+m3 = S3 / (2.3 * VTH);
+
+m = [m1, m2, m3];
 
 
-%eje5%
+
+                                             %eje5%
 %con la ecuacion de saturacion dada%
 % Datos proporcionados
 VG = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8];
@@ -217,7 +216,7 @@ disp(pc3);
 %VT=0.764V ; Kn=3.639E-04
 
 
-%eje6%
+                                           %eje6%
 % Crear la figura y plotear las curvas
 figure;
 hold on;
@@ -241,17 +240,24 @@ threshold = 1e-5; % Umbral para considerar la derivada cercana a cero
 curves = {ID_VGS_0, ID_VGS_0_36, ID_VGS_0_72, ID_VGS_1_08, ID_VGS_1_44, ID_VGS_1_8};
 VGS_values = {'0 V', '0.36 V', '0.72 V', '1.08 V', '1.44 V', '1.8 V'};
 markers = {'o', '*', 's', 'd', '^', 'v'};
+VDS_SAT = []; % Vector para almacenar los valores de V_DS en saturación
 
 for i = 1:length(curves)
     ID = curves{i};
     dID_dVD = diff(ID) ./ diff(VD); % Calcular la derivada
     idx = find(abs(dID_dVD) < threshold, 1); % Encontrar el primer índice donde la derivada es menor al umbral
     if ~isempty(idx)
+        VDS_SAT = [VDS_SAT, VD(idx)]; % Agregar el valor de V_DS en saturación al vector
         plot(VD(idx), ID(idx), 'ko', 'MarkerFaceColor', 'k', 'DisplayName', sprintf('V_{GS} = %s, V_{DS} = %.2f V', VGS_values{i}, VD(idx)));
     end
 end
 
 hold off;
+
+% Mostrar los valores de VDS_SAT
+disp('Valores de VDS_SAT:');
+disp(VDS_SAT);
+
 
 % Crear la figura y plotear las curvas
 figure;
@@ -308,3 +314,146 @@ for i = 1:length(curves)
 end
 
 hold off; 
+
+%EJE7 (de la ecuacion)%                   %esto es con ecuacion%
+% Definir los parámetros conocidos
+%gamma = 0.746;      % Constante gamma
+%psi_B = -0.399;     % Potencial de banda
+%VT0 = 0.555;        % Voltaje umbral inicial
+% Definir valores de VBS
+%VBS = [0, -0.9, -1.8];   % Voltaje bulk-source
+% Calcular VT para cada valor de VBS
+%VT = VT0 + gamma * (sqrt(-VBS - 2 * psi_B) - sqrt(-2 * psi_B));
+% Mostrar los resultados
+%disp('Valores de VT:');
+%disp(VT);
+% Graficar VT vs VBS
+%figure;
+%plot(VBS, VT, 'o-', 'LineWidth', 2, 'MarkerSize', 8);
+%grid on;
+%xlabel('V_{BS}');
+%ylabel('V_{T}');
+%title('Gráfico de V_{T} vs V_{BS}');
+%Valores de VT:
+%    0.5550    0.8607    1.0910
+
+%EJE8 (de la ecuacion)%                      %esto es con ecuacion%
+% Definir los parámetros conocidos
+%gamma = 0.746;      % Constante gamma
+%psi_B = -0.399;     % Potencial de banda
+%VBS = [0, -0.9, -1.8];   % Voltaje bulk-source
+% Calcular m(VBS)
+%m_VBS = 1 + (gamma ./ (2 .* sqrt(-VBS - 2 .* psi_B)));
+% Mostrar el resultado
+%disp('Valores de m(VBS):');
+%disp(m_VBS);
+% Graficar m(VBS) vs VBS
+%figure;
+%plot(VBS, m_VBS, 'o-', 'LineWidth', 2, 'MarkerSize', 8);
+%grid on;
+%xlabel('V_{BS}');
+%ylabel('m(V_{BS})');
+%title('Gráfico de m(V_{BS}) vs V_{BS}');
+
+                      %eje7%
+% Datos proporcionados
+VT = [0.406, 0.612, 0.764];   % Voltaje umbral VT en voltios
+VBS = [0, -0.9, -1.8];        % Voltaje bulk-source VBS en voltios
+% Graficar VT vs VBS
+figure;
+plot(VBS, VT, 'o-', 'LineWidth', 2, 'MarkerSize', 8);
+grid on;
+xlabel('V_{BS} (V)');
+ylabel('V_{T} (V)');
+title('V_{T} vs V_{BS}');
+
+                      %eje8%
+% Datos proporcionados
+% Graficar m(VBS) vs VBS
+figure;
+plot(VBS, m, 'o-', 'LineWidth', 2, 'MarkerSize', 8);
+grid on;
+xlabel('V_{BS} (V)');
+ylabel('m(V_{BS})');
+title('m vs V_{BS}');
+
+
+                      %eje9%
+% Datos proporcionados
+Kn = [2.863E-04, 2.885E-04, 3.639E-04]; % Valores de Kn
+% Graficar Kn vs VBS
+figure;
+plot(VBS, Kn, 'o-', 'LineWidth', 2, 'MarkerSize', 8);
+grid on;
+xlabel('V_{BS} (V)');
+ylabel('K_{n}');
+title('K_{n} vs V_{BS}');
+
+                  %eje10%
+
+% Curvas de corriente ID para diferentes VGS
+ID_curves = {ID_VGS_0, ID_VGS_0_36, ID_VGS_0_72, ID_VGS_1_08, ID_VGS_1_44, ID_VGS_1_8};
+VGS_labels = {'0V', '0.36V', '0.72V', '1.08V', '1.44V', '1.8V'};
+
+% Rango de índices para calcular la media
+% Aquí se podría ajustar según el punto donde consideres que la curva se estabiliza
+inicio_indice_estable = 15;  % Ajustar según la observación de las curvas
+fin_indice_estable = length(VD);  % Puedes ajustar este valor según sea necesario
+
+% Calcular la corriente de saturación como el promedio de los valores en el rango establecido
+I_saturation = zeros(size(ID_curves));
+
+for i = 1:length(ID_curves)
+    ID_curve = ID_curves{i};
+    ID_stable_range = ID_curve(inicio_indice_estable:fin_indice_estable);
+    I_saturation(i) = mean(ID_stable_range);
+end
+
+% Mostrar los valores de corriente de saturación
+fprintf('Corriente de saturación promedio para cada curva:\n');
+for i = 1:length(I_saturation)
+    fprintf('VGS = %s: %.4e A\n', VGS_labels{i}, I_saturation(i));
+end
+
+% Graficar
+figure;
+plot(VA_values, I_saturation, '-o', 'LineWidth', 1.5);
+xlabel('VA Values');
+ylabel('ID SAT (A)');
+title('ID SAT vs VA');
+grid on;
+grid minor;
+
+%no se mantiene constante%
+
+                         %EJE11%
+                         
+                         % Datos proporcionados
+m_VDS_SAT = 1.4505;
+VT_VDS_SAT = 0.406;
+VGS_SAT = [0, 0.36, 0.72, 1.08, 1.44, 1.8];
+
+% Calcular VDS_SAT_CALC
+VDS_SAT_CALC = (VGS_SAT - VT_VDS_SAT) / m_VDS_SAT;
+
+% Redondear los valores negativos a 0
+VDS_SAT_CALC(VDS_SAT_CALC < 0) = 0;
+
+% Mostrar los resultados
+disp('Valores calculados de VDS_SAT_CALC:');
+disp(VDS_SAT_CALC);
+
+% Definir los vectores
+VDS_estimado = [0, 0, 0.200000000000000, 0.450000000000000, 0.750000000000000, 1.05000000000000];
+VDS_calculado = [0, 0, 0.216477076870045, 0.464667356084109, 0.712857635298173, 0.961047914512237];
+
+% Calcular la diferencia absoluta
+diferencia_absoluta = abs(VDS_estimado - VDS_calculado);
+
+% Crear una tabla
+T = table(VDS_estimado', VDS_calculado', diferencia_absoluta', ...
+    'VariableNames', {'VDS_estimado', 'VDS_calculado', 'Diferencia_absoluta'});
+
+% Mostrar la tabla
+disp('Tabla de comparación entre VDS_estimado y VDS_calculado:');
+disp(T);
