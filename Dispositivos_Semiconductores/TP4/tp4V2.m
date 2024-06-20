@@ -233,9 +233,6 @@ end
 
 hold off;
 
-% Mostrar los valores de VDS_SAT
-%disp('Valores de VDS_SAT:');
-%disp(VDS_SAT);
 % Crear la figura y plotear las curvas
 figure;
 hold on;
@@ -405,10 +402,6 @@ VGS_SAT = [0, 0.36, 0.72, 1.08, 1.44, 1.8];
 VDS_SAT_CALC = (VGS_SAT - VT(1)) / m(1);
 % Redondear los valores negativos a 0
 VDS_SAT_CALC(VDS_SAT_CALC < 0) = 0;
-
-% Mostrar los resultados
-%disp('Valores calculados de VDS_SAT_CALC:');
-%disp(VDS_SAT_CALC);
 
 % Calcular la diferencia absoluta
 diferencia_absoluta = abs(VDS_SAT - VDS_SAT_CALC);
