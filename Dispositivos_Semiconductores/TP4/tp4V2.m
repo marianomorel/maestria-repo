@@ -562,3 +562,19 @@ legend('show', 'Location', 'northwest');
 
 % Opcional: Cambiar el tamaño de los símbolos para mejor visualización
 set(gca, 'FontSize', 12);
+
+               %####COMPARACION CL Y CC#########%
+% Plotear las curvas
+figure;
+plot(VD, ID_VG18_CC, '-h', 'DisplayName', 'VG = 1.8V Canal Corto');
+hold on;
+plot(VD, ID_VGS_1_8, '-o', 'DisplayName', 'VG = 1.8V Canal Largo');
+
+% Ajustar propiedades del gráfico
+grid on;
+xlabel('VD (V)');
+ylabel('ID (A)');
+title('Curvas ID-VD para diferentes VG');
+legend('show', 'Location', 'northwest');
+set(gca, 'FontSize', 12);
+hold off;
