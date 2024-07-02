@@ -1,4 +1,4 @@
-% Promediado de se?ales% Modelo
+% Promediado de señales 
 Fs = 1000;
 f = 1;
 n = 0 : 1/Fs : 0.499;

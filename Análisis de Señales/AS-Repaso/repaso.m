@@ -76,7 +76,6 @@ ceros=poly(ceros);
 zplane(ceros,polos);
 title('Diagrama de P y Z de la señal filtrada PA + NOTCH');
 
-% Filtrado NOTCH de la señal
 output1 = filter(ceros, polos, output);
 figure;
 subplot(2,1,1);

@@ -4,11 +4,12 @@ clearvars
 close all
 clc
 Fs = 200;
+T=1/Fs;
 t = -4 : 1/Fs : 4;
 x = t.*t;
 y = zeros(length(t));
 for i = 2 : length(t) 
-    y(i) = y(i-1) + x(i)/Fs; %T=1/Fs
+    y(i) = y(i-1) + T*x(i); 
 end
 plot(t,x);
 hold on;
