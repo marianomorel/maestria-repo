@@ -22,8 +22,8 @@ b1 = 2*r*cos(tita);
 b2 = r*r;
 a1 = -2;
 a2 = 1;
-num = [1 a1 a2]; % z2 z 1
-den = [1 -b1 b2]; % z2 z 1
+num = [1 a1 a2]; % z2 z1
+den = [1 -b1 b2]; % z2 z1
 
 figure(2);
 zplane(num,den)
@@ -39,7 +39,7 @@ hold on;
 plot(C,'m');
 hold off;
 
-% Observaci?n de la FFT para analizar los ruidos
+% Observación de la FFT para analizar los ruidos
 
 % Si no queremos que se vea pulsada, puede hacerse una FFT de sólo una
 % subseñal (un "período" solamente)... lo que se ve pulsado es por la
@@ -51,7 +51,7 @@ hold off;
 figure(4)
 w = 0 : 2*pi/length(C) : 2*pi - 2*pi/ length(C);
 f = linspace(0,Fs,length(C));
-plot(f,abs(fft(C)))
+plot(abs(fft(C)))
 
 % Filtro Notch
 
@@ -71,9 +71,9 @@ z9 = 1 .* exp(1j*fase);
 z10 = 1 .* exp(1j*-fase);
 ceros = [z1 z2 z3 z4 z5 z6 z7 z8 z9 z10];
 num = poly(ceros);
-% den = [1 0 0 0 0 0 0 0 0 0 0];
-den = zeros(1,length(num));
-den(1) = 1;
+den = [1 0 0 0 0 0 0 0 0 0 0];
+% den = zeros(1,length(num));
+% den(1) = 1;
 
 G = (sum(num)/sum(den)); % La ganancia de continua sería cuando z = 1 (z = e^(jw) con w = 0)
 
@@ -107,7 +107,7 @@ while(i<length(estimulo))
 end
 marcas = marcas(1:k);
 
-% Promediadod de señal
+% Promediador de señal
 
 largo = marcas(2) - marcas(1); % podría usar un mínimo si es variable (estímulo no períodico)
 

@@ -1,5 +1,4 @@
 %%
-%%
 % Ejemplo Computo de armónicos y frecuencias
 clear all; 
 syms t

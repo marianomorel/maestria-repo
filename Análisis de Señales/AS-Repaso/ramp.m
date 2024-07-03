@@ -1,4 +1,4 @@
-function y=rampa(t,m,ad)
+function y=ramp(t,m,ad)
 % ramp generation
 % t: time support
 % m: slope of ramp

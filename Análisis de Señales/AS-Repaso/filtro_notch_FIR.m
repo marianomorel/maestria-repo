@@ -1,4 +1,4 @@
-%filtro notch a 50hz
+%filtro notch a 50hz con t y con una señal + ruido
 
 Fs = 200;                 % Frecuencia de muestreo
 t = 0:1/Fs:10;            % Vector de tiempo

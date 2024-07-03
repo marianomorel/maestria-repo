@@ -1,11 +1,11 @@
 %Fs=
+F=fft(abs(f));
 L=length(F);
-F=ffy(abs(f));
 w=0:2*pi/L:2*pi-2*pi/L;
 
 for i=1:4 %esto no es necesario si conocemos el submuestreo que queremos hacer
     b=downsample(y,2^i);
-    B=ffy(abs(b));
+    B=fft(abs(b));
 end
 
 subplot(2,1,1);

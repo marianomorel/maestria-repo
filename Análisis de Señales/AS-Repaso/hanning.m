@@ -1,16 +1,14 @@
-% Ejercicio resuelto
-
-% Carga de se?al. Definici?n de Fs y espacio de tiempo n
+% Carga de señal. Definicion de Fs y espacio de tiempo n
 
 %load('SIGNALSADQ.mat')
-Fs = 20;
-n = 0:1/Fs:length(A)/Fs - 1/Fs; %para que lo uso?
+Fs = 1000;
+% n = 0:1/Fs:length(A)/Fs - 1/Fs; 
 
 % Filtro pasa bajos
 
 b1 = 0;
 b2 = 0;
-a1 = 2;
+a1 = 0;
 a2 = 1;
 num = [1 a1 a2]; % z2 z 1
 den = [1 -b1 b2]; % z2 z 1
@@ -25,21 +23,19 @@ freqz(num, den, 2000, Fs)
 C = filtfilt(num,den,A);
 
 figure(1);
-plot(n,0.1*C,'m'); %no uso n?
+plot(C,'m'); 
 hold on;
-plot(n,A,'g')
+plot(A,'g')
 hold off;
 
+%FILTRO CON ECUACION EN DIFERENCIAS
 
+B=A;
 
-% Fs = 8; %para que lo uso?
-% n = 0:1/Fs:length(A)/Fs - 1/Fs; %para que lo uso?
-% B=A;
-% 
-% for i=3:length(A)
-% B(i)=(A(i)+2*A(i-1)+A(i-2))/Fs;% resp al impulso en n
-% end
-% figure;
-% plot(B,'g')
-% hold on
-% plot(0.5*A,'r')
+for i=3:length(A)
+B(i)=0.25*(A(i)+A(i-2));% resp al impulso en n
+end
+figure;
+plot(B,'r')
+hold on
+plot(0.5*A,'g')

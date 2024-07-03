@@ -60,7 +60,7 @@ plot(A,'r')
 
 %otra forma%
 
-C=conv(A,hz);
+C=conv(A,hz); %si conociera h, no uso impz
 plot(C,'r')
 hold on
 plot(A,'b')

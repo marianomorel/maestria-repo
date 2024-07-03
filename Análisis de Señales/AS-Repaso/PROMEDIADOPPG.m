@@ -13,11 +13,11 @@ b1 = 2*r*cos(tita);
 b2 = r*r;
 a1 = -2;
 a2 = 1;
-ceros = [1 a1 a2]; % z2 z 1
-polos = [1 -b1 b2]; % z2 z 1
+ceros = [1 a1 a2]; % z2 z1
+polos = [1 -b1 b2]; % z2 z1
 salidaoscu = filtfilt(ceros,polos,salidaoscu);
-ceros = [1/4 1/2 1/4]; % z2 z 1
-polos = [1 0 0]; % z2 z 1
+ceros = [1/4 1/2 1/4]; % z2 z1
+polos = [1 0 0]; % z2 z1
 salidaoscu = filtfilt(ceros,polos,salidaoscu);
 subplot(2,1,1);
 plot(salida2);
@@ -52,8 +52,8 @@ figure;
 plot(vector);
 
 %vuelve a filtrar
-ceros = [1/16 1/4 6/16 1/4 1/16]; % z2 z 1
-polos = [1 0 0 0 0]; % z2 z 1
+ceros = [1/16 1/4 6/16 1/4 1/16]; % z2 z1
+polos = [1 0 0 0 0]; % z2 z1
 vector = filtfilt(ceros,polos,vector);
 hold on;
 plot(vector,'r');

@@ -1,3 +1,5 @@
+%serie de fourier para diferentes valores K de un coseno
+
 clear all;
 clf;
 syms t;
@@ -41,16 +43,16 @@ for i = 1:length(K_values)
     hold off;
 end
 
-clear all;
-clf;
-syms t;
-T0 = 1; % periodo fundamental 
-N = 10; % cantidad de armónicos  
+% clear all;
+% clf;
+% syms t;
+% T0 = 1; % periodo fundamental 
+% N = 10; % cantidad de armónicos  
+% 
+% % Valores de K a utilizar
+% K_values = [0.25, 0.0625, 2, 8];
 
-% Valores de K a utilizar
-K_values = [0.25, 0.0625, 2, 8];
-
-figure(1);
+figure(2);
 
 for i = 1:length(K_values)
     K = K_values(i);

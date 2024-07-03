@@ -16,7 +16,7 @@ f=[f1 f2];
 %n=input('ingrese n ');
  
 alfa = (1/2);
-n = 0.5;
+n = 2;
 g=( 1/(2*sqrt(pi*alfa))*exp(-(t-n)).^2/(4*alfa) );
 a=f.*g;
 b=abs(fft(f));

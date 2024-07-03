@@ -1,5 +1,5 @@
 
-% Tomar los primeros 39 elementos de pa para el cálculo de la pendiente
+% Tomar ciertos elementos de pa para el cálculo de la pendiente
 datos_pa = pa(23:40);
 indices = 22:39;
 

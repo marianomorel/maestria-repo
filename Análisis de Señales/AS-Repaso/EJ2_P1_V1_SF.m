@@ -1,3 +1,5 @@
+%serie de fourier de una senoidal con envolventes
+
 clear all;
 clf;
 syms t;
@@ -8,7 +10,7 @@ N = 2; % cantidad de armónicos
 %m = heaviside(t) - heaviside(t - T0/4) +  heaviside(t - 3*T0/4); 
 %m = heaviside(t) - heaviside(t - 1*T0/2);
 %m = heaviside(t) - heaviside(t - 4*T0/10) +  heaviside(t - 6*T0/10);
-m=abs(cos(1*pi*t))
+m=abs(cos(1*pi*t));
 x = m;
 
 % armónicos y frecuencias de los armónicos

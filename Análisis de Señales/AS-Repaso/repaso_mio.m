@@ -136,7 +136,7 @@ for i = 2 : k-1
      pause;
 end
 pa = pa/10;
-%plot(pa);
+plot(pa);
 
 %otro filtrado mas
 zz1=1/16;
@@ -149,8 +149,8 @@ ceros2=[zz1 zz2 zz3 zz4 zz5];
 polos2 = [1 0 0 0 0]; % z2 z1
 vector = filtfilt(ceros2,polos2,pa);
 plot(vector,'r')
-%hold on;
-%plot(pa,'b');
+hold on;
+plot(pa,'b');
 
 
 % Tomar los primeros 39 elementos de pa

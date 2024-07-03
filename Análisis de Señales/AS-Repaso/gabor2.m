@@ -5,7 +5,7 @@
 
 
 % Análisis de señales con Ventana de Gabor 
- clear all; 
+clear all; 
 clf;
  
 % variable independiente entre -4 y 4

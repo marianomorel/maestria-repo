@@ -1,9 +1,9 @@
 % Ejemplo 3 Tiempo vs. Frecuencia. Transformada de Fourier
 
-Graficar el cambio que se produce en la 
-Transformada de Fourier a medida que el 
-soporte de la senal en el tiempo se 
-incrementa de [-0.5 a 0.5] hasta [-2 a 2]
+% Graficar el cambio que se produce en la 
+% Transformada de Fourier a medida que el 
+% soporte de la senal en el tiempo se 
+% incrementa de [-0.5 a 0.5] hasta [-2 a 2]
 
 clear all; 
 clf
