@@ -1,10 +1,10 @@
-% Ejercicio resuelto
+% % Ejercicio resuelto
 
 clearvars
 close all
 clc
 
-% Carga de se?al. Definici?n de Fs y espacio de tiempo n
+% Carga de se?al. Definición de Fs y espacio de tiempo n
 
 load('SIGNALSADQ.mat')
 Fs = 1000;
@@ -111,13 +111,16 @@ marcas = marcas(1:k);
 
 largo = marcas(2) - marcas(1); % podría usar un mínimo si es variable (estímulo no períodico)
 
-% plot(salida1(1:marcas(2)));
+plot(salida1(1:marcas(2)));
 ref = salida1(1:marcas(2));
 seleccionados = zeros(1,10);
 pa = zeros(1,largo);
 p = 0;
 for i = 2 : k-1
-    plot(ref);hold on;plot(salida1(marcas(i):marcas(i+1)-1),'r');hold off;
+    plot(ref);
+    hold on;
+    plot(salida1(marcas(i):marcas(i+1)-1),'r');
+    hold off;
     corr = corrcoef(ref,salida1(marcas(i):marcas(i+1)));
     if (corr(1,2)>0.9)
         p = p + 1;
@@ -127,7 +130,7 @@ for i = 2 : k-1
     if (p >= 10)
         break;
     end
-%     pause;
+    pause;
 end
 pa = pa/10;
 plot(pa);
@@ -148,8 +151,7 @@ hold on;
 plot(pa,'r');
 hold off;
 
-% Derivada de 3 puntos para hallar la pendiente de subida del potencial de
-% acción
+% Derivada de 3 puntos para hallar la pendiente de subida del potencial de % acción
 
 h = [3 -4 1];
 
