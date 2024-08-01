@@ -1,0 +1,144 @@
+module precordic #(
+    parameter WIDTH = 16
+)(
+    input wire [WIDTH-1:0] x_in,
+    input wire [WIDTH-1:0] y_in,
+    input wire [WIDTH-1:0] z_in,
+    output wire [WIDTH-1:0] x_out,
+    output wire [WIDTH-1:0] y_out,
+    output wire [WIDTH-1:0] z_out
+);
+    // Assuming precordic just passes through inputs to outputs for simplicity
+    assign x_out = x_in;
+    assign y_out = y_in;
+    assign z_out = z_in;
+endmodule
+
+
+
+module cordic #(
+    parameter WIDTH = 16,
+    parameter PIPELINE = 1
+)(
+    input wire clk,
+    input wire rst,
+    input wire [WIDTH-1:0] x_in,
+    input wire [WIDTH-1:0] y_in,
+    input wire [WIDTH-1:0] z_in,
+    input wire rot_0vec_1,
+    output wire [WIDTH-1:0] x_out,
+    output wire [WIDTH-1:0] y_out,
+    output wire [WIDTH-1:0] z_out
+);
+
+    // Precordic processing
+    wire [WIDTH-1:0] x_pre, y_pre, z_pre;
+    precordic #(
+        .WIDTH(WIDTH)
+    ) pre_inst (
+        .x_in(x_in),
+        .y_in(y_in),
+        .z_in(z_in),
+        .x_out(x_pre),
+        .y_out(y_pre),
+        .z_out(z_pre)
+    );
+
+    // Angle LUT
+    reg [WIDTH-1:0] angle_lut [0:15];
+    initial begin
+        angle_lut[0]  = 16'h2000; // arctan(2^-0)
+        angle_lut[1]  = 16'h12E4; // arctan(2^-1)
+        angle_lut[2]  = 16'h09FB; // arctan(2^-2)
+        angle_lut[3]  = 16'h0516; // arctan(2^-3)
+        angle_lut[4]  = 16'h028B; // arctan(2^-4)
+        angle_lut[5]  = 16'h0145; // arctan(2^-5)
+        angle_lut[6]  = 16'h00A2; // arctan(2^-6)
+        angle_lut[7]  = 16'h0051; // arctan(2^-7)
+        angle_lut[8]  = 16'h0028; // arctan(2^-8)
+        angle_lut[9]  = 16'h0014; // arctan(2^-9)
+        angle_lut[10] = 16'h000A; // arctan(2^-10)
+        angle_lut[11] = 16'h0005; // arctan(2^-11)
+        angle_lut[12] = 16'h0003; // arctan(2^-12)
+        angle_lut[13] = 16'h0001; // arctan(2^-13)
+        angle_lut[14] = 16'h0001; // arctan(2^-14)
+        angle_lut[15] = 16'h0000; // arctan(2^-15)
+    end
+
+    // Shift register for rot_0vec_1
+    reg [15:0] rot_shift_reg;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            rot_shift_reg <= 16'b0;
+        end else if (PIPELINE) begin
+            rot_shift_reg <= {rot_shift_reg[14:0], rot_0vec_1};
+        end
+    end
+
+    // CORDIC iteration variables
+    reg [WIDTH-1:0] x [0:16];
+    reg [WIDTH-1:0] y [0:16];
+    reg [WIDTH-1:0] z [0:16];
+    reg rot [0:15]; // Only need 16 bits for rotation
+
+    integer j;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (j = 0; j < 17; j = j + 1) begin
+                x[j] <= 0;
+                y[j] <= 0;
+                z[j] <= 0;
+            end
+            for (j = 0; j < 16; j = j + 1) begin
+                rot[j] <= 0;
+            end
+        end else begin
+            x[0] <= x_pre;
+            y[0] <= y_pre;
+            z[0] <= z_pre;
+            rot[0] <= rot_0vec_1;
+        end
+    end
+
+    // CORDIC iterations
+    genvar i;
+    generate
+        for (i = 0; i < 16; i = i + 1) begin : cordic_iter
+            wire [WIDTH-1:0] x_next, y_next, z_next;
+
+            // Perform CORDIC calculation
+            assign x_next = rot_shift_reg[i] ? x[i] - (y[i] >>> i) : x[i] + (y[i] >>> i);
+            assign y_next = rot_shift_reg[i] ? y[i] + (x[i] >>> i) : y[i] - (x[i] >>> i);
+            assign z_next = rot_shift_reg[i] ? z[i] - angle_lut[i] : z[i] + angle_lut[i];
+
+            // Pipeline registers
+            if (PIPELINE) begin
+                always @(posedge clk or posedge rst) begin
+                    if (rst) begin
+                        x[i+1] <= 0;
+                        y[i+1] <= 0;
+                        z[i+1] <= 0;
+                        rot[i+1] <= 0;
+                    end else begin
+                        x[i+1] <= x_next;
+                        y[i+1] <= y_next;
+                        z[i+1] <= z_next;
+                        rot[i+1] <= rot_shift_reg[i+1];
+                    end
+                end
+            end else begin
+                // Combinational
+                assign x[i+1] = x_next;
+                assign y[i+1] = y_next;
+                assign z[i+1] = z_next;
+                assign rot[i+1] = rot_shift_reg[i+1];
+            end
+        end
+    endgenerate
+
+    // Outputs
+    assign x_out = x[16];
+    assign y_out = y[16];
+    assign z_out = z[16];
+
+endmodule

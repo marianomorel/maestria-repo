@@ -1,0 +1,164 @@
+`timescale 1ns / 1ps
+
+module csdigit(
+    input signed[14+2:0]a,
+    output reg signed [14+1:0]c
+    );
+
+integer i;
+reg carry=0;
+
+always @(a or i or carry)
+begin
+
+for(i=0;i<16;i=i+1)
+begin
+//if carry =0
+if(carry == 0)
+begin
+
+if({a[i+1],a[i]}==2'b00 ||{a[i+1],a[i]}==2'b10)
+begin 
+c[i] = 1'b0;
+carry = 0;
+end 
+else if({a[i+1],a[i]}==2'b01)
+begin
+c[i] = 1'b1;
+carry = 0;
+end
+else if({a[i+1],a[i]}==2'b11)
+begin
+c[i] = -1'b1;
+carry = 1;
+end
+else
+begin
+c = a;
+carry = 0;
+end
+end//if end
+///////else carry =1
+else
+begin
+if({a[i+1],a[i]}==2'b01 ||{a[i+1],a[i]}==2'b11)
+begin 
+c[i] = 1'b0;
+carry = 1;
+end 
+else if({a[i+1],a[i]}==2'b00)
+begin
+c[i] = 1'b1;
+carry = 0;
+end
+else if({a[i+1],a[i]}==2'b10)
+begin
+c[i] = -1'b1;
+carry = 1;
+end
+else
+begin
+c = a;
+carry = 0;
+end
+end//else end
+
+end// for end
+
+end//always end
+
+endmodule
+
+//------------------------------------------------//
+
+module bmul(
+    input signed [15:0] m,
+    input signed [14+2:0] q,
+    output reg signed[31:0] p
+    );
+	 
+	 wire signed [14+1:0]q_in;
+	 
+	 csdigit csd(.a({1'b0,q[14],q[14:0]}),.c(q_in));
+	 
+reg [15:0]mn;
+ 
+integer i;
+reg qn1;
+reg [1:0]t;
+ 
+ initial begin 
+ p = 32'h0;
+ qn1 = 0;
+ end
+ 
+always @(m,q_in,p)
+begin 
+ for(i=0;i<16;i=i+1)
+begin
+t = {q_in[i],qn1};
+mn = -m;
+case(t)
+2'b10 :begin
+        p[31:16] = p[31:16] +  mn;
+        p = p>>1;
+        p[31] = p[30];
+        qn1 = q_in[i];
+        end
+2'b01 : begin
+       p[31:16] = p[31:16] +  m;
+       p = p>>1;
+       p[31] = p[30];
+       qn1 = q_in[i];
+		 end
+2'b00,2'b11:begin
+        p = p>>1;
+        p[31] = p[30];
+        qn1 = q_in[i];
+       end
+default : begin end
+endcase 
+end
+if(q_in==16'h8000) 
+begin 
+p = -p;
+end
+end
+
+endmodule
+
+
+
+/* 
+
+a: Es la entrada SIGNADA de 17 bits.
+c: Es la salida SIGNADA de 16 bits que contendrá la representación CSD.
+Si carry es 0:
+Si los dos bits actuales son 00 o 10, el bit correspondiente de c se establece en 0 y carry sigue siendo 0.
+Si los bits actuales son 01, el bit correspondiente de c se establece en 1 y carry sigue siendo 0.
+Si los bits actuales son 11, el bit correspondiente de c se establece en -1 y carry se establece en 1.
+Si carry es 1:
+Si los dos bits actuales son 01 o 11, el bit correspondiente de c se establece en 0 y carry sigue siendo 1.
+Si los bits actuales son 00, el bit correspondiente de c se establece en 1 y carry se establece en 0.
+Si los bits actuales son 10, el bit correspondiente de c se establece en -1 y carry sigue siendo 1.
+
+
+m: Es la entrada SIGNADA de 16 bits.
+q: Es la entrada SIGNADA de 17 bits.
+p: Es la salida SIGNADA de 32 bits que contendrá el resultado del producto. 
+q_in: Es una señal de 16 bits que contiene la representación CSD de q.
+csdigit es una instancia del módulo csdigit que convierte q a su representación CSD.
+mn: Almacena el valor negativo de m.
+i: Índice para el bucle for.
+qn1: Un bit que almacena el valor anterior de q_in.
+t: Un par de bits que almacena el valor actual de q_in y qn1.
+
+
+Casos de Multiplicación
+Si t es 2'b10, se resta m del producto p y luego se desplaza p a la derecha.
+Si t es 2'b01, se suma m al producto p y luego se desplaza p a la derecha.
+Si t es 2'b00 o 2'b11, solo se desplaza p a la derecha.
+Después de cada operación, se actualiza qn1 con el valor actual de q_in[i].
+Si q_in es igual a 16'h8000 (el complemento a dos de 2^15), se niega el producto p al final.
+
+*/

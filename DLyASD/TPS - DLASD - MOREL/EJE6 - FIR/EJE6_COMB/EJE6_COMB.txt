@@ -1,0 +1,59 @@
+module fir_filter (
+    input clk,
+    input rst,
+    input [15:0] x,       // Entrada de 16 bits
+    output reg [15:0] y    // Salida de 16 bits
+);
+
+    // Coeficientes del filtro
+    reg [15:0] h [0:15];
+    reg [15:0] x_reg [0:15]; // Registro para las entradas
+    reg [31:0] temp_y;       // Variable temporal para almacenar el resultado
+
+    integer i;
+
+    initial begin
+        // Inicialización de los coeficientes
+        h[0]  = 15; 
+        h[1]  = 10; 
+        h[2]  = 21; 
+        h[3]  = 32; 
+        h[4]  = 43; 
+        h[5]  = 54; 
+        h[6]  = 65; 
+        h[7]  = 76; 
+        h[8]  = 76; 
+        h[9]  = 65; 
+        h[10] = 54; 
+        h[11] = 43; 
+        h[12] = 32; 
+        h[13] = 21; 
+        h[14] = 10; 
+        h[15] = 15; 
+    end
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // Resetear registros y salida
+            for (i = 0; i < 16; i = i + 1)
+                x_reg[i] <= 16'd0;
+            	y <= 16'd0;
+        end else begin
+            // Desplazar los registros de entrada
+            for (i = 15; i > 0; i = i - 1)
+                x_reg[i] <= x_reg[i-1];
+            	x_reg[0] <= x;
+            
+            // Realizar la convolución
+            temp_y = 32'd0; // Inicializar el resultado temporal
+            for (i = 0; i < 16; i = i + 1)
+                temp_y = temp_y + (x_reg[i] * h[i]);
+
+            // Saturar o truncar el resultado a 16 bits
+            if (temp_y > 32'hFFFF)
+                y <= 16'hFFFF; // Saturación
+            else
+                y <= temp_y[15:0]; // Truncamiento (tomar los 16 bits inferiores)
+        end
+    end
+endmodule

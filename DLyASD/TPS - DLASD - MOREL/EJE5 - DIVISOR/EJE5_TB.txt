@@ -1,0 +1,148 @@
+`timescale 1ns / 1ps
+
+module tb_BinaryDivider();
+
+    localparam N = 8;  // Define N como 8
+
+    reg clk;
+    reg reset;
+    reg start;
+    reg [N-1:0] numerator;
+    reg [N-1:0] divisor;
+    wire [N-1:0] quotient;
+    wire error;
+
+    // Instancia del módulo BinaryDivider
+    BinaryDivider #(N) uut (
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .numerator(numerator),
+        .divisor(divisor),
+        .quotient(quotient),
+        .error(error)
+    );
+
+    // Generador de reloj
+    always #5 clk = ~clk;
+
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+        // Inicialización de señales
+        clk = 0;
+        reset = 0;
+        start = 0;
+        numerator = 0;
+        divisor = 0;
+        #10;
+
+        // Casos de prueba
+        reset = 1;
+        #10;
+        reset = 0;
+        #10;
+
+        // Prueba 1
+        numerator = 8'b00101010; // 42
+        divisor = 8'b00001000;   // 8
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 2
+        numerator = 8'b00111100; // 60
+        divisor = 8'b00000110;   // 6
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 3
+        numerator = 8'b00110100; // 52
+        divisor = 8'b00000100;   // 4
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 4
+        numerator = 8'b01100100; // 100
+        divisor = 8'b00001010;   // 10
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 5
+        numerator = 8'b00011011; // 27
+        divisor = 8'b00000101;   // 5
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 6
+        numerator = 8'b01100111; // 103
+        divisor = 8'b00000011;   // 3
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 7
+        numerator = 8'b01111111; // 127
+        divisor = 8'b00000001;   // 1
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 8
+        numerator = 8'b00000000; // 0
+        divisor = 8'b00000001;   // 1
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 9
+        numerator = 8'b01111111; // 127
+        divisor = 8'b01111110;   // 126
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);
+
+        // Prueba 10
+        numerator = 8'b01111111; // 127
+        divisor = 8'b01111111;   // 127
+        start = 1;
+        #10;
+        start = 0;
+        wait (uut.state == 0);
+        #10;
+        $display("numerator = %d, divisor = %d, quotient = %d, error = %b", numerator, divisor, quotient, error);    
+
+        $finish;
+    end
+
+endmodule

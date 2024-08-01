@@ -1,0 +1,75 @@
+module BinaryDivider #(
+    parameter N = 8
+) (
+    input wire clk,            // Reloj
+    input wire reset,          // Reset
+    input wire start,          // Señal para iniciar la división
+    input wire [N-1:0] numerator,  // Numerador de N bits
+    input wire [N-1:0] divisor,    // Divisor de N bits
+    output reg [N-1:0] quotient,   // Cociente de N bits
+    output reg error               // Señal de error
+);
+
+    reg signed [N-1:0] L, H, mid;
+  	reg [2:0] state;
+
+    localparam IDLE = 0, INIT = 1 , DIVIDE = 2, UPDATE = 3, DONE = 4;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            quotient <= 0;
+            error <= 0;
+            L <= 0;
+            H <= 0;
+            mid <= 0;
+            state <= IDLE;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (start) begin
+                        L <= 0;
+                        H <= numerator;
+                        error <= 0;
+                        state <= INIT;
+                    end
+                end
+              
+                INIT: begin
+                    if (divisor == 0) begin
+                        quotient <= 0;
+                        error <= 1;  // Marca el error si divisor es 0
+                        state <= DONE;
+                    end else if (divisor > numerator) begin
+                        quotient <= 0;
+                        error <= 0;  // No hay error, solo el cociente es 0
+                        state <= DONE;
+                    end else begin
+                        state <= DIVIDE;
+                    end
+                end
+                DIVIDE: begin
+                    if (H > L + 1) begin
+                      mid <= (L + H + 1) >> 1;  // Usa el operador >>> para desplazamiento aritmético (divide)
+                        state <= UPDATE;
+                    end else begin
+                        quotient <= L;
+                        state <= DONE;
+                    end
+                end
+                UPDATE: begin
+                  if (mid * divisor > numerator) begin
+                    H <= mid;    
+                    end else begin
+                    L <= mid;    
+                    end
+                    state <= DIVIDE;
+                end
+                DONE: begin
+                    // División completa
+                    state <= IDLE;
+                end
+            endcase
+        end
+    end
+
+endmodule

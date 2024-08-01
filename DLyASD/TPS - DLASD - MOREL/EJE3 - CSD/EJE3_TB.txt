@@ -1,0 +1,57 @@
+`timescale 1ns / 1ps
+
+module tb_shift_and_add_multiplier;
+
+  // Parameters
+  parameter N = 4;
+
+  // Inputs
+  reg clk;
+  reg reset;
+  reg [N-1:0] x;
+  reg [N-1:0] y;
+
+  // Outputs
+  wire [2*N:0] result;
+
+  // Instantiate the Unit Under Test (UUT)
+  shift_and_add_multiplier #(N) uut (
+      .clk(clk),
+      .reset(reset),
+      .x(x),
+      .y(y),
+      .result(result)
+  );
+
+  initial begin
+    // Initialize Inputs
+    clk = 0;
+    reset = 0;
+    x = 4'b0011;  // 3 in binary
+    y = 4'b0010;  // 2 in binary
+
+    // Apply Inputs
+    #10 reset = 1;
+    #10 reset = 0;
+    x = 4'b0011;  // 3 in binary
+    y = 4'b0010;  // 2 in binary
+
+    // Wait for the operation to complete
+    #100;
+
+    // Check the result
+    $display("Result = %b", result);
+    if (result == 6) begin  // 3 * 2 = 6
+      $display("Test passed. Result = %b", result);
+    end else begin
+      $display("Test failed. Result = %b", result);
+    end
+
+    // End the simulation
+    $finish;
+  end
+
+  // Clock generation
+  always #5 clk = ~clk;
+
+endmodule
