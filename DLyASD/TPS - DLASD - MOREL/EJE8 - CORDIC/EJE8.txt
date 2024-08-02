@@ -8,7 +8,7 @@ module precordic #(
     output wire [WIDTH-1:0] y_out,
     output wire [WIDTH-1:0] z_out
 );
-    // Assuming precordic just passes through inputs to outputs for simplicity
+    
     assign x_out = x_in;
     assign y_out = y_in;
     assign z_out = z_in;
@@ -31,8 +31,9 @@ module cordic #(
     output wire [WIDTH-1:0] z_out
 );
 
-    // Precordic processing
+    // Precordic
     wire [WIDTH-1:0] x_pre, y_pre, z_pre;
+
     precordic #(
         .WIDTH(WIDTH)
     ) pre_inst (
@@ -44,7 +45,7 @@ module cordic #(
         .z_out(z_pre)
     );
 
-    // Angle LUT
+    // Angulos LUT
     reg [WIDTH-1:0] angle_lut [0:15];
     initial begin
         angle_lut[0]  = 16'h2000; // arctan(2^-0)
@@ -65,7 +66,7 @@ module cordic #(
         angle_lut[15] = 16'h0000; // arctan(2^-15)
     end
 
-    // Shift register for rot_0vec_1
+    // Shift register rot_0vec_1
     reg [15:0] rot_shift_reg;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -75,11 +76,11 @@ module cordic #(
         end
     end
 
-    // CORDIC iteration variables
+    // CORDIC 
     reg [WIDTH-1:0] x [0:16];
     reg [WIDTH-1:0] y [0:16];
     reg [WIDTH-1:0] z [0:16];
-    reg rot [0:15]; // Only need 16 bits for rotation
+    reg rot [0:15]; 
 
     integer j;
     always @(posedge clk or posedge rst) begin
@@ -100,18 +101,18 @@ module cordic #(
         end
     end
 
-    // CORDIC iterations
+    // CORDIC
     genvar i;
     generate
         for (i = 0; i < 16; i = i + 1) begin : cordic_iter
             wire [WIDTH-1:0] x_next, y_next, z_next;
 
-            // Perform CORDIC calculation
+            
             assign x_next = rot_shift_reg[i] ? x[i] - (y[i] >>> i) : x[i] + (y[i] >>> i);
             assign y_next = rot_shift_reg[i] ? y[i] + (x[i] >>> i) : y[i] - (x[i] >>> i);
             assign z_next = rot_shift_reg[i] ? z[i] - angle_lut[i] : z[i] + angle_lut[i];
 
-            // Pipeline registers
+        
             if (PIPELINE) begin
                 always @(posedge clk or posedge rst) begin
                     if (rst) begin
@@ -127,7 +128,7 @@ module cordic #(
                     end
                 end
             end else begin
-                // Combinational
+                
                 assign x[i+1] = x_next;
                 assign y[i+1] = y_next;
                 assign z[i+1] = z_next;
@@ -136,7 +137,7 @@ module cordic #(
         end
     endgenerate
 
-    // Outputs
+    
     assign x_out = x[16];
     assign y_out = y[16];
     assign z_out = z[16];

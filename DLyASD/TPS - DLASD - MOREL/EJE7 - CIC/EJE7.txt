@@ -1,7 +1,7 @@
 module cic_filter #(
-    parameter N = 3,      // Order of the CIC filter
-    parameter BX = 16,    // Input word width
-    parameter K = 2       // Log2 of decimation factor (R = 2^K)
+    parameter N = 3,      // Orden
+    parameter BX = 16,    
+    parameter K = 2       //  (R = 2^K)
 )(
     input clk,
     input rst,
@@ -9,7 +9,7 @@ module cic_filter #(
     output reg [BX-1:0] dout
 );
 
-    localparam R = 2**K;  // Decimation factor
+    localparam R = 2**K;  
 
     // Integrator stages
     reg [BX-1:0] integrators[N-1:0];
@@ -27,7 +27,7 @@ module cic_filter #(
         end
     end
 
-    // Decimator
+    // Decimacion
     reg [BX-1:0] decimator_reg;
     reg [K-1:0] decimator_counter;
     always @(posedge clk or posedge rst) begin
@@ -44,7 +44,7 @@ module cic_filter #(
         end
     end
 
-    // Differentiator stages
+    // Diferenciación
     reg [BX-1:0] differentiators[N-1:0];
     always @(posedge clk or posedge rst) begin
         if (rst) begin

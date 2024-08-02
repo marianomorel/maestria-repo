@@ -2,21 +2,20 @@
 
 module tb_cic_filter;
 
-    // Parameters
-    parameter N = 3;      // Order of the CIC filter
-    parameter BX = 16;    // Input word width
-    parameter K = 2;      // Log2 of decimation factor (R = 2^K)
+ 
+    parameter N = 3;     
+    parameter BX = 16;    
+    parameter K = 2;     
     
-    // Local parameters
-    localparam R = 2**K;  // Decimation factor
+  
+    localparam R = 2**K; 
 
-    // Signals
     reg clk;
     reg rst;
     reg [BX-1:0] din;
     wire [BX-1:0] dout;
 
-    // Instantiate the DUT (Device Under Test)
+    
     cic_filter #(N, BX, K) uut (
         .clk(clk),
         .rst(rst),
@@ -24,40 +23,37 @@ module tb_cic_filter;
         .dout(dout)
     );
 
-    // Clock generation
+ 
     initial begin
         clk = 0;
         forever #5 clk = ~clk;  // 100 MHz clock
     end
 
-    // Stimulus
+  
     initial begin
       $dumpfile("dump.vcd"); $dumpvars;
-        // Initialize inputs
+       
         rst = 1;
         din = 0;
 
-        // Reset the DUT
+        
         #20 rst = 0;
 
-        // Apply test vectors
-        #10 din = 16'd100;  // Sample 1
-        #10 din = 16'd200;  // Sample 2
-        #10 din = 16'd300;  // Sample 3
-        #10 din = 16'd400;  // Sample 4
-        #10 din = 16'd500;  // Sample 5
-        #10 din = 16'd600;  // Sample 6
-        #10 din = 16'd700;  // Sample 7
-        #10 din = 16'd800;  // Sample 8
+        
+        #10 din = 16'd100;  // muestra 1
+        #10 din = 16'd200; 
+        #10 din = 16'd300; 
+        #10 din = 16'd400;  
+        #10 din = 16'd500;  
+        #10 din = 16'd600;  
+        #10 din = 16'd700;  
+        #10 din = 16'd800;  
 
-        // Continue with more samples as needed
-        // ...
 
-        // End of test
         #600 $finish;
     end
 
-    // Monitor
+
     initial begin
         $monitor("Time = %0dns, rst = %b, din = %d, dout = %d", $time, rst, din, dout);
     end
