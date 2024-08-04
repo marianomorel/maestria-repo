@@ -1,0 +1,64 @@
+`timescale 1ns / 1ps
+
+module tb_Cordic_Machine;
+
+    // Parameters for the module
+    parameter fractional_bit = 22;
+    parameter iteration_number = 22;
+
+    // Inputs to the Cordic_Machine
+    reg clock_pulse;
+    reg signed [fractional_bit+2:0] x_input;
+    reg signed [fractional_bit+2:0] y_input;
+    reg signed [fractional_bit+2:0] z_input;
+
+    // Outputs from the Cordic_Machine
+    wire signed [fractional_bit+2:0] x_output;
+    wire signed [fractional_bit+2:0] y_output;
+    wire signed [fractional_bit+2:0] z_output;
+    wire flag;
+
+    // Instantiate the Cordic_Machine module
+    Cordic_Machine #(
+        .fractional_bit(fractional_bit),
+        .iteration_number(iteration_number)
+    ) uut (
+        .clock_pulse(clock_pulse),
+        .x_input(x_input),
+        .y_input(y_input),
+        .z_input(z_input),
+        .x_output(x_output),
+        .y_output(y_output),
+        .z_output(z_output),
+        .flag(flag)
+    );
+
+    // Clock generation
+    initial begin
+        clock_pulse = 0;
+        forever #5 clock_pulse = ~clock_pulse; // 10ns clock period
+    end
+
+    // Test sequence
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+        // Initialize inputs
+        x_input = 25'b000_1001101101010110111010;
+        y_input = 0;
+        z_input = 25'b000_0010000000000000000000;
+
+        // Wait for some time to observe the results
+        #1000;
+
+        // Check the output and flag
+        $display("Time = %0d", $time);
+        $display("x_output = %b", x_output);
+        $display("y_output = %b", y_output);
+        $display("z_output = %b", z_output);
+        $display("flag = %b", flag);
+
+        // End the simulation
+        $finish;
+    end
+
+endmodule

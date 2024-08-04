@@ -1,0 +1,47 @@
+`timescale 1ns / 1ps
+
+module shift_and_add_multiplier #(
+    parameter N = 4
+) (
+    input wire clk,
+    input wire reset,
+    input wire [N-1:0] x,
+    input wire [N-1:0] y,
+    output reg [2*N:0] result
+);
+
+    reg [2*N:0] concat;
+    reg [N-1:0] x_reg;
+    reg [N-1:0] y_reg;
+    integer count;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+          	concat <= {5'b00000,x};
+            x_reg <= x;
+            y_reg <= y;
+            count <= 0;
+            result <= 0;
+        end else begin
+            if (count < N) begin
+                if (~x_reg[1]) begin
+                    concat <= concat >> 1;
+                    x_reg <= concat[N-1:0];               
+                end else begin
+                    if ((x_reg[0])) begin
+                        concat <= {concat[2*N:N] + (~(y_reg)), x_reg} >> 1;
+                        x_reg <= concat[N-1:0];               
+                    end else begin
+                        concat <= {concat[2*N:N] + y_reg, x_reg} >> 1;
+                        x_reg <= concat[N-1:0];               
+                    end
+                end
+                count <= count + 1;
+            end
+            result <= concat;
+        end
+    end
+endmodule
+
+
+//no encuentro el error

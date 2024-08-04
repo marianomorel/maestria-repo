@@ -1,0 +1,61 @@
+`timescale 1ns / 1ps
+
+module tb_cic_filter;
+
+ 
+    parameter N = 3;     
+    parameter BX = 16;    
+    parameter K = 2;     
+    
+  
+    localparam R = 2**K; 
+
+    reg clk;
+    reg rst;
+    reg [BX-1:0] din;
+    wire [BX-1:0] dout;
+
+    
+    cic_filter #(N, BX, K) uut (
+        .clk(clk),
+        .rst(rst),
+        .din(din),
+        .dout(dout)
+    );
+
+ 
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;  // 100 MHz clock
+    end
+
+  
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+       
+        rst = 1;
+        din = 0;
+
+        
+        #20 rst = 0;
+
+        
+        #10 din = 16'd100;  // muestra 1
+        #10 din = 16'd200; 
+        #10 din = 16'd300; 
+        #10 din = 16'd400;  
+        #10 din = 16'd500;  
+        #10 din = 16'd600;  
+        #10 din = 16'd700;  
+        #10 din = 16'd800;  
+
+
+        #600 $finish;
+    end
+
+
+    initial begin
+        $monitor("Time = %0dns, rst = %b, din = %d, dout = %d", $time, rst, din, dout);
+    end
+
+endmodule

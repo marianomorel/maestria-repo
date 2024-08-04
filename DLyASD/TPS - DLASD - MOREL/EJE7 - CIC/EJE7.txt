@@ -1,0 +1,64 @@
+module cic_filter #(
+    parameter N = 3,      // Orden
+    parameter BX = 16,    
+    parameter K = 2       //  (R = 2^K)
+)(
+    input clk,
+    input rst,
+    input [BX-1:0] din,
+    output reg [BX-1:0] dout
+);
+
+    localparam R = 2**K;  
+
+    // Integrator stages
+    reg [BX-1:0] integrators[N-1:0];
+    integer i;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (i = 0; i < N; i = i + 1) begin
+                integrators[i] <= 0;
+            end
+        end else begin
+            integrators[0] <= integrators[0] + din;
+            for (i = 1; i < N; i = i + 1) begin
+                integrators[i] <= integrators[i] + integrators[i-1];
+            end
+        end
+    end
+
+    // Decimacion
+    reg [BX-1:0] decimator_reg;
+    reg [K-1:0] decimator_counter;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            decimator_counter <= 0;
+            decimator_reg <= 0;
+        end else begin
+            if (decimator_counter == R-1) begin
+                decimator_counter <= 0;
+                decimator_reg <= integrators[N-1];
+            end else begin
+                decimator_counter <= decimator_counter + 1;
+            end
+        end
+    end
+
+    // Diferenciación
+    reg [BX-1:0] differentiators[N-1:0];
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (i = 0; i < N; i = i + 1) begin
+                differentiators[i] <= 0;
+            end
+            dout <= 0;
+        end else begin
+            differentiators[0] <= decimator_reg;
+            for (i = 1; i < N; i = i + 1) begin
+                differentiators[i] <= differentiators[i] - differentiators[i-1];
+            end
+            dout <= differentiators[N-1];
+        end
+    end
+
+endmodule

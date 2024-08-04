@@ -1,0 +1,70 @@
+`timescale 1ns / 1ps
+
+module tb_multiplicador_3x3; 
+
+    // Parámetros del reloj
+    reg clk;
+    reg reset;
+
+    // Entradas x0, x1, x2; y0, y1, y2
+    reg x0, x1, x2;
+    reg y0, y1, y2;
+
+    // Salida m
+    wire [5:0] m;
+
+    // Instancia del módulo bajo prueba
+    multiplicador_3x3 dut (
+        .clk(clk),
+        .reset(reset),
+        .x0(x0),
+        .x1(x1),
+        .x2(x2),
+        .y0(y0),
+        .y1(y1),
+        .y2(y2),
+        .m(m)
+    );
+
+    // Generación del clock
+    always #5 clk = ~clk;
+
+    // Generación de reset inicial
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+        clk = 0;
+        reset = 1;
+      
+        x0 = 1'b1; x1 = 1'b1; x2 = 1'b0;
+        y0 = 1'b1; y1 = 1'b1; y2 = 1'b0;
+        #10 reset = 0;
+    end
+
+  
+    initial begin
+        // Esperar un poco
+        #120;
+      if ((x2 == 0 && y2 == 1) || (x2 == 1 && y2 == 0)) begin
+        // Mostrar resultados
+        $display("Resultado (NEGATIVO) de la multiplicación x * y: es %b", m[4:0]);
+      end else begin
+        $display("Resultado (POSITIVO) de la multiplicación x * y: es %b", m[4:0]);
+      end
+      
+      // Testbench de prueba 2
+      	x0 = 1'b1; x1 = 1'b1; x2 = 1'b1;
+        y0 = 1'b1; y1 = 1'b1; y2 = 1'b0;
+        #10 reset = 0;
+      #120;
+      if ((x2 == 0 && y2 == 1) || (x2 == 1 && y2 == 0)) begin
+        // Mostrar resultados
+        $display("Resultado (NEGATIVO) de la multiplicación x * y: es %b", m[4:0]);
+      end else begin
+        $display("Resultado (POSITIVO) de la multiplicación x * y: es %b", m[4:0]);
+      end
+
+        // Terminar la simulación
+        $finish;
+    end
+
+endmodule

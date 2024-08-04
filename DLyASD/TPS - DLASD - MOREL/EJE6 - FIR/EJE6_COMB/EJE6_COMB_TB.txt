@@ -1,0 +1,63 @@
+module tb_fir_filter;
+
+    // Parámetros
+    parameter N = 16; // Número de bits
+
+    // Señales de prueba
+    reg clk;
+    reg rst;
+    reg [15:0] x;
+    wire [15:0] y;
+
+    // Instanciar el módulo FIR
+    fir_filter uut (
+        .clk(clk),
+        .rst(rst),
+        .x(x),
+        .y(y)
+    );
+
+    // Generar reloj
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // Frecuencia de reloj: 100 MHz (modificable según necesidad)
+    end
+
+    // Estimulación de señales
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+        // Inicializar señales
+        rst = 1;
+        x = 16'd0;
+        #10;
+        rst = 0;
+
+        // Estímulos
+        x = 16'd1; #10;
+        x = 16'd2; #10;
+        x = 16'd3; #10;
+        x = 16'd4; #10;
+        x = 16'd5; #10;
+        x = 16'd6; #10;
+        x = 16'd7; #10;
+        x = 16'd8; #10;
+        x = 16'd9; #10;
+        x = 16'd10; #10;
+        x = 16'd11; #10;
+        x = 16'd12; #10;
+        x = 16'd13; #10;
+        x = 16'd14; #10;
+        x = 16'd15; #10;
+        x = 16'd0; #10; // Volver a 0 para observar el comportamiento
+
+        // Finalizar simulación
+        #400;
+        $finish;
+    end
+
+    // Monitoreo de señales
+    initial begin
+        $monitor("Time = %0t | x = %d | y = %d", $time, x, y);
+    end
+
+endmodule

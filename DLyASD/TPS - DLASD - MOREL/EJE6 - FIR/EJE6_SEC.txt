@@ -1,0 +1,87 @@
+module fir_filter (
+    input clk,
+    input rst,
+    input [15:0] x,       // Entrada de 16 bits
+    output reg [15:0] y    // Salida de 16 bits
+);
+
+    // Coeficientes del filtro
+    reg [15:0] h [0:15];
+    reg [15:0] x_reg [0:15]; // Registro para las entradas
+    reg [31:0] acc;          // Acumulador para la multiplicación secuencial
+
+    integer i;
+    reg [4:0] state;         // Estado para el controlador secuencial
+    reg [3:0] j;             // Índice para iterar sobre las entradas y coeficientes
+
+    initial begin
+        // Inicialización de los coeficientes
+        h[0]  = 15; 
+        h[1]  = 10; 
+        h[2]  = 21; 
+        h[3]  = 32; 
+        h[4]  = 43; 
+        h[5]  = 54; 
+        h[6]  = 65; 
+        h[7]  = 76; 
+        h[8]  = 76; 
+        h[9]  = 65; 
+        h[10] = 54; 
+        h[11] = 43; 
+        h[12] = 32; 
+        h[13] = 21; 
+        h[14] = 10; 
+        h[15] = 15; 
+    end
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // Resetear registros y salida
+            for (i = 0; i < 16; i = i + 1)
+                x_reg[i] <= 16'd0;
+            y <= 16'd0;
+            state <= 0;
+            acc <= 32'd0;
+        end else begin
+            case (state)
+                0: begin
+                    // Desplazar los registros de entrada
+                    for (i = 15; i > 0; i = i - 1)
+                        x_reg[i] <= x_reg[i-1];
+                    x_reg[0] <= x;
+
+                    // Iniciar la convolución
+                    acc <= 32'd0; // Inicializar el acumulador
+                    j <= 0;
+                    state <= 1;
+                end
+
+                1: begin
+                    // Realizar la multiplicación y acumulación
+                    acc <= acc + x_reg[j] * h[j];
+                    if (j == 15) begin
+                        state <= 2;
+                    end else begin
+                        j <= j + 1;
+                    end
+                end
+
+                2: begin
+                    // Saturar o truncar el resultado a 16 bits
+                    if (acc > 32'hFFFF)
+                        y <= 16'hFFFF; // Saturación
+                    else
+                        y <= acc[15:0]; // Truncamiento (tomar los 16 bits inferiores)
+                    state <= 3;
+                end
+
+                3: begin
+                    // Estado de inactividad, mantener la salida y hasta que llegue una nueva entrada
+                    if (x != x_reg[0]) begin
+                        state <= 0; // Reiniciar el proceso si hay una nueva entrada
+                    end
+                end
+            endcase
+        end
+    end
+endmodule

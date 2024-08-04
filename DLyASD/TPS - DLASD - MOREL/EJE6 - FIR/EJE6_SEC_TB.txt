@@ -1,0 +1,59 @@
+module tb_fir_filter;
+
+    // Declarar señales para el DUT (Device Under Test)
+    reg clk;
+    reg rst;
+    reg [15:0] x;
+    wire [15:0] y;
+
+    // Instanciar el DUT
+    fir_filter uut (
+        .clk(clk),
+        .rst(rst),
+        .x(x),
+        .y(y)
+    );
+
+    // Generar el reloj
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // Periodo de reloj de 10 unidades de tiempo
+    end
+
+    // Procedimiento de prueba
+    initial begin
+      $dumpfile("dump.vcd"); $dumpvars;
+        // Inicializar señales
+        rst = 1;
+        x = 16'd0;
+
+        // Liberar reset después de algunos ciclos de reloj
+        #20 rst = 0;
+
+        // Aplicar diferentes entradas
+        #10 x = 16'd1;
+        #10 x = 16'd2;
+        #10 x = 16'd3;
+        #10 x = 16'd4;
+        #10 x = 16'd5;
+        #10 x = 16'd6;
+        #10 x = 16'd7;
+        #10 x = 16'd8;
+        #10 x = 16'd9;
+        #10 x = 16'd10;
+        #10 x = 16'd11;
+        #10 x = 16'd12;
+        #10 x = 16'd13;
+        #10 x = 16'd14;
+        #10 x = 16'd15;
+
+        // Esperar y luego finalizar la simulación
+        #300 $finish;
+    end
+
+    // Monitorear señales
+    initial begin
+      //  $monitor("Time=%0t : clk=%b, rst=%b, x=%d, y=%d", $time, clk, rst, x, y);
+    end
+
+endmodule
