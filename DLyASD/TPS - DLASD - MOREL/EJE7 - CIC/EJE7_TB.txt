@@ -41,7 +41,7 @@ module tb_cic_filter;
 
         
         #10 din = 16'd100;  // muestra 1
-        #10 din = 16'd200; 
+        #10 din = 16'd200; // m.2
         #10 din = 16'd300; 
         #10 din = 16'd400;  
         #10 din = 16'd500;  

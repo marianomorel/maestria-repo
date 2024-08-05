@@ -11,7 +11,7 @@ module cic_filter #(
 
     localparam R = 2**K;  
 
-    // Integrator stages
+    // Integrador
     reg [BX-1:0] integrators[N-1:0];
     integer i;
     always @(posedge clk or posedge rst) begin
