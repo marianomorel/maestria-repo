@@ -62,3 +62,15 @@ module cic_filter #(
     end
 
 endmodule
+
+
+
+/*
+Resumen
+Este módulo implementa un filtro CIC de orden N con decimación. Funciona en tres etapas principales:
+Integración: Suma las entradas a través de N integradores.
+Decimación: Reduce la tasa de muestreo al seleccionar solo un valor cada R ciclos.
+Diferenciación: Calcula la diferencia entre los valores de salida de los integradores para obtener el resultado final.
+Este tipo de filtro es común en aplicaciones de procesamiento de señales digitales, especialmente en sistemas de comunicación y procesamiento de audio, debido a su simplicidad y eficacia en la reducción de la tasa de muestreo.
+
+*/

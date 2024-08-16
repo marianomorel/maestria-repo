@@ -8,7 +8,7 @@ module precordic #(
     output wire [WIDTH-1:0] y_out,
     output wire [WIDTH-1:0] z_out
 );
-    
+    // Assuming precordic just passes through inputs to outputs for simplicity
     assign x_out = x_in;
     assign y_out = y_in;
     assign z_out = z_in;
@@ -31,9 +31,8 @@ module cordic #(
     output wire [WIDTH-1:0] z_out
 );
 
-    // Precordic
+    // Precordic processing
     wire [WIDTH-1:0] x_pre, y_pre, z_pre;
-
     precordic #(
         .WIDTH(WIDTH)
     ) pre_inst (
@@ -44,11 +43,13 @@ module cordic #(
         .y_out(y_pre),
         .z_out(z_pre)
     );
+  
+  /*Se instancia el módulo precordic para procesar las entradas antes de iniciar el cálculo CORDIC. Las salidas de precordic se almacenan en x_pre, y_pre, y z_pre.*/
 
-    // Angulos LUT
+    // Angle LUT
     reg [WIDTH-1:0] angle_lut [0:15];
     initial begin
-        angle_lut[0]  = 16'h2000; // arctan(2^-0)
+      angle_lut[0]  = 16'h2000; // arctan(2^-0)  /* deberia ser 32784 es decir 16'h8000*/
         angle_lut[1]  = 16'h12E4; // arctan(2^-1)
         angle_lut[2]  = 16'h09FB; // arctan(2^-2)
         angle_lut[3]  = 16'h0516; // arctan(2^-3)
@@ -66,7 +67,7 @@ module cordic #(
         angle_lut[15] = 16'h0000; // arctan(2^-15)
     end
 
-    // Shift register rot_0vec_1
+    // Shift register for rot_0vec_1
     reg [15:0] rot_shift_reg;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -75,12 +76,17 @@ module cordic #(
             rot_shift_reg <= {rot_shift_reg[14:0], rot_0vec_1};
         end
     end
+  
+  /*
+  Si el parámetro PIPELINE está activado (es 1), este registro se desplaza en cada ciclo de reloj para propagar el valor de rot_0vec_1 a las etapas posteriores del CORDIC. Esto asegura que cada iteración tenga la información correcta sobre si debe realizar una rotación o vectorización. */
 
-    // CORDIC 
+    // CORDIC iteration variables
     reg [WIDTH-1:0] x [0:16];
     reg [WIDTH-1:0] y [0:16];
     reg [WIDTH-1:0] z [0:16];
-    reg rot [0:15]; 
+    reg rot [0:15]; // Only need 16 bits for rotation
+  
+  /*se definen arreglos para almacenar los valores de x, y, z y la dirección de rotación en cada iteración del algoritmo CORDIC.*/
 
     integer j;
     always @(posedge clk or posedge rst) begin
@@ -101,18 +107,21 @@ module cordic #(
         end
     end
 
-    // CORDIC
+    // CORDIC iterations
     genvar i;
     generate
-        for (i = 0; i < 16; i = i + 1) begin : cordic_iter
+      
+      /*El bucle generate crea 16 etapas del algoritmo CORDIC, cada una de las cuales realiza una rotación vectorial dependiendo del valor de rot_shift_reg[i].*/
+
+      for (i = 0; i < 16; i = i + 1) begin : cordic_iter
             wire [WIDTH-1:0] x_next, y_next, z_next;
 
-            
+            // Perform CORDIC calculation
             assign x_next = rot_shift_reg[i] ? x[i] - (y[i] >>> i) : x[i] + (y[i] >>> i);
             assign y_next = rot_shift_reg[i] ? y[i] + (x[i] >>> i) : y[i] - (x[i] >>> i);
             assign z_next = rot_shift_reg[i] ? z[i] - angle_lut[i] : z[i] + angle_lut[i];
 
-        
+            // Pipeline registers
             if (PIPELINE) begin
                 always @(posedge clk or posedge rst) begin
                     if (rst) begin
@@ -128,7 +137,7 @@ module cordic #(
                     end
                 end
             end else begin
-                
+                // Combinational
                 assign x[i+1] = x_next;
                 assign y[i+1] = y_next;
                 assign z[i+1] = z_next;
@@ -137,9 +146,12 @@ module cordic #(
         end
     endgenerate
 
-    
+    // Outputs
     assign x_out = x[16];
     assign y_out = y[16];
     assign z_out = z[16];
 
 endmodule
+
+/*
+Este CORDIC implementa un método iterativo para calcular la rotación o vectorización de un vector en un sistema de coordenadas. Las iteraciones ajustan gradualmente el vector y el ángulo (x, y, z) usando desplazamientos y sumas o restas, controladas por la tabla de ángulos angle_lut y la señal rot_0vec_1. El parámetro PIPELINE permite seleccionar entre una implementación completamente combinacional o una version pipeline, donde los registros se usan para retener los resultados entre ciclos de reloj, lo cual mejora el rendimiento a expensas de una mayor latencia.*/
