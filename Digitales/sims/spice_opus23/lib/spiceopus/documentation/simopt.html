@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="SPICE OPUS -- A SPICE engine for OPtimization UtilitieS" />
+  <meta name="keywords" content="analog circuit simulation, spice, opus, analog circuit optimization" />
+  <meta name="author" content="Faculty of Electircal Engineering, Ljubljana, Slovenia / Template design: G. Wolfgang" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style_screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="./css/style_print.css" />
+  <title>SPICE OPUS</title>
+</head>
+
+<body>
+<div class="bg-head"><div class="page-container-2">
+
+     <!-- Navigation Level 1 -->
+     <div class="nav1-container">
+    	<div class="nav1">
+			<ul>
+    	    	<li><a href="index.html">Home</a></li>
+         		<li><a href="contact.html">Contact</a></li>																		
+			</ul>
+		</div>
+    </div>			
+		<a href="index.html"><div class="site-name"></div></a>
+    
+    <!-- Site slogan -->
+	  <div class="site-slogan-container">
+		<div class="site-slogan">
+       		<p class="readmore">&rsaquo;&rsaquo;&rsaquo;&nbsp;<a href="img/screen-pll.png">Screenshot</a></p>
+    		<p class="title">THE SLIDE RULE OF SILICON DESIGN</p>
+	      	<p class="subtitle">Free Analog Circuit Simulation</p>  
+    	</div>
+	  </div>		 						    	
+       	 						
+    <!-- Header banner -->		 						    		 						
+	  <div class="img-header"></div>
+    
+    <!-- Navigation Level 2 -->												
+    <div class="nav2">			
+			<ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="license.html">License</a></li>
+        <li><a href="release.html">Release</a></li>
+        <li><a href="http://www.spiceopus.si/download/download.html">Download</a></li>			
+        <li><a href="documentation.html"class="selected">Documentation</a></li>		
+        <li><a href="links.html">Links</a></li>
+		  </ul>
+		</div>
+    
+    <!-- Buffer after header -->    
+		<div class="buffer"></div>
+
+		<!-- NAVIGATION -->				
+  	<!-- Navigation Level 3 -->
+		<div class="nav3">
+      <ul>
+        <li class="title">Menu</li>
+        <li class="group"><a href="index.html">About</a></li>		
+        <li class="group"><a href="license.html">License</a></li>
+        <li class="group"><a href="release.html">Release</a></li>
+        <li class="group"><a href="http://www.spiceopus.si/download/download.html">Download</a></li>       
+           <li><a href="http://www.spiceopus.si/download/downloadl.html">Linux</a></li>
+           <li><a href="http://www.spiceopus.si/download/downloadw.html">Windows</a></li>
+        <li class="group"><a href="documentation.html"class="selected">Documentation</a></li>
+        <li class="group"><a href="links.html">Links</a></li>       
+      </ul>
+    </div>				
+
+  	<!-- 	CONTENT -->
+		<div class="content2">
+
+  	  <!-- Page title -->		
+		  <div class="content2-pagetitle">Simulator Options</div>			
+       
+       
+           				
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					Include in your netlist ...
+          </p>                            
+					<div class="content-txtbox-noshade">
+					<p class="showcode">
+        ****************************************************************************
+  <br />****************************************************************************
+  <br />** Options, defaults
+  <br />****************************************************************************
+  <br />****************************************************************************
+  <br />* Temperature
+  <br />****************************************************************************
+  <br />* Nominal temperature
+  <br />*.options tnom=27
+  <br />*
+  <br />* Operating temperature
+  <br />*.options temp=27
+  <br />****************************************************************************
+  <br />* Convergence and precision
+  <br />****************************************************************************
+  <br />* Minimum conductance used in ac and transient domain
+  <br />*.options gmin=1e-12
+  <br />*
+  <br />* Minimum conductance used in dc domain
+  <br />*.options gmindc=1e-12
+  <br />*
+  <br />* Minimum resistance value for resistors
+  <br />*.options resmin=1e-5
+  <br />*
+  <br />* Relative error tolerance
+  <br />*.options reltol=1e-3
+  <br />*
+  <br />* Absolute error tolerance
+  <br />*.options abstol=1e-12
+  <br />*
+  <br />* Voltage error tolerance
+  <br />*.options vntol=1e-6
+  <br />*
+  <br />* Steady state analysis tolerance multiplicator
+  <br />*.options sssetol=10
+  <br />*
+  <br />* Charge error tolerance
+  <br />*.options chgtol=1e-14
+  <br />*
+  <br />* Truncation error overestimation factor
+  <br />*.options trtol=7
+  <br />*
+  <br />* Minimum acceptable pivot
+  <br />*.options pivtol=1e-13
+  <br />*
+  <br />* Minimum acceptable ratio of pivot
+  <br />*.options pivrel=1e-3
+  <br />*
+  <br />* Type of timestep control
+  <br />* lvltim=0 iteration count algorithm
+  <br />* lvltim=1 dvdt algorithm
+  <br />* lvltim=2 Berkeley's local truncation error algorithm
+  <br />*.options lvltim=1
+  <br />*
+  <br />* Use simplified algorithm to calculate local truncation error
+  <br />*.options newtrunc=not defined
+  <br />*
+  <br />* Maximum slope change used in dvdt timestep algorithm
+  <br />*.options slopetol=0.75 (0.5 if lvltim is not set to 1)
+  <br />*
+  <br />* Maximum absolute solution change used in dvdt timestep algorithm
+  <br />*.options absvar=0.5
+  <br />*
+  <br />* Maximum relative solution change used in dvdt timestep algorithm
+  <br />*.options relvar=0.3
+  <br />*
+  <br />* Maximum relative truncation for local truncation error calculation
+  <br />*.options relq=1e-3
+  <br />*
+  <br />* Relative current tolerance for local truncation error calculation
+  <br />*.options ltereltol=0.01
+  <br />*
+  <br />* Absolute current tolerance for local truncation error calculation
+  <br />*.options lteabstol=1e-6
+  <br />*
+  <br />* Maximal transient step multiplier
+  <br />*.options rmax=5 (2 if lvltim is not set to 1)
+  <br />*
+  <br />* Minimal transient step multiplier
+  <br />*.options rmin=1e-9
+  <br />*
+  <br />* Fraction of timestep for first time point
+  <br />*.options fs=0.25
+  <br />*
+  <br />* Fraction by which timestep is multiplied in case of non-convergence
+  <br />*.options ft=0.25
+  <br />*
+  <br />* Model voltage (vds, pn junction etc. voltages) limit during the iterations
+  <br />*.options voltagelimit=1e30
+  <br />*
+  <br />* Check the matrix and right hand side entries and correct (limit) them in
+  <br />* each iteration after circuit load
+  <br />*.options matrixcheck=not defined
+  <br />*
+  <br />* Allow bypass of unchanging elements
+  <br />*.options bypass=1
+  <br />*
+  <br />* DC iteration limit
+  <br />*.options itl1=100
+  <br />*
+  <br />* DC transfer curve iteration limit
+  <br />*.options itl2=50
+  <br />*
+  <br />* Lower transient iteration limit
+  <br />*.options itl3=3
+  <br />* also named
+  <br />*.options imin=3
+  <br />*
+  <br />* Upper transient iteration limit
+  <br />*.options itl4=10
+  <br />* also named
+  <br />*.options imax=10
+  <br />*
+  <br />* Total transient iteration limit (has no effect)
+  <br />*.options itl5=xxx
+  <br />*
+  <br />* Number of source steps
+  <br />* If srcsteps is less than one then no source stepping is performed
+  <br />*.options itl6=10
+  <br />* also named
+  <br />*.options srcsteps=10
+  <br />*
+  <br />* Number of Gmin steps
+  <br />* If gminsteps is less than one then no Gmin stepping is performed
+  <br />*.options gminsteps=10
+  <br />*
+  <br />* Minimum capacitance used in Cmin stepping
+  <br />* If cmin is less than or equal zero then no Cmin stepping is performed
+  <br />*.options cmin=1e-12
+  <br />*
+  <br />* Number of Cmin steps
+  <br />* If cminsteps is less than one then no Cmin stepping is performed
+  <br />*.options cminsteps=10
+  <br />*
+  <br />* PZ iteration limit
+  <br />*.options pziter=200
+  <br />*
+  <br />* Skip DC OP iterations, go directly to convergence aids 
+  <br />*.options noopiter=not defined
+  <br />*
+  <br />* Skip source lifting
+  <br />* Cmin stepping is also not performed
+  <br />*.options nosrclift=not defined
+  <br />*
+  <br />* Skip initial source lifting without cmins. Go directly to Cmin stepping
+  <br />*.options noinitsrcl=not defined
+  <br />*
+  <br />* Print convergence aid messages
+  <br />*.options opdebug=not defined
+  <br />*
+  <br />* Priority of gmin stepping algorithm
+  <br />*.options gminpriority=1
+  <br />*
+  <br />* Priority of source stepping algorithm
+  <br />*.options srcspriority=2
+  <br />*
+  <br />* Priority of source lifting algorithm
+  <br />*.options srclpriority=3
+  <br />*
+  <br />* Maximum number of source lifting iterations
+  <br />*.options srclmaxiter=5000
+  <br />*
+  <br />* Source lifting convergence test (number of constant iterations)
+  <br />*.options srclconviter=50
+  <br />*
+  <br />* Number of source rising iterations (used only if scrlrisetime=0)
+  <br />*.options srclriseiter=50
+  <br />*
+  <br />* Rise time in source lifting procedure
+  <br />*.options srclrisetime=0
+  <br />*
+  <br />* Final stop time in source lifting procedure if convergence not achieved
+  <br />*.options srclmaxtime=10
+  <br />*
+  <br />* Minimal step used in source lifting
+  <br />*.options srclminstep=1e-15
+  <br />*
+  <br />* Allowed right hand side change per iteration in solution limiting
+  <br />* If sollim is less than or equal zero then
+  <br />* no solution limiting is performed
+  <br />*   if(abs(new rhs value - old rhs value) > tolerance)
+  <br />*     new rhs value = old rhs value +- tolerance / sollim
+  <br />*.options sollim=10
+  <br />*
+  <br />* Allowed number of iterations in solution limiting
+  <br />* If sollimiter is less than or equal zero then
+  <br />* no solution limiting is performed
+  <br />*   DC iteration limit in solution limiting = sollimiter * itl1
+  <br />*.options sollimiter=10
+  <br />*
+  <br />* Do not automatically set option values to achieve convergence
+  <br />* when calculating operating point
+  <br />*.options noautoconv=not defined
+  <br />*
+  <br />* Do not perform circuit topology verification during circuit setup
+  <br />* (do not check for floating nodes in dc domain)
+  <br />*.options nofloatnodescheck=not defined
+  <br />*
+  <br />* Do not double check convergence in Newton-Raphson algorithm
+  <br />*.options noconviter=not defined
+  <br />*
+  <br />* Do not use predictor corrector method.
+  <br />*.options nopredictor=not defined
+  <br />*
+  <br />* Integration method, trapezoidal or gear
+  <br />* Note: Gear's algorithm also sets bypass to zero and lvltim to two
+  <br />*.options method=trap
+  <br />*
+  <br />* Maximum integration order
+  <br />*.options maxord=2
+  <br />*
+  <br />* Coefficient for the second order trapezoidal integration algorithm.
+  <br />* It provides smooth transition from the second order (xmu=0.5) back to the
+  <br />* first order (xmu=0) (Euler) algorithm.
+  <br />* The range for xmu is 0 to 0.5.
+  <br />*.options xmu=0.5
+  <br />* also named
+  <br />*.options mu=0.5
+  <br />*
+  <br />* Decreasing multiplier of xmu coefficient in
+  <br />* case of numerical oscillations.
+  <br />* The range for xmumult is 0 to 1.
+  <br />* If xmumult=1 then decreasing of xmu is off.
+  <br />*.options xmumult=0.8
+  <br />* also named
+  <br />*.options mumult=0.8
+  <br />*
+  <br />* Numerical oscillations detecting level to decrease xmu.
+  <br />* trapratio has to be greater than 1.
+  <br />*.options trapratio=10
+  <br />*
+  <br />* Print messages about trapezoidal integration method behaviour.
+  <br />*.options integdebug=notdefined
+  <br />*
+  <br />* Denominator of first time step to solve the circuit at time t->0
+  <br />* 0=off
+  <br />*.options icstep=0
+  <br />*
+  <br />* Factor used in matrix loading to pull the solution towards
+  <br />* the given nodesets
+  <br />*.options nsfactor=1e10
+  <br />*
+  <br />* Number of iterations in which the nodeset factor gradually disappears
+  <br />*.options nssteps=1
+  <br />*
+  <br />* Minimum time between breakpoints
+  <br />*.options minbreak=no default
+  <br />*
+  <br />* Record operating point for each small-signal analysis
+  <br />*.options keepopinfo
+  <br />****************************************************************************
+  <br />* XSPICE options 
+  <br />****************************************************************************
+  <br />* Maximum analog/event alternations in DCOP
+  <br />*.options maxopalter=nr_of_outputs_on_hybrids+1
+  <br />*
+  <br />* Maximum event iterations at analysis point
+  <br />*.options maxevtiter=nr_of_event_driven_outputs+1
+  <br />*
+  <br />* Do not do analog/event alternation in DCOP
+  <br />*.options noopalter
+  <br />*
+  <br />* Transient analysis supply ramping time
+  <br />* 0=off
+  <br />*.options ramptime=0
+  <br />*
+  <br />* Enable convergence assistance on code models
+  <br />*.options convlimit
+  <br />*
+  <br />* Fractional step allowed by code model inputs between iterations
+  <br />*.options convstep=0.25
+  <br />*
+  <br />* Absolute step allowed by code model inputs between iterations
+  <br />*.options convabsstep=0.1
+  <br />*
+  <br />* Use auto-partial computation for all models
+  <br />*.options autopartial
+  <br />*
+  <br />* Shunt resistance from analog nodes to ground
+  <br />* If rshunt is not defined then no shunt resistances are added
+  <br />*.options rshunt=not defined
+  <br />*
+  <br />* Shunt capacitance from analog nodes to ground
+  <br />* If cshunt is less than or equal zero then no shunt capacitances are added
+  <br />*.options cshunt=0
+  <br />*
+  <br />****************************************************************************
+  <br />* SPICE3 models
+  <br />****************************************************************************
+  <br />* Default MOSfet length
+  <br />*.options defl=100u
+  <br />*
+  <br />* Default MOSfet width
+  <br />*.options defw=100u
+  <br />*
+  <br />* Default MOSfet area of drain
+  <br />*.options defad=0
+  <br />*
+  <br />* Default MOSfet area of source
+  <br />*.options defas=0
+  <br />*
+  <br />* Default MOSFET perimeter of drain
+  <br />*.options defpd=0
+  <br />*
+  <br />* Default MOSFET perimeter of source
+  <br />*.options defps=0
+  <br />*
+  <br />* Default number of MOSFET drain squares
+  <br />*.options defnrd=0
+  <br />*
+  <br />* Default number of MOSFET source squares
+  <br />*.options defnrs=0
+  <br />*
+  <br />* Default value for MOSFET model parameter check (bsmi3v3 only)
+  <br />*.options defmodcheck=0
+  <br />*
+  <br />* Default value for MOSFET instance parameter check (bsmi3v3 only)
+  <br />*.options definstcheck=0
+  <br />*
+  <br />* Scale factor for instance metric parameters
+  <br />*.options scale=1
+  <br />*
+  <br />* Use old mos3 model (discontinuous with respect to kappa)
+  <br />*.options badmos3
+  <br />*
+  <br />* Depletion capacitance equation selector
+  <br />*.options dcap=1
+  <br />*
+  <br />* Try compaction for LTRA lines
+  <br />*.options trytocompact 
+  <br />*
+  <br />****************************************************************************
+  <br />* Obsolete
+  <br />****************************************************************************
+  <br />* Print accounting
+  <br />*.options acct
+  <br />*
+  <br />* Print a listing
+  <br />*.options list
+  <br />*
+  <br />* Don't print a model summary
+  <br />*.options nomod
+  <br />*
+  <br />* Don't insert page breaks
+  <br />*.options nopage
+  <br />*
+  <br />* Print a node connection summary
+  <br />*.options node
+  <br />*
+  <br />* Print a list of the options
+  <br />*.options opts
+  <br />*
+  <br />* Use SPICE2 MOSfet limiting
+  <br />*.options oldlimit
+  <br />*
+  <br />* Set number of digits printed
+  <br />*.options numdgt
+  <br />*
+  <br />* Total cpu time in seconds
+  <br />*.options cptime
+  <br />*
+  <br />* Time to reserve for output
+  <br />*.options limtim
+  <br />*
+  <br />* Maximum points per analysis
+  <br />*.options limpts
+  <br />*
+  <br />* Generate machine code
+  <br />*.options lvlcod
+  <br />*
+  <br />****************************************************************************
+  <br />* Statistics, read-only, integer
+  <br />****************************************************************************
+  <br />*  totiter       ... Total iterations
+  <br />*  traniter      ... Transient iterations
+  <br />*  equations     ... Circuit Equations
+  <br />*  tranpoints    ... Transient timepoints
+  <br />*  accept        ... Accepted timepoints
+  <br />*  rejected      ... Rejected timepoints
+  <br />*  trancuriters  ... Transient iters per point
+  <br />*
+  <br />****************************************************************************
+  <br />* Statistics, read-only, real
+  <br />****************************************************************************
+  <br />*  time          ... Total Analysis Time
+  <br />*  trantime      ... Transient time
+  <br />*  reordertime   ... Matrix reordering time
+  <br />*  lutime        ... L-U decomposition time
+  <br />*  solvetime     ... Matrix solve time
+  <br />*  tranlutime    ... transient L-U decomp time
+  <br />*  transolvetime ... Transient solve time
+  <br />*  loadtime      ... Load time
+  <br />****************************************************************************
+          </p></div>
+        </div>
+      </div> 
+
+      
+		
+
+     </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+       <p><b>Copyright &copy; 2008 Faculty of Electrical Engineering, Ljubljana, Slovenia | All Rights Reserved</b></p>
+       <p>Page Design <a href="mailto:gw@actamail.com">G. Wolfgang</a> | Page content <a href="mailto:spice_developers@fides.fe.uni-lj.si">EDA Group</a></p>
+    </div>
+  </div>
+  
+
+ <script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script type="text/javascript">
+   try
+   {
+     var pageTracker = _gat._getTracker("UA-8305434-3");
+     pageTracker._trackPageview();
+   } catch(err)
+   {
+   }
+ </script>
+  
+  
+</body>
+</html>
