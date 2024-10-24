@@ -1,0 +1,1207 @@
+STIL 1.0; 
+
+//***************************************************************************//
+//                             STIL VECTOR FILE                              //
+//Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec//
+//***************************************************************************//
+//                                                                           //
+//  FILE CREATED..............October 19, 2023 at 22:13:03                   //
+//                                                                           //
+//  PROJECT NAME..............modus_project                                  //
+//                                                                           //
+//  TESTMODE..................FULLSCAN_TIMED                                 //
+//                                                                           //
+//  TDR.......................ate.tdr                                        //
+//                                                                           //
+//  TEST PERIOD...............100.000  TEST TIME UNITS...........ns          //
+//  TEST PULSE WIDTH..........10.000                                         //
+//  TEST STROBE OFFSET........70.000   TEST STROBE TYPE..........edge        //
+//  TEST BIDI OFFSET..........0.000                                          //
+//  TEST PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                     SCAN OVERLAP..............yes         //
+//  SCAN PERIOD...............100.000  SCAN TIME UNITS...........ns          //
+//  SCAN PULSE WIDTH..........10.000                                         //
+//  SCAN STROBE OFFSET........10.000   SCAN STROBE TYPE..........edge        //
+//  SCAN BIDI OFFSET..........0.000                                          //
+//  SCAN PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                                                           //
+//   Individually set PIs                                                    //
+//  "scan_clk" (PI # 115)                                                    //
+//  TEST OFFSET...............10.000   PULSE WIDTH...............10.000      //
+//  SCAN OFFSET...............20.000   PULSE WIDTH...............10.000      //
+//                                                                           //
+//  Active TESTMODEs TM = 1 ..FULLSCAN_TIMED                                 //
+//                                                                           //
+//  EXPERIMENT................4  Name = iddq                                 //
+//  DATA FORMAT...............binary                                         //
+//                                                                           //
+//  TEST SECTION..............1        TEST SECTION TYPE.........IDDq        //
+//                                                                           //
+//  The range of Tests in this Test Section......................82:100      //
+//                                                                           //
+//  TESTER TERMINATION........none     TERMINATION DOMINATION....tester      //
+//                                                                           //
+//***************************************************************************//
+
+  Include "STIL.FULLSCAN_TIMED.signals.stil"; 
+
+//***************************************************************************//
+//                            TIMING DEFINITIONS                             //
+//***************************************************************************//
+
+  Timing { 
+
+    WaveformTable "test_cycle" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '10.000000ns' D/U/Z/U; '20.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+    } } 
+
+    WaveformTable "scan_cycle_TM_1" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '20.000000ns' D/U/Z/U; '30.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+    } } 
+} 
+
+//***************************************************************************//
+//                               TEST VECTORS                                //
+//***************************************************************************//
+
+PatternBurst 
+  MAIN_BRST { Termination { "ALLPOs" TerminateOff; } 
+              PatList { MAIN_TEST; } } 
+
+PatternExec 
+  MAIN_EXEC { PatternBurst MAIN_BRST; } 
+
+Pattern 
+  MAIN_TEST { 
+
+//***************************************************************************//
+//  TESTER LOOP...............1        PROCEDURES HAVE MEMORY....no          //
+//                                                                           //
+//  The range of Tests in this Tester Loop.......................82:100      //
+//                                                                           //
+//  TEST PROCEDURE............1        TYPE......................init        //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  TEST SEQUENCE.............         TYPE......................init        //
+//***************************************************************************//
+
+//  Processing the Static: EVENT 4.1.1.1.1.1.1;  Stim_PI; 
+//  Processing the Static: EVENT 4.1.1.1.1.1.2;  Stim_PPI;  (Not Used) 
+//  The current cycle count is at '1'
+  Macro "TEST" { 
+    "ALLPIs" = 01 \r119 Z ; 
+    "ALLPOs" = \r84 X ; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............2        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................82:82       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............21599    PERCENT IDDQ FAULTS.......25.053648   //
+//  TEST SEQUENCE.............82       TYPE......................normal      //
+//***************************************************************************//
+
+//  Processing the Static: EVENT 4.1.1.2.1.1.1;  Scan_Load;  (no_overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '2'
+  Macro "TEST" { 
+    "ALLPIs" = 01 \r119 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 1;  Scan_Sequence  
+//  The current cycle count is at '1239'
+  Macro "SCAN_TM_1" { 
+    "CR_1_TM_1" = 010011011100110101111100100111100100011101001100010001011010100100010101001001 \r3 0010 0100011001101010000110000101100001100110100011100010101110001001000011100011011101000000111011110 \r12 1 0110111010110101111001111111010110010000101110100011110010010 \r11 1 011110101110101111 \r3 1110 1100 \r8 1 0101101001010011011100100110010010100000100100111011110101010110110010001100000100101100110100011 \r5 10 1100001111100110110101010011101110011110001011100010101000101110101101110001100101110111111010000100001010110111000011011111100011011001111011010100 \r3 1101 011000010011 \r8 0 1111110100110000110101101011011010110001 \r8 0 111101110000011001000000011101101010111000111010011000010001101011011001011100101001011000011000010001100011101011100110000100001010111100011111010110011000110110100011110011001101111110001011001001001111011100001101101100111110010111110110101010000101001001011000011001101111111001101000010010100001101000011100000001011000 \r35 1 01101000111010101100001111001010010110111110
+                  111011001100000011010111001111101001011010001111101001000110111010011010001010110101011101111010100101001101100 \r5 01 0011101010011 \r18 0 11111 \r10 0 1 \r18 0 ; } 
+
+//  Processing the Static: EVENT 4.1.1.2.1.2.1;  Stim_PI; 
+//  Processing the Static: EVENT 4.1.1.2.1.3.1;  Stim_Clock; 
+//  The current cycle count is at '1240'
+  Macro "TEST" { 
+    "ALLPIs" = 100 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.2.1.4.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.2.1.5.1;  Stim_Clock; 
+//  The current cycle count is at '1241'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.2.1.6.1;  Scan_Unload;  (overlap) 
+  "4.1.1.2.1.6": 
+//  Processing the Static: EVENT 4.1.1.3.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '1242'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 2;  Scan_Sequence  
+//  The current cycle count is at '2479'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLHHLHHHLLHHLHLHHHHHLLHLLHHHHLLHLLLHHHLHLHHLLLHLLLLLHHLHLHLLHLLLHLHLHLLHLLHLLLLLLLHLLHLLLHLLLHHLLHHLHLHLLLLHHLLLHLHHLLLLHHLLHHHHLLLLHHHLLLHLHLHHHLLHLHLHLLHHHHLLLLHHLHHHLHLLLLLHHHLHHHHHH \r11 L HLHHLHHHLHLHHLHLHHHLLHHHHHHHLHLHHLLHLLLLHLHHHLHLLLLHHLHLLHLLHLHL \r9 H LHHHHLHLHHHLHLHHHHHHHL \r8 H LHLL \r12 H LHHHHLHLHHLLHLLLLHLHHHHLLHLLHLHLLLLLHLLHLLHHHLHHHHLHLHLHLHHLHHLLHLLLHHLLLLLHLLHLHHLLHHLHLHLHHHHLHLHLHHHHHLLLLHHHHHLLHHLHHLHLHLHLLHHHLHHHLLHHHHLLLHLLHLLLLHLHLHLLLHLHHHLHLHHLHHHLLLHHLLHLHHHLHHHHHHLHLLLLHLLLLHLHLHHLHHHLLLLHHLHHHHHHLLLHHLHHLLHHHHLHHLHLHLLHHLHHHLHHLHHHLLHLLHHLLHLLHLHLLLLLHHHHHLHLLHHLLLLHHLHLHHLHLHHLHHLHLHHLLLH \r8 L HHHHLHHHLLLLLHHLLHLLLLLLLHHHLHHLHLHLHHLLLH \r29 L HHHHH \r29 L HLLLLHLHLLLHLLLLLHH \r44 L H \r9 L HLHHHHHLLLHLHHLLHLLHLHLHHHHHHHLHLHHHLHHLHHLLHHHHHLLHLHHHHHLHHLHLHL \r36 H LHHLHLLLLHLLHLHLLHLHHLHLLLLHHHLLLLLHLHHLLLLL \r37 H LLHLLHHHHLHLHLHHLLLLHHHHLLHLHLLHLHHLHHHHHLHLHLHHLLHLLLLLLLHLHLHLHHLLHHHHHLHLLHLHLLHLLLHHHHH \r8 L HLLHHLHLHHLHHLLH \r11 L HHHLH
+                   \r5 HL HHLLHLHHHLL \r5 LH LLHHHLHLHLLLHH \r17 L HHHHHLHHLLLLHH \r12 L HHLLHLLHL; 
+    "CR_1_TM_1" = 01000110010000011000000101001001100110001010011111011101101110111101010100011011011101100010010100001001101110001111 \r8 0 1111100101000010100011011000111111001111000 \r10 1 00000101001011011111100011010101011110101110001011010100110101010001100101100001001001001100010110110111011 \r8 0 101100000111000101100000010100111101101111001001111110101111101011101110000101000100101111111001111101111001100100110111101001110001 \r29 0 1100001110100111111011111010001010001001110001010001000010101011011110101101010111100100000011110100110000100101011001000100101011110001111101010111000001011001111011010010110110001101101111100110000110011111001101111111010100101011001101111110100110111111010111000011000101110 \r8 1 01011111110111110010 \r10 1 000 \r10 1 0101101101001111101111010 \r10 1 0110111100000111010 \r8 1 011111 \r10 0 11010011110 \r8 1 0001110111110001010001001011101010000011111010100111011101101100011000 \r16 1 0011101011110111001111111010110 \r9 1 001011100101101010 \r3 0011 001001101
+                   \r9 0 101111100110111010011110011011000111011110010000110111110111000100100111101111000100100100000100001011010 \r9 1 010000101110001110 \r8 1 011101111110100001100100110111100111000100101; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............3        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................83:83       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............11207    PERCENT IDDQ FAULTS.......38.053150   //
+//  TEST SEQUENCE.............83       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.3.1.2.1;  Stim_PI; 
+//  Processing the Static: EVENT 4.1.1.3.1.3.1;  Stim_Clock; 
+//  The current cycle count is at '2480'
+  Macro "TEST" { 
+    "ALLPIs" = 100 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.3.1.4.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.3.1.5.1;  Stim_Clock; 
+//  The current cycle count is at '2481'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.3.1.6.1;  Scan_Unload;  (overlap) 
+  "4.1.1.3.1.6": 
+//  Processing the Static: EVENT 4.1.1.4.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '2482'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 3;  Scan_Sequence  
+//  The current cycle count is at '3719'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHLLHLLLLLHLHHLLLLHLHLLHLLHHLLHHLLLHLLLHHHLHHLHHLLHHLHHHLHHHHLHLHLHLLLHHLHH \r10 L HLLHLHLLLLHLLHHLHHHLLLLLLLHLLLLLLHHHHHLLLHLHLLLLHLHLLLHHLLLLLHLLLLLLLHLLH \r19 L HLH \r16 L HHLHLHLHLHHHHLHLHHHLLLHLHHLHLHLLHHLHLHLHLLLHHLHHLHHLLLLHLLHLLHLLHHLLLHLHHLHHLHHHLHH \r8 L HLHHLLLLLHHHLLLHLHHLLH \r8 L HHHHLHHLHHHHLLHLLHHHHHHLHLHHHHHLHLHHHLHHHLLLLHLHLLLHLLHLHHHHHHHLLHHHHHLHHHHLLHHLLHLHLHLHHL \r8 H LLLH \r29 L HHLLLLHHHLHLLLHHHHHLHHHHHLHLLLHLHLLLHLLHHHLLLHLHLLLHLLLLHLHLHLHHLHHHHLHLHHLHLHLHHHHLLHLLLLLLHHHHLHLLHHLLLLHLLHLHLHHLLHLLLHLLHLHLHHHHLLLHHHHHLHLHLHHHLLLLLHLHHLLHHHHLHHLHLLHLHHLHHLLLHHLHHLHHHHHLLHHLLLLHHLLHHHHHLLHHLHHHHHHHLHLHLLHLHLHHLLLHLHHHHHHLHLLHHLHHHHHHLHLHHHLLLLHHLLLHHHHL \r8 H LHLHHHHHHHLHHLHHHLHHLHHHLHHH \r10 L HHHHLH \r9 L HHLLHHHHHHHLHLHHL \r9 H LH \r15 L HL \r8 H LHHHHHL \r8 H LH \r64 L HLLHHHLHHLLLLLHLHLLHHLLL \r16 H LLLHHLHLHHHHLHHHLLHHHHHHHLHLHHL \r9 H LLHHHLHLLHLHHLHLHL \r3 LLHH LLHLLHHLHLLLLLLLHLHLHHHHHLLLLLLLHLLHLLLHLHLLHLHHLLLHHHLHHHHLLHLLLLHHLHHHHLLLLHHHLHLLHLLHHHHLHHHHLLLHL
+                  LHLLHLLLLLHLLLLHLHHLHL \r9 H LHLLLLHLHHHLLLHHHL \r8 H LHHHLHHHHHHLHLLLLHLLLHLHLHLHHHHLLHHHLLLHLLHHH; 
+    "CR_1_TM_1" = 11110001100011101000001100001011110010100111001100000010 \r3 1001 001111010010110110100010110001011101010011110111101010000101101111000000010101110010101111100110101000011100110001110100010111111100101010010011100110 \r11 1 0000010101001111101110011001001001110 \r9 1 00100111010 \r9 1 \r7 0 1100100111100111001101101110001111111000010001110111110001110011110000011100100000111100000110011101000111011100010110 \r33 1 0111000010000100101111110011100110001011110100010011110111100110110110000001000111110101111111010100000111101111111001000011110 \r9 1 001111011110011111110011111110011101001111101101100011111000110110000100111000011111100001110101101100001101000000110110010100100001101101110101011110100010001011000001101110010111110111111010001110111111100100101110010011111100010111101011111011100100000001001 \r8 0 1 \r3 0110 0011101011001101100110 \r18 1 0011011101111001010001111101001011011010101000001111011011111010111000000011100001100100000001101001001000100001111100011110101111100111100111010
+                  011111110010100111100101110011111010101000 \r4 1101 1100001110011011111110011011000000110011011010110111100011111011111110111101011011111000111100111111001011000011 \r10 0 1; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............4        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................84:84       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............7071     PERCENT IDDQ FAULTS.......46.255119   //
+//  TEST SEQUENCE.............84       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.4.1.2.1;  Stim_PI; 
+//  Processing the Static: EVENT 4.1.1.4.1.3.1;  Stim_Clock; 
+//  The current cycle count is at '3720'
+  Macro "TEST" { 
+    "ALLPIs" = 110 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.4.1.4.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.4.1.5.1;  Stim_Clock; 
+//  The current cycle count is at '3721'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.4.1.6.1;  Scan_Unload;  (overlap) 
+  "4.1.1.4.1.6": 
+//  Processing the Static: EVENT 4.1.1.5.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '3722'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 4;  Scan_Sequence  
+//  The current cycle count is at '4959'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HHHLLLHHLLLHHHLHLLLLLHHLLLLHLHHHHLLHLHLLHHHLLHHLLLLLLHL \r3 HLLH LLHHHHLHLLHLHHLHHLHLLLHLHHLLLHLHHHLHLHLLHHHHLHHHHLHLHLLLLHLHHLHHHHLLLLLLLHLHLHHHLLHLHLHHHHHLLHHLHLHLLLLHHHLLHHLLLHHHLHLLLHLHHHHHHHLLHLHLHLLHLLHHHLLHHL \r11 H LLLLLHLHLHLLHHHHHLHHHLLHHLLHLLHLLHHHL \r9 H LLHLLHHHLHL \r9 H \r7 L HHLLHLLHHHHLLHHHLLHHLHHLHHHLLLHHHHHHHLLLLHLLLHHHLHHHHHLLLHHHLLHHHHLLLLLHHHLLHLLLLLHHHHLLLLLHHLLHHHLHLLLHHHLHHHLLLHLHHL \r33 H LHHHLLLLHLLLLHLLHLHHHHHHLLHHHLLHHLLLHLHHHHLHLLLHLLHHHHLHHHHLLHHLHHLHHLLLLLLHLLLHHHHHLHLHHHHHHHLHLHLLLLLHHHHLHHHHHHHLLHLLLLHHHHL \r9 H LLHHHHLHHHHLLHHHHHHHLLHHHHHHHLLHHHLHLLHHHHHLHHLHHLLLHHHHHLLLHHLHHLLLLHLLHHHLLLLHHHHHHLLLLHHHLHLHHLHHLLLLHHLHLLLLLLHHLHHLLHLHLLHLLLLHHLHHLHHHLHLHLHHHHLHLLLHLLLHLHHLLLLLHHLHHHLLHLHHHHHLHHHHHHLHLLLHHHLHHHHHHHLLHLLHLHHHLLHLLHHHHHHLLLHLHHHHLHLHHHHHLHHHLLHLLLLLLLHLLH \r8 L H \r3 LHHL LLHHHLHLHHLLHHLHHLLHHL \r18 H LLHHLHHHLHHHHLLHLHLLLHHHHHLHLLHLHHLHHLHLHLHLLLLLHHHHLHHLHHHHHLHLHHHLLLLLLLHHHLLLLHHLLHLLLLLLLHHLHLLHLLHLLLHLLLLHHHHHLLLHHHHLHLHHHHHLLHHHHLLHHHLHLL
+                  HHHHHHHLLHLHLLHHHHLLHLHHHLLHHHHHLHLHLHLLL \r4 HHLH HHLLLLHHHLLHHLHHHHHHHLLHHLHHLLLLLLHHLLHHLHHLHLHHLHHHHLLLHHHHHLHHHHHHHLHHHHLHLHHLHHHHHLLLHHHHLLHHHHHHLLHLHHLLLLHH \r10 L HL; 
+    "CR_1_TM_1" = 0001011110001110100001111100101111101010011000110000001010011001110111111101001011011010101101110101110001001111111010100000110110111011110101110111101010111101110010100001010011100001011000 \r9 1 0101000011001000010001110111110011010101000011101010010111001001110 \r9 1 00100111010 \r9 1 \r8 0 100100011100011000100001001000011111000 \r5 01 110111000 \r11 1 01001 \r19 0 1011110101110111000101101111011110011101 \r13 0 110100101100101001001001001110000000100010000110100100001110001000101101010010011011 \r13 0 1010111100 \r23 1 0100001111000001000110111010011010111000000101100101100100010001101001010010111111001011100000001110010101101110000000101010110011111100100001110101111100011010110001011011011101011110100010110101111011001110101010110110000011110111111100010101101011101010101110010001001 \r8 0 101100011110 \r8 1 000110 \r8 1 0 \r8 1 010111111101100111001110010100011111011000110101110110100011010010111011100011110 \r9 1 0011011111101110100110101101010000100000100011010010011000011100110001
+                  0110010100111100101110100111010101000100111110101110111001011100100001100100110110100011111101 \r10 0 11011110100011100100 \r11 1 001110001100011100011111100101 \r10 0 1; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............5        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................85:85       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............7700     PERCENT IDDQ FAULTS.......55.186695   //
+//  TEST SEQUENCE.............85       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.5.1.2.1;  Stim_PI; 
+//  The current cycle count is at '4960'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.5.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.5.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.5.1.4": 
+//  Processing the Static: EVENT 4.1.1.6.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '4961'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 5;  Scan_Sequence  
+//  The current cycle count is at '6198'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LLLHLHHHHLLLHHHLHLLLLHHHHHLLHLHHHHHLHLHLLHHLLLHHLLLLLLHLHLLHHLLHHHLHHHHHHHLHLLHLHHLHHLHLHLHHLHHHLHLHHHLLLHLLHHHHHHHLHLHLLLLLHHLHHLHHHLHHHHLHLHHHLHHHHLHLHLHHHHLHHHLLHLHLLLLHLHLLHHHLLLLHLHHLLL \r9 H LHLHLLLLHHLLHLLLLHLLLHHHLHHHHHLLHHLHLHLHLLLLHHHLHLHLLHLHHHLLHLLHHHL \r9 H LLHLLHHHLHL \r9 H \r8 L HLLHLLLHHHLLLHHLLLHLLLLHLLHLLLLHHHHHLLL \r5 LH HHLHHHLLL \r11 H LHLLH \r19 L HLHHHHLHLHHHLHHHLLLHLHHLHHHHLHHHHLLHHHLH \r13 L HHLHLLHLHHLLHLHLLHLLHLLHLLHHHLLLLLLLHLLLHLLLLHHLHLLHLLLLHHHLLLHLLLHLHHLHLHLLHLLHHLHH \r13 L HLHLHHHHLL \r23 H LHLLLLHHHHLLLLLHLLLHHLHHHLHLLHHLHLHHHLLLLLLHLHHLLHLHHLLHLLLHLLLHHLHLLHLHLLHLHHHHHHLLHLHHHLLLLLLLHHHLLHLHLHHLHHHLLLLLLLHLHLHLHHLLHHHHHHLLHLLLLHHHLHLHHHHHLLLHHLHLHHLLLHLHHLHHLHHHLHLHHHHLHLLLHLHHLHLHHHHLHHLLHHHLHLHLHLHHLHHLLLLLHHHHLHHHHHHHLLLHLHLHHLHLHHHLHLHLHLHHHLLHLLLHLLH \r8 L HLHHLLLHHHHL \r8 H LLLHHL \r8 H L \r8 H LHLHHHHHHHLHHLLHHHLLHHHLLHLHLLLHHHHHLHHLLLHHLHLHHHLHHLHLLLHHLHLLHLHHHLHHHLLLHHHHL \r9 H LLHHLHHHHHHLHHHLHLLHHLHLHHLHLHLLLLHLLLLLHLLLHHLHLLHLLHHLLLLHHHLLHHLLLH
+                  LHHLLHLHLLHHHHLLHLHHHLHLLHHHLHLHLHLLLHLLHHHHHLHLHHHLHHHLLHLHHHLLHLLLLHHLLHLLHHLHHLHLLLHHHHHHLH \r10 L HHLHHHHLHLLLHHHLLHLL \r11 H LLHHHLLLHHLLLHHHLLLHHHHHHLLHLH \r10 L H; 
+    "CR_1_TM_1" = 10001001001100111101000100100001010011100001110101011101101011010100110100010010101101100011010100111111101100001011010010100010100110101001111111001101011001100111010 \r10 1 0111001010111001001110000001010101001111100100110100101110111101110011101001111110001010100001100111110000110 \r11 1 001110110001111110100110011110111110011100011110000100011100010110101110100000001110000001000100000110000101001100011101001001111 \r8 0 111110111110000010110101110001101110110010001000110111100110011101101000011000001101111011110 \r8 1 01110111111010110101101110101101001100000101100000100011100010100111001101101111010101101000101100001111111000000011101101011111110000001101110100001010100110000111 \r9 0 110100010000111110011100 \r10 1 01101000010100010 \r9 1 0001011001011011101100001001001111000101110001011111110110000011101111101111101000110011000111101100111101100010010110100111 \r9 0 1 \r9 0 10110000100001100100101000000010000101001110011100100000100101111111010011010001100100011011010100000111110
+                   \r13 1 01011110111111011101111101001011000010101100001010010101111100101000110100110111011011100001011110010110100101110110001010101100111011001010 \r11 1 0000100100101111100101101110110110101 \r16 0 10; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............6        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................86:86       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............4413     PERCENT IDDQ FAULTS.......60.305531   //
+//  TEST SEQUENCE.............86       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.6.1.2.1;  Stim_PI; 
+//  The current cycle count is at '6199'
+  Macro "TEST" { 
+    "ALLPIs" = 001 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.6.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.6.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.6.1.4": 
+//  Processing the Static: EVENT 4.1.1.7.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '6200'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 6;  Scan_Sequence  
+//  The current cycle count is at '7437'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLLLHLLHLLHHLLHHHHLHLLLHLLHLLLLHLHLLHHHLLLLHHHLHLHLHHHLHHLHLHHLHLHLLHHLHLLLHLLHLHLHHLHHLLLHHLHLHLLHHHHHHHLHHLLLLHLHHLHLLHLHLLLHLHLLHHLHLHLLHHHHHHHLLHHLHLHHLLHHLLHHHLHL \r10 H LHHHLLHLHLHHHLLHLLHHHLLLLLLHLHLHLHLLHHHHHLLHLLHHLHLLHLHHHLHHHHLHHHLLHHHLHLLHHHHHHLLLHLHLHLLLLHHLLHHHHHLLLLHHL \r11 H LLHHHLHHLLLHHHHHHLHLLHHLLHHHHLHHHHHLLHHHLLLHHHHLLLLHLLLHHHLLLHLHHLHLHHHLHLLLLLLLHHHLLLLLLHLLLHLLLLLHHLLLLHLHLLHHLLLHHHLHLLHLLHHHH \r8 L HHHHHLHHHHHLLLLLHLHHLHLHHHLLLHHLHHHLHHLLHLLLHLLLHHLHHHHLLHHLLHHHLHHLHLLLLHHLLLLLHHLHHHHLHHHHL \r8 H LHHHLHHHHHHLHLHHLHLHHLHHHLHLHHLHLLHHLLLLLHLHHLLLLLHLLLHHHLLLHLHLLHHHLLHHLHHLHHHHLHLHLHHLHLLLHLHHLLLLHHHHHHHLLLLLLLHHHLHHLHLHHHHHHHLLLLLLHHLHHHLHLLLLHLHLHLLHHLLLLHHH \r9 L HHLHLLLHLLLLHHHHHLLHHHLL \r10 H LHHLHLLLLHLHLLLHL \r9 H LLLHLHHLLHLHHLHHHLHHLLLLHLLHLLHHHHLLLHLHHHLLLHLHHHHHHHLHHLLLLLHHHLHHHHHLHHHHHLHLLLHHLLHHLLLHHHHLHHLLHHHHLHHLLLHLLHLHHLHLLHHH \r9 L H \r9 L HLHHLLLLHLLLLHHLLHLLHLHLLLLLLLHLLLLHLHLLHHHLLHHHLLHLLLLLHLLHLHHHHHHHLHLLHHLHLLLHHLLHLLLHHLHHLHLHLLLLLHHHHHL
+                   \r13 H LHLHHHHLHHHHHHLHHHLHHHHHLHLLHLHHLLLLHLHLHHLLLLHLHLLHLHLHHHHHLLHLHLLLHHLHLLHHLHHHLHHLHHHLLLLHLHHHHLLHLHHLHLLHLHHHLHHLLLHLHLHLHHLLHHHLHHLLHLHL \r11 H LLLLHLLHLLHLHHHHHLLHLHHLHHHLHHLHHLHLH \r16 L HL; 
+    "CR_1_TM_1" = \r5 01 00110001011001100100111100110000110010001 \r5 10 \r5 01 0010001010101111110001010111011011110100110010011101001011011110011100110000111111000000011111010 \r10 1 0101 \r5 10 \r7 1 0000 \r11 1 0001000001010111100001000100110001111010101100010010 \r9 1 00111011010 \r9 1 \r9 0 10 \r9 1 0010001010111 \r9 0 11110 \r16 1 0111110010111101011001101101 \r9 0 1010001100000011110110010 \r26 1 010001000000100010010101000001000011010001000000100001000000010110110000010001000001 \r16 0 1 \r76 0 100001 \r9 0 10011110001000101 \r26 0 10001000001 \r8 0 110010110111010100011101111 \r9 0 1001111000000100000100001000100101111110001101010 \r32 1 011011100001001001111111000000111 \r11 0 11 \r17 0 100111110000 \r16 1 0 \r15 1 001101000000110111010101 \r11 0 11010000011010010001000000111001111010110010011011110101010111000000010 \r3 0001 0100000110011000101111100010010110010110100000101010100100000110000110001100100001001000011111 \r18 0 1101110100101000111110001101011 \r11 0 1000111010100110110001001
+                   \r14 0 10; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............7        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................87:87       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............2966     PERCENT IDDQ FAULTS.......63.745926   //
+//  TEST SEQUENCE.............87       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.7.1.2.1;  Stim_PI; 
+//  The current cycle count is at '7438'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.7.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.7.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.7.1.4": 
+//  Processing the Static: EVENT 4.1.1.8.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '7439'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 7;  Scan_Sequence  
+//  The current cycle count is at '8676'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = \r5 LH LLHHLLLHLHHLLHHLLHLLHHHHLLHHLLLLHHLLHLLLH \r5 HL \r5 LH LLHLLLHLHLHLHHHHHHLLLHLHLHHHLHHLHHHHLHLLHHLLHLLHHHLHLLHLHHLHHHHLLHHHLLHHLLLLHHHHHHLLLLLLLHHHHHLHL \r10 H LHLH \r5 HL \r7 H LLLL \r11 H LLLHLLLLLHLHLHHHHLLLLHLLLHLLHHLLLHHHHLHLHLHHLLLHLLHL \r9 H LLHHHLHHLHL \r9 H \r9 L HL \r9 H LLHLLLHLHLHHH \r9 L HHHHL \r16 H LHHHHHLLHLHHHHLHLHHLLHHLHHLH \r9 L HLHLLLHHLLLLLLHHHHLHHLLHL \r26 H LHLLLHLLLLLLHLLLHLLHLHLHLLLLLHLLLLHHLHLLLHLLLLLLHLLLLHLLLLLLLHLHHLHHLLLLLHLLLHLLLLLH \r16 L H \r76 L HLLLLH \r9 L HLLHHHHLLLHLLLHLH \r26 L HLLLHLLLLLH \r8 L HHLLHLHHLHHHLHLHLLLHHHLHHHH \r9 L HLLHHHHLLLLLLHLLLLLHLLLLHLLLHLLHLHHHHHHLLLHHLHLHL \r32 H LHHLHHHLLLLHLLHLLHHHHHHHLLLLLLHHH \r11 L HH \r17 L HLLHHHHHLLLL \r16 H L \r15 H LLHHLHLLLLLLHHLHHHLHLHLH \r11 L HHLHLLLLLHHLHLLHLLLHLLLLLLHHHLLHHHHLHLHHLLHLLHHLHHHHLHLHLHLHHHLLLLLLLHL \r3 LLLH LHLLLLLHHLLHHLLLHLHHHHHLLLHLLHLHHLLHLHHLHLLLLLHLHLHLHLLHLLLLLHHLLLLHHLLLHHLLHLLLLHLLHLLLLHHHHH \r18 L HHLHHHLHLLHLHLLLHHHHHLLLHHLHLHH \r11 L HLLLHHHLHLHLLHHLHHLLLHLLH
+                   \r14 L HL; 
+    "CR_1_TM_1" = 111101000100100010011010011011010010101101010001000001101110010101111111001011010000011000011010111001010011010111000110100111000010111 \r5 10 0010111 \r6 10 1101010010110000101000101100101011100011000000011111101110101000011001111001011101100111011111000010100100000011111011101101001100000011010110000111110110100010101111111010011010001101001111010100100110010000100001101100011001001111100010111011101101101001101010 \r10 1 0010001001001000011 \r9 0 1001001001 \r8 0 \r8 1 000100100010010011 \r10 0 10011001011010001100111101000100001101001 \r10 0 101100000100010110010101101011000001001001100100111011111000011101011001111000101010011101 \r10 0 1100111100010110010001111111011011001101110011100011011011010001100011001011111001011110110101111010000111011110110111001110 \r10 1 0 \r9 1 0110001111011010000001010110111011010101100101100100010010100000100100000010001 \r32 0 10 \r5 01 000110000001 \r13 0 10010100001 \r33 0 110111010011001001011 \r11 0 11110000000111100110110101111010011011011
+                   \r5 10 11100001000110000000100010111101010001100101001100000110000011010101111011100011111001110111111010010 \r8 1 011111011101000101001 \r19 0 ; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............8        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................88:88       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............2873     PERCENT IDDQ FAULTS.......67.078445   //
+//  TEST SEQUENCE.............88       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.8.1.2.1;  Stim_PI; 
+//  The current cycle count is at '8677'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.8.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.8.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.8.1.4": 
+//  Processing the Static: EVENT 4.1.1.9.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '8678'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 8;  Scan_Sequence  
+//  The current cycle count is at '9915'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HHHHLHLLLHLLHLLLHLLHHLHLLHHLHHLHLLHLHLHHLHLHLLLHLLLLLHHLHHHLLHLHLHHHHHHHLLHLHHLHLLLLLHHLLLLHHLHLHHHLLHLHLLHHLHLHHHLLLHHLHLLHHHLLLLHLHHH \r5 HL LLHLHHH \r6 HL HHLHLHLLHLHHLLLLHLHLLLHLHHLLHLHLHHHLLLHHLLLLLLLHHHHHHLHHHLHLHLLLLHHLLHHHHLLHLHHHLHHLLHHHLHHHHHLLLLHLHLLHLLLLLLHHHHHLHHHLHHLHLLHHLLLLLLHHLHLHHLLLLHHHHHLHHLHLLLHLHLHHHHHHHLHLLHHLHLLLHHLHLLHHHHLHLHLLHLLHHLLHLLLLHLLLLHHLHHLLLHHLLHLLHHHHHLLLHLHHHLHHHLHHLHHLHLLHHLHLHL \r10 H LLHLLLHLLHLLHLLLLHH \r9 L HLLHLLHLLH \r8 L \r8 H LLLHLLHLLLHLLHLLHH \r10 L HLLHHLLHLHHLHLLLHHLLHHHHLHLLLHLLLLHHLHLLH \r10 L HLHHLLLLLHLLLHLHHLLHLHLHHLHLHHLLLLLHLLHLLHHLLHLLHHHLHHHHHLLLLHHHLHLHHLLHHHHLLLHLHLHLLHHHLH \r10 L HHLLHHHHLLLHLHHLLHLLLHHHHHHHLHHLHHLLHHLHHHLLHHHLLLHHLHHLHHLHLLLHHLLLHHLLHLHHHHHLLHLHHHHLHHLHLHHHHLHLLLLHHHLHHHHLHHLHHHLLHHHL \r10 H L \r9 H LHHLLLHHHHLHHLHLLLLLLHLHLHHLHHHLHHLHLHLHHLLHLHHLLHLLLHLLHLHLLLLLHLLHLLLLLLHLLLH \r32 L HL \r5 LH LLLHHLLLLLLH \r13 L HLLHLHLLLLH \r33 L HHLHHHLHLLHHLLHLLHLHH \r11 L HHHHLLLLLLLHHHHLLHHLHHLHLHHHHLHLLHHLHHLHH
+                   \r5 HL HHHLLLLHLLLHHLLLLLLLHLLLHLHHHHLHLHLLLHHLLHLHLLHHLLLLLHHLLLLLHHLHLHLHHHHLHHHLLLHHHHHLLHHHLHHHHHHLHLLHL \r8 H LHHHHHLHHHLHLLLHLHLLH \r19 L ; 
+    "CR_1_TM_1" = 010001100100000100001101001010101101001010011101 \r9 10 \r5 01 1011011000 \r12 1 011111011001010001101011000111000 \r8 1 011011000000110 \r8 1 0000101001001011011001111100110111111001011100110001100110110101101000011010101011011010100100101011101011000010011001010011110000110011101010000 \r8 1 001110101010000110101100101010010110000110000011010010100001110110111100111111000010011000101101011111101 \r32 0 11110011010111111010 \r11 1 011111000100100000001101101000010100 \r12 1 010001111001101001110100100011000010100100110001111010001110011001101111111011110 \r10 1 01111100101101111101001101101010111101010111001010101111111011001001 \r14 0 1 \r10 0 11011000111 \r13 0 1 \r10 0 1111110100101000100001011101001100001011101 \r9 0 1100010000100010011101110011110000111010010111 \r12 0 11101000000010110 \r15 1 00001 \r27 0 10011101 \r8 0 1110011 \r8 0 1000101100111100 \r17 1 0000110001101110101100010010110111101001100110100001010110101000111001111000000110001001100001110101000010110001001101000
+                   \r8 1 011 \r34 0 10100000011110001010100101000011010001001001010100110111110110100111101011101111011; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............9        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................89:89       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............2355     PERCENT IDDQ FAULTS.......69.810120   //
+//  TEST SEQUENCE.............89       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.9.1.2.1;  Stim_PI; 
+//  The current cycle count is at '9916'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.9.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.9.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.9.1.4": 
+//  Processing the Static: EVENT 4.1.1.10.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '9917'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 9;  Scan_Sequence  
+//  The current cycle count is at '11154'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHLLHLLLLLHLLLLHHLHLLHLHLHLHHLHLLHLHLLHHHLH \r9 HL \r5 LH HLHHLHHLLL \r12 H LHHHHHLHHLLHLHLLLHHLHLHHLLLHHHLLL \r8 H LHHLHHLLLLLLHHL \r8 H LLLLHLHLLHLLHLHHLHHLLHHHHHLLHHLHHHHHHLLHLHHHLLHHLLLHHLLHHLHHLHLHHLHLLLLHHLHLHLHLHHLHHLHLHLLHLLHLHLHHHLHLHHLLLLHLLHHLLHLHLLHHHHLLLLHHLLHHHLHLHLLLL \r8 H LLHHHLHLHLHLLLLHHLHLHHLLHLHLHLLHLHHLLLLHHLLLLLHHLHLLHLHLLLLHHHLHHLHHHHLLHHHHHHLLLLHLLHHLLLHLHHLHLHHHHHHLH \r32 L HHHHLLHHLHLHHHHHHLHL \r11 H LHHHHHLLLHLLHLLLLLLLHHLHHLHLLLLHLHLL \r12 H LHLLLHHHHLLHHLHLLHHHLHLLHLLLHHLLLLHLHLLHLLHHLLLHHHHLHLLLHHHLLHHLLHHLHHHHHHHLHHHHL \r10 H LHHHHHLLHLHHLHHHHHLHLLHHLHHLHLHLHHHHLHLHLHHHLLHLHLHLHHHHHHHLHHLLHLLH \r14 L H \r10 L HHLHHLLLHHH \r13 L H \r10 L HHHHHHLHLLHLHLLLHLLLLHLHHHLHLLHHLLLLHLHHHLH \r9 L HHLLLHLLLLHLLLHLLHHHLHHHLLHHHHLLLLHHHLHLLHLHHH \r12 L HHHLHLLLLLLLHLHHL \r15 H LLLLH \r27 L HLLHHHLH \r8 L HHHLLHH \r8 L HLLLHLHHLLHHHHLL \r17 H LLLLHHLLLHHLHHHLHLHHLLLHLLHLHHLHHHHLHLLHHLLHHLHLLLLHLHLHHLHLHLLLHHHLLHHHHLLLLLLHHLLLHLLHHLLLLHHHLHLHLLLLHLHHLLLHLLHHLHLLL
+                   \r8 H LHH \r34 L HLHLLLLLLHHHHLLLHLHLHLLHLHLLLLHHLHLLLHLLHLLHLHLHLLHHLHHHHHLHHLHLLHHHHLHLHHHLHHHHLHH; 
+    "CR_1_TM_1" = 01010011011111000110011111110101101101011010011101100 \r7 01 1101010110110100100000010010101011011110001010111011110100011101101111101010110101110001101111100100000010010110000001110 \r10 1 00010111111001101000100010100101111000010101001000000011110100111101101010110011101011110000001001000010011000111111011101101111110 \r12 1 0 \r12 1 01001 \r4 1000 10011100100111100101100011011011010010001100110000001101 \r9 0 1 \r11 0 \r7 1 00100011000110100011100111110001010011111010100110000011011101010111100111110110010100110110011010000001001101101010010101101000011000001110000011111001100111111010000100000011000000101000011011111011100111110101111100101001101111000111110111110100101000001000000100111111101111111010001101010011110010110111100011001111011010100111100101110101110011111001001101110001101111110010010111000110111010011010001110000011110010001000110000101001100001011010100111000011111101100000111110000101011110 \r12 1 0011101100111110110000001000000101100000100010000110011101111000011010001
+                  1110001110000001110001110101100010011001110010111000001011001000011111110000001001 \r12 0 11011 \r3 0110 10001001001110101110000010001011110011110110110100 \r9 1 01011001011001 \r14 0 1; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............10       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................90:90       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............1488     PERCENT IDDQ FAULTS.......71.536118   //
+//  TEST SEQUENCE.............90       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.10.1.2.1;  Stim_PI; 
+//  The current cycle count is at '11155'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.10.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.10.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.10.1.4": 
+//  Processing the Static: EVENT 4.1.1.11.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '11156'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 10;  Scan_Sequence  
+//  The current cycle count is at '12393'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLHLLHHLHHHHHLLLHHLLHHHHHHHLHLHHLHHLHLHHLHLLHHHLHHLL \r7 LH HHLHLHLHHLHHLHLLHLLLLLLHLLHLHLHLHHLHHHHLLLHLHLHHHLHHHHLHLLLHHHLHHLHHHHHLHLHLHHLHLHHHLLLHHLHHHHHLLHLLLLLLHLLHLHHLLLLLLHHHL \r10 H LLLHLHHHHHHLLHHLHLLLHLLLHLHLLHLHHHHLLLLHLHLHLLHLLLLLLLHHHHLHLLHHHHLHHLHLHLHHLLHHHLHLHHHHLLLLLLHLLHLLLLHLLHHLLLHHHHHHLHHHLHHLHHHHHHL \r12 H L \r12 H LHLLH \r4 HLLL HLLHHHLLHLLHHHHLLHLHHLLLHHLHHLHHLHLLHLLLHHLLHHLLLLLLHHLH \r9 L H \r11 L \r7 H LLHLLLHHLLLHHLHLLLHHHLLHHHHHLLLHLHLLHHHHHLHLHLLHHLLLLLHHLHHHLHLHLHHHHLLHHHHHLHHLLHLHLLHHLHHLLHHLHLLLLLLHLLHHLHHLHLHLLHLHLHHLHLLLLHHLLLLLHHHLLLLLHHHHHLLHHLLHHHHHHLHLLLLHLLLLLLHHLLLLLLHLHLLLLHHLHHHHHLHHHLLHHHHHLHLHHHHHLLHLHLLHHLHHHHLLLHHHHHLHHHHHLHLLHLHLLLLLHLLLLLLHLLHHHHHHHLHHHHHHHLHLLLHHLHLHLLHHHHLLHLHHLHHHHLLLHHLLHHHHLHHLHLHLLHHHHLLHLHHHLHLHHHLLHHHHHLLHLLHHLHHHLLLHHLHHHHHHLLHLLHLHHHLLLHHLHHHLHLLHHLHLLLHHHLLLLLHHHHLLHLLLHLLLHHLLLLHLHLLHHLLLLHLHHLHLHLLHHHLLLLHHHHHHLHHLLLLLHHHHHLLLLHLHLHHHHL \r12 H LLHHHLHHLLHHHHHLHHLLLLLLHLLLLLLHLHHLLLLLHLLLHLLLLHHLLHHHLHHHHLLLLHHLHLLLH
+                  HHHLLLHHHLLLLLLHHHLLLHHHLHLHHLLLHLLHHLLHHHLLHLHHHLLLLLHLHHLLHLLLLHHHHHHHLLLLLLHLLH \r12 L HHLHH \r3 LHHL HLLLHLLHLLHHHLHLHHHLLLLLHLLLHLHHHHLLHHHHLHHLHHLHLL \r9 H LHLHHLLHLHHLLH \r14 L H; 
+    "CR_1_TM_1" = 0100001 \r5 10 111010000010100110101010110000100001011111100011100010101110001 \r12 0 1100110110110001111110000111101000111010011001101101100011011100101110010101001100111111101000010000101111100010010000101111110100011001000110101101010110001010111111100101001111010111111010011011110101111010111111011001110011101111111000 \r15 1 0111111100010100001000001111001 \r5 10 11111100101100011100100101110000 \r26 1 011011101011000101111001001010111100111010110011111100000111110010001100011000010010000011100011001101001000101011101000001110010100110001000101110011110010011011100001110000101111011111010100011011000111111011110100111011001001000001100111011011101111100 \r10 1 0100101000011000001111100 \r10 1 01001001000100011100110000001101011101111101011001100011000111101101000101010011101000011111000111011111110110110 \r8 1 010 \r24 1 011100001 \r26 0 1010100000010010100 \r5 01 \r8 1 0011111010111111 \r8 0 10100011010011011101010000010001 \r11 0 1 \r14 0 1000100100010111010000110000100000011111000101
+                  01101100000011111000010000110000001010001000110100011110000 \r11 1 0100101010110110000111010 \r10 1 0101101110010011011001100100010000100010; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............11       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................91:91       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............1366     PERCENT IDDQ FAULTS.......73.120598   //
+//  TEST SEQUENCE.............91       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.11.1.2.1;  Stim_PI; 
+//  The current cycle count is at '12394'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.11.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.11.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.11.1.4": 
+//  Processing the Static: EVENT 4.1.1.12.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '12395'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 11;  Scan_Sequence  
+//  The current cycle count is at '13632'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLLH \r5 HL HHHLHLLLLLHLHLLHHLHLHLHLHHLLLLHLLLLHLHHHHHHLLLHHHLLLHLHLHHHLLLH \r12 L HHLLHHLHHLHHLLLHHHHHHLLLLHHHHLHLLLHHHLHLLHHLLHHLHHLHHLLLHHLHHHLLHLHHHLLHLHLHLLHHLLHHHHHHHLHLLLLHLLLLHLHHHHHLLLHLLHLLLLHLHHHHHHLHLLLHHLLHLLLHHLHLHHLHLHLHHLLLHLHLHHHHHHHLLHLHLLHHHHLHLHHHHHHLHLLHHLHHHHLHLHHHHLHLHHHHHHLHHLLHHHLLHHHLHHHHHHHLLL \r15 H LHHHHHHHLLLHLHLLLLHLLLLLHHHHLLH \r5 HL HHHHHHLLHLHHLLLHHHLLHLLHLHHHLLLL \r26 H LHHLHHHLHLHHLLLHLHHHHLLHLLHLHLHHHHLLHHHLHLHHLLHHHHHHLLLLLHHHHHLLHLLLHHLLLHHLLLLHLLHLLLLLHHHLLLHHLLHHLHLLHLLLHLHLHHHLHLLLLLHHHLLHLHLLHHLLLHLLLHLHHHLLHHHHLLHLLHHLHHHLLLLHHHLLLLHLHHHHLHHHHHLHLHLLLHHLHHLLLHHHHHHLHHHHLHLLHHHLHHLLHLLHLLLLLHHLLHHHLHHLHHHLHHHHHLL \r10 H LHLLHLHLLLLHHLLLLLHHHHHLL \r10 H LHLLHLLHLLLHLLLHHHLLHHLLLLLLHHLHLHHHLHHHHHLHLHHLLHHLLLHHLLLHHHHLHHLHLLLHLHLHLLHHHLHLLLLHHHHHLLLHHHLHHHHHHHLHHLHHL \r8 H LHL \r24 H LHHHLLLLH \r26 L HLHLHLLLLLLHLLHLHLL \r5 LH \r8 H LLHHHHHLHLHHHHHH \r8 L HLHLLLHHLHLLHHLHHHLHLHLLLLLHLLLH \r11 L H \r14 L HLLLHLLHLLLHLHHHLHLLLLHHLLLLHLLLLLLHHHHHLLLHLH
+                  LHHLHHLLLLLLHHHHHLLLLHLLLLHHLLLLLLHLHLLLHLLLHHLHLLLHHHHLLLL \r11 H LHLLHLHLHLHHLHHLLLLHHHLHL \r10 H LHLHHLHHHLLHLLHHLHHLLHHLLHLLLHLLLLHLLLHL; 
+    "CR_1_TM_1" = 1 \r11 0 11 \r5 10 110111 \r5 10 11100111 \r8 0 1110111010101110000100111000111110 \r10 1 010100110111010011001011110000 \r9 1 01010100111011001000001011101001011111110101111010101001100011110101000001101010101100111101100101111101010 \r7 01 1101000101011000111100000100001011000110000 \r11 1 0 \r9 1 010000100110101001101011010001110110000110010101011000000011001110101000101011010011101100011010 \r22 1 001111110111001110101100101001101111010110010110111 \r8 0 11101110001101001010011000011011111101111000001010111110111110101010011000011000111111010101100101110100110100000101100101110010011001001011010110010101111100100 \r8 1 0001101100100111000100000001101100000001011010000001010010000011000101000010110100100011100011001110011111110110101101011011000101101010100110100011101001000100101111011110100110000001000 \r3 0111 \r12 1 01110011111001110001001110101100001 \r9 0 10000010111111100011 \r14 0 1110100100010101110 \r15 1 01110011111110010111010100110 \r9 1 01101110111111101011111001100010111011
+                  010100000100110000110011101011010110101110001000 \r9 1 01 \r8 0 1100000011111100101000010001110100101100011101011101010111111011010110010000110011010111101 \r8 0 11; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............12       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................92:92       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............914      PERCENT IDDQ FAULTS.......74.180786   //
+//  TEST SEQUENCE.............92       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.12.1.2.1;  Stim_PI; 
+//  The current cycle count is at '13633'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.12.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.12.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.12.1.4": 
+//  Processing the Static: EVENT 4.1.1.13.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '13634'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 12;  Scan_Sequence  
+//  The current cycle count is at '14871'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = H \r11 L HH \r5 HL HHLHHH \r5 HL HHHLLHHH \r8 L HHHLHHHLHLHLHHHLLLLHLLHHHLLLHHHHHL \r10 H LHLHLLHHLHHHLHLLHHLLHLHHHHLLLL \r9 H LHLHLHLLHHHLHHLLHLLLLLHLHHHLHLLHLHHHHHHHLHLHHHHLHLHLHLLHHLLLHHHHLHLHLLLLLHHLHLHLHLHHLLHHHHLHHLLHLHHHHHLHLHL \r7 LH HHLHLLLHLHLHHLLLHHHHLLLLLHLLLLHLHHLLLHHLLLL \r11 H L \r9 H LHLLLLHLLHHLHLHLLHHLHLHHLHLLLHHHLHHLLLLHHLLHLHLHLHHLLLLLLLHHLLHHHLHLHLLLHLHLHHLHLLHHHLHHLLLHHLHL \r22 H LLHHHHHHLHHHLLHHHLHLHHLLHLHLLHHLHHHHLHLHHLLHLHHLHHH \r8 L HHHLHHHLLLHHLHLLHLHLLHHLLLLHHLHHHHHHLHHHHLLLLLHLHLHHHHHLHHHHHLHLHLHLLHHLLLLHHLLLHHHHHHLHLHLHHLLHLHHHLHLLHHLHLLLLLHLHHLLHLHHHLLHLLHHLLHLLHLHHLHLHHLLHLHLHHHHHLLHLL \r8 H LLLHHLHHLLHLLHHHLLLHLLLLLLLHHLHHLLLLLLLHLHHLHLLLLLLHLHLLHLLLLLHHLLLHLHLLLLHLHHLHLLHLLLHHHLLLHHLLHHHLLHHHHHHHLHHLHLHHLHLHHLHHLLLHLHHLHLHLHLLHHLHLLLHHHLHLLHLLLHLLHLHHHHLHHHHLHLLHHLLLLLLHLLL \r3 LHHH \r12 H LHHHLLHHHHHLLHHHLLLHLLHHHLHLHHLLLLH \r9 L HLLLLLHLHHHHHHHLLLHH \r14 L HHHLHLLHLLLHLHLHHHL \r15 H LHHHLLHHHHHHHLLHLHHHLHLHLLHHL \r9 H LHHLHHHLHHHHHHHLHLHHHHHLLHHLLLHLHHHLHH
+                  LHLHLLLLLHLLHHLLLLHHLLHHHLHLHHLHLHHLHLHHHLLLHLLL \r9 H LH \r8 L HHLLLLLLHHHHHHLLHLHLLLLHLLLHHHLHLLHLHHLLLHHHLHLHHHLHLHLHHHHHHLHHLHLHHLLHLLLLHHLLHHLHLHHHHLH \r8 L HH; 
+    "CR_1_TM_1" = 010001110101000101000100001010000101000010001011000001101110101010010000100001101101010111110111001001010000101011011010001111000001101110010011001001010010001001010 \r12 1 01000000 \r14 1 \r14 0 111001001000000101001 \r5 10 1111110100011011111101 \r9 0 11110001001 \r9 0 1100001111010 \r8 1 0000001111101101011101011010111101011110000100001 \r10 0 11000001100001010110010011110101011100110100 \r20 1 01111000001001010011110110101001001001111001110110100010100011100101111001100011000000011010000110001110110110100000101011100100000110110111010111111101100100000011010101110001101100111111011001111111010110001010011010010000101110100000101 \r3 1000 110000011 \r10 0 1011011000101001110000011 \r10 0 1011011111001100 \r8 1 00000110 \r9 1 0001101101111011010010110001100011001001001011101111111010100111101100000100100010000100010000001 \r10 0 \r16 1 00 \r14 1 001110011010101101001011011000010001111011001101010001001001101010000100111000100000101000011000010000100001 \r8 0 1111001001110100101110101110111
+                  01011111110101100110100100101001101010010010000100 \r17 1 011110 \r9 1 001000100100111001001010000011101101010110100101000111011000010110100110011010000001; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............13       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................93:93       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............1075     PERCENT IDDQ FAULTS.......75.427727   //
+//  TEST SEQUENCE.............93       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.13.1.2.1;  Stim_PI; 
+//  The current cycle count is at '14872'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.13.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.13.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.13.1.4": 
+//  Processing the Static: EVENT 4.1.1.14.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '14873'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 13;  Scan_Sequence  
+//  The current cycle count is at '16110'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHHLHLHLLLHLHLLLHLLLLHLHLLLLHLHLLLLHLLLHLHHLLLLLHHLHHHLHLHLHLLHLLLLHLLLLHHLHHLHLHLHHHHHLHHHLLHLLHLHLLLLHLHLHHLHHLHLLLHHHHLLLLLHHLHHHLLHLLHHLLHLLHLHLLHLLLHLLHLHL \r12 H LHLLLLLL \r14 H \r14 L HHHLLHLLHLLLLLLHLHLLH \r5 HL HHHHHHLHLLLHHLHHHHHHLH \r9 L HHHHLLLHLLH \r9 L HHLLLLHHHHLHL \r8 H LLLLLLHHHHHLHHLHLHHHLHLHHLHLHHHHLHLHHHHLLLLHLLLLH \r10 L HHLLLLLHHLLLLHLHLHHLLHLLHHHHLHLHLHHHLLHHLHLL \r20 H LHHHHLLLLLHLLHLHLLHHHHLHHLHLHLLHLLHLLHHHHLLHHHLHHLHLLLHLHLLLHHHLLHLHHHHLLHHLLLHHLLLLLLLHHLHLLLLHHLLLHHHLHHLHHLHLLLLLHLHLHHHLLHLLLLLHHLHHLHHHLHLHHHHHHHLHHLLHLLLLLLHHLHLHLHHHLLLHHLHHLLHHHHHHLHHLLHHHHHHHLHLHHLLLHLHLLHHLHLLHLLLLHLHHHLHLLLLLHLH \r3 HLLL HHLLLLLHH \r10 L HLHHLHHLLLHLHLLHHHLLLLLHH \r10 L HLHHLHHHHHLLHHLL \r8 H LLLLLHHL \r9 H LLLHHLHHLHHHHLHHLHLLHLHHLLLHHLLLHHLLHLLHLLHLHHHLHHHHHHHLHLHLLHHHHLHHLLLLLHLLHLLLHLLLLHLLLHLLLLLLH \r10 L \r16 H LL \r14 H LLHHHLLHHLHLHLHHLHLLHLHHLHHLLLLHLLLHHHHLHHLLHHLHLHLLLHLLHLLHHLHLHLLLLHLLHHHLLLHLLLLLHLHLLLLHHLLLLHLLLLHLLLLH \r8 L HHHHLLHLLHHHLHLLHLHHHLHLHHHLHHH
+                  LHLHHHHHHHLHLHHLLHHLHLLHLLHLHLLHHLHLHLLHLLHLLLLHLL \r17 H LHHHHL \r9 H LLHLLLHLLHLLHHHLLHLLHLHLLLLLHHHLHHLHLHLHHLHLLHLHLLLHHHLHHLLLLHLHHLHLLHHLLHHLHLLLLLLH; 
+    "CR_1_TM_1" = 100000100100100110110000111101000001010010010111000001011110011000101111101011011001101000010010101110110011001000100001100000010000100110111101100111 \r3 1100 010100110 \r8 1 0101011010111010101001001110100001011010000101010111000000101110 \r3 1001 0111101100111101110100010010100001001100111100100100100111100111101011001111010101 \r8 0 11000000 \r11 1 0011000010010101011100110100110010001111010110100100011001101100011 \r21 0 1101110111000111101100101011001000000010101000011011100100110010100011011100000110110111111010100111001001111011101011000110011110011100011010111000010000010001111001101110110101 \r10 0 100011001100000001100010100100101110001001011010000101100010 \r9 1 010010111011001110101101001110111110100100010110010110111100001011100001001011000 \r11 1 0101011000101100110111100100100001001100111111101110101110010011011010011000001011 \r9 0 \r32 1 011000010010000101001001 \r11 0 1001001000111000100111011011100001011011000011111010001010001 \r14 0 100001101100100000111001
+                   \r13 0 1010001001010100101011100000110000001011010110001 \r18 0 1 \r14 0 101101100011 \r3 1110 10010011 \r8 0 1000011010010000101111011 \r10 0 1 \r8 0 ; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............14       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................94:94       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............780      PERCENT IDDQ FAULTS.......76.332489   //
+//  TEST SEQUENCE.............94       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.14.1.2.1;  Stim_PI; 
+//  The current cycle count is at '16111'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.14.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.14.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.14.1.4": 
+//  Processing the Static: EVENT 4.1.1.15.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '16112'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 14;  Scan_Sequence  
+//  The current cycle count is at '17349'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLLLLLHLLHLLHLLHHLHHLLLLHHHHLHLLLLLHLHLLHLLHLHHHLLLLLHLHHHHLLHHLLLHLHHHHHLHLHHLHHLLHHLHLLLLHLLHLHLHHHLHHLLHHLLHLLLHLLLLHHLLLLLLHLLLLHLLHHLHHHHLHHLLHHH \r3 HHLL LHLHLLHHL \r8 H LHLHLHHLHLHHHLHLHLHLLHLLHHHLHLLLLHLHHLHLLLLHLHLHLHHHLLLLLLHLHHHL \r3 HLLH LHHHHLHHLLHHHHLHHHLHLLLHLLHLHLLLLHLLHHLLHHHHLLHLLHLLHLLHHHHLLHHHHLHLHHLLHHHHLHLHLH \r8 L HHLLLLLL \r11 H LLHHLLLLHLLHLHLHLHHHLLHHLHLLHHLLHLLLHHHHLHLHHLHLLHLLLHHLLHHLHHLLLHH \r21 L HHLHHHLHHHLLLHHHHLHHLLHLHLHHLLHLLLLLLLHLHLHLLLLHHLHHHLLHLLHHLLHLHLLLHHLHHHLLLLLHHLHHLHHHHHHLHLHLLHHHLLHLLHHHHLHHHLHLHHLLLHHLLHHHHLLHHHLLLHHLHLHHHLLLLHLLLLLHLLLHHHHLLHHLHHHLHHLHLH \r10 L HLLLHHLLHHLLLLLLLHHLLLHLHLLHLLHLHHHLLLHLLHLHHLHLLLLHLHHLLLHL \r9 H LHLLHLHHHLHHLLHHHLHLHHLHLLHHHLHHHHHLHLLHLLLHLHHLLHLHHLHHHHLLLLHLHHHLLLLHLLHLHHLLL \r11 H LHLHLHHLLLHLHHLLHHLHHHHLLHLLHLLLLHLLHHLLHHHHHHHLHHHLHLHHHLLHLLHHLHHLHLLHHLLLLLHLHH \r9 L \r32 H LHHLLLLHLLHLLLLHLHLLHLLH \r11 L HLLHLLHLLLHHHLLLHLLHHHLHHLHHHLLLLHLHHLHHLLLLHHHHHLHLLLHLHLLLH \r14 L HLLLLHHLHHLLHLLLLLHHHLLH
+                   \r13 L HLHLLLHLLHLHLHLLHLHLHHHLLLLLHHLLLLLLHLHHLHLHHLLLH \r18 L H \r14 L HLHHLHHLLLHH \r3 HHHL HLLHLLHH \r8 L HLLLLHHLHLLHLLLLHLHHHHLHH \r10 L H \r8 L ; 
+    "CR_1_TM_1" = 01101010011111100111001101110100001111101001111110110001010000100101 \r5 10 1100111100 \r10 1 0001101001110111 \r9 0 11000000 \r8 1 0001101001111010100000001011111010110011000001100000100101000001 \r11 0 10111101110011110111000111110100111000001000111110000010100000011 \r16 0 10101100011101001000010010100101011111 \r11 0 1001110100010011001110010 \r8 1 0111111101110100001000000010110000111001100100 \r13 1 000010010000001111000010011010010010001000001101000110010100111110000011010001011001111110000011101000 \r8 1 01101 \r8 0 1101001 \r9 0 10010110110000000110000101010000100111010001000011010 \r10 1 0011010110001011001000100111001100111000110100101011010111111001110000 \r3 0001 101111101111111010000100001000000101100110001101100010000010010 \r3 0001 0011000011100010100011011001010000001111101001110101110011011111100000101000101000001000001011 \r9 0 1 \r12 0 1110 \r3 1000 000010000000111100111 \r13 0 10010100110111001010000111011110100000110101110110011000100011111101111011111010111101110000101
+                  010111010110011 \r8 0 1011101010101101100001010000101001001101 \r25 0 100110100110010001 \r6 10 00010100111 \r11 0 11001110111011001011110111101110011111011; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............15       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................95:95       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............840      PERCENT IDDQ FAULTS.......77.306839   //
+//  TEST SEQUENCE.............95       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.15.1.2.1;  Stim_PI; 
+//  Processing the Static: EVENT 4.1.1.15.1.3.1;  Stim_Clock; 
+//  The current cycle count is at '17350'
+  Macro "TEST" { 
+    "ALLPIs" = 100 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.15.1.4.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.15.1.5.1;  Stim_Clock; 
+//  The current cycle count is at '17351'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.15.1.6.1;  Scan_Unload;  (overlap) 
+  "4.1.1.15.1.6": 
+//  Processing the Static: EVENT 4.1.1.16.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '17352'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 15;  Scan_Sequence  
+//  The current cycle count is at '18589'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHHLHLHLLHHHHHHLLHHHLLHHLHHHLHLLLLHHHHHLHLHHHHLLHLHHLLLHLHLLLLHLLHLH \r5 HL HHLLHHHHLLH \r23 L HH \r34 L HHHHLHLLHLLLLLLHLHHHHHLHLHHLHHLLLLLLHHLLLLLHLLHLH \r17 L HLHHHHLHHHLLHHHHLHHHLLLHHHHHLHLLLHLLLLLLHLLLH \r9 L HLHLLLLLLLHLHHH \r13 L HLLLLLLLHHHLHLLHLHLLLLHHHLLLHLHLHHHHH \r11 L HLLHHHLHLLLHLLHHLLHLLLLLLHLLLLHLLHHHLHLLLHLLLLHHLHLHLLLLLLLHLHHLHLHHHHLLHHLLHLL \r13 H LLLLHLLHLLLLLLHHHHLLLLHLLHHLLLLHLLHLLLHLLLLLHHLHLLLHLLLHLHLLHHHHHLLLLLHHLHLLLHLHHLLHHHHHHLLLLLHHHLHLLL \r8 H LHHLH \r8 L HHLHLLH \r9 L HLLHLHHLHHLLLLLLLHHLLLLHLHLHLLLHLLHHLLLLHHHLLLHLHLLL \r11 H LLHHLHLHHLLLHLHHLLHLLLHLLHHHLLHHLLHHHLLLHHLHLLHLLLLHLHLHHHHHHLLHHHLLLL \r3 LLLH \r7 H LHHHHHHHLHLLLLHLLLLHLLLLLLHLHHLLHHLLLHH \r9 L HHHLLHHLLLLLHLLLHLLLLHHHLHHHHLHLLLLLHHLHLLHHHLLHLHLLLLLLHHHHHLHLLHHHLLHLLHLHHHLHHLHHHHHHLLHLHLLLLHHHLHHHHLHLLLLLHHLHLLLLLLLH \r12 L HHHL \r3 HLLL LLLLHLLLLLLLHHHHLLH \r18 L HHHHHLHLHHLHLLHHHHHLHHHHLHHHHHLHLHHHHLHHHHHLHHLLHHLLLHLLLHHHHHHLHHHHLHHHHHLHLHHHHLHHHLLLLHLHLHLHHHLHLHHLLLLH \r9 L HHHLHLHLHLHHLHHLLLLLLH
+                  HLLHLLHLLHHLHLH \r34 L HHLLHLLLH \r6 HL LLLHLHLLHHLH \r11 L HHLHLLLHHHHLHHLLHLHHLHLHHHHLHHHLLHHHHLHHH; 
+    "CR_1_TM_1" = 01111101101010100001101010111000011110100000110111011010110111011100110111101110000001111010001010010110100001010011110010110101101001011001001010000101011001001110 \r15 1 01000 \r15 1 0 \r17 1 00101010100010011110110111111100010001100101111 \r15 0 111 \r16 0 110001000001001111001001111111010010011111000100101000010000101010011010011001000010100001 \r8 0 1000011111100110001001 \r35 0 11001011110010011111110110100010111101000010010001100100111010000001100111110100101000100110101101111010100010110110100111101010011001010011110010001010010100100100001100101100001100101010111011010010000000110001011010111000011111100 \r3 1101 1010111111011010000001 \r5 10 01110101100 \r9 1 0110100011010110010001001100010001010000100110110111010011100000010101001010000010000100100000010101000100101 \r8 0 10100010000010000100011000101 \r8 0 111100111010011000001101110111101011101011110100 \r12 1 0010100010101110111111010101110111110110110011011110010100100000100110000101011110 \r5 01 100111110111110000101101011111
+                  011000011100110100101101101100101 \r9 0 1011000000100101001100000111101100010101100100001000011111101100000110110100110100111001011 \r15 0 111; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............16       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................96:96       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............694      PERCENT IDDQ FAULTS.......78.111839   //
+//  TEST SEQUENCE.............96       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.16.1.2.1;  Stim_PI; 
+//  The current cycle count is at '18590'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.16.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.16.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.16.1.4": 
+//  Processing the Static: EVENT 4.1.1.17.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '18591'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 16;  Scan_Sequence  
+//  The current cycle count is at '19828'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHHHHHLHHLHLHLHLLLLHHLHLHLHHHLLLLHHHHLHLLLLLHHLHHHLHHLHLHHLHHHLHHHLLHHLHHHHLHHHLLLLLLHHHHLHLLLHLHLLHLHHLHLLLLHLHLLHHHHLLHLHHLHLHHLHLLHLHHLLHLLHLHLLLLHLHLHHLLHLLHHHL \r15 H LHLLL \r15 H L \r17 H LLHLHLHLHLLLHLLHHHHLHHLHHHHHHHLLLHLLLHHLLHLHHHH \r15 L HHH \r16 L HHLLLHLLLLLHLLHHHHLLHLLHHHHHHHLHLLHLLHHHHHLLLHLLHLHLLLLHLLLLHLHLHLLHHLHLLHHLLHLLLLHLHLLLLH \r8 L HLLLLHHHHHHLLHHLLLHLLH \r35 L HHLLHLHHHHLLHLLHHHHHHHLHHLHLLLHLHHHHLHLLLLHLLHLLLHHLLHLLHHHLHLLLLLLHHLLHHHHHLHLLHLHLLLHLLHHLHLHHLHHHHLHLHLLLHLHHLHHLHLLHHHHLHLHLLHHLLHLHLLHHHHLLHLLLHLHLLHLHLLHLLHLLLLHHLLHLHHLLLLHHLLHLHLHLHHHLHHLHLLHLLLLLLLHHLLLHLHHLHLHHHLLLLHHHHHHLL \r3 HHLH HLHLHHHHHHLHHLHLLLLLLH \r5 HL LHHHLHLHHLL \r9 H LHHLHLLLHHLHLHHLLHLLLHLLHHLLLHLLLHLHLLLLHLLHHLHHLHHHLHLLHHHLLLLLLHLHLHLLHLHLLLLLHLLLLHLLHLLLLLLHLHLHLLLHLLHLH \r8 L HLHLLLHLLLLLHLLLLHLLLHHLLLHLH \r8 L HHHHLLHHHLHLLHHLLLLLHHLHHHLHHHHLHLHHHLHLHHHHLHLL \r12 H LLHLHLLLHLHLHHHLHHHHHHLHLHLHHHLHHHHHLHHLHHLLHHLHHHHLLHLHLLHLLLLLHLLHHLLLLHLHLHHHHL \r5 LH HLLHHHHHLHHHHHLLLLHLHHLHLHHHHH
+                  LHHLLLLHHHLLHHLHLLHLHHLHHLHHLLHLH \r9 L HLHHLLLLLLHLLHLHLLHHLLLLLHHHHLHHLLLHLHLHHLLHLLLLHLLLLHHHHHHLHHLLLLLHHLHHLHLLHHLHLLHHHLLHLHH \r15 L HHH; 
+    "CR_1_TM_1" = \r5 01 001100000011101110011010110001100001000101001 \r6 10 010101101001000101100000111001111010110111001111100111010011100011000011 \r9 0 110010001001001001011010111011111001000 \r11 1 01011011110000011001101000101010011110011000100001010110001001011101000000101 \r6 10 110100010010100111000111111101011001011110110111000111010111101010001101111110001010111001001011101000100011110000100111100101000101011001 \r27 0 1001010 \r9 1 001110101101011011111100010101010000101101001001000101010111010110001101100100110 \r5 01 10101110001 \r10 0 1001011100100100110100000110111011001110110100000101110110011011010111110011100100110100100001010100010110110100 \r12 1 0110 \r16 1 01011101111110 \r9 1 00011 \r8 0 101111010000101000110011101001001010010110110101101001110010000000100000100000001111100100 \r8 1 01 \r16 0 1011 \r13 0 11 \r29 0 101110011011110100110011110101010000111110110000111 \r8 0 1111001010000100110011101100100110001000000010000101 \r12 0 1101011110001010000011011111010000110111110010011001110
+                  01010111011100101011111001001011101100101101000000111110110100111100100110011101001000001000001111111011000001001 \r19 0 110; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............17       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................97:97       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............639      PERCENT IDDQ FAULTS.......78.853050   //
+//  TEST SEQUENCE.............97       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.17.1.2.1;  Stim_PI; 
+//  The current cycle count is at '19829'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.17.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.17.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.17.1.4": 
+//  Processing the Static: EVENT 4.1.1.18.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '19830'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 17;  Scan_Sequence  
+//  The current cycle count is at '21067'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = \r5 LH LLHHLLLLLLHHHLHHHLLHHLHLHHLLLHHLLLLHLLLHLHLLH \r6 HL LHLHLHHLHLLHLLLHLHHLLLLLHHHLLHHHHLHLHHLHHHLLHHHHHLLHHHLHLLHHHLLLHHLLLLHH \r9 L HHLLHLLLHLLHLLHLLHLHHLHLHHHLHHHHHLLHLLL \r11 H LHLHHLHHHHLLLLLHHLLHHLHLLLHLHLHLLHHHHLLHHLLLHLLLLHLHLHHLLLHLLHLHHHLHLLLLLLHLH \r6 HL HHLHLLLHLLHLHLLHHHLLLHHHHHHHLHLHHLLHLHHHHLHHLHHHLLLHHHLHLHHHHLHLHLLLHHLHHHHHHLLLHLHLHHHLLHLLHLHHHLHLLLHLLLHHHHLLLLHLLHHHHLLHLHLLLHLHLHHLLH \r27 L HLLHLHL \r9 H LLHHHLHLHHLHLHHLHHHHHHLLLHLHLHLHLLLLHLHHLHLLHLLHLLLHLHLHLHHHLHLHHLLLHHLHHLLHLLHHL \r5 LH HLHLHHHLLLH \r10 L HLLHLHHHLLHLLHLLHHLHLLLLLHHLHHHLHHLLHHHLHHLHLLLLLHLHHHLHHLLHHLHHLHLHHHHHLLHHHLLHLLHHLHLLHLLLLHLHLHLLLHLHHLHHLHLL \r12 H LHHL \r16 H LHLHHHLHHHHHHL \r9 H LLLHH \r8 L HLHHHHLHLLLLHLHLLLHHLLHHHLHLLHLLHLHLLHLHHLHHLHLHHLHLLHHHLLHLLLLLLLHLLLLLHLLLLLLLHHHHHLLHLL \r8 H LH \r16 L HLHH \r13 L HH \r29 L HLHHHLLHHLHHHHLHLLHHLLHHHHLHLHLHLLLLHHHHHLHHLLLLHHH \r8 L HHHHLLHLHLLLLHLLHHLLHHHLHHLLHLLHHLLLHLLLLLLLHLLLLHLH \r12 L HHLHLHHHHLLLHLHLLLLLHHLHHHHHLHLLLLHHLHHHHHLLHLLHHLLHHHL
+                  LHLHLHHHLHHHLLHLHLHHHHHLLHLLHLHHHLHHLLHLHHLHLLLLLLHHHHHLHHLHLLHHHHLLHLLHHLLHHHLHLLHLLLLLHLLLLLHHHHHHHLHHLLLLLHLLH \r19 L HHL; 
+    "CR_1_TM_1" = 0100011001000001001001001001000011010101011101101 \r11 0 110101110111111101001100101110110001101010011010001010000001111000 \r3 0111 101011000110101110010001 \r9 0 10 \r6 01 11111010111101000011111010111100100001010011111110110110111100100000011001001011 \r8 0 11011110111101010000110110101001010011000000110010110 \r10 1 01110 \r13 1 0001001010101111 \r10 0 10111000111010011101100100001000001100001 \r35 0 1 \r5 10 010010101110111011000101011101101101100110000100010101111110101101100111010011110010110100101011101000010101111010101100000110010110010110000011100110010010 \r3 0011 110011111100100011011101111001 \r3 0110 11000111110101000011001000 \r12 1 0011111010111011100 \r19 1 0100001101101010000001001111000101100000010110111011001010011111101001101010010111011111100111 \r5 10 01 \r18 0 1 \r16 0 110001001 \r3 1110 00100 \r5 01 0000100000010000110110101010110111100111110100110001010001111100110001010010100100000100110000 \r3 0001 \r13 0 101001100001111010001000010110110001000010101
+                   \r8 0 110110011101000001 \r33 0 1011011001001011011100110110 \r3 1001 11100010011101001010000010100111100010011110; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............18       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................98:98       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............508      PERCENT IDDQ FAULTS.......79.442299   //
+//  TEST SEQUENCE.............98       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.18.1.2.1;  Stim_PI; 
+//  The current cycle count is at '21068'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.18.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.18.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.18.1.4": 
+//  Processing the Static: EVENT 4.1.1.19.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '21069'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 18;  Scan_Sequence  
+//  The current cycle count is at '22306'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHLLHLLLLLHLLHLLHLLHLLHLLLLHHLHLHLHLHHHLHHLH \r11 L HHLHLHHHLHHHHHHHLHLLHHLLHLHHHLHHLLLHHLHLHLLHHLHLLLHLHLLLLLLHHHHLLL \r3 LHHH HLHLHHLLLHHLHLHHHLLHLLLH \r9 L HL \r6 LH HHHHHLHLHHHHLHLLLLHHHHHLHLHHHHLLHLLLLHLHLLHHHHHHHLHHLHHLHHHHLLHLLLLLLHHLLHLLHLHH \r8 L HHLHHHHLHHHHLHLHLLLLHHLHHLHLHLLHLHLLHHLLLLLLHHLLHLHHL \r10 H LHHHL \r13 H LLLHLLHLHLHLHHHH \r10 L HLHHHLLLHHHLHLLHHHLHHLLHLLLLHLLLLLHHLLLLH \r35 L H \r5 HL LHLLHLHLHHHLHHHLHHLLLHLHLHHHLHHLHHLHHLLHHLLLLHLLLHLHLHHHHHHLHLHHLHHLLHHHLHLLHHHHLLHLHHLHLLHLHLHHHLHLLLLHLHLHHHHLHLHLHHLLLLLHHLLHLHHLLHLHHLLLLLHHHLLHHLLHLLHL \r3 LLHH HHLLHHHHHHLLHLLLHHLHHHLHHHHLLH \r3 LHHL HHLLLHHHHHLHLHLLLLHHLLHLLL \r12 H LLHHHHHLHLHHHLHHHLL \r19 H LHLLLLHHLHHLHLHLLLLLLHLLHHHHLLLHLHHLLLLLLHLHHLHHHLHHLLHLHLLHHHHHHLHLLHHLHLHLLHLHHHLHHHHHHLLHHH \r5 HL LH \r18 L H \r16 L HHLLLHLLH \r3 HHHL LLHLL \r5 LH LLLLHLLLLLLHLLLLHHLHHLHLHLHLHHLHHHHLLHHHHHLHLLHHLLLHLHLLLHHHHHLLHHLLLHLHLLHLHLLHLLLLLHLLHHLLLL \r3 LLLH \r13 L HLHLLHHLLLLHHHHLHLLLHLLLLHLHHLHHLLLHLLLLHLHLH
+                   \r8 L HHLHHLLHHHLHLLLLLH \r33 L HLHHLHHLLHLLHLHHLHHHLLHHLHHL \r3 HLLH HHHLLLHLLHHHLHLLHLHLLLLLHLHLLHHHHLLLHLLHHHHL; 
+    "CR_1_TM_1" = 110010000100011010101110110111101 \r9 0 1111010011000110110111110100101100110100010001010100111100011101011010101100101101101011010110010 \r9 1 001001011011111100 \r11 1 000000111111101111100100011111101111100000101100011110111100111110011110011101000111111000001001110100111110000001001110011110110001111110000010100001011111110001101000111000110000101001111110001011010110111110001101000000011000111100100001101110 \r14 1 00100100000011011111101000101110011111010000110110110100010100100100010011111101110110000111010000011110101011000110111011001100001101011100010010000100000010001101111100100111110011101011001110000001111001010110100101000000100110111010101100101101000 \r5 01 0000100000010101011100001111010001100001100000101111011100111011001001100110100011101001100000001110110011111 \r9 0 \r4 10 01000111100 \r8 1 00010001111110 \r3 0111 10 \r10 1 01110011111 \r37 0 1000000110000000111 \r11 0 1111100010001101110111100 \r9 1 011100 \r9 1 011110000011111011100110110000011000011011111010001001111
+                  1101010011100010111111100110001000000100000010101011111 \r24 0 1111101000 \r8 1 011111100100011101011100101110101 \r8 0 110001 \r10 0 111101000001000010; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............19       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................99:99       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............311      PERCENT IDDQ FAULTS.......79.803047   //
+//  TEST SEQUENCE.............99       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.19.1.2.1;  Stim_PI; 
+//  The current cycle count is at '22307'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.19.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.19.1.4.1;  Scan_Unload;  (overlap) 
+  "4.1.1.19.1.4": 
+//  Processing the Static: EVENT 4.1.1.20.1.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '22308'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 19;  Scan_Sequence  
+//  The current cycle count is at '23545'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HHLLHLLLLHLLLHHLHLHLHHHLHHLHHHHLH \r9 L HHHHLHLLHHLLLHHLHHLHHHHHLHLLHLHHLLHHLHLLLHLLLHLHLHLLHHHHLLLHHHLHLHHLHLHLHHLLHLHHLHHLHLHHLHLHHLLHL \r9 H LLHLLHLHHLHHHHHHLL \r11 H LLLLLLHHHHHHHLHHHHHLLHLLLHHHHHHLHHHHHLLLLLHLHHLLLHHHHLHHHHLLHHHHHLLHHHHLLHHHLHLLLHHHHHHLLLLLHLLHHHLHLLHHHHHLLLLLLHLLHHHLLHHHHLHHLLLHHHHHHLLLLLHLHLLLLHLHHHHHHHLLLHHLHLLLHHHLLLHHLLLLHLHLLHHHHHHLLLHLHHLHLHHLHHHHHLLLHHLHLLLLLLLHHLLLHHHHLLHLLLLHHLHHHL \r14 H LLHLLHLLLLLLHHLHHHHHHLHLLLHLHHHLLHHHHHLHLLLLHHLHHLHHLHLLLHLHLLHLLHLLLHLLHHHHHHLHHHLHHLLLLHHHLHLLLLLHHHHLHLHLHHLLLHHLHHHLHHLLHHLLLLHHLHLHHHLLLHLLHLLLLHLLLLLLHLLLHHLHHHHHLLHLLHHHHHLLHHHLHLHHLLHHHLLLLLLHHHHLLHLHLHHLHLLHLHLLLLLLHLLHHLHHHLHLHLHHLLHLHHLHLLL \r5 LH LLLLHLLLLLLHLHLHLHHHLLLLHHHHLHLLLHHLLLLHHLLLLLHLHHHHLHHHLLHHHLHHLLHLLHHLLHHLHLLLHHHLHLLHHLLLLLLLHHHLHHLLHHHHH \r9 L \r4 HL LHLLLHHHHLL \r8 H LLLHLLLHHHHHHL \r3 LHHH HL \r10 H LHHHLLHHHHH \r37 L HLLLLLLHHLLLLLLLHHH \r11 L HHHHHLLLHLLLHHLHHHLHHHHLL \r9 H LHHHLL \r9 H LHHHHLLLLLHHHHHLHHHLLHHLHHLLLLLHHLLLLHHLHHHHHLHLLLHLLHHHH
+                  HHLHLHLLHHHLLLHLHHHHHHHLLHHLLLHLLLLLLHLLLLLLHLHLHLHHHHH \r24 L HHHHHLHLLL \r8 H LHHHHHHLLHLLLHHHLHLHHHLLHLHHHLHLH \r8 L HHLLLH \r10 L HHHHLHLLLLLHLLLLHL; 
+    "CR_1_TM_1" = \r18 1 0 \r23 1 00000100000 \r15 1 0 \r11 1 00100000 \r24 1 000 \r21 1 0 \r57 1 \r8 0 11010001110010 \r15 1 0 \r16 1 010 \r9 1 010 \r17 1 00010011000000010 \r16 1 \r8 0 \r26 1 011111101111010 \r33 1 \r8 0 \r17 1 \r32 0 \r9 1 00011011110 \r15 1 0111001111110 \r141 1 000000 \r37 1 010 \r30 1 0000 \r32 1 0111 \r3 1110 001110 \r50 1 0 \r15 1 000110 \r83 1 010 \r12 1 0111111101101011111001011110100000001010011 \r9 0 10 \r8 1 00011011111101110001111010000101001110000111011000000111111001001010000 \r10 1 011111110110 \r8 1 01111100 \r67 1 00 \r19 1 00 \r22 1 001101101; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............20       TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................100:100     //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  IDDQ FAULTS...............1347     PERCENT IDDQ FAULTS.......81.365494   //
+//  TEST SEQUENCE.............100      TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 4.1.1.20.1.2.1;  Stim_PI; 
+//  The current cycle count is at '23546'
+  Macro "TEST" { 
+    "ALLPIs" = 000 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+//  Processing the Static: EVENT 4.1.1.20.1.3.1;  Measure_Current; 
+  IddqTestPoint; 
+//  Processing the Static: EVENT 4.1.1.20.1.4.1;  Scan_Unload;  (no_overlap) 
+  "4.1.1.20.1.4": 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '23547'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 20;  Scan_Sequence  
+//  The current cycle count is at '24784'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = \r18 L H \r23 L HHHHHLHHHHH \r27 L \r8 H \r24 L HHH \r165 L HHH \r13 L H \r18 L HHHHHH \r33 L \r8 H \r33 L \r8 H \r17 L \r32 H \r19 L H \r15 L H \r10 L HHLLLLLLLH \r133 L HHHHH \r38 L H \r68 L H \r10 L H \r202 L HH \r82 L HLLHLLH \r12 L HHHH \r25 L H \r8 L HLLLLLHH \r67 L H \r44 L HHLLHLLHL; } 
+
+// Inserted final non-scan Pattern
+//  The current cycle count is at '24785'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+  } 

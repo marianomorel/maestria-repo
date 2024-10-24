@@ -1,0 +1,991 @@
+STIL 1.0; 
+
+//***************************************************************************//
+//                             STIL VECTOR FILE                              //
+//Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec//
+//***************************************************************************//
+//                                                                           //
+//  FILE CREATED..............October 19, 2023 at 22:12:14                   //
+//                                                                           //
+//  PROJECT NAME..............modus_project                                  //
+//                                                                           //
+//  TESTMODE..................FULLSCAN_TIMED                                 //
+//                                                                           //
+//  TDR.......................ate.tdr                                        //
+//                                                                           //
+//  TEST PERIOD...............100.000  TEST TIME UNITS...........ns          //
+//  TEST PULSE WIDTH..........10.000                                         //
+//  TEST STROBE OFFSET........70.000   TEST STROBE TYPE..........edge        //
+//  TEST BIDI OFFSET..........0.000                                          //
+//  TEST PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                     SCAN OVERLAP..............yes         //
+//  SCAN PERIOD...............100.000  SCAN TIME UNITS...........ns          //
+//  SCAN PULSE WIDTH..........10.000                                         //
+//  SCAN STROBE OFFSET........10.000   SCAN STROBE TYPE..........edge        //
+//  SCAN BIDI OFFSET..........0.000                                          //
+//  SCAN PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                                                           //
+//   Individually set PIs                                                    //
+//  "scan_clk" (PI # 115)                                                    //
+//  TEST OFFSET...............10.000   PULSE WIDTH...............10.000      //
+//  SCAN OFFSET...............20.000   PULSE WIDTH...............10.000      //
+//                                                                           //
+//  Active TESTMODEs TM = 1 ..FULLSCAN_TIMED                                 //
+//                                                                           //
+//***************************************************************************//
+
+  Include "STIL.FULLSCAN_TIMED.signals.stil"; 
+
+//***************************************************************************//
+//                            TIMING DEFINITIONS                             //
+//***************************************************************************//
+
+  Timing { 
+
+    WaveformTable "test_cycle" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '10.000000ns' D/U/Z/U; '20.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+    } } 
+
+    WaveformTable "scan_cycle_TM_1" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '20.000000ns' D/U/Z/U; '30.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+    } } 
+} 
+
+//***************************************************************************//
+//                               TEST VECTORS                                //
+//***************************************************************************//
+
+PatternBurst 
+  MAIN_BRST { Termination { "ALLPOs" TerminateOff; } 
+              PatList { MAIN_TEST; } } 
+
+PatternExec 
+  MAIN_EXEC { PatternBurst MAIN_BRST; } 
+
+Pattern 
+  MAIN_TEST { 
+
+//***************************************************************************//
+//                                                                           //
+//  EXPERIMENT................3  Name = static_logic_0                       //
+//  DATA FORMAT...............binary                                         //
+//                                                                           //
+//  TEST SECTION..............1        TEST SECTION TYPE.........logic       //
+//                                                                           //
+//  The range of Tests in this Test Section......................66:81       //
+//                                                                           //
+//  TESTER TERMINATION........none     TERMINATION DOMINATION....tester      //
+//                                                                           //
+//***************************************************************************//
+
+//***************************************************************************//
+//  TEST PROCEDURE............2        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................66:81       //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  STATIC FAULTS.............3254     PERCENT STATIC FAULTS.....78.847244   //
+//  TEST SEQUENCE.............66       TYPE......................normal      //
+//***************************************************************************//
+
+//  Processing the Static: EVENT 3.1.1.2.1.1.1;  Scan_Load;  (no_overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '1'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 1;  Scan_Sequence  
+//  The current cycle count is at '1238'
+  Macro "SCAN_TM_1" { 
+    "CR_1_TM_1" = \r5 01 001100010101001001111001010111011000010000001010111001100110101011010011000101 \r19 0 1010100011110001011101 \r10 0 1 \r8 0 111001010110001 \r8 0 1001010100011111001100011111100011001100011011100110111001000111001100001011111101100101011110011100111010101110100011100111010000111110011111100111000101111001000100111010001110000000111011001111010101011011001000110000010010111011010101110101100101000001111100110110101010011101110010110001001111100001000101110100111110001100001110111101111000101001000110111000011011111000011011101111011010100 \r3 1101 011100011111 \r8 0 111111010001000011010111101110110011000101101000111101110000011011000000011101 \r5 10 0101111001100001000110101101100100110010100101100001100001000110001100101111111000000010101011110001111101111001100011011010001110101100110 \r8 1 010110010011011110111000000111101111111010001101110001000 \r33 1 0100110100001000100101 \r12 0 1111100010101001111011111110100011011100010001111101100011101010110000111100101001010111111011101100
+                  11000000110111100011111011 \r6 10 11000010000010111010000100100 \r9 1 000100111010110010 \r8 1 011111001111001111101111011 \r16 0 1001100000001 \r20 0 ; } 
+
+//  Processing the Static: EVENT 3.1.1.2.1.2.1;  Stim_PI; 
+  "3.1.1.2.1.4": 
+//  Processing the Static: EVENT 3.1.1.2.1.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.1.4.1;  Measure_PO; 
+//  The current cycle count is at '1239'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.1.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.1.5": 
+//  Processing the Static: EVENT 3.1.1.2.2.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '1240'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 2;  Scan_Sequence  
+//  The current cycle count is at '2477'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHHLLHHLLLLHHLHLHLLHLLHHHHLLHLHLHHHLH \r11 L HLHLHHHLLHHLLHHLHLHLHHLH \r30 L HLHLHLLHLHHHLLHHLHHHHH \r10 L H \r8 L HHLHLHLLHHLLLLH \r8 L HLLHLHHLLLHHHHHHLLHHLLHLLLLHHLLLHHLLHHLLLHHLHHHLLHHLHHHLLHLLLHHHLLHHLLLLHLHLHHLHHHHLLHLHLHHHHLLHHHLLHHHLHLHHHHHLHLLLHHHLLHHHHLLLLLHHHHHLH \r10 L HHHLHLHHHHLLHLLLHLLHHHLHLLLHHHLLLLLLLHHHLHHLH \r31 L HHLHHHLHHLHLHLHHHHLHLHLHHHHLLLLLHHHHHLLHHLHHLHLHLHLLHHHLHHHLLHLHHLLLHLLHLHHHLLLLHLLLHLHHHLHLLHLHHHLLLHHLLLLHHHLHHHHLHHHHLLLHLHLLHLLLHHLHHHLLLLHHLHHHHHLLLLHHLHHHLHHHHLHHLHLHLL \r3 HHLH LHHHLLLHHHHH \r8 L HHHHHHLHLLLHLLLLHHLHLHHHHLHHHLHHLLHHLLLHLHHLHLLLHHHHLHHHLLLLLHHLHHLLLLLLLHHHLHHLHLHLHLLLLHLHHHHLLHHLLLLHLLLHHLHLHHLHHLLHLLHHLLHLHLLHLHHLLLLHHLLLLHLLLHHLLLHHLLHLHLLLHLLLLLHHLLH \r11 L HHHHLHHHHHHHLHLLLHHLHHHLLLHLLLHLHLHHLLHHLHLLLLLHHLHHLLLHLLLLLLL \r9 H LLLLHHHHLHHHHHHHLHLLLHHLHHHLLLHLLLLLHHHHLHHHHHHHLHLLLHHLHHHLLLHLLLHLHLHHHLHLLLLHHLLHLLHLH \r12 L HHHHHLLLHLHLHLLHHHHLHHHHHHHLHLLLHHLHHHLLLHLLLHHHLLLHLLLLLHHLHLHLHHLLLLHHHHLLHLHLLHLHLHHHHHHLHHHLHHLLHHLLLLLLHLHLH
+                  LHHLLLHLLHHHHHLLLHLLLHHHLHHLLHLLLLLLLHLHHHLLHLLLHLLHLL \r9 H LLLHLLHHHLHLHHLLH \r31 L H \r20 L HLLHHHLLLLLH \r19 L HL; 
+    "CR_1_TM_1" = 01000000011011010111011000110000100000111010000101111101011010010111111100010101100000100000110111011011001000111101000010000010100001100110110110010010011010000001010110110100101 \r18 0 101 \r15 0 1010111001111000110010011110010010100110000001010111101111111011010100 \r12 1 01101001100111101010100010001010000110101010011110011100110010110001001010100101011001100001111101010011110000001101011000 \r9 1 000011011000110000010000111 \r5 10 11010010111100110100011111100110101100100110011000110010110000110011010011111100100001010111000110000110001000110010000 \r6 01 001100101010110100110000001110000111100100101111110000100000111001000100100101110100000010100000110110100101001101011101011111010111110100011101100111110100111000101011111100011110111100010011000100111111011001100101001111101110001110011010001100010110001110100110100 \r11 01 000101000011000100100001011100101001 \r8 0 11100011111 \r12 0 10010001011001001001100 \r15 01 000001001001010001011101001101100111011101101100011011010111100100011
+                  0000111001011100000010100100 \r6 01 001011101010111010001100111101101111100011001000110111010110000111001010 \r11 1 0110100110001 \r3 1100 \r14 0 1; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............67       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.2.2.1;  Stim_PI; 
+  "3.1.1.2.2.4": 
+//  Processing the Static: EVENT 3.1.1.2.2.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.2.4.1;  Measure_PO; 
+//  The current cycle count is at '2478'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.2.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.2.5": 
+//  Processing the Static: EVENT 3.1.1.2.3.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '2479'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 3;  Scan_Sequence  
+//  The current cycle count is at '3716'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLLLLLHHLHHLHLLHHLHHLLLHHLLLLHLLLLLHHHLLLHLHLHHHHLLHLHHLHLLHLHHHHHHHLLLHLHLHLLLLLLLHHLLHLLHHLLLLHHHHHLHLHLLLLHHHLHLLLHLLLLHHHLLLHLLHHLLLLHHHHHLHHLHLHHLLHHLLLLLLHLHLHHLHHLHLLHHLLLH \r17 L H \r15 L HLHLHHHLLHHHHLLLHHLLHLLHHHHLLHLLLLHLLHHHHHLLHLLHHHHHHLHHHHHHHLHHLHLHLH \r13 L HHLHLLHHLLHHHHH \r8 L HLLLHLHLLLLHHLHLHLHLLHHHHLLHHHLLHHLLHLHHLHHLHLHLHHHLHLLLHHLLHHHHLHHLHHHHHLLHLLHHHHLLLLHLHHLLHHHHLL \r9 H LLLLHHLHHLLLHHLLLLLHLLLLHHH \r6 HL LHLLHLHHHHLLHHLHLLLHHLHHHLLHLLHLHHLLHLLHHLLHHLLLHHLLHLHHLLLLHHLLHHLHLLHHHHHHLLHLLLLHLHLHHHLLLHHLLLLHHLLLHLLLHHLLHLLLL \r6 LH LLHHLLHLHLHLHHLHLLHHLLLLLLHHHLLLLHHHHLLHLLHLHHHHHHLLLLHLLLLLHHHLLHLLLHLLHLLHLHHHLHLLLLLLHLLLLH \r29 L HHLHH \r29 L HLLLLHLHLLLH \r10 L HLLLHLLLHHLL \r14 LH LLHHLHLLHH \r9 L HLLH \r12 L HHHLHLLHHLHLL \r11 LH LLLHLHLHLL \r14 LH LLHLLLHHHLLLHHHHH \r12 L HLLHLLLHLHHLLHLLHLLHHLL \r14 LH LLLLLLHLLLLLLHLHLLLHLHHHLHLLHHLHHLLHHHLHHHLHHLHHLHLHHLHHLHLHHHHLLLHLLLHHHHLHLLLLHLHHHLLLLLLHLHLLHLLLHHLHLLHLHLLLLHLHHLHHHHLHLHLHHLHHLLHLLLHLLLLLLHHLLLHHLLHLLLH
+                  HLHHHLHLHHLLLLHHHLLHLLHH \r18 L HHLLHHLHLHHHLLHL \r17 H ; 
+    "CR_1_TM_1" = 01010000010001 \r3 0100 0101001110010 \r10 1 0011111101111000010111101101010100110100 \r17 1 00110100001011010001110 \r19 1 0001010110100110101001010011011101101100000010011111 \r10 0 100111011011001010111110111110000000100001100010010111000000 \r8 1 01111100000001111111010111100000011010001000101110000111000001010000010100011111110111110000001011110101011101101101100010111110111100010010011110000010100011001101001110000111110100001001111001101111000010101001111100110000010111011011100011010110001110001100110001001101110101100111000011001001011111001001 \r8 0 100100 \r10 1 \r4 0100 000011011010111110000001101010010101100010001111100111000001010101001010010100010101011100000010 \r3 1101 01111001000110100010011011100100000011111000110101011 \r3 1110 0011101011011010 \r10 1 010010000100000011100100010101001100 \r51 1 0 \r15 1 0001011111001011101110110110 \r8 1 0010000011011111011101111011111001111100111110011100111110 \r11 1 011110 \r9 1 010000010010100110000011010001000110011101011000010110001
+                  1110100011110101001000111101001100111010101100011111001110101011111010001011100000001000000100101001100010011111110001 \r14 0 ; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............68       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.3.2.1;  Stim_PI; 
+  "3.1.1.2.3.4": 
+//  Processing the Static: EVENT 3.1.1.2.3.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.3.4.1;  Measure_PO; 
+//  The current cycle count is at '3717'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.3.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.3.5": 
+//  Processing the Static: EVENT 3.1.1.2.4.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '3718'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 4;  Scan_Sequence  
+//  The current cycle count is at '4955'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLHLLLLLHLLLHLHLHHHHHLHHHLLHLHHHHLHHLHLHLHHLHHLLLLHHLHHLHHHHLLLLHLHHHHLHHLHLHLLLLLHHLHHH \r17 L H \r8 L HHHLLHLLHHHHHHH \r17 L HLLHHLHLLHHLLLHHLHLHLLHLHLLHHLHHLLHHLHHLLLLLLHLHLLLHH \r10 L HLLHHH \r22 L HHHHHHLHHLLHLHHLLLHLLHHLLHLLLLLL \r8 H LHHHHHLLLLLLHLLLLLLHLHLHHHHLLLLLLHHHHLLLLLLLHLHHHLLLLHHHLLLLLHLHLLLLLHLHLLLHHHHHHHLHHHHHLLLLLLHLHHHHLHLHLHHHLHHLHHLHHLLLHLHHHHHLHHHLHHLLLHHLHHHHHLLLLLHLHLLLHHLLHHLHLLHHHLLLLHHHHHLHLLLLHLLHLHHLLHHLHHHHLLLLHLHLHLLHHHHHLLHHLLLLLHLHHHLHHLHHHLLLHHLHLHHLLLHHHLLLHHLLHHLLLHLLHHLHLHHHLHHHLLLHHHLHLHHLHHLHLHHHHHLLHLLH \r8 L HLLHLL \r10 H \r4 LHLL LLLLHHLHHLHLHHHHHLLLLLLHHLHLHLLHLHLHHLLLHLLLHHHHHLLHHHLLLLLHLLHHLHLLHLHLLHLHLLLHLHLHLHHHLLLLLLHHH \r5 HL LHHLLHLLLLLHLHHHHLLHLLHLLHHHLLHLLLHLHLLLLH \r43 L \r7 H LLHLHLLHLHLLLLHHHHHLLHHLLHHHHHHLLHHL \r51 H L \r11 H LHHHLLHH \r8 L \r3 HLHH LHHH \r9 L HLLHHLLHHHHHL \r11 H LHHHHLHHHHHHHLLHHHHHLLHHHLLHHHHHL \r11 H LHHHHLHHHHHHHLHLLLLHLLHLLHLH \r10 L HLLHLLLLLLHHLLHHLLHLLHLHLLHLLHHLHHHHLLLLHHLHHHLH \r33 L HHHLHLHHHLHLHLHHHHHLHLL
+                  LHLHHHLHHLLLLLHLLLLLLHLLHLHHHHHLLHHLLHHHHLHHLLLL \r13 H L; 
+    "CR_1_TM_1" = 10010011011101110001011110111001010101101100111 \r3 1100 000001111000011110110010100001000110001011011000111110010010110110000001001100010010110001101010011111011001110001101100110011100100000111110000100100000101110111001110110001000000011100111011010110000011100000001000001110001000000010000011001111000100100111100010 \r5 01 0010 \r8 1 01001110111000001011001010001010101110110110111011100110110010100110111110100011101 \r8 0 1111000010100110100110000110010100011011100000001101000001110101101110111 \r8 0 11010 \r3 1000 1100010 \r3 1001 00001011100110111000110001111000000010110001100101001100101011000011100010010110100100001100011100110111010100011110111000110010001100001010100001111111011001011 \r10 0 111110111110100 \r11 1 00101100001000110101110011000110100100000110 \r11 1 0101111110000100110100000011101010101110010001101100011 \r20 0 1 \r11 0 110 \r29 1 01111110100100 \r8 1 00100001001 \r9 0 110101 \r15 10 001101100000010100111011101001001110011000010010011101000101011101111010
+                   \r3 1001 1101011000000010110010001001110101 \r33 0 11011011010001 \r5 10 \r7 1 01100011001100001010110000110000100000011 \r10 0 11; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............69       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.4.2.1;  Stim_PI; 
+  "3.1.1.2.4.4": 
+//  Processing the Static: EVENT 3.1.1.2.4.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.4.4.1;  Measure_PO; 
+//  The current cycle count is at '4956'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = H \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.4.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.4.5": 
+//  Processing the Static: EVENT 3.1.1.2.5.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '4957'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 5;  Scan_Sequence  
+//  The current cycle count is at '6194'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLLHLLHHLHHHLHHHLLHHLHHHHLHHHLLHLHLHLHHLHHLHHHLLLLLHHLHHLLLLLLLHHHHLLLLHHHHLHH \r30 L HHLLLHLLHLLLHHLLLLLLHH \r18 L HLHHLHLLHHHHLLHHLLHHHLLLHHLHHLHHLHLHHHLLHLLLLHLLLLHLLLLHLLHLLLLLHLHHHLHHHLLHHHLHHLLLHLLLLLLLHHHLLHLLLHHHHLHHLLLLHLHHHLLHLLLLLHLHHHHHLLLHLLLLLLLHLLLLLHHLLHHHHLLLHLLHL \r9 H L \r5 LH LLHL \r8 H LHLLHHHLHHHLLLLLHLHHLLHLHLLLHLHLHLHHHLHHLHHLHHHLHHHLLHHLHHLLHHHLLHHHLLLHHLHLLLHHHLH \r8 L HHHHLLLLHLHLLHHLHLLHHLLLLHHLLHLHLLLHHLHHHLLLLLLLHHLHLLLLLHHHLHLHHLHHHLHHH \r8 L HHLHL \r3 HLLL HHLLLHL \r3 HLLH LLLLHLHHHLLHHLHHHLLLHHLLLHHHHLLLLLLLHLHHLLLHHLLHLHLLHHLLHLHLHHLLLLHHHLLLHLLHLHHLHLLHLLLLHHLLLHHHLLHHLHHHLHLHLLLHHHHLHHHLLLHHLLHLLLHH \r35 L H \r32 L HLLLLLHHLLLHHLLLHH \r46 L HHLLLLHH \r8 L HLHLHHLLHHLLLHHLLHHHHHHLHHH \r20 L H \r11 L HHL \r29 H LHHHHHHLHLLHL \r9 H LH \r18 L HHHHLH \r15 HL LLHHLHHLLLHLLHLHLLHHHLHHHLHLLHLLHHHLLHHLLLLHLLHLLHHHLHLLLHLLLLLLLHLHLHLHHLHLHLLHHLLHHHLHLHHLLLLLLLHLHHLHLLLLHLLHHHLHLH \r33 L HHLHHLHHLHLLLH \r5 HL \r10 H LLLHHLLHHLLLLHLHLHHLLLHLHLHLHLLLLLLLHL \r12 H ; 
+    "CR_1_TM_1" = 001100001000110000110011110100010100101011010111110111101011100000110110110011111 \r9 0 \r10 1 011111100110011101010011011100 \r11 1 0111110011010111110111100101110000100000010001100010001001011100010010100100110100111100100011000101101111010100011100100 \r21 1 0 \r16 1 001100110101111100110000100100100101001000011100100101111100000011110010111001101011110010100001100001001010101110110001010111011000011100010100000110111011110000001011000110011011001101100100001111001100000111111000111010110111011011100010100011001010101001110101101001110010001100000100111 \r5 10 11001101101111011101101000110111100011110101110010100101010111110000001101010100000101010100111001010111100101011010001110010100 \r8 1 010000111110 \r5 01 \r8 1 \r7 0 11010011001011011011111001110011001001011100101100101110100110001010100010111000010010001 \r44 0 1 \r17 0 100001110010100101100000001 \r15 0 11 \r33 0 1011000010001100010101001100100111110100100010101101100110110001111011011001000001010000110100100100111110101010000010
+                  111010001100100000010110001000010100000100011101010011110111100010000100000010110000110001001000010001 \r13 0 10; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............70       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.5.2.1;  Stim_PI; 
+  "3.1.1.2.5.4": 
+//  Processing the Static: EVENT 3.1.1.2.5.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.5.4.1;  Measure_PO; 
+//  The current cycle count is at '6195'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.5.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.5.5": 
+//  Processing the Static: EVENT 3.1.1.2.6.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '6196'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 6;  Scan_Sequence  
+//  The current cycle count is at '7433'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LLHHLLLLHLLLHHLLLHHHLLHHHHLHLLLHLHLLHLHLHHHHHHHLHHHHHLLHLHHHLLLLLHHLHHLHHLLHHHH \r8 L HLLLHHHHLLHLHHHLLHHLLHHHLHLLLLLLLHHLHHHHHHHLLHHHHLLHLHHHLLHHLHHLHLLLLLHLHLLH \r19 L H \r31 L HLLHHLHLLHHHHLLHLLLHHLLLHLHHLHHHLHHLLHLLHHHLLLLHL \r20 H \r13 L HLLLLLLHLLHHLHHLLLH \r9 L HLLHLLHLLHLHLLHLLLLHHHLLHLLHLHHHHHLLLLH \r19 L HHLHHLHLHHLHLHHLLLLHLLHHHLHLHHHLHLLHLLLHLHHHLHHLLLLHHHLLLHLHLLLLLHHLHHHLHHHH \r9 L HLLLHHLLHHLHHLLHHLHHLLHLLLLHLHHLLHHLLLLLHHHHHHLLLHHHLHLHHLHHHLHHLHHHLLLHLHLLLHHLLHLHLHLHLLHHHLHLHHLHLLHHHLLHLLLHHLLLLLHLLHHH \r5 HL HHLLHHLHHLHHHHLHHHLHHLHLLLHHLHHHHLLLHHHHLHLHHHLLHLHLLHLHLHLHHHHHLLLLLLHHLHLHLHLLLLLHLLLLH \r29 L HHLH \r30 L HLLHLHHHLLLH \r49 L HLLHHLHLH \r10 L HHLLLHLHLHHLL \r10 H LHHHLLH \r44 L H \r17 L HLLLLHHHLLHHLLLHLHLLHLLLLLH \r15 L H \r34 L HLLHLLLLHLLLHLLLLHLHLHLLHHLLHLLHHHHHLHLLHLLLHLHLHHLHLLLHHLHLLLLLHHLHLHLLLLLLHLLLLHLHLLLLHHLHLHHLLHLHLHHHLLLLLHHLHHLLH \r33 L HLLLLLHLLLHHHLHLHLLHHHHLHHHHLLLLHLLLLHLLLLLLHLHHLLHHHHLLLHLLHHLLLHLLLL \r14 H L; 
+    "CR_1_TM_1" = \r5 01 00110011000001001011101111100111110011101110011110001111000010000110000101101 \r19 0 1010011001000010100101001001 \r15 0 1110110100011111100101000111111000111100001011111100100 \r9 1 00001100101011010011110011000010001110010011000101011 \r9 0 111110111011 \r9 0 1011000110001111110101100101010001100010111001011001010100101011111101011011010110011011010000100001100110110000110110110001101111100101110000001101010000110101011010000011101001101101001110110001000011010110111001011101011100111110110100110000110010011000001101110111001001010001001011000001100110100110010 \r5 01 0010100100100100000011000010101010011111101111100100110000011001101110010100110010101111101101101000011000000010000100011110000001001011101011011111001111000000111100011101111111000010111010101000011100010110100 \r3 0011 111010010010101101011000 \r23 1 0 \r8 1 \r7 0 1 \r24 0 10110000001110111010001 \r12 0 100110010010 \r10 1 00110110000001101111000110011100100001111010010010000100100010000000111011000111100110010110100
+                  001111110100011010100110000010100100100010100000001 \r25 0 1011101101001110001111100111010100110111111011110100101001110100011001111000101100010; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............71       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.6.2.1;  Stim_PI; 
+  "3.1.1.2.6.4": 
+//  Processing the Static: EVENT 3.1.1.2.6.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.6.4.1;  Measure_PO; 
+//  The current cycle count is at '7434'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.6.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.6.5": 
+//  Processing the Static: EVENT 3.1.1.2.7.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '7435'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 7;  Scan_Sequence  
+//  The current cycle count is at '8672'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = \r5 LH LLHHLLLLHLHHHHLLHHLLLLHLLLLHHLLLHLLHLLLHLHHLHHHHLLLHHHHLLLLHLLLLHH \r14 L HLLHLHHLLHLHLHLLLLLHHLHLHLHLLLHHLHHLLLLHLHLLHLHHLLHLHLHLLLHHHHLHHLHLLHLHLHHHLLHLHLLLHHHHHLLLLHHHHLLLLHHLLLLLHLLHLL \r9 H LLLLHHLLHLHLHHLHLLHHHHLLHHLLLLHLLHHHHLLHLLHHLLLHLHLHH \r9 L HHHHHLHHHLHH \r8 L HLLHH \r14 L HLLLLLLHLHLHLLLHHLLLHLHHHLLHLHHLLHLHLHLLHLHLHHHHH \r30 L HLHHLLHHLHHLLLHHHHLHHLLLHLHHLHHHHHLLHLHHHLLLLLLHHLHLHLLLLHHLHLHLHHLHLLLLLLHHLHLLHHLHHLHLLHHHLHHLLLHLLLLHHLHLHHLHHHLLHLHHHLHLHHHLLHHHHHLHHLHLLHHLLLLHHLLHLLHHLLLLLHHLHHHLHHHLLHLLHLHLLLHLLHLHHLLLLLHHLLHHLHLLHHLLHL \r5 LH LLHLHLLHLLHLLHLLLLLLHHLLLLHLHLHLHLLHHHHHHLHHHHHLLHLLHHLLLLLHHLLHHLHHHLLHLLLLHHLLHLHLHHHHHLHHLHHLHLLLLHHLLLLLLLHLLLLHLLLHHHHLLLLLLHLLHLHHHLHLHHLLHHHHLLLHLLLLLHHLLLHHHHHHHLHLLHHLLHHHLLHHLHHLLLLLLHHLHHHH \r13 L HHLLLLLL \r8 H LLLLHHHLHHHHHHLHL \r24 H L \r8 H \r7 L H \r26 L HHLLHLLLHHHHHHHLHLLHH \r12 L HLLHHLHLLHHLLLLHHHHLHLLHLLHLLLLH \r3 LLHL HHHHHHLHLLHLHLLHHHHLHLLHLLHLLLLH \r3 LLHL LLLLLHHHLLLHHHHLLHHLLLHLHLLLLLHLLLHHHLLLLLHHLLLHLHLHH
+                  LHLHLHLLLHLLHLLHLLH \r34 L HHLHHHLHLLHHHLLLHHHHHLLHHHLHLLHLLHHLHHHHHHLHHHHLHHHHLLLLHLHLHLLLHHLLHHHHLLLHLHHLLLHL; 
+    "CR_1_TM_1" = 01000110010000010111100111101100111001111001000010111110110011000011011111 \r5 10 1111 \r14 0 10001011001001001110010100001 \r16 0 1011101001001111011001111101010001101111110001111111011111110000 \r11 1 010010100001101010101110110000110010010111 \r13 0 11001 \r15 0 101110001101011010111110101100101011101110010011000101110010001110110010001101111001110010001000111001100111100101000001100011100110011111100111000010001001001111001110100001100101000000100111100101100 \r9 1 \r3 0011 011100101101000110101100100010000100100100001001101010001111010001110001001000110000011010111011001111011000011111010110000101000100011111110010011010110111101001011101010100011011101100110010010010 \r8 1 011 \r3 1100 001010001000101110001011011000001111011 \r10 0 110000101 \r6 10 001000110111011001001110001000111101111100001000110000001 \r32 0 1 \r25 0 1111001001111101000001 \r12 0 11011001000000101010100 \r11 01 11111000111111010001000001000001 \r12 0 11100011110010101100000111101101110000111100011001011011000010010
+                  1111000110101000001001011111000111011111001111010101000011001010111110000011111110101110000100111101001001110101010110011001; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............72       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.7.2.1;  Stim_PI; 
+  "3.1.1.2.7.4": 
+//  Processing the Static: EVENT 3.1.1.2.7.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.7.4.1;  Measure_PO; 
+//  The current cycle count is at '8673'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.7.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.7.5": 
+//  Processing the Static: EVENT 3.1.1.2.8.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '8674'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 8;  Scan_Sequence  
+//  The current cycle count is at '9911'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLHHLLHLLLLLHLLHHHLLHHHHLHHLLHHHLLHHHHLHLLLLLHLHHHLHLHHLLHHLLLLHHLHHHHHHLHLHLLLHLHHHHLLLLLLHHLHHHLHHHLLLHLLHLHLHLHHLLHLLLHLHHHHLLLLLHHLHHHLHHHLLHHHHHLHLLHLHHLLHLHHLLHHHHHLHLHLLHLHLHHHHHHLLHLLLLLLHLHHHHHHHLLLLHHHHH \r18 L HHLHHHLHHHLLLLLHLHHHLLHLLHHLLH \r13 L HHLLH \r15 L HLHHLLLLHHLHLHHHLLHHHHHHHLHHLLHLHLHHHLHHHLLHLLHHLLLHLHHHLLHLLLHHHHLLLLLHHLLLLHLH \r6 HL LLHLLLHLLHHLLHHHHHHHLHHHLHHLLLHLHHHLLHHLLHHHHHHLLHHHLLLLHLLLHLLHLLHHHHLLHHHLHLLLLHHLLHLHLLLLLLHLLHHLHLLHLHLLL \r9 H \r3 LLHH LHHHLLHLHHLHLLLHHLHLHHLLHLLLHLLLLHLLHLLHLLLLHLLHHLHLHLLLHHHHLHLLLHHHLLLHLLHLLLHHLLLLLHHLHLHHHLHHLLHHHHLHHLLLLHHHHHLHLHHLLLLHLHLLLHLLLHHHHHHHLLHLLHHLHLHHLHHHHLHLLHLHHHLLLLH \r29 L HHLHH \r29 L HLLHLLLHLHHLLHLLLLLLHLLHLHLHLLLLHLHLHLHLL \r12 LH HLLLHHH \r11 L HLLHHHHLLLLLHHHHHHHLLLHHLLLLLLH \r32 L H \r25 L HHHHLLHLLHHHHHLHLLLLHH \r12 L HHLHHLHLLHLLHHHLHLLLHLLLLLHLLLLLH \r10 L \r7 H LLLHHHHHHLHLLLHLLLLLHLLLLLH \r10 L HHLLLLHLHHHHLLHLHLHHLLLLLLLHLLLLLHHHLLLLHHHLLLHHHHLHLHHLHHLLLLHLLHLLHHHLHLHHLHLHLLLLLHLLHLHHHHHLLLHHH
+                  LHHHH \r31 L H \r20 L HLLHHHLLHLLHLLHHHLHLHLHLHHLLHHLHH; 
+    "CR_1_TM_1" = 10010110101 \r11 0 10 \r5 01 11011100011101000001010101001000011110110000001010000000 \r15 1 01101011000010010001110110 \r15 1 0010010101110010010000100 \r10 1 0100100110001110110111 \r13 0 101011101011000100010101000111011001110010101110 \r15 1 01100 \r14 1 01111110001111110100110110111100011001010111001000101000110000110010010100001110110111100111011 \r8 0 1000011110110110110000110000011011110001001110000000111100000010101 \r5 10 11101011111001001100110 \r3 1101 100 \r9 1 011110110110111000101001110100110011010110000000111001111010101110011001111010100011011010100110010100010001100110001011101101110110101110111001010101110111011010101011011000100001000011001110000111011110 \r8 1 0011000011010100111001011010100000101111000010000 \r13 1 0001101111001100001010010110100000101001111000110011100001000101010 \r15 1 011100111111001001001110111010001100001100010011101100001100001001 \r12 0 1001100100001101010 \r15 1 01010011111110011000111001001 \r19 0 10000001010011000 \r3 0111 0110000110101110000
+                  010101100011011010001100100001 \r19 0 1 \r13 0 1010010000011110001010100101000111111 \r3 0110 10010100111010 \r14 1 00110010; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............73       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.8.2.1;  Stim_PI; 
+  "3.1.1.2.8.4": 
+//  Processing the Static: EVENT 3.1.1.2.8.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.8.4.1;  Measure_PO; 
+//  The current cycle count is at '9912'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = H \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.8.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.8.5": 
+//  Processing the Static: EVENT 3.1.1.2.9.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '9913'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 9;  Scan_Sequence  
+//  The current cycle count is at '11150'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLLLHLLLHLHLHLLLHHLLLLHL \r5 LH HHLHHHLLHHH \r8 L \r4 HL LHLLLLHHHHLHH \r8 L H \r29 L HLHHLLHLLLLLHHHHH \r21 L HHLHLLHLLHLHLHLLLLHLHLLLLLLHHHLHHLLHLLHHLLLHHHLHHLHHH \r14 L HLHHHLHLHHLLLHLLLHLHLHLLLHHHHHHHLLLHHL \r5 LH \r14 H LH \r16 L HLHHLH \r11 L HLLLLLLHHLHHHHLLLHHLLHLHLHHHLLHLLLHLHLLLHHLLLLHHLLHLLHLHLLLLHHHLHHLHHHHLLHHHLHH \r8 L HLLLHLHHHLLHHLLLLHHLLLHHLLLLLHHLHHHHLLLHLLHHHLLLLLLLHHHHLLLLLLHLHLH \r5 HL HHHLHLHHHHLLLHLLHLLLHHL \r3 HHLH HLL \r9 H LHHHHLHHLHHLHHHLLLHLHLLHHHLHLLHHLLHHLHLHHLLLLLLLHHHLLHHHHLHLHLHHHLLHHLLHHHHLHLHLLLHHLHHLHLHLLHHLLHLHLLLHLLLHHLLHHLLLHLHHHLHHLHHHLHHLHLHHHLHHHLLHLHLHLHHHLHHHLHHLHLLHHLHHLHHLLLHLLLLHLLLLHHLLHHHLLLLHLHLHHHHL \r8 H LLHHLLLLHHLHLHLLHHHHLHLHLLLHHHLLLLLLLHHLHLHLLLHLLHLLL \r15 H LHLHLLHHHHHHLLHLLHLHHLHLLLLH \r6 HL LLLLHHHLLLLHLLLHLHLHL \r15 H LHHHLLHHHHHHLHLHL \r15 H LHLHLLHHHHHHHLHLHLHHLLLLHHLLLLHLLH \r12 L HLLHHLHHHHHLLLLHLHH \r19 L HLLLLLLHHHHHLLLLHLHLLHLLH \r19 L HLLLLLLHLHLLHHLLLLHHHLHHHLHLHLLLHHLLLHLLHHHHLLLLLHLHLHHLLLLHHLLHLLLLHLLLHLLLLH
+                   \r34 L HLHLLLLLLHHHHLLLHLHLHLLHLHLLLLHHHHHH \r3 LHHL HHHHLLL \r5 LH \r11 H LLHHLLHL; 
+    "CR_1_TM_1" = 10001011100111000110101011110100111101001000011001111010101110100011101000111010100001100010110011011011000001010101001011110100011101100110100110011110010000101101011100010011100101000100100001001000110000100001001000110011001 \r10 0 100100011000101100100101111 \r12 0 11001001 \r14 0 \r3 1011 100101100000100 \r9 1 01001001110011010000010110 \r4 0001 0011100100111100101110001001011010010101100011100101100100011101010010010001001111110100010110110100011111101110010000010101011110100100111011101011111100111110110010100110110010010000001001101101010010101101000001000001110000011111001100111111010100100001011000110000010010011111010100111110101111100101001100110001010110101001100101100001101011011110100101001010010100010010100010001110011100001011111011111100111100101110101110011111000011101110011000001011001111110110111110100001 \r12 0 1 \r18 0 \r5 10 11010100101111110100101101111 \r9 0 10101001 \r12 0 1111100100101 \r12 0 1 \r19 0 1000101100110010010000100100011011001011 \r8 0 1110100010001110
+                  01111110010100101011110010010100001 \r7 10 111 \r16 0 1 \r16 0 100100111010111000001000101111011111010000010000101101001100111110000110100011010001; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............74       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.9.2.1;  Stim_PI; 
+  "3.1.1.2.9.4": 
+//  Processing the Static: EVENT 3.1.1.2.9.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.9.4.1;  Measure_PO; 
+//  The current cycle count is at '11151'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = H \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.9.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.9.5": 
+//  Processing the Static: EVENT 3.1.1.2.10.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '11152'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 10;  Scan_Sequence  
+//  The current cycle count is at '12389'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLLLHLHHHLLHHHLLLHHLHLHLHHHHLHLLHHHHLHLLHLLLHHLLHHHHLLLHLHHHLHLLLHHHLHLLLHHHLHLLLLLLLHHHLH \r23 L HHHHHLLLHLLHLLLHH \r17 L HHHLHLHLLHHLHLHLHLHHHLLLHLLHHHLHLLHLLLHLLHLLLLHLLHHLLHHLLLLHLLLLHLLHLLLHHLLHHLLH \r10 L HLLHLLLHHHLHLLLHLLHLLHLHHHH \r13 L HHLLLLH \r12 L HL \r3 HLHH HLHLLLLLHHH \r11 L HLLHLLHLLHHHLLHHLHLLLLLHLHHL \r4 LLLH LLHHHLLHLLHHHHLLHLHHHLLLHLLHLHHL \r8 H LHHHHHHLLHLHHLLHLLLHHHLHLHLLHLLHLLLHLLHHHHHHLHLLLHLHHLHHLHLLLHHHHHHLHHHLLHLLLLLHLHLHLHHHHLHLLHLLHHHLHHHLHLHHHHHHLLHHHHHLHHLLHLHLLHHLHHLLHLLHLLLLLLHLLHHLHHLHLHLLHLHLHHLHLLLLLHLLLLLHHHLLLLLHHHHHLLHHLLHHHHHHLHLHLLHLLLLHLHHLLLHHLLLLLHLLHLLHHHHHLHLHLLHHHHHLHLHHHHHLLHLHLLHHLLHLHH \r29 L HHLHH \r29 L HLLLLLLHLLLHLLLLLHH \r9 L HLHLLHH \r8 L H \r19 L HHHLLLLLHH \r8 L HHLH \r10 L HHHHHLH \r17 L H \r18 L H \r12 L H \r19 L HHHHLH \r9 L HLHLHLLH \r12 L HHHHHLLLHHHLLLLHLLHLLLHHLLHLLLHHLHHLLHLHHLLLLHLLHHLHHLLLHLLHLLHLLLLHLLHLLLHHLHHLLHLHHLLLLLLHLHHHLHLLLH \r10 L HLHLLLLHHLLHLHLHHHHLLLHLHLHLLLLHHHLHL \r5 LH HH \r16 L H \r16 L HLLHLLHHHLHLHHHLLLL
+                  LHLLLHLHHHHLHHHHHLHLLLLLHLLLLHLHHLLLLHLLLHHLLHLLLLHHLHLLLHHLHLLHH; 
+    "CR_1_TM_1" = 0100001 \r5 10 00001111000011000100 \r3 1101 00000111111000111000101011100010000111000001110110110100001111101000010101000111010011101101101100001010111101010010110011101111010101011000001100011101111000001100010111110011010101001101010000010011011110010101010011000100100111011010110001001001011001001100101010010010111011111101101110101010011101011010011 \r12 0 1001101100011111101011001101010000100101110001110 \r8 1 0 \r9 1 000110 \r5 01 1110101001101001010111100101010000001111100100011111000001000010000010010000011100011001101001000101011101000011110010100110001000101110011110010011011100001111000101111011111010100011110000011110011110100111011001001000001100111111011111011101000000010001111000001101000 \r5 01 0011101100110101111100011100010000001111010001111101011001100001000111000101000101100011101011010111000111000110010010110001 \r25 0 1 \r22 0 1 \r18 0 \r4 10 00010110000001 \r18 0 1100 \r14 01 0000011011000000101110000000100011 \r8 0 1011110001000111111010000011001011011001111101111110
+                  01110000011100110100010101 \r34 0 \r9 1 010010101011011000011101000100000010111101101000000011010110100011001010110; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............75       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.10.2.1;  Stim_PI; 
+  "3.1.1.2.10.4": 
+//  Processing the Static: EVENT 3.1.1.2.10.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.10.4.1;  Measure_PO; 
+//  The current cycle count is at '12390'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.10.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.10.5": 
+//  Processing the Static: EVENT 3.1.1.2.11.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '12391'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 11;  Scan_Sequence  
+//  The current cycle count is at '13628'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLHLLHHLHLHLLLLHHLLLHHHHLLLLHHLLLHLLHHLHHLHHHLLLLHLHLHHHHHLLLHHHLLLHLHLHHHLLLHLLLLLHHHH \r19 L HLLHLLHLLHHLHHHLHLHLLHH \r18 L HLHHLHHLHHLHLLLHLHHLLHHHLHHHHHLHLLHLHHLLLLLHHLLHLLHLHHHHLLLLLHHLLLHLHHHHHLLHHLHLHLHLLHHLHLHLLLLLHLLHHHHLHHLLHLHLHHHLLHHLLLHLLHLLHHLLHHLH \r14 L HLHHHLLHHLLHLHHLLHHHLLLHHHLHHHHHHLHHLHHHLHLHLHLLHHHLHLHHLHLLHH \r12 L HLLHHLHHLLLHHHHHHLHLHHLLHHLHLHLLLLLHLHLLHLHLLLHHL \r8 H L \r9 H LLLHHL \r5 LH HHHLHLHLLLHLHLLHLHLHHHHLLHLHLHLLLLLLHHHHLLLHLLLHHHHHLLLLLHLLLLHLLLLLHLLHLLLLLHHHLLLHHLLHHLHLLHLLLHLHLHHHLHLLLLHHHHLLHLHLLHHLLLHLLLHLHHHLLHHHHLLHLLHHLHHHLLLLHHHHLLLHLHHHHLHHHHHLHLHLLLHHHHLLLLLHHHHLLHHHHLHLLHHHLHHLLHLLHLLLLLHHLLHHHHHLLLHHHHLHHHLHLLLLLLLHLLLHHHHLLLLLHHLHLLL \r5 LH LLHHHLHHLLHHLHLHHHH \r3 HHLL \r50 L HHLHHLH \r9 L HHHLLHLHLHLLLLLLHHHHHHH \r29 L HLLLLL \r14 LH LLLLL \r5 LH LLLLHLHHLLLLLLH \r17 L HLHLL \r14 LH \r7 L HHHLLLHL \r17 LH LLLLLHH \r11 L HHLH \r10 L HHHHHLHHHLLHLLHHHHLLLHLLLLHLHHLLLLHLHLH \r33 L \r9 H LHLLHLHLHLHHLHHLLLLHHHLLHLLLHLLLLLLHLHHHHHHHLLLLHLLHLHLLHLH
+                  HLHLLLHHLLHLHLHHL; 
+    "CR_1_TM_1" = \r5 01 00110001000011110111110000101011100110001000001110111010101110000100111000011100 \r18 1 01110100010110111110101111110 \r13 1 01011100000101110000110100111011111001001111010101001001001 \r7 10 00110100111100110000110010110101000001011001010011111011100010001110011111000000100101110110011110011010011101000101000101001010111101010000110010101011000000011001110101000101011010011101100011010110111101010 \r6 01 11111010110011010101101100011011110111100101101110000100011000110011011001010011000011011111101111001000100000101110110110001101000011000111111000101100101110100110100000101100101110011101000111111000011010011111100100 \r8 1 00011011001001111001001110 \r9 1 01101111010011111001110000001011111001101000101110011101001100100011111010110101101010011010101001010001010110011101001000100100110111111011010000001100111 \r17 0 1 \r38 0 1 \r8 0 10011000011110110111000001011101000011100101000 \r17 01 000011101011010110111111101101010101101111011111 \r11 0 10110111111001000100001011110011010
+                   \r5 01 0001010101 \r21 0 1 \r12 0 10000100011101001011000111010111010111000110000111101000011100110101100011101000111; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............76       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.11.2.1;  Stim_PI; 
+  "3.1.1.2.11.4": 
+//  Processing the Static: EVENT 3.1.1.2.11.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.11.4.1;  Measure_PO; 
+//  The current cycle count is at '13629'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.11.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.11.5": 
+//  Processing the Static: EVENT 3.1.1.2.12.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '13630'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 12;  Scan_Sequence  
+//  The current cycle count is at '14867'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = \r5 LH LLHHLLLHHLLLHHHHLHHHHHLLLLHLHLHHLLHHLLLHLLLLLHHHLHHHLHLHLHHHLLLLHLLHHLLLLLH \r12 L H \r10 L HLLLLHLLHL \r3 LLHH \r8 L H \r8 L HHLHHLHHLHLLLLHLHHHLLLLHHLHLLHHLHLHHHHLLHLLHHHHLHHLLHLLHLLHLLH \r7 HL LLHHLHLLHHHHLLHHLLLLHHLHLLHHLHLHLLLLLHHHHLLHLHLLHHHHHLHLLLLLHLLLHHHLH \r11 L HLLHLHHHHLLLLLLHHHHHHLHLLHHHLHLLLHLHLLLHLHLLHLHLHHHHLHLHLLLLHHLLHLHLHLHHLLLLLLLHHLLHHHLHLHLLLHLHLHHLHLHHLHLHHHLHLHHHLHHLHHHHLHLHL \r6 LH HHHHHLHLHHLLHHLHLHLHLLLHLLLHHLHHHHLHHHHLLHLHLLHHHLLLLHLLLHHLLLHHLLHHLHHLLHLHLLHHLLLLHHLHHHHHHLHHHHLLHLLLHLHHHLHLLLHLHLLLHLHLLHLHLHHHHHLLLHHHHHHLLLHLHHLLHLHHHLHLLHHLHLLLLLHLHHLLHLHHHLLHHHLHLLLHHHHHHLLLLHHLHLLHHHHHHLLHLL \r8 H LLLHHLHHLLHLLHHHLLLH \r29 L HHHH \r30 L HLLHHHLHLLLH \r9 L H \r43 L HLHLLHLLLLLLHLLHHLHHHHHHLHHLHHLLHHHHHHLHHH \r17 L H \r38 L H \r8 L HLLHHHLLHLLLLLHHLHHHHLLLLHLHHHLHLLLLHHHLLHHLLLL \r17 LH LLLLHLLLHLHHLHLHHLHHHHHHHLHHLHLHLHLHHLHHHHLHHHHH \r13 L HLHLHLHHHLLHLLLHLLLLHLHHHHLLHHLHLLHLHHLHLLLLLLHLHLLLH \r21 L H \r12 L HLLLLHLLLHHHLHLLHLHHLLLHHHLHLHHHLHLHHHLLLHHLLLL
+                  HHLHLLL \r7 LH HLLLHHHLHLLLHHH; 
+    "CR_1_TM_1" = 0100001 \r6 10 001001001010011110101001010110010011011101010100100001000011 \r9 0 1111001100100100110010011101101010100100 \r3 1001 0011011001010101001001 \r9 0 1001011110000010011010100101 \r14 0 11100110100000110 \r9 1 011101101110100000110010000001110000111100011110001100011000001100001001011100010000110111110101111010011010100001011 \r8 0 101 \r8 0 111010011000010101100110 \r5 01 1100110100101101100110011101010111101000000111 \r8 0 1010100100000111100011011001110010110101101000010000001 \r8 0 110100001100011101101101000001010111001000001101101110101111111011001000000110101011100011011001111110110011111100100011110100100100100001011101000001 \r3 0110 001101101110101000101000111000011010 \r19 1 011111101111111001100111100000110 \r8 1 00111101101111011010010110001100011101101 \r12 0 11001010110011100101000010001 \r15 0 100011000001111000010001101011101001101111000111001111100010100101 \r13 0 110100100101 \r3 0100 \r9 0 10001100000100111100011110111 \r27 0 11101010011110000101110101001111110
+                  11011101000000010011010100100101011100001 \r27 0 1001000100100111001001010000011101001110110100110111101001000010110010000000101111101; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............77       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.12.2.1;  Stim_PI; 
+  "3.1.1.2.12.4": 
+//  Processing the Static: EVENT 3.1.1.2.12.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.12.4.1;  Measure_PO; 
+//  The current cycle count is at '14868'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.12.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.12.5": 
+//  Processing the Static: EVENT 3.1.1.2.13.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '14869'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 13;  Scan_Sequence  
+//  The current cycle count is at '16106'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLHLLHHHHLHLHLLHHLLLHLLHLLHLHLLHHHHLHLHLLHHHHHLHHHHHLLHHHLHLHLHLLHLLLLHLLLLHH \r9 L HH \r17 L HLLLLLHHHLHHLHHHLLHLHHH \r19 L HLHHLHHHLHLLLH \r15 L HHLLHLLLHLLHHLHLHLLHLHLLLH \r10 L HHHLLHHLHLLLLLHHL \r9 H LHHHLHHHHHHLLLLLLLHHHHHLLLLLLHHHLLLLHHHHLLLHLHHLLLHHLLLHHLLLLLHLLLLLHLLHHLL \r8 H LHHLHHHHHLHLHHHHLHLLHHLHLHLLLLHLHH \r8 L HLH \r8 L HHHLHLLHHLLLLHLHLHHLLHHLLHLHLHHHLHHHLLHHLHLLHLHHLHHLLHHLLHHHLHLHLHHHHLHLLLLLLHHH \r8 L HLHLHLLHLLLLLHHHHLLLHHLHHHLLLHHLLLLHLHHLHLHHHHLHHHHLLLH \r8 L HHLHLLLLHHLLLHHHLHHLHHLHLLLLLHLHLHHHLLHLLLLLHHLHHLHHHLHLHHHHHHHLHHLLHLLLLLLHHLHLHLHHHLLLHHLHHLLHHHHHHLHHLLHHHHHHLLHLLLHHHHLHLLHLLHLLHLLLLHLHHHLHLLLLLHLHHLLHHLLHLLLLHHLHHLHHHLHLHLLLHLHLLLHHHLLLLHHLHL \r19 H LHHHHHHLHHHHHHHLLHLLLH \r9 L HLHLLLHHLHLLHHLLLLLH \r11 L HLLLHHLLLLLLLHHLHHLHLLHLLLLHLLLLHHLHLHHLLLLLHHHLLHLHLLLLHLLLH \r15 L HLLLHHLLL \r3 LLLH \r11 L HLLLHHLLLLLLHHHLHLHHHHHLLLHLHLLHLH \r20 L HH \r35 L HLLHHHHLLLHHHHLHHH \r31 L HLHLLHHHHLLLLLLLHLHLHLHHLHHHHHLHHLHHHLHLLLLLLLHLHLLHLHLLHLLLHLHLHHHLLLLH
+                   \r27 L HLLHLLLHLLHLLHHHLLHLLHLHLLLLLHHHLHLLHHHLHHLHLLHHLHHHHLLLLHLLLLHHLHLLHLLLLLLLHLHHHHHHH; 
+    "CR_1_TM_1" = 0010001010101001101011100100000110111101100101101111110010000110100101000011111101001101000010100000101010111110101000011101100100000111101001011011111110100011000101000101100010101110110101110101100010010100010011110101001010000011000001100011001111110000100011000011011010111101010100101010111010010001100111010000101100001001011110001001000001100100000 \r9 1 0011000010010101001100110100110000000101010110100101111001101101010001101000010000101011111000100011011110100010101 \r8 0 110010 \r5 01 11000101100100010110111000001101101111110101001110000011110011000110001100111110111000110101110010100000100011110011011101101001 \r9 0 101100001100001001010010111001101111001111011000101101000010011111011011101100011011111100101000111001101111100011100010011100100000011100001001011010 \r11 1 01010010001011001101111101011110010011001010001011101010100 \r22 1 0 \r9 1 \r13 0 1 \r18 0 101000011111010111110101 \r10 0 1110000010100 \r17 01 1111000 \r3 1101 11001110010001111011100100001111011110101100000101001
+                  10010100 \r9 1 00100010110001110010110001010011000100011011101111110110110101101100011 \r3 1110 100100110010111000101101010100001111110010110110010110110101; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............78       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.13.2.1;  Stim_PI; 
+  "3.1.1.2.13.4": 
+//  Processing the Static: EVENT 3.1.1.2.13.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.13.4.1;  Measure_PO; 
+//  The current cycle count is at '16107'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.13.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.13.5": 
+//  Processing the Static: EVENT 3.1.1.2.14.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '16108'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 14;  Scan_Sequence  
+//  The current cycle count is at '17345'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LLHLLLHLHLHLHLLHHHHLHHHLLHLLLLLHHLHHHHLHHLHLHHLLHHLHHLLHLLLLHHLHLLHLHLLLLHHHHHH \r13 L HLHLLLLLHLHLHLHHHHHLHLHLLLLHHHLHHLLHLLLLLHHHHLHLLHLHHLHHHHHHHLHLLLHHLLLHLHLLLHLHHLLLHLHLHHHLHHLHLHHHLHLHHLLLHLLHLHLLLHLLHHHHLHLHLLHLHLLLLLHHLLLLLHHLLLHHLLHHHHHHLLLLHLLLHHLLLLHHLHHLHLHHHHLHLHLHLLHLHLHLHHHLHLLHLLLHHLLHHHLHLLLHHHHHHLLLHLLHLHHHHLLLHLLHLLLLLHHLLHLLLLL \r9 H LLHHLLLLHLLHLHLHLLHHLLHHLHLLHHLLLLLLLHLHLHLHHLHHHLLLLHHLLHHLHHLHLHLLLHHLHLLLLHLLLLHLHLHHHHHLLLHLLLHHLHLHHLHLLLHLHLH \r8 L HLLLHL \r5 LH HHLLLHLHHLLHLLLHLHHLHHHLLLLLHHLHHLHHHHHHLHLHLLHHHLLLLLHHHHLLHHLLLHHLLLHHLLHHHHHLHHHLLLHHLHLHHHLLHLHLLLLLHLLLHHHHLLHHLHHHLHHLHLLH \r9 L HLHHLLLLHHLLLLHLLHLHLLHLHHHLLHHLHHHHLLHHHHLHHLLLLLHHLHLLLLHLLHHHHHLHHLHHHLHHLLLHHLHHHLHLHHHHLH \r8 L HHLLLHLLLLHHHHLLHLHLLLH \r9 L H \r43 L HLHHHHHLLHHHHHHLHLLHHHLHLHLHHHLHHHHHHHLHHL \r22 H L \r9 H \r13 L H \r18 L HLHLLLLHHHHHLHLHHHHHLLLH \r18 L HLHLL \r16 LH LLHH \r9 L HHLHHHLHHHLLHHHLLHLLLHHHHLHHHLLHLLLLHHHHLHHHHLHH \r10 L HLLLLLHHLLLHHHLHHLHHHLHLLLHLLLLLHLHLLLLHHHLLLHLHLLH
+                  HLLLHLLLHHLHHHLHHHHHHLHHLHHLHLHHLHHLLLHH \r3 HHHL HLLHLLHHLLHLHHHLLLHLHHLHLHLHHLLLHLHHHHLLHLHHLHHLLHLHHLHHLHHH; 
+    "CR_1_TM_1" = 01000110010000010001100101011100001111101001101101110011010011100011111001101111100101 \r15 0 100001111000101 \r8 0 10001 \r12 0 110000011100101111 \r12 0 10000100100001 \r9 0 11110011 \r10 0 1 \r3 1110 01010000110101011110001111011001011001101 \r9 0 11110000001 \r9 0 11100101001000111111010010100101011111001010000001001110100010011010100010 \r8 1 01111111011101000010000000101000111110011011001111011111010000010101110001111000000100101110010001000001101000000011110110100001110010001011001111110000011101000 \r8 1 01101 \r8 0 1101001 \r9 0 10010110110001000110000101010000100111010001000011010101111101111001111010000110010001001110011001110001101001011110011100011011100101110000000 \r8 1 0011011001110110001011001101001011100010110010101000011100001 \r9 0 1101101001111010000110101101101100001111110100100001100100111011 \r40 0 1 \r23 0 10000001001011101001001 \r8 0 100000011001000000010110001101011110011111000110011101000010000010001 \r11 0 1 \r12 0 10000101000100110100001000000010100111000101101
+                  100100011011101000001101001100111100011110010111110011010110111100110001000001011101110011001101110110100010011000111000011011000001 \r9 0 1; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............79       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.14.2.1;  Stim_PI; 
+  "3.1.1.2.14.4": 
+//  Processing the Static: EVENT 3.1.1.2.14.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.14.4.1;  Measure_PO; 
+//  The current cycle count is at '17346'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.14.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.14.5": 
+//  Processing the Static: EVENT 3.1.1.2.15.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '17347'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 15;  Scan_Sequence  
+//  The current cycle count is at '18584'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLLHHLHLHLHHHHHLHHLLHLHLHHHLLLLHHHHHLHLHHLHLLHHHLLLHLHLLHHHLLLHHHHHLLHHLHHHHLLLLHLHLH \r13 L HLLLLHHHHLLLHHLH \r24 L HHLLLLLHHLHLHLLHH \r13 L HLLLHLLHLLLLLH \r9 L HHHHLLHH \r10 L H \r3 HHHL LHLHLLLLHHLHLHLHHHHLLLHHHHLHHLLHLHHHHLHLH \r9 L HHHHLLLLH \r13 L HLLLHLLLHLLHLLLLLHLLLHHHHLLHLHLHHHHHLLHLHLLLLLLHLLHHHLHLLLHLLHHLHH \r10 L HLLHHHLHLHHLLHHHLLHHHHHLLLLLLLHLHHHHLHHLLLLHHLHHLLHHHHLHHHHHLHLLLLLHLHLHHHLLLHHHHLLLLLLHLLHLHLHLLHLLLHLLLLLHHLHLLLLLLLHHHHLHHLHLLLLHHHLLHLLLHLHHLLHHHHHHLLLLLHHHLHLLL \r8 H LHHLH \r8 L HHLHLLH \r9 L HLLHLHHLHHLLLHLLLHHLLLLHLHLHLLLLHLLHHHLHLLLHLLLLHHLHLLHLLLLHHHLHHHLLLLHLHLLLLHHLLHLLLHLLHHHLLHHLLHHHLLLHHLHLLHLLLHH \r28 L HHHHLH \r29 L HLLLLHHHLLLHLHLH \r8 L HLHH \r12 L HHLHLHHHHLLHHHHHLLLHH \r12 L HHLLLLLHHHHHHLLLHHLLLLHLLHLHHHHLHH \r40 L H \r23 L HHLLLLLHLLHLHHHLHLLHLLH \r8 L HLLLLLLHHLHHHHHLLLLLHLLLH \r11 L HLLHLLLLLLLHHHHHLHLLLLHLLLLLHLLLH \r11 L H \r12 L HLLLLHLHLLLH \r11 L HLLLLLLHLLLLHHHLLLHLHHLHHLLHLLHLLHHHLLHLLLHLHHLH \r33 L HLHLLHLLHHLLLHLLLLLHLHHHLHHHLLLHHLL
+                  HHLHHHLHHLHLLLHHHHHLL \r6 LH HLLLLLL \r10 H ; 
+    "CR_1_TM_1" = 11000110010000010001101001111000111110100000110101011010110111011100110111101110100001010000110011011011000101100111010111111001101001100100110110000101011000001111011001111101111010001110110111110011001111110111110010011001010010000110101010111111101001001011001101 \r9 0 11111100001 \r9 0 110000011 \r10 0 11011001101110010010011111000000100010010000101010011010011001000010100001 \r8 0 110000011110011000100100 \r26 1 0111110110001011100100101001101101100101100010000100000011001001110100000011001111101001010001001100011011110101000101101101001111010100110010100111100100010100101001001010011001011001101001010001011110100100000001100010110101110000111101010100010111110110 \r9 1 \r7 0 111000010110001101011001101111100001010010100110010000001110110001010000100110110111010011110000010100000010011011100100110010010011000100100100001 \r41 0 1 \r17 0 1101011010100011111 \r12 0 1 \r11 0 1100 \r9 01 00 \r7 01 1010001111001110001010001001001101000101001010101000001001000011100001101010111110010000010001
+                  110110101011001001100011101001011000000100101111001100111101100010101100100001000011101111110 \r10 1 00111000111001111101001110010110011; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............80       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.15.2.1;  Stim_PI; 
+  "3.1.1.2.15.4": 
+//  Processing the Static: EVENT 3.1.1.2.15.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.15.4.1;  Measure_PO; 
+//  The current cycle count is at '18585'
+  Macro "TEST" { 
+    "ALLPIs" = P01 \r118 Z ; 
+    "ALLPOs" = L \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.15.5.1;  Scan_Unload;  (overlap) 
+  "3.1.1.2.15.5": 
+//  Processing the Static: EVENT 3.1.1.2.16.1.1;  Scan_Load;  (overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '18586'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 16;  Scan_Sequence  
+//  The current cycle count is at '19823'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LHLLLLHHLHLHLHLHHHLHHLHLLHHHHLLLHHHHHLHLLLLHHLLLHLHHLLLHHLHHHLHHHLLHHLHHHHLHHHLLLLLLLHH \r26 L HHHHLLLHHHHLLLLHH \r18 L HLHHLHHLHLLHLHLHLHHLLHHHHHLHHHLHLHLLHHHLHHLHHHHHLHHHLLHHHHHHLHHHHHLLHLLHHLLHLHLLHLLLLHHLHLHLHLHHHHHHHLHLLHLLHLHHLLHHLH \r9 L HHHHHHLLLLH \r9 L HHLLLLLHH \r9 L HHHHLHHLHHLHHHLLHLLHLLHHHHHLLLLLLHLLLHLLHLLLLHLHLHLLHHLHLLHHLLHLLLLHLHLLLLH \r8 L HHLLLLLHHHHHLHHHHHLHHLL \r27 H LHHHHHLHHLLLHLHHHLLHLLHLHLLHHLHHLHHLLHLHHLLLHLLLLHLLLLLLHHLLHLLHHHLHLLLLLLHHLLHHHHHLHLLHLHLLLHLLHHLLLHHLHHHHLHLHLLLHLHHLHHLHLLHHHHLHLHLLHHLLHLHLLHHHHLLHLLLHLHLLHLHLLHLLHLHLLHHLLHLHHLLHHLHLLHLHLLLHLHHHHLHLLHLLLLLLLHHLLLHLHHLHLHHHLLLLHHHHLHLHLLHLLHLHHHHHLHHL \r9 H \r7 L HHHLLLLHLHHLLLHHLHLHHLLHHLHHHHHLLLLHLHHLHLHLLLHLHLLLHHLLLHLHLH \r10 L \r6 HL L \r6 LH LLHHLHLHHH \r10 L HLHLLLLLHLHLHLHHHHHHHLHLHLLLLH \r27 L \r9 HL L \r7 LH HHHLHHLHLHLLLHHHHHLLH \r9 L H \r10 L HLLLL \r9 LH LL \r6 LH LLHLHHLLHHHLLLLLLH \r29 L HHLHLLH \r9 L HHLH \r9 L HLHHLLHLLHLLLLLHHLHLHHHLLHLHLLHLLLHLLHHLLLHHHLHLLHLHHLLLLLLHLLHLHHHHLLHHLLHH
+                  HHLHHLLLHLHLHHLLHLLLLHLLLL \r10 H L \r10 H LLHLLLLHLHHLLHLHHHLHLLHHHLLHLHHLLHH; 
+    "CR_1_TM_1" = 1010110011101001001101101110011010110001100001001000001101111000 \r10 1 000010010100100011001000100100111110111111100110110111000110011001001001101100010010010010110101011100011110010 \r14 1 0111111011 \r5 10 000001011101001001000011110010101100010001011101101101111111001011011011011111100001101011000111011110010111101101110000110 \r10 1 00110100101100010100110010010111010001000111011101101110001010001011110010000011001101100110111101011001011000000111001100111001100010111101110101010000100101001001000101010111010010001101100101110010110010010101011001000000100010010111001001001101000001101110110011101101000001011101100110110101111000111001001101001000010101000101110100110000011 \r10 0 1011011011110110110100011 \r10 0 1011011 \r9 0 100100011000101001110011101001000110010100110001101101101010000000100110000 \r9 1 011000 \r8 1 00010001 \r15 0 1000110001011100001110101100110101010010001101110010101111100001111000000010001011011111010010001 \r15 0 100011000001101110100110011111110110110001011001
+                  1100010101011111110111010 \r9 1 000000110111110010011011111110101101111001000011100010010101011001010000100111111101101001111001001100111010001100010111110101100111100010000010110001000101010110; } 
+
+//***************************************************************************//
+//  TEST SEQUENCE.............81       TYPE......................normal      //
+//***************************************************************************//
+
+
+//  Processing the Static: EVENT 3.1.1.2.16.2.1;  Stim_PI; 
+  "3.1.1.2.16.4": 
+//  Processing the Static: EVENT 3.1.1.2.16.3.1;  Pulse; 
+//  Processing the Static: EVENT 3.1.1.2.16.4.1;  Measure_PO; 
+//  The current cycle count is at '19824'
+  Macro "TEST" { 
+    "ALLPIs" = P00 \r118 Z ; 
+    "ALLPOs" = H \r83 X ; } 
+//  Processing the Static: EVENT 3.1.1.2.16.5.1;  Scan_Unload;  (no_overlap) 
+  "3.1.1.2.16.5": 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '19825'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 17;  Scan_Sequence  
+//  The current cycle count is at '21062'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = HLHLHHLLHHHLHLLHLLHHLHHLHHHLLHHLHLHHLLLHHLLLLLHLLLHLHLHLHHHHLLL \r10 H LLLLH \r20 L HHLHLLHLHLLLHLLLLLHLLLHHLHHH \r13 L HHLHLLHLLHLLHLHLLHLHLLHHLHHLHLHLHHHLLLHHHLHLH \r14 L HLHHHHHHLHH \r5 HL LLLLLHLHHHLHLLHLLHLLLLHHHHLHLLHLHHLLLHLLLHLHHHLHHLHHLHHHHHHHLLHLH \r14 L HHHHHHLHLHHLLHLLHLLLLLLLHLHHHHLHHLHHHLLLLHHL \r10 H LLHHLHLLHLHHLLLHLHLLHHLLHLLHLHHHLHLLLHLLLHHHLHHHLHHLHHLHLHHLLLHHHLHHHHLLHLLLLLHHLLHHLHHLLHHLHHHHLHLHHLLHLHHLLLLLLHLHLLHHLLHHHLLHHLLLHLHHLHLHHHLLLHLHLLLLHLLHLHLLHLLHLLLHLHLHLHHHLHLLHLLLHHLHHLLHLHHHLLLLLHHLLHLHLLHHLLLHHLHHLHHLHLLLHLLHLHHHLLHLLHLLHHLHLLLLLHHLHHHLHHLLHHHLHHLHLLLLLHLHHHLHHLLHHLHHLHLHHHHLLLHHHLLHLLHHLHLLHLLLLHLHLHLLLHLHHHLLHLHHLLLLLHH \r10 L HLHHLHHLLLLLHHHHHHLHLLLHH \r10 L HLHHLHH \r9 L HLLH \r12 L HLLLH \r24 L HLLLHHLLLLLLH \r8 L H \r8 L \r9 H LLLLLL \r8 H LLLHLLLH \r15 L HLLLHHLLLHLLHLLLH \r15 L HLLLHHLLLLLHHHHLHLHLHLHHHHHLLLLHH \r18 L HHHHHLHLLHLLLH \r15 L HLLLHHLLLLLHHLHHHLHLLHHLLHHHHHHHLHHLHHLLLHLHHLLHHHLLLHLHLHLHHHHHHHLHHHLLHHHLHLHLHHLLHLLLHHL
+                   \r8 H LLHHLHHHHLLLHLHLHLLLLHHLHLLLLHHHLLLHLLHLHLHLHHLLHLHLLLLHLLHH \r31 L H \r20 L HHHLHHLLLLHH \r12 L HHLLHLLHL; } 
+
+// Inserted final non-scan Pattern
+//  The current cycle count is at '21063'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+  } 

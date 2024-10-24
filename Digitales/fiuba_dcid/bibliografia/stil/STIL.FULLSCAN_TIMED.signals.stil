@@ -1,0 +1,384 @@
+STIL 1.0; 
+
+//***************************************************************************//
+//                             STIL SIGNALS FILE                             //
+//Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec//
+//***************************************************************************//
+//                                                                           //
+//  FILE CREATED..............October 19, 2023 at 22:12:14                   //
+//                                                                           //
+//  PROJECT NAME..............modus_project                                  //
+//                                                                           //
+//  TESTMODE..................FULLSCAN_TIMED                                 //
+//                                                                           //
+//  TDR.......................ate.tdr                                        //
+//                                                                           //
+//  TEST PERIOD...............100.000  TEST TIME UNITS...........ns          //
+//  TEST PULSE WIDTH..........10.000                                         //
+//  TEST STROBE OFFSET........70.000   TEST STROBE TYPE..........edge        //
+//  TEST BIDI OFFSET..........0.000                                          //
+//  TEST PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                     SCAN OVERLAP..............yes         //
+//  SCAN PERIOD...............100.000  SCAN TIME UNITS...........ns          //
+//  SCAN PULSE WIDTH..........10.000                                         //
+//  SCAN STROBE OFFSET........10.000   SCAN STROBE TYPE..........edge        //
+//  SCAN BIDI OFFSET..........0.000                                          //
+//  SCAN PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                                                           //
+//   Individually set PIs                                                    //
+//  "scan_clk" (PI # 115)                                                    //
+//  TEST OFFSET...............10.000   PULSE WIDTH...............10.000      //
+//  SCAN OFFSET...............20.000   PULSE WIDTH...............10.000      //
+//                                                                           //
+//  Active TESTMODEs TM = 1 ..FULLSCAN_TIMED                                 //
+//                                                                           //
+//***************************************************************************//
+
+//***************************************************************************//
+//                              DEFINE SIGNALS                               //
+//***************************************************************************//
+
+  Signals { 
+    "scan_clk" In;      // pinName = scan_clk;  tf = -ES  ; testOffset = 10.000000;  scanOffset = 20.000000;  
+    "scan_se" In;      // pinName = scan_se;  tf = +SE  ; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "scan_si" In;      // pinName = scan_si;  tf =  SI  ; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_clk" In;      // pinName = a_clk; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_ee_noload" In;      // pinName = a_ee_noload; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_factory_access_pad" In;      // pinName = a_factory_access_pad; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_manch_in" In;      // pinName = a_manch_in; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_manch_pad_in" In;      // pinName = a_manch_pad_in; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "a_rst" In;      // pinName = a_rst; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[0]" In;      // pinName = die_source_code[0]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[10]" In;      // pinName = die_source_code[10]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[11]" In;      // pinName = die_source_code[11]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[12]" In;      // pinName = die_source_code[12]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[13]" In;      // pinName = die_source_code[13]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[14]" In;      // pinName = die_source_code[14]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[15]" In;      // pinName = die_source_code[15]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[16]" In;      // pinName = die_source_code[16]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[17]" In;      // pinName = die_source_code[17]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[18]" In;      // pinName = die_source_code[18]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[19]" In;      // pinName = die_source_code[19]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[1]" In;      // pinName = die_source_code[1]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[20]" In;      // pinName = die_source_code[20]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[21]" In;      // pinName = die_source_code[21]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[22]" In;      // pinName = die_source_code[22]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[23]" In;      // pinName = die_source_code[23]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[24]" In;      // pinName = die_source_code[24]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[25]" In;      // pinName = die_source_code[25]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[26]" In;      // pinName = die_source_code[26]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[27]" In;      // pinName = die_source_code[27]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[28]" In;      // pinName = die_source_code[28]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[29]" In;      // pinName = die_source_code[29]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[2]" In;      // pinName = die_source_code[2]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[3]" In;      // pinName = die_source_code[3]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[4]" In;      // pinName = die_source_code[4]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[5]" In;      // pinName = die_source_code[5]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[6]" In;      // pinName = die_source_code[6]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[7]" In;      // pinName = die_source_code[7]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[8]" In;      // pinName = die_source_code[8]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "die_source_code[9]" In;      // pinName = die_source_code[9]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[0]" In;      // pinName = ee_dataout[0]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[10]" In;      // pinName = ee_dataout[10]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[11]" In;      // pinName = ee_dataout[11]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[12]" In;      // pinName = ee_dataout[12]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[13]" In;      // pinName = ee_dataout[13]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[14]" In;      // pinName = ee_dataout[14]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[15]" In;      // pinName = ee_dataout[15]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[16]" In;      // pinName = ee_dataout[16]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[17]" In;      // pinName = ee_dataout[17]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[18]" In;      // pinName = ee_dataout[18]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[19]" In;      // pinName = ee_dataout[19]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[1]" In;      // pinName = ee_dataout[1]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[20]" In;      // pinName = ee_dataout[20]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[21]" In;      // pinName = ee_dataout[21]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[22]" In;      // pinName = ee_dataout[22]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[23]" In;      // pinName = ee_dataout[23]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[24]" In;      // pinName = ee_dataout[24]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[25]" In;      // pinName = ee_dataout[25]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[26]" In;      // pinName = ee_dataout[26]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[27]" In;      // pinName = ee_dataout[27]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[28]" In;      // pinName = ee_dataout[28]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[29]" In;      // pinName = ee_dataout[29]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[2]" In;      // pinName = ee_dataout[2]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[30]" In;      // pinName = ee_dataout[30]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[31]" In;      // pinName = ee_dataout[31]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[3]" In;      // pinName = ee_dataout[3]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[4]" In;      // pinName = ee_dataout[4]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[5]" In;      // pinName = ee_dataout[5]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[6]" In;      // pinName = ee_dataout[6]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[7]" In;      // pinName = ee_dataout[7]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[8]" In;      // pinName = ee_dataout[8]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_dataout[9]" In;      // pinName = ee_dataout[9]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_hlat" In;      // pinName = ee_hlat; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_llat" In;      // pinName = ee_llat; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "ee_prog" In;      // pinName = ee_prog; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[0]" In;      // pinName = hard_misr_final[0]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[10]" In;      // pinName = hard_misr_final[10]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[11]" In;      // pinName = hard_misr_final[11]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[12]" In;      // pinName = hard_misr_final[12]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[13]" In;      // pinName = hard_misr_final[13]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[14]" In;      // pinName = hard_misr_final[14]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[15]" In;      // pinName = hard_misr_final[15]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[16]" In;      // pinName = hard_misr_final[16]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[17]" In;      // pinName = hard_misr_final[17]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[18]" In;      // pinName = hard_misr_final[18]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[19]" In;      // pinName = hard_misr_final[19]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[1]" In;      // pinName = hard_misr_final[1]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[20]" In;      // pinName = hard_misr_final[20]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[21]" In;      // pinName = hard_misr_final[21]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[22]" In;      // pinName = hard_misr_final[22]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[23]" In;      // pinName = hard_misr_final[23]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[24]" In;      // pinName = hard_misr_final[24]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[25]" In;      // pinName = hard_misr_final[25]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[26]" In;      // pinName = hard_misr_final[26]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[27]" In;      // pinName = hard_misr_final[27]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[28]" In;      // pinName = hard_misr_final[28]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[29]" In;      // pinName = hard_misr_final[29]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[2]" In;      // pinName = hard_misr_final[2]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[30]" In;      // pinName = hard_misr_final[30]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[31]" In;      // pinName = hard_misr_final[31]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[3]" In;      // pinName = hard_misr_final[3]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[4]" In;      // pinName = hard_misr_final[4]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[5]" In;      // pinName = hard_misr_final[5]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[6]" In;      // pinName = hard_misr_final[6]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[7]" In;      // pinName = hard_misr_final[7]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[8]" In;      // pinName = hard_misr_final[8]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_misr_final[9]" In;      // pinName = hard_misr_final[9]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[0]" In;      // pinName = hard_test_cycles_final[0]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[10]" In;      // pinName = hard_test_cycles_final[10]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[1]" In;      // pinName = hard_test_cycles_final[1]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[2]" In;      // pinName = hard_test_cycles_final[2]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[3]" In;      // pinName = hard_test_cycles_final[3]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[4]" In;      // pinName = hard_test_cycles_final[4]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[5]" In;      // pinName = hard_test_cycles_final[5]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[6]" In;      // pinName = hard_test_cycles_final[6]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[7]" In;      // pinName = hard_test_cycles_final[7]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[8]" In;      // pinName = hard_test_cycles_final[8]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "hard_test_cycles_final[9]" In;      // pinName = hard_test_cycles_final[9]; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "scan_mode" In;      // pinName = scan_mode; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "spi_csn_i" In;      // pinName = spi_csn_i; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "spi_mosi_i" In;      // pinName = spi_mosi_i; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "spi_sclk_i" In;      // pinName = spi_sclk_i; testOffset = 0.000000;  scanOffset = 0.000000;  
+    "scan_so" Out;      // pinName = scan_so;  tf =  SO  ; 
+    "clk_trim[0]" Out;      // pinName = clk_trim[0]; 
+    "clk_trim[1]" Out;      // pinName = clk_trim[1]; 
+    "clk_trim[2]" Out;      // pinName = clk_trim[2]; 
+    "clk_trim[3]" Out;      // pinName = clk_trim[3]; 
+    "cp_dac[0]" Out;      // pinName = cp_dac[0]; 
+    "cp_dac[1]" Out;      // pinName = cp_dac[1]; 
+    "cp_dac[2]" Out;      // pinName = cp_dac[2]; 
+    "cp_dac[3]" Out;      // pinName = cp_dac[3]; 
+    "cp_dac[4]" Out;      // pinName = cp_dac[4]; 
+    "cp_en" Out;      // pinName = cp_en; 
+    "d_boost_enable" Out;      // pinName = d_boost_enable; 
+    "d_data_out[0]" Out;      // pinName = d_data_out[0]; 
+    "d_data_out[1]" Out;      // pinName = d_data_out[1]; 
+    "d_data_out[2]" Out;      // pinName = d_data_out[2]; 
+    "d_data_out[3]" Out;      // pinName = d_data_out[3]; 
+    "d_data_out[4]" Out;      // pinName = d_data_out[4]; 
+    "d_data_out[5]" Out;      // pinName = d_data_out[5]; 
+    "d_data_out[6]" Out;      // pinName = d_data_out[6]; 
+    "d_data_out[7]" Out;      // pinName = d_data_out[7]; 
+    "d_iddq_mode" Out;      // pinName = d_iddq_mode; 
+    "d_manch_out" Out;      // pinName = d_manch_out; 
+    "d_scan_mode" Out;      // pinName = d_scan_mode; 
+    "ee_addr[0]" Out;      // pinName = ee_addr[0]; 
+    "ee_addr[1]" Out;      // pinName = ee_addr[1]; 
+    "ee_addr[2]" Out;      // pinName = ee_addr[2]; 
+    "ee_addr[3]" Out;      // pinName = ee_addr[3]; 
+    "ee_addr[4]" Out;      // pinName = ee_addr[4]; 
+    "ee_block_mode[0]" Out;      // pinName = ee_block_mode[0]; 
+    "ee_block_mode[1]" Out;      // pinName = ee_block_mode[1]; 
+    "ee_comp_en" Out;      // pinName = ee_comp_en; 
+    "ee_datain[0]" Out;      // pinName = ee_datain[0]; 
+    "ee_datain[10]" Out;      // pinName = ee_datain[10]; 
+    "ee_datain[11]" Out;      // pinName = ee_datain[11]; 
+    "ee_datain[12]" Out;      // pinName = ee_datain[12]; 
+    "ee_datain[13]" Out;      // pinName = ee_datain[13]; 
+    "ee_datain[14]" Out;      // pinName = ee_datain[14]; 
+    "ee_datain[15]" Out;      // pinName = ee_datain[15]; 
+    "ee_datain[16]" Out;      // pinName = ee_datain[16]; 
+    "ee_datain[17]" Out;      // pinName = ee_datain[17]; 
+    "ee_datain[18]" Out;      // pinName = ee_datain[18]; 
+    "ee_datain[19]" Out;      // pinName = ee_datain[19]; 
+    "ee_datain[1]" Out;      // pinName = ee_datain[1]; 
+    "ee_datain[20]" Out;      // pinName = ee_datain[20]; 
+    "ee_datain[21]" Out;      // pinName = ee_datain[21]; 
+    "ee_datain[22]" Out;      // pinName = ee_datain[22]; 
+    "ee_datain[23]" Out;      // pinName = ee_datain[23]; 
+    "ee_datain[24]" Out;      // pinName = ee_datain[24]; 
+    "ee_datain[25]" Out;      // pinName = ee_datain[25]; 
+    "ee_datain[26]" Out;      // pinName = ee_datain[26]; 
+    "ee_datain[27]" Out;      // pinName = ee_datain[27]; 
+    "ee_datain[28]" Out;      // pinName = ee_datain[28]; 
+    "ee_datain[29]" Out;      // pinName = ee_datain[29]; 
+    "ee_datain[2]" Out;      // pinName = ee_datain[2]; 
+    "ee_datain[30]" Out;      // pinName = ee_datain[30]; 
+    "ee_datain[31]" Out;      // pinName = ee_datain[31]; 
+    "ee_datain[3]" Out;      // pinName = ee_datain[3]; 
+    "ee_datain[4]" Out;      // pinName = ee_datain[4]; 
+    "ee_datain[5]" Out;      // pinName = ee_datain[5]; 
+    "ee_datain[6]" Out;      // pinName = ee_datain[6]; 
+    "ee_datain[7]" Out;      // pinName = ee_datain[7]; 
+    "ee_datain[8]" Out;      // pinName = ee_datain[8]; 
+    "ee_datain[9]" Out;      // pinName = ee_datain[9]; 
+    "ee_en" Out;      // pinName = ee_en; 
+    "ee_er" Out;      // pinName = ee_er; 
+    "ee_pr" Out;      // pinName = ee_pr; 
+    "ee_rd" Out;      // pinName = ee_rd; 
+    "ee_vread[0]" Out;      // pinName = ee_vread[0]; 
+    "ee_vread[1]" Out;      // pinName = ee_vread[1]; 
+    "ee_vread[2]" Out;      // pinName = ee_vread[2]; 
+    "ibias_trim[0]" Out;      // pinName = ibias_trim[0]; 
+    "ibias_trim[1]" Out;      // pinName = ibias_trim[1]; 
+    "ibias_trim[2]" Out;      // pinName = ibias_trim[2]; 
+    "ibias_trim[3]" Out;      // pinName = ibias_trim[3]; 
+    "spi_csn_i_e" Out;      // pinName = spi_csn_i_e; 
+    "spi_miso_o" Out;      // pinName = spi_miso_o; 
+    "spi_miso_o_e" Out;      // pinName = spi_miso_o_e; 
+    "spi_mosi_i_e" Out;      // pinName = spi_mosi_i_e; 
+    "spi_mosi_o" Out;      // pinName = spi_mosi_o; 
+    "spi_mosi_o_e" Out;      // pinName = spi_mosi_o_e; 
+    "spi_sclk_i_e" Out;      // pinName = spi_sclk_i_e; 
+    "tie_hi" Out;      // pinName = tie_hi; 
+    "tie_lo" Out;      // pinName = tie_lo; 
+    "vddio_ref_e_n" Out;      // pinName = vddio_ref_e_n; 
+  } 
+
+//***************************************************************************//
+//                           DEFINE SIGNAL GROUPS                            //
+//***************************************************************************//
+
+  SignalGroups { 
+
+    "ALLPIs" = '"scan_clk"+"scan_se"+"scan_si"+"a_clk"+"a_ee_noload"
+               +"a_factory_access_pad"+"a_manch_in"+"a_manch_pad_in"+"a_rst"
+               +"die_source_code[0]"+"die_source_code[10]"
+               +"die_source_code[11]"+"die_source_code[12]"
+               +"die_source_code[13]"+"die_source_code[14]"
+               +"die_source_code[15]"+"die_source_code[16]"
+               +"die_source_code[17]"+"die_source_code[18]"
+               +"die_source_code[19]"+"die_source_code[1]"
+               +"die_source_code[20]"+"die_source_code[21]"
+               +"die_source_code[22]"+"die_source_code[23]"
+               +"die_source_code[24]"+"die_source_code[25]"
+               +"die_source_code[26]"+"die_source_code[27]"
+               +"die_source_code[28]"+"die_source_code[29]"
+               +"die_source_code[2]"+"die_source_code[3]"
+               +"die_source_code[4]"+"die_source_code[5]"
+               +"die_source_code[6]"+"die_source_code[7]"
+               +"die_source_code[8]"+"die_source_code[9]"+"ee_dataout[0]"
+               +"ee_dataout[10]"+"ee_dataout[11]"+"ee_dataout[12]"
+               +"ee_dataout[13]"+"ee_dataout[14]"+"ee_dataout[15]"
+               +"ee_dataout[16]"+"ee_dataout[17]"+"ee_dataout[18]"
+               +"ee_dataout[19]"+"ee_dataout[1]"+"ee_dataout[20]"
+               +"ee_dataout[21]"+"ee_dataout[22]"+"ee_dataout[23]"
+               +"ee_dataout[24]"+"ee_dataout[25]"+"ee_dataout[26]"
+               +"ee_dataout[27]"+"ee_dataout[28]"+"ee_dataout[29]"
+               +"ee_dataout[2]"+"ee_dataout[30]"+"ee_dataout[31]"
+               +"ee_dataout[3]"+"ee_dataout[4]"+"ee_dataout[5]"
+               +"ee_dataout[6]"+"ee_dataout[7]"+"ee_dataout[8]"
+               +"ee_dataout[9]"+"ee_hlat"+"ee_llat"+"ee_prog"
+               +"hard_misr_final[0]"+"hard_misr_final[10]"
+               +"hard_misr_final[11]"+"hard_misr_final[12]"
+               +"hard_misr_final[13]"+"hard_misr_final[14]"
+               +"hard_misr_final[15]"+"hard_misr_final[16]"
+               +"hard_misr_final[17]"+"hard_misr_final[18]"
+               +"hard_misr_final[19]"+"hard_misr_final[1]"
+               +"hard_misr_final[20]"+"hard_misr_final[21]"
+               +"hard_misr_final[22]"+"hard_misr_final[23]"
+               +"hard_misr_final[24]"+"hard_misr_final[25]"
+               +"hard_misr_final[26]"+"hard_misr_final[27]"
+               +"hard_misr_final[28]"+"hard_misr_final[29]"
+               +"hard_misr_final[2]"+"hard_misr_final[30]"
+               +"hard_misr_final[31]"+"hard_misr_final[3]"
+               +"hard_misr_final[4]"+"hard_misr_final[5]"
+               +"hard_misr_final[6]"+"hard_misr_final[7]"
+               +"hard_misr_final[8]"+"hard_misr_final[9]"
+               +"hard_test_cycles_final[0]"+"hard_test_cycles_final[10]"
+               +"hard_test_cycles_final[1]"+"hard_test_cycles_final[2]"
+               +"hard_test_cycles_final[3]"+"hard_test_cycles_final[4]"
+               +"hard_test_cycles_final[5]"+"hard_test_cycles_final[6]"
+               +"hard_test_cycles_final[7]"+"hard_test_cycles_final[8]"
+               +"hard_test_cycles_final[9]"+"scan_mode"+"spi_csn_i"
+               +"spi_mosi_i"+"spi_sclk_i"'; 
+
+    "ALLPOs" = '"scan_so"+"clk_trim[0]"+"clk_trim[1]"+"clk_trim[2]"
+               +"clk_trim[3]"+"cp_dac[0]"+"cp_dac[1]"+"cp_dac[2]"
+               +"cp_dac[3]"+"cp_dac[4]"+"cp_en"+"d_boost_enable"
+               +"d_data_out[0]"+"d_data_out[1]"+"d_data_out[2]"
+               +"d_data_out[3]"+"d_data_out[4]"+"d_data_out[5]"
+               +"d_data_out[6]"+"d_data_out[7]"+"d_iddq_mode"+"d_manch_out"
+               +"d_scan_mode"+"ee_addr[0]"+"ee_addr[1]"+"ee_addr[2]"
+               +"ee_addr[3]"+"ee_addr[4]"+"ee_block_mode[0]"
+               +"ee_block_mode[1]"+"ee_comp_en"+"ee_datain[0]"
+               +"ee_datain[10]"+"ee_datain[11]"+"ee_datain[12]"
+               +"ee_datain[13]"+"ee_datain[14]"+"ee_datain[15]"
+               +"ee_datain[16]"+"ee_datain[17]"+"ee_datain[18]"
+               +"ee_datain[19]"+"ee_datain[1]"+"ee_datain[20]"
+               +"ee_datain[21]"+"ee_datain[22]"+"ee_datain[23]"
+               +"ee_datain[24]"+"ee_datain[25]"+"ee_datain[26]"
+               +"ee_datain[27]"+"ee_datain[28]"+"ee_datain[29]"
+               +"ee_datain[2]"+"ee_datain[30]"+"ee_datain[31]"
+               +"ee_datain[3]"+"ee_datain[4]"+"ee_datain[5]"+"ee_datain[6]"
+               +"ee_datain[7]"+"ee_datain[8]"+"ee_datain[9]"+"ee_en"+"ee_er"
+               +"ee_pr"+"ee_rd"+"ee_vread[0]"+"ee_vread[1]"+"ee_vread[2]"
+               +"ibias_trim[0]"+"ibias_trim[1]"+"ibias_trim[2]"
+               +"ibias_trim[3]"+"spi_csn_i_e"+"spi_miso_o"+"spi_miso_o_e"
+               +"spi_mosi_i_e"+"spi_mosi_o"+"spi_mosi_o_e"+"spi_sclk_i_e"
+               +"tie_hi"+"tie_lo"+"vddio_ref_e_n"'; 
+
+    "CR_1_TM_1" = '"scan_si"' { ScanIn 1237; } 
+
+    "OR_1_TM_1" = '"scan_so"' { ScanOut 1237; } 
+
+    "ALLCLKs_TM_1" = '"scan_clk"'; 
+
+    "ALLECs_TM_1" = '"scan_clk"'; 
+
+    "ALLSIs_CR_TM_1" = '"CR_1_TM_1"'; 
+
+    "ALLSOs_OR_TM_1" = '"OR_1_TM_1"'; 
+
+  } 
+
+//***************************************************************************//
+//                               DEFINE MACROS                               //
+//***************************************************************************//
+
+  MacroDefs { 
+
+    "TEST" { WaveformTable "test_cycle"; 
+      Vector { 
+        "ALLPOs" = %; 
+        "ALLPIs" = %; } } 
+
+    "SCAN_CYCLE_TM_1" { WaveformTable "scan_cycle_TM_1"; 
+      Vector { 
+        "ALLPOs" = %; 
+        "ALLPIs" = %; } } 
+
+    "SCAN_TM_1" { WaveformTable "scan_cycle_TM_1"; 
+      Condition { 
+        "ALLPOs" =  \r84 X; 
+        "ALLSIs_CR_TM_1" = 0; 
+        "ALLCLKs_TM_1" = 0; 
+        } 
+      Shift { Vector { 
+        "ALLSOs_OR_TM_1" = #; 
+        "ALLSIs_CR_TM_1" = #; 
+        "ALLECs_TM_1" = P; } } } 
+
+    "TBphantomLogicSeq1_20231020011050__0" { WaveformTable "TBphantomLogicSeq1_20231020011050__0_cycle"; 
+      Vector { 
+        "ALLPIs" = %; 
+        "ALLPOs" = %; } } 
+
+    "TBphantomLogicSeq1_20231020011050__1" { WaveformTable "TBphantomLogicSeq1_20231020011050__1_cycle"; 
+      Vector { 
+        "ALLPIs" = %; 
+        "ALLPOs" = %; } } 
+} 

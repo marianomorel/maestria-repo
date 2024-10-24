@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="SPICE OPUS -- A SPICE engine for OPtimization UtilitieS" />
+  <meta name="keywords" content="analog circuit simulation, spice, opus, analog circuit optimization" />
+  <meta name="author" content="Faculty of Electircal Engineering, Ljubljana, Slovenia / Template design: G. Wolfgang" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style_screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="./css/style_print.css" />
+  <title>SPICE OPUS</title>
+ </head>
+ <body>
+  <div class="bg-head">
+   <div class="page-container-2">
+    <!-- Navigation Level 1 -->
+    <div class="nav1-container">
+     <div class="nav1">
+      <ul>
+       <li>
+        <a href="index.html">Home</a></li>
+       <li>
+        <a href="contact.html">Contact</a></li></ul></div></div>
+		<a href="index.html"><div class="site-name"></div></a>
+    <!-- Site slogan -->
+	<div class="site-slogan-container">
+	 <div class="site-slogan">
+      <p class="readmore">&rsaquo;&rsaquo;&rsaquo;&nbsp;
+       <a href="img/screen-pll.png">Screenshot</a></p>
+      <p class="title">THE SLIDE RULE OF SILICON DESIGN</p>
+      <p class="subtitle">Free Analog Circuit Simulation</p></div></div>
+    <!-- Header banner -->
+    <div class="img-header"></div>
+    <!-- Navigation Level 2 -->
+    <div class="nav2">
+     <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="license.html">License</a></li>
+      <li><a href="release.html">Release</a></li>
+      <li><a href="http://www.spiceopus.si/download/download.html">Download</a></li>
+      <li><a href="documentation.html"class="selected">Documentation</a></li>
+      <li><a href="links.html">Links</a></li></ul></div>
+    <!-- Buffer after header -->
+    <div class="buffer"></div>
+    <!-- NAVIGATION -->
+    <!-- Navigation Level 3 -->
+    <div class="nav3">
+     <ul>
+      <li class="title">Menu</li>
+      <li class="group">
+       <a href="index.html">About</a></li>
+      <li class="group">
+       <a href="license.html">License</a></li>
+      <li class="group">
+       <a href="release.html">Release</a></li>
+      <li class="group">
+       <a href="http://www.spiceopus.si/download/download.html">Download</a></li>
+      <li>
+       <a href="http://www.spiceopus.si/download/downloadl.html">Linux</a></li>
+      <li>
+       <a href="http://www.spiceopus.si/download/downloadw.html">Windows</a></li>
+      <li class="group">
+       <a href="documentation.html"class="selected">Documentation</a></li>
+      <li class="group">
+       <a href="links.html">Links</a></li></ul></div>
+    <!-- CONTENT -->
+    <div class="content2">
+     <!-- Page title -->
+     <div class="content2-pagetitle">Fifth-order active low-pass filter</div>
+     <!-- Text container -->
+     <div class="content2-container line-box">
+      <div class="content2-container-1col">
+       <p class="content-title-noshade-size3">The circuit</p>
+       <div class="content-txtbox-noshade">
+        <p>In this example the fifth-order active low-pass filter will be optimised by
+         <em>optimize</em> command. The circuit is shown in figure below.</p>
+        <p align="center"><img border="0" src="./imgopt/opt004-01.gif" /></p>
+        <p>We can see, that we have two ideal operational amplifiers with 120dB gain and five resistors and capacitors, which determine pole locations in
+         <em>s</em> plane. In fact all circuit poles can be set without changing resistor values. So all resistors are the same (resistance is
+         50k<font face="symbol">W</font>).</p>
+        <p>Here is the netlist of the circuit (part of
+         <em>fifth-order_active_low-pass_filter.cir</em> file):
+         <font size="2">
+          <pre>
+*** the fifth-order low-pass filter ***
+
+vin 1 0 dc 0 ac 1V
+
+r1 1 2 50k
+r2 2 3 50k
+r3 3 4 50k
+r4 5 6 50k
+r5 6 7 50k
+
+c1 2 0 250nF
+c2 4 0 25nF
+c3 3 5 500nF
+c4 6 8 500nF
+c5 7 0 5nF
+
+e1 5 0 4 5 1meg
+e2 8 0 7 8 1meg
+
+.end
+</pre></font></p>
+        <p align="center">
+         <img border="0" src="./imgopt/opt004-02.gif" /></p>
+        <p>We want to design the low-pass filter with -3dB at 100Hz (cutoff frequency) and at least -70dB at 350Hz. Minimal ripple is desired at the same time. So we are looking for capacitances
+         <em>c1</em>,
+         <em>c2</em>,
+         <em>c3</em>,
+         <em>c4</em> and
+         <em>c5</em>, which will give the most satisfying frequency response. Frequency response is in our case given by:</p>
+        <p align="center">
+         <em>H(j
+          <font face="symbol">w</font>) =
+          H(j<font face="symbol">w</font>, c1, c2, c3, c4, c5)</em></p>
+        <p>Because of the given circuit topology the
+         <em>dc</em> gain will always be 0dB for arbitrary capacitances
+         <em>c1</em>,
+         <em>c2</em>,
+         <em>c3</em>,
+         <em>c4</em> and
+         <em>c5</em>.</p>
+        <p align="center">
+         <em>H(j0, c1, c2, c3, c4, c5) = 1 = 0dB</em></p>
+        <p>We can estimate the explicit constraints of the capacitances
+         <em>c1</em>,
+         <em>c2</em>,
+         <em>c3</em>,
+         <em>c4</em> and
+         <em>c5</em>.</p>
+        <p align="center">
+         <em>50nF &lt; c1 &lt; 500nF
+          <br />5nF &lt; c2 &lt; 50nF
+          <br />100nF &lt; c3 &lt; 1uF
+          <br />100nF &lt; c4 &lt; 1uF
+          <br />1nF &lt; c5 &lt; 10nF</em></p>
+        <p>In this example, we are searching for the capacitances
+         <em>c1</em>,
+         <em>c2</em>,
+         <em>c3</em>,
+         <em>c4</em> and
+         <em>c5</em> inside these intervals, which will give the required frequency response.</p>
+        <p>Now we have to define the cost function. It has to increase with ripple, difference between cutoff frequency and 100Hz and dBs above -70dB at 350Hz. The cost function will be defined by simply adding those three requests without weights (all are equally important). The second request will not be strictly realised. The cost function will be increased if frequency response is below -3dB at 98Hz (cutoff frequency is to low) and if frequency response is above -3dB at 102Hz (cutoff frequency is to high).</p>
+        <p align="center">
+         <em>E(c1, c2, c3, c4, c5) = (ripple) +
+          <br />((below -3dB at 98Hz) + (above -3dB at 102Hz)) +
+          <br />(above -70dB at 350Hz)</em></p>
+        <p>Because we are interested only in vector
+         <em>v(8)</em>, we will not save all other vectors calculated in a particular analysis.
+         <em>save</em> command defines which vectors will be saved. Then the circuit's netlist is loaded by
+         <em>source</em> command.
+         <font size="2">
+          <pre>
+Spice Opus 1 -> source (filename with netlist of the circuit)
+Circuit: *** the fifth-order low-pass filter ***
+Spice Opus 2 -> save v(8)
+</pre></font></p>
+        <p>First we have to define the parameters, which can vary in the optimisation process. Those are
+         <em>capacitances</em> of elements
+         <em>c1</em>,
+         <em>c2</em>,
+         <em>c3</em>,
+         <em>c4</em> and
+         <em>c5</em>. This can be done by
+         <em>optimize parameter</em> command. At the same time we will give the explicit constraints for all parameters and the initial point
+         (<em>c1</em> = 250nF,
+         <em>c2</em> = 25nF,
+         <em>c3</em> = 500nF,
+         <em>c4</em> = 500nF and
+         <em>c5</em> = 5nF), where the optimisation algorithm will start.
+         <font size="2">
+          <pre>
+Spice Opus 3 -> optimize parameter 0 @c1[capacitance]
+  low 50n high 500n initial 250n
+Spice Opus 4 -> optimize parameter 1 @c2[capacitance]
+  low 5n high 50n initial 25n
+Spice Opus 5 -> optimize parameter 2 @c3[capacitance]
+  low 100n high 1u initial 500n
+Spice Opus 6 -> optimize parameter 3 @c4[capacitance]
+  low 100n high 1u initial 500n
+Spice Opus 7 -> optimize parameter 4 @c5[capacitance]
+  low 1n high 10n initial 5n
+</pre></font></p>
+        <p>We also have to define the commands, which will be executed in every iteration. Those commands have to provide data for computing the value of the cost function and for verifying the implicit constraints (in this example there are no implicit constraints). To compute the cost function the frequency response is needed. It will be computed by three
+         <em>ac</em> analyses, so we will define three
+         <em>ac</em> commands by
+         <em>optimize analysis</em> command.
+         <font size="2">
+          <pre>
+Spice Opus 8 -> optimize analysis 0 ac lin 100 10Hz 95Hz
+Spice Opus 9 -> optimize analysis 1 ac lin 3 98Hz 102Hz
+Spice Opus 10 -> optimize analysis 2 ac lin 3 350Hz 360Hz
+</PRE>The expression for the cost function have to be defined next. We will use the <em>optimize cost</em> command. The expression have to be written in standard <em>Nutmeg</em> language.<pre>
+Spice Opus 11 -> optimize cost max(db(ac1.v(8))) - min(db(ac1.v(8))) +
+  (db(ac2.v(8)[0]) lt -3) * abs(db(ac2.v(8)[0]) + 3) +
+  (db(ac2.v(8)[2]) gt -3) * (db(ac2.v(8)[2]) + 3) +
+  (db(ac3.v(8)[0]) gt -70) * (db(ac3.v(8)[0]) + 70)
+</pre></font></p>
+        <p>The optimisation method and its parameters can be defined by
+         <em>optimize method</em> command. We will choose the constrained simplex method
+         (<em>complex</em>) with default settings.
+         <font size="2">
+          <pre>
+Spice Opus 12 -> optimize method complex
+</pre></font></p>
+        <p>Now we are ready to start the optimisation algorithm by
+         <em>optimize</em> command without parameters. When the algorithm converges the results and some statistics are written.
+         <font size="2">
+          <pre>
+Spice Opus 13 -> optimize
+Complex: stopped, simplex small enough
+Time needed for optimisation: 7.869 seconds
+Number of iterations: 565
+Lowest cost function value: 5.920833e-001
+Optimal values:
+@c1[capacitance]	=	1.105419e-007
+@c2[capacitance]	=	9.081350e-009
+@c3[capacitance]	=	2.275500e-007
+@c4[capacitance]	=	3.103057e-007
+@c5[capacitance]	=	3.384043e-009
+</pre></font></p>
+        <p>It is interesting to see how did the parameter values (capacitances) travel around the parameter space during the optimisation. The normalised values of the capacitances can be plotted by
+         <em>plot</em> command.
+         <font size="2">
+          <pre>
+Spice Opus 14 -> plot (c1_capacitance-5e-8)/45e-8
+  (c2_capacitance-5e-9)/45e-9 (c3_capacitance-1e-7)/9e-7
+  (c4_capacitance-1e-7)/9e-7 (c5_capacitance-1e-9)/9e-9
+  xlabel iteration ylabel capacitances
+</pre></font></p>
+        <p align="center">
+         <img border="0" src="./imgopt/opt004-03.gif" /></p>
+        <p>We can see that rough optimal values are determined after 350 iterations.</p>
+        <p>We optimised our low-pass filter. Now we will determine capacitances analytically and compare them with obtained results. The fifth-order 0.5dB Chebyshev low-pass filter meet our requirements. We can calculate the capacitances and compare them:
+         <table>
+          <tr>
+           <td width="100"></td>
+           <td width="50"></td>
+           <td width="100">analytic</td>
+           <td width="100">optimised</td></tr>
+          <tr>
+           <td></td>
+           <td>
+            <em>c1</em></td>
+           <td>106nF</td>
+           <td>111nF</td></tr>
+          <tr>
+           <td></td>
+           <td>
+            <em>c2</em></td>
+           <td>9.66nF</td>
+           <td>9.08nF</td></tr>
+          <tr>
+           <td></td>
+           <td>
+            <em>c3</em></td>
+           <td>218nF</td>
+           <td>228nF</td></tr>
+          <tr>
+           <td></td>
+           <td>
+            <em>c4</em></td>
+           <td>301nF</td>
+           <td>310nF</td></tr>
+          <tr>
+           <td></td>
+           <td>
+            <em>c5</em></td>
+           <td>3.64nF</td>
+           <td>3.38nF</td></tr></table>We can see that optimising algorithm found almost the same values as analytically calculated. We can also compare pole
+         (<em><font face="symbol">a</font> +
+          j<font face="symbol">w</font></em>) distribution in
+         <em>s</em> plane.
+         <table>
+          <tr align="center">
+           <td width="70"></td>
+           <td width="70">pole</td>
+           <td width="120">analytic</td>
+           <td width="120">optimised</td></tr>
+          <tr align="center">
+           <td></td>
+           <td>1.</td>
+           <td>-214</td>
+           <td>-201</td></tr>
+          <tr align="center">
+           <td></td>
+           <td>2.</td>
+           <td>-174 - j371</td>
+           <td>-167 - j381</td></tr>
+          <tr align="center">
+           <td></td>
+           <td>3.</td>
+           <td>-174 + j371</td>
+           <td>-167 + j381</td></tr>
+          <tr align="center">
+           <td></td>
+           <td>4.</td>
+           <td>-66.4 - j601</td>
+           <td>-66.5 - j614</td></tr>
+          <tr align="center">
+           <td></td>
+           <td>5.</td>
+           <td>-66.4 + j601</td>
+           <td>-66.5 + j614</td></tr></table></p>
+        <p>Finally it is interesting to compare frequency responses of optimised and analytic filter. Capacitances will be changed to analytically calculated by
+         <em>alter</em> command.
+         <font size="2">
+          <pre>
+Spice Opus 15 -> ac dec 100 1Hz 1kHz
+Spice Opus 16 -> alter c1 capacitance = 106n
+Spice Opus 17 -> alter c2 capacitance = 9.66n
+Spice Opus 18 -> alter c3 capacitance = 218n
+Spice Opus 19 -> alter c4 capacitance = 301n
+Spice Opus 20 -> alter c5 capacitance = 3.64n
+Spice Opus 21 -> ac dec 100 1Hz 1kHz
+Spice Opus 22 -> plot db(ac1.v(8)) db(ac2.v(8))
+  xlabel f[Hz] ylabel magnitude[dB] title 'AC analyses'
+</pre></font></p>
+        <p align="center">
+         <img border="0" src="./imgopt/opt004-04.gif" />
+         <br />
+         <br />
+         <img border="0" src="./imgopt/opt004-05.gif" /></p>
+        <p>
+         <font size="2">
+          <pre>
+Spice Opus 23 -> _
+</pre></font></p>
+        <p>We can see that the filters are almost identical and that they equally satisfy our requirements.</p>
+        <p>The input file
+         (<em>fifth-order_active_low-pass_filter.cir</em>) comes with the installation. It does not do exactly the same steps which are described above.</p></div></div></div></div>
+    <!-- FOOTER -->
+    <div class="footer">
+     <p>
+      <strong>Copyright &copy; 2008 Faculty of Electrical Engineering, Ljubljana, Slovenia | All Rights Reserved</strong></p>
+     <p>Page Design
+      <a href="mailto:gw@actamail.com">G. Wolfgang</a> | Page content
+      <a href="mailto:spice_developers@fides.fe.uni-lj.si">EDA Group</a></p></div></div></div>
+  <script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+   try
+   {
+     var pageTracker = _gat._getTracker("UA-8305434-3");
+     pageTracker._trackPageview();
+   } catch(err)
+   {
+   }
+  </script></body></html>

@@ -1,0 +1,553 @@
+STIL 1.0; 
+
+//***************************************************************************//
+//                             STIL VECTOR FILE                              //
+//Cadence(R) Modus(TM) DFT Software Solution, Version 19.12-s004_1, built Dec//
+//***************************************************************************//
+//                                                                           //
+//  FILE CREATED..............October 19, 2023 at 22:12:14                   //
+//                                                                           //
+//  PROJECT NAME..............modus_project                                  //
+//                                                                           //
+//  TESTMODE..................FULLSCAN_TIMED                                 //
+//                                                                           //
+//  TDR.......................ate.tdr                                        //
+//                                                                           //
+//  TEST PERIOD...............100.000  TEST TIME UNITS...........ns          //
+//  TEST PULSE WIDTH..........10.000                                         //
+//  TEST STROBE OFFSET........70.000   TEST STROBE TYPE..........edge        //
+//  TEST BIDI OFFSET..........0.000                                          //
+//  TEST PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                     SCAN OVERLAP..............yes         //
+//  SCAN PERIOD...............100.000  SCAN TIME UNITS...........ns          //
+//  SCAN PULSE WIDTH..........10.000                                         //
+//  SCAN STROBE OFFSET........10.000   SCAN STROBE TYPE..........edge        //
+//  SCAN BIDI OFFSET..........0.000                                          //
+//  SCAN PI OFFSET............0.000    X VALUE...................Z           //
+//                                                                           //
+//                                                                           //
+//   Individually set PIs                                                    //
+//  "scan_clk" (PI # 115)                                                    //
+//  TEST OFFSET...............10.000   PULSE WIDTH...............10.000      //
+//  SCAN OFFSET...............20.000   PULSE WIDTH...............10.000      //
+//                                                                           //
+//  Active TESTMODEs TM = 1 ..FULLSCAN_TIMED                                 //
+//                                                                           //
+//***************************************************************************//
+
+  Include "STIL.FULLSCAN_TIMED.signals.stil"; 
+
+//***************************************************************************//
+//                            TIMING DEFINITIONS                             //
+//***************************************************************************//
+
+  Timing { 
+
+    WaveformTable "test_cycle" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '10.000000ns' D/U/Z/U; '20.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '70.000000ns' L/H/T/X; } } 
+    } } 
+
+    WaveformTable "scan_cycle_TM_1" { Period '100.000000ns' ; 
+      Waveforms { 
+        "scan_clk" { 01ZP { '0ns' P/P/P/P;  '20.000000ns' D/U/Z/U; '30.000000ns' D/U/Z/D; } } 
+        "scan_se" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_si" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_clk" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_ee_noload" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_factory_access_pad" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_manch_pad_in" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "a_rst" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "die_source_code[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_dataout[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_hlat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_llat" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "ee_prog" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[11]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[12]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[13]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[14]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[15]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[16]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[17]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[18]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[19]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[20]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[21]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[22]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[23]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[24]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[25]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[26]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[27]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[28]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[29]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[30]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[31]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_misr_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[0]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[10]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[1]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[2]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[3]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[4]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[5]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[6]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[7]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[8]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "hard_test_cycles_final[9]" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_mode" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_csn_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_mosi_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "spi_sclk_i" { 01Z  { '0.000000ns' D/U/Z; } } 
+        "scan_so" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "clk_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_dac[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "cp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_boost_enable" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_data_out[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_iddq_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_manch_out" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "d_scan_mode" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_addr[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_block_mode[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_comp_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[10]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[11]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[12]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[13]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[14]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[15]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[16]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[17]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[18]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[19]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[20]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[21]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[22]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[23]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[24]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[25]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[26]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[27]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[28]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[29]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[30]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[31]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[4]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[5]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[6]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[7]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[8]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_datain[9]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_en" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_er" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_pr" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_rd" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ee_vread[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[0]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[1]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[2]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "ibias_trim[3]" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_csn_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_miso_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_mosi_o_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "spi_sclk_i_e" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_hi" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "tie_lo" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+        "vddio_ref_e_n" { LHTX { '0ns' X/X/X/X; '10.000000ns' L/H/T/X; } } 
+    } } 
+} 
+
+//***************************************************************************//
+//                               TEST VECTORS                                //
+//***************************************************************************//
+
+PatternBurst 
+  MAIN_BRST { Termination { "ALLPOs" TerminateOff; } 
+              PatList { MAIN_TEST; } } 
+
+PatternExec 
+  MAIN_EXEC { PatternBurst MAIN_BRST; } 
+
+Pattern 
+  MAIN_TEST { 
+
+//***************************************************************************//
+//                                                                           //
+//  EXPERIMENT................1  Name = scanchain_dynamic                    //
+//  DATA FORMAT...............binary                                         //
+//                                                                           //
+//  TEST SECTION..............1        TEST SECTION TYPE.........scan        //
+//                                                                           //
+//  The range of Tests in this Test Section......................1:1         //
+//                                                                           //
+//  TESTER TERMINATION........none     TERMINATION DOMINATION....tester      //
+//                                                                           //
+//***************************************************************************//
+
+//***************************************************************************//
+//  TESTER LOOP...............1        PROCEDURES HAVE MEMORY....no          //
+//                                                                           //
+//  The range of Tests in this Tester Loop.......................1:1         //
+//                                                                           //
+//  TEST PROCEDURE............1        TYPE......................init        //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  TEST SEQUENCE.............         TYPE......................init        //
+//***************************************************************************//
+
+//  Processing the Static: EVENT 1.1.1.1.1.1.1;  Stim_PI; 
+//  Processing the Static: EVENT 1.1.1.1.1.1.2;  Stim_PPI;  (Not Used) 
+//  The current cycle count is at '1'
+  Macro "TEST" { 
+    "ALLPIs" = 01 \r119 Z ; 
+    "ALLPOs" = \r84 X ; } 
+
+//***************************************************************************//
+//  TEST PROCEDURE............2        TYPE......................normal      //
+//                                                                           //
+//  The range of Tests in this Test Procedure....................1:1         //
+//                                                                           //
+//  SLOW TO TURN OFF..........false    SEQUENCES HAVE MEMORY.....no          //
+//  STATIC FAULTS.............21450    PERCENT STATIC FAULTS.....24.880816   //
+//  DYNAMIC FAULTS............15352    PERCENT DYNAMIC FAULTS....14.432369   //
+//  TEST SEQUENCE.............1        TYPE......................normal      //
+//***************************************************************************//
+
+//  Processing the Static: EVENT 1.1.1.2.1.1.1;  Scan_Load;  (no_overlap) 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '2'
+  Macro "TEST" { 
+    "ALLPIs" = 01 \r119 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 1;  Scan_Sequence  
+//  The current cycle count is at '1239'
+  Macro "SCAN_TM_1" { 
+    "CR_1_TM_1" = 0011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111
+                  100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111100011110001111000111; } 
+
+//  Processing the Static: EVENT 1.1.1.2.1.2.1;  Scan_Unload;  (no_overlap) 
+  "1.1.1.2.1.2": 
+// Inserted the Scan Sequence:  Scan_Preconditioning_Sequence  
+//  Inserted the Static: EVENT Stim_PI; 
+//  The current cycle count is at '1240'
+  Macro "TEST" { 
+    "ALLPIs" = 011 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+// Inserted the Scan Sequence # 2;  Scan_Sequence  
+//  The current cycle count is at '2477'
+  Macro "SCAN_TM_1" { 
+    "OR_1_TM_1" = LLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHH
+                  HLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHHHLLLHHH; } 
+
+// Inserted final non-scan Pattern
+//  The current cycle count is at '2478'
+  Macro "TEST" { 
+    "ALLPIs" = 010 \r118 Z ; 
+    "ALLPOs" = \r84 X ; } 
+  } 
