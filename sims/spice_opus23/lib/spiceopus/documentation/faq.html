@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="SPICE OPUS -- A SPICE engine for OPtimization UtilitieS" />
+  <meta name="keywords" content="analog circuit simulation, spice, opus, analog circuit optimization" />
+  <meta name="author" content="Faculty of Electircal Engineering, Ljubljana, Slovenia / Template design: G. Wolfgang" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style_screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="./css/style_print.css" />
+  <title>SPICE OPUS</title>
+</head>
+
+<body>
+<div class="bg-head"><div class="page-container-2">
+
+     <!-- Navigation Level 1 -->
+     <div class="nav1-container">
+    	<div class="nav1">
+			<ul>
+    	    	<li><a href="index.html">Home</a></li>
+         		<li><a href="contact.html">Contact</a></li>																		
+			</ul>
+		</div>
+    </div>			
+		<a href="index.html"><div class="site-name"></div></a>
+    
+    <!-- Site slogan -->
+	  <div class="site-slogan-container">
+		<div class="site-slogan">
+       		<p class="readmore">&rsaquo;&rsaquo;&rsaquo;&nbsp;<a href="img/screen-pll.png">Screenshot</a></p>
+    		<p class="title">THE SLIDE RULE OF SILICON DESIGN</p>
+	      	<p class="subtitle">Free Analog Circuit Simulation</p>  
+    	</div>
+	  </div>		 						    	
+       	 						
+    <!-- Header banner -->		 						    		 						
+	  <div class="img-header"></div>
+    
+    <!-- Navigation Level 2 -->												
+    <div class="nav2">			
+			<ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="license.html">License</a></li>
+        <li><a href="release.html">Release</a></li>
+        <li><a href="http://www.spiceopus.si/download/download.html">Download</a></li>			
+        <li><a href="documentation.html"class="selected">Documentation</a></li>		
+        <li><a href="links.html">Links</a></li>
+		  </ul>
+		</div>
+    
+    <!-- Buffer after header -->    
+		<div class="buffer"></div>
+
+		<!-- NAVIGATION -->				
+  	<!-- Navigation Level 3 -->
+		<div class="nav3">
+      <ul>
+        <li class="title">Menu</li>
+        <li class="group"><a href="index.html">About</a></li>		
+        <li class="group"><a href="license.html">License</a></li>
+        <li class="group"><a href="release.html">Release</a></li>
+        <li class="group"><a href="http://www.spiceopus.si/download/download.html">Download</a></li>       
+           <li><a href="http://www.spiceopus.si/download/downloadl.html">Linux</a></li>
+           <li><a href="http://www.spiceopus.si/download/downloadw.html">Windows</a></li>
+        <li class="group"><a href="documentation.html"class="selected">Documentation</a></li>
+        <li class="group"><a href="links.html">Links</a></li>       
+      </ul>
+    </div>				
+
+  	<!-- 	CONTENT -->
+		<div class="content2">
+
+  	  <!-- Page title -->		
+		  <div class="content2-pagetitle">Frequently Asked Questions</div>			
+       
+       
+           				
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					In the circuit netlist I have a resistor instance R1 1 0 1kOhm. Why does the command print @R1 cause two error messages namely Error: instance 'R1' not found. and Error: @R1: no such vector., instead of printing the resistance of R1?
+          </p>                            
+					<div class="content-txtbox-noshade">
+				  <p>
+          The problem lies in the case sensitivity of the circuit netlist and the NUTMEG command set. 
+          The netlist syntax (element definitions, .model and .subckt statements) is case insensitive. 
+          It is always converted to lower case before parsing. For example the lines:
+          <p class="showcode">
+          R1 1 0 1kOhm<br>
+          R1 1 0 1KOHM<br>
+          r1 1 0 1Kohm etc.
+          <p>
+          are all converted into the same lowercase line:
+          <p class="showcode">
+          r1 1 0 1kohm
+          <p>
+          In all above cases the simulator knows a resistor named r1 and not R1. NUTMEG commands 
+          (issued in the .control block or interactively at SpiceOpus prompt) on the other hand are 
+          case sensitive. Therefore print, PRINT, Print etc. are different commands. For example 
+          executing a command:
+          <p class="showcode">
+          PRINT @R1
+          <p>
+          will cause SpiceOpus to answer with the error message:
+          <p class="showcode">
+          PRINT: no such command available in SpiceOpus
+          <p>
+          The reason is that the simulator really does not know the command PRINT, it knows 
+          only print. Because it also does not know an element R1, but only r1, the command 
+          print @R1 will not work. To print a resistors resistance the command print @r1 
+          should be issued. To avoid this kind of errors it is best to stick consequently 
+          to lower case (in the circuit netlist as well as the NUTMEG commands).           
+          </div>
+        </div>
+      </div> 
+
+      
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How can the output printed in SpiceOpus Command Window be redirected to somewhere else (output file)?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Output can not be redirected from the Command Window. But it can also be printed into an arbitrary 
+          file by using the -o option in the command line. This way output is printed into a file and into 
+          the SPICE OPUS Command Window at the same time. The -o option was originally coded but not documented 
+          in Berkeley's User's Manual. For instance starting SpiceOpus with
+          <p class="showcode">
+          spice3.exe -o out.txt
+          <p>
+          logs all its output into file out.txt. If also an input file with circuit netlist and Nutmeg 
+          commands is provided, and the last command is quit, then starting SpiceOpus with
+          <p class="showcode">
+          spice3.exe -o out.txt input_file.cir
+          <p>
+          is similar to batch mode running of SpiceOpus without dot commands (-b option).
+          </p></div>
+        </div>
+      </div> 
+
+      
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					I put an .op command in my input file with circuit netlist (see listing below). 
+					Why can't I print the resulting node voltage v(2) with command print v(2) after 
+					the file is loaded into SpiceOpus?
+          </p>                            
+					<div class="content-txtbox-noshade">
+          <p class="showcode">
+          simple circuit<br>
+          v1 1 0 dc 5V<br>
+          r1 1 2 2<br>
+          r2 2 0 3<br>
+          .op<br>
+          .end<br>
+          <p>
+          When the input file is loaded (source command) the circuit netlist is parsed and 
+          Nutmeg commands (commands inside .control .endc blocks) are executed. In the listing 
+          above there are no Nutmeg commands. Dot commands (in our case .op) are not executed. 
+          Because the operating point analysis was not made the node voltage v(2) cannot be 
+          printed respectively.
+          <p>
+          Dot commands are obsolete in Berkeley's Spice3 versions. They were used in Spice2 
+          versions where simulator ran in batch mode and it wrote the results to an output 
+          file which were than usually viewed with a post processing program.
+          <p>
+          In order to execute the dot commands the run command can be used. The dot commands 
+          can also be issued as Nutmeg commands inside .control block. In our case instead 
+          of .op one should use:
+          <p class="showcode">
+          .control<br>
+          op<br>
+          .endc<br>
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Batch mode running of program documented in Berkeley's documentation for Spice2 
+					versions does not work for SpiceOpus. Can SpiceOpus run in batch mode?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          SpiceOpus can run in batch mode by using the -b option in the command line. Starting SpiceOpus by
+          <p class="showcode">spice3.exe -b in.cir -o out.txt
+          <p>runs the program in batch mode. It reads the circuit described in the in.cir file and first 
+          executes all Nutmeg commands. Then it automatically performs destroy all and run commands. Thus 
+          the dot commands are also executed as it is the case in Spice2 versions (see explanation about 
+          dot commands above). The required results (enlisted by .print etc. commands) are send to output 
+          file which has to be specified by -o option (in our case out.txt). The results of dot commands 
+          can also be redirected to raw file (-r option). The results from analyses performed as Nutmeg 
+          commands are not saved by default.
+          <p>
+          Lets take a closer look at the following example. Let the listing of in.cir be as follows:
+          <p class="showcode">
+          simple circuit<br>
+          v1 1 0 dc 0 ac 1V pulse 0 5V 1s 1s 1s 5s 12s<br>
+          r1 1 2 2<br>
+          r2 2 0 3<br>
+          c2 2 0 1m<br>
+          .tran 1s 13s<br>
+          .ac dec 10 1Hz 100kHz<br>
+          .print tran v1#branch<br>
+          .print ac v(2)<br>
+          .control<br>
+          op<br>
+          write op.raw<br>
+          .endc<br>
+          .end<br>
+          <p>
+          If the user runs SpiceOpus in batch mode with the command line above then the results of 
+          operating point analysis are written into op.raw file. The current v1#branch calculated 
+          in the transient analysis and voltage v(2) calculated in the ac analysis are written 
+          into the out.txt file.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How can I get fixed timestep in transient analysis?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Timestep in transient analysis is always dynamically adjusted. So it will never 
+          stay constant through the analysis and time points will not be equidistant 
+          respectively. But there are two parameters, that timestep can be controlled 
+          with. And the results can also be linearised afterwards. As it is well known 
+          the tran command has the following syntax:
+          <p class="showcode">tran tstep tstop[ tstart[ tmax]][ uic]
+          <p>Parameters tstep and tmax are related with timestep. The second parameter 
+          is an upper limit, so the timestep can never be greater than tmax. This way 
+          a minimal time precision can be guaranteed. The first parameter (tstep) is 
+          used for calculating the initial timestep and the default value of tmax when 
+          it is not given. To linearise the results afterwards use linearize command. 
+          It creates new plot (set of results). All vectors are linearised to a fixed 
+          timestep given with the command. This way one can obtain transient results 
+          with equidistant time points suitable for fast Fourier transformation.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					I want to calculate DC characteristics of a MOSFET device (see netlist below). 
+					When they are plotted some linear lines show up, which should not be there. 
+					How can the characteristics be plotted properly?
+          </p>                            
+					<div class="content-txtbox-noshade">
+          <p class="showcode">
+          dc mosfet characteristics<br>
+          .control<br>
+          dc vds 0 10V 0.5V vgs 0 5V 1V<br>
+          plot -i(vds)<br>
+          .endc<br>
+          vgs gate 0 dc 0<br>
+          vds drain 0 dc 0<br>
+          m1 drain gate 0 0 nchannel<br>
+          .model nchannel nmos<br>
+          .end <br>	  
+          <p> 
+          <img src="./img/dc_mosfet_characteristics.gif" class="img-right-noborder-topmargin" width="" height="" alt="" />
+          The DC analysis issued above produces results packed in 21 × 6 = 126 points 
+          long vectors. First 21 points correspond to vgs = 0, second 21 to vgs = 1V etc. 
+          When one plots the results, 126 points long vector(s) is(are) plotted. plot 
+          command does not know, that for example vector i(vds) represents six subvectors. 
+          It just plots its points connected with lines, which produces unwanted linear lines.
+          <p>
+          Resulting vector has to be break apart into six subvectors to remove linear lines. 
+          This can be achieved by forming six new vectors named ivg0, ivg1, ... ivg5, 
+          which can then be plotted. So plot command in the above .control block should be 
+          replaced with the following commands:
+          <p class="showcode">
+          let ivgs0 = -i(vds)[  0, 20]<br>
+          let ivgs1 = -i(vds)[ 21, 41]<br>
+          let ivgs2 = -i(vds)[ 42, 62]<br>
+          let ivgs3 = -i(vds)[ 63, 83]<br>
+          let ivgs4 = -i(vds)[ 84,104]<br>
+          let ivgs5 = -i(vds)[105,125]<br>
+          plot ivgs0 ivgs1 ivgs2 ivgs3 ivgs4 ivgs5<br>
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Is there a way to control options from the SpiceOpus command line interface? 
+					If a particular option is set via the .options line in the cir file, can 
+					its value be viewed and changed after the file is loaded?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Any option value can be viewed by set command without arguments. If one types set, 
+          all variables are displayed. Some of them have + sign in front of them. Those are 
+          the simulator variables that are normally set with .options line in the netlist 
+          file. Options (variables with + sign) can also be altered or set by using:
+          <p class="showcode">set variable_name = value
+          <p>An arbitrary Nutmeg expression wrapped into curly braces {} can be used instead 
+          of value. The options can also be deleted by using the unset command:
+          <p class="showcode">unset variable_name
+          <p>If a particular simulator option is not set, then SpiceOpus will use the default values.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How can I get the current through an arbitrary branch of the circuit?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          SpiceOpus (and other Spices in general) can print currents, which flow through 
+          voltage sources. They can be accessed in two ways:
+          <p class="showcode">i(voltage_source_name)
+          <p>or
+          <p class="showcode">voltage_source_name#branch
+          <p>(Note that lowercase letters are used in Nutmeg.)
+          This way currents in voltage source branches are automatically accessible. 
+          If one wants to measure a particular current in a non voltage source branch, 
+          voltage source with 0V (short circuit) has to be added in serial. This does 
+          not actually change the circuit, it stays the same. Now, after the analysis 
+          is done, one can get the current through the 0V voltage source, which is 
+          wanted branch current at the same time, with the above syntax.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How the results from the ac analysis can be plotted in an ordinary used 
+					units (dB for magnitude and degrees for phase)?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Lets say out is the output node name of the analysed circuit, and in is the 
+          input node with unity input ac source to the ground. When the ac analysis 
+          is performed v(out) actually represents the ratio v(out)/v(in), because 
+          v(in) = 1V. Gain in dB (that is 20log(v(out)/v(in))), and phase in degrees 
+          (that is arctg(imag(v(out)/v(in))/real(v(out)/v(in)))) can be plotted by:
+          <p class="showcode">set units = degrees<br>
+          plot db(v(out)) ph(v(out))
+          <p>Nutmeg functions db and ph calculates the expressions for the gain and 
+          phase written above. units variable defines the units for the trigonometric 
+          functions (default are radians), so in our case the phase is calculated 
+          in degrees.
+          <p>Instead of the above lines one can also achieve the same with simply:
+          <p class="showcode">plot v(out)
+          <p>v(out) is a complex vector and only its real part is plotted by default 
+          (like in original Berkeley's Spice). For displaying gain in dB options 
+          Graph/Magnitude and Graph/Units/Magnitude: dB(20log10) have to be chosen. 
+          And for displaying phase in degrees Graph/Phase and Graph/Units/Angle: 
+          deg have to be chosen.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					When I run SpiceOpus it always prints a message Note: can't find 
+					init file. What does it mean and how can I fix that?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Nutmeg commands, which are carried out automatically at start, are 
+          in init file spinit. SpiceOpus obviously did not find the file and 
+          the commands were therefore not executed. If environment variable 
+          OPUSHOME is specified then spinit file should be in OPUSHOME/lib/scripts 
+          directory. Otherwise, if OPUSHOME is not defined, SpiceOpus takes 
+          SPICE_LIB_DIR environment variable and search for spinit in 
+          SPICE_LIB_DIR/scripts directory. If also SPICE_LIB_DIR is not defined 
+          then default path to scripts directory is used. It is c:/spiceopus/lib/scripts 
+          for Windows based operating systems.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How can I model non-linear resistance, capacitance or inductance?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+					<img src="./img/non-linear_modelling.gif" class="img-left-noborder-topmargin" width="" height="" alt="" />
+          Non-linear element can be defined in two different ways. For resistance 
+          u(i) or i(u) characteristic can be given, for capacitance q(u) or u(q) 
+          and for inductance i(y) or y(i) characteristic. All six cases are depicted 
+          in figure below. Of course non-linear controlled sources (B) has to be used. 
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					What analyses can be used in optimize analysis statements?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          An arbitrary Nutmeg commands can be used in optimize analysis block. That 
+          includes all analysis commands. The commands will be executed every iteration 
+          of optimisation procedure to provide the results for calculating the cost 
+          function. They will be performed in an order defined with numbers after 
+          optimize analysis.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					If channel width/length of a MOSFET are the optimisation parameters, 
+					do the drain/source perimeters/areas change automatically corresponding to the width/length?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          MOSFET drain/source perimeters/areas are not corrected when width/length of the channel is 
+          changed. There are also some model parameters in some levels, which depend on channel 
+          width/length (e.g. parameter lambda for MOS2 - level = 2) and are not corrected as well. 
+          All those parameters should be set manually in the optimize analysis statements prior to 
+          any circuit analysis. Example:
+          <p class="showcode">
+          ...<br>
+          m1 2 6 3 3 pch1 ...<br>
+          m2 1 7 3 3 pch1 ...<br>
+          .model pch1 pmos level=2 ...<br>
+          ...<br>
+          .control<br>
+          ...<br>
+          *** setting optimisation parameters ***<br>
+          optimize parameter 0 @m1[w] low 4u high 200u initial 4.2u<br>
+          optimize parameter 1 @m1[l] low 4u high 40u  initial 4.3u<br>
+          ...<br>
+          *** setting width dependent parameters in every iteration ***<br>
+          optimize analysis 0  let @m2[w]  = @m1[w]<br>
+          optimize analysis 1  let @m2[l]  = @m1[l]<br>
+          optimize analysis 2  let @m1[ad] = 9e-6 * (@m1[w] + 8e-7)<br>
+          optimize analysis 3  let @m2[ad] = 9e-6 * (@m1[w] + 8e-7)<br>
+          optimize analysis 4  let @m1[as] = 9e-6 * (@m1[w] + 8e-7)<br>
+          optimize analysis 5  let @m2[as] = 9e-6 * (@m1[w] + 8e-7)<br>
+          optimize analysis 6  let @m1[pd] = 18e-6 + (@m1[w] + 8e-7)<br>
+          optimize analysis 7  let @m2[pd] = 18e-6 + (@m1[w] + 8e-7)<br>
+          optimize analysis 8  let @m1[ps] = 18e-6 + (@m1[w] + 8e-7)<br>
+          optimize analysis 9  let @m2[ps] = 18e-6 + (@m1[w] + 8e-7)<br>
+          optimize analysis 10 let @@pch1[lambda] = 1 / (8.3 * (@m1[l] * 1e6)^1.14)<br>
+          optimize analysis 11 tran ...<br>
+          ...<br>
+          .endc<br>
+          ...<br>
+          <p>In the example above we have for instance two equal transistors m1 and m2 modelled with 
+          model pch1 which is MOSFET level = 2 (circuit netlist is not included). Channel dimensions 
+          of m1 are the optimisation parameters. Because m2 and m1 are equal the dimensions of m2 
+          are changed in first two optimize analysis statements. Then all perimeters/areas are set 
+          for both transistors (the expressions are defined with process technology). Also the model 
+          parameter lambda is corrected because of change of channel length. A detailed knowledge 
+          of the model is required here. But usually model parameters do not need to be changed, 
+          since they are valid for some range of channel widths/lengths.
+          <p>
+          Automatic changing of an arbitrary parameter can be achieved with 
+          <a href="netlist.html#5">parametrised subcircuits</a>. 
+          Therefore circuit netlist has to be changed. The example above would look like this:
+          <p class="showcode">
+          ...<br>
+          xpair 1 2 3 6 7 pair<br>
+          .subckt pair 1 2 3 6 7 param: w1=4.2u l1=4.3u<br>
+          m1 2 6 3 3 pch1 w={w1} l={l1} ad={9e-6*(w1+8e-7)} as={9e-6*(w1+8e-7)}<br>
+          + pd={18e-6+(w1+8e-7)} ps={18e-6+(w1+8e-7)}<br>
+          m2 1 7 3 3 pch1 w={w1} l={l1} ad={9e-6*(w1+8e-7)} as={9e-6*(w1+8e-7)}<br>
+          + pd={18e-6+(w1+8e-7)} ps={18e-6+(w1+8e-7)}<br>
+          .model pch1 pmos level=2 ... lambda={1/(8.3*(l1*1e6)^1.14)}<br>
+          .ends<br>
+          ...<br>
+          .control<br>
+          ...<br>
+          *** setting optimisation parameters ***<br>
+          optimize parameter 0 @xpair[w1] low 4u high 200u initial 4.2u<br>
+          optimize parameter 1 @xpair[l1] low 4u high 40u  initial 4.3u<br>
+          ...<br>
+          *** analyses ***<br>
+          optimize analysis 0 tran ...<br>
+          ...<br>
+          .endc<br>
+          ...<br>
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					There seems to be an inconsistency in the optimisation part of the 
+					SpiceOpus. Every time I run the optimisation for my circuit it 
+					comes out with different values for the parameters. Why?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          The optimisation is a process of finding minimum of a given cost 
+          function. If the cost function has more than one local minimum or cost 
+          function is 'numerically noisy' or the global minimum is not very 
+          distinctive or the method has bad convergence etc., then there is no 
+          guarantee that the optimisation will always find the global minimum from 
+          an arbitrary initial point. In many optimisation methods there is also 
+          some random behaviour built in to improve the robustness of a particular 
+          method. So it is possible to get different solutions with the same method 
+          launched from the same initial point in subsequent optimisation runs. 
+          That is also desired because each solution (if the method converged 
+          well then the solution is some local minimum) should give some 
+          additional information about the circuit to the designer. Notice 
+          also that the initial point is set to new values after each optimisation run.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Is m parameter used with BSIM3v3 MOSFET model (level = 53 in SpiceOpus) 
+					a true parallel topology parameter (e.g. m * Ids) or is it a geometrical 
+					scaling factor (e.g. m * w)?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          The m parameter used with BSIM3v3 is true topological parameter. It 
+          defines m transistors in parallel, which only approximately behaves as 
+          m-times wider transistor. This way the designer automatically gets m 
+          transistors in parallel so he does not need m identical lines in the 
+          circuit netlist. m transistors in parallel in general behaves differently 
+          then m-times wider transistor because of non-linear dependencies of 
+          channel width.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Can the results be simultaneously written into a file while the circuit analysis is running?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+					Yes, this can be done with run command. The circuit analysis (or more analyses) has to be 
+					defined in SPICE2 style with dot command outside the interactive .control .endc block. 
+					When the circuit is loaded into SpiceOpus the dot analysis is (or dot analyses are) 
+					performed when run command is issued. If run command has no argument the results are 
+					kept in computer memory. Otherwise argument defines the filename where results are 
+					simultaneously stored. Example:
+          <p class="showcode">
+          ... (circuit netlist)<br>
+          .tran ... (dot command(s))<br>
+          .control<br>
+          run output.raw<br>
+          .endc<br>
+          .end<br>
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Only node voltages and voltage supply currents are available by default after an 
+					arbitrary analysis is completed. How can I get other vectors beside those 
+					mentioned (e.g. current through a transistor port)?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Other vectors (e.g. element properties like current through a transistor port, model 
+          properties, simulator properties etc.) can be included by save command. Before the 
+          analysis is performed save command defining vectors for saving should be issued. 
+          For instance:
+          <p class="showcode">save @m1[id]
+          <p>shall include the id (drain current) property of the transistor m1. If there is 
+          no save defined, node voltages and voltage source currents will be saved by default. 
+          But if at least one save is defined then only listed vectors shall be saved. The 
+          above command would therefore save only vector @m1[id] and nothing else. If one 
+          wants to save the default vectors beside the specially listed ones all keyword 
+          should be used. For instance:
+          <p class="showcode">save @m1[id] all
+          <p> shall include all default vectors and vector @m1[id]. The list of saves can be 
+          retrieved by status command and a particular save can be deleted from the list by 
+          delete command.
+          </p></div>
+        </div>
+      </div> 
+
+ 			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					How can I save the results to an output file?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Results of separate analysis consist of a group of vectors called plot. 
+          Plots can be saved into output files (or raw files) in binary or ascii format 
+          by write command. Mode can be set by filetype variable, the default is ascii. 
+          The syntax of write command is:
+          <p class="showcode">write [file_name] [expressions]
+          <p> Example:
+          <p class="showcode">
+          set filetype = binary<br>
+          write amp.out v(1) v(4)
+          <p> Vectors v(1) and v(4) shall be written into the file amp.out in binary mode. 
+          The scales for both vectors shall be written out as well. If no expressions are 
+          given in the expression list all vectors in the current plot are saved by default. 
+          If the expression list contains vectors from different plots (results of different 
+          analyses) then all plots with listed vectors and their scales will be written. 
+          If the filename is omitted the default filename is rawspice.raw and can be set 
+          with -r flag in the command line. Output files generated this way can be read 
+          back into the SpiceOpus by load command.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					I want to perform corner simulations of the circuit. How can I change the MOS model 
+					parameters (e.g. tox, gamma etc.) dynamically while running SpiceOpus? Is it possible 
+					to establish dependencies among model parameters?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Model parameters can be changed interactively with alter or let command. However alter 
+          command is obsolete and will not be maintained in the future, so let is recommended. 
+          The syntax is:
+          <p class="showcode">
+          alter #model_name model_parameter = value<br>
+          let @@model_name[model_parameter] = value
+          <p> Example:
+          <p class="showcode">
+          ...<br>
+          m1 1 2 5 5 pch ...<br>
+          m2 3 4 5 5 pch ...<br>
+          .model pch pmos level=1 tox=2e-8 ...<br>
+          ...<br>
+          <p> Parameter tox of model pch can be changed from 20nm to 22nm with either:
+          <p class="showcode">
+          alter #pch tox = 2.2e-8<br>
+          let @@pch[tox] = 2.2e-8<br>
+          <p>Dependencies among model or device parameters can be established with 
+          <a href="netlist.html#5">parametrised subcircuits</a>. 
+          Nevertheless model parameters are independent and such relations are usually 
+          not needed. Example:
+          <p class="showcode">
+          ...<br>
+          xpair 1 2 3 4 5 ppair<br>
+          .subckt ppair 1 2 3 4 5 param: percent=0<br>
+          m1 1 2 5 5 pch ...<br>
+          m2 3 4 5 5 pch ...<br>
+          .model pch pmos level=1 tox={2e-8*(1+percent/100)}<br>
+          + gamma={0.2*(1+percent/100)} ...<br>
+         .ends<br>
+         ...<br>
+         <p> Parameters tox and gamma of model pch in subcircuit x1 can be simultaneously increased 
+         from their nominal values by 1% with:
+          <p class="showcode">let @x1[percent] = 1
+          <p> Corner simulations are normally not performed by changing model or device parameters 
+          interactively. Usually the model libraries for different corners (typical mean, worst power, 
+          worst speed etc.) are included into netlist as different netclasses. To switch from one 
+          corner to another only change of the netclass in needed.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					When gradient optimisation method (e.g. Davidon-Fletcher-Powell's method) is used, gradient 
+					of the cost function has to be calculated in each iteration. How the gradient is calculated 
+					in SpiceOpus's optimisation procedures?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          If cost function is defined in such a way that its gradient or at least some of gradient 
+          components (partial derivatives) can be expressed with the derivatives of the node voltages, 
+          then those gradient components can be obtained by sensitivity analysis of the circuit. The 
+          needed sensitivity analyses have to be done inside optimize analysis block. Mathematical 
+          expressions defining how to obtain a particular gradient component from node voltage derivatives 
+          have to be given with gradientx parameters of the gradient optimisation method.
+          <p>
+          But cost function is usually not defined in such a nice way and its gradient cannot be obtained 
+          through sensitivity. In this case it has to be calculated numerically by small perturbations 
+          of the optimisation parameters. This procedure has two considerable drawbacks. First at least 
+          additional n circuit analyses (executions of optimize analysis block) have to be done in each 
+          iteration, and second because of numerical errors the derivatives obtained are usually not 
+          very accurate. Therefore gradient optimisation methods are hardly convenient for such cost 
+          functions.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					What is area parameter for?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          The model parameters for diode, BJT, JFET and MESFET devices are always extracted for a 
+          particular layout and dimensions. So the model is valid only for that particular realisation 
+          of the device. If user wants to change the layout another model has to be used. The only way 
+          in which user can affect on layout is through area factor. Area factor defines how larger 
+          (or smaller) the device is comparing to modelled one. Its value is one by default. In layout 
+          all dimensions are multiplied by area factor so the device is enlarged (or reduced) 
+          for its value.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Why do I get singular matrix error if I run operating point analysis on a circuit with 
+					capacitors connected in series?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          The singular matrix error because of mentioned reason can occur only if option nofloatnodescheck 
+          is set. In this case checking circuit topology for floating nodes is not performed. During the 
+          operating point analysis all capacitances are considered as open circuits and all inductances 
+          are considered as short circuits. Therefore if there is a node to which only capacitances are 
+          connected then this node will be floating during the operating point analysis which causes 
+          singular matrix error. To avoid such situations insert a huge resistors from all floating nodes 
+          to ground into the circuit. Since the resistors have huge resistances they should not affect 
+          the circuit's behaviour. One can also use the rshunt option which places equal resistances from 
+          all nodes to ground.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Why do I get failed to open message when I try to read circuit's netlist into SpiceOpus with source command?
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          If only filename is specified as an argument to the source command then it has to reside in current 
+          working directory. Variable workdir contains absolute path of current working directory. It can be 
+          viewed by echo $(workdir) command. One can also use cd . command (change to current directory). If 
+          the file is not there then absolute path has to be provided as an argument to source command or current 
+          working directory has to be changed (use cd command).
+          <p>
+          If the file still cannot be opened then it obviously does not exist. Common error in this case is that 
+          the file was created with a text editor which automatically appends txt extension to file's name. 
+          Therefore the file with specified name really does not exist but there is filename.txt file.
+          </p></div>
+        </div>
+      </div> 
+
+  			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size2">
+					Are there any reports of bugs in BSIM3SOIv2 models in SpiceOpus? I have been running sample circuits 
+					available at UC Berkeley's BSIMSOI website using enclosed model cards but results in SpiceOpus are different 
+					from what they report according to their simulations.
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          There were no bug reports on BSIMSOI models until recently. The reason for this is probably that 
+          BSIMSOI models have not received much importance so far. We assume that only very few people work with 
+          BSIMSOI and also that it is quite hard to find model cards relating to a specific SOI process.
+          The <a href="./download/bsim3soi_samples.zip">sample circuits</a> were run with SpiceOpus and some bugs were found 
+          and fixed in version 2.23. The results are in accordance with Berkeley's.
+          </p></div>
+        </div>
+      </div> 
+
+      
+      
+ 
+		
+		
+		
+     
+     </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+       <p><b>Copyright &copy; 2008 Faculty of Electrical Engineering, Ljubljana, Slovenia | All Rights Reserved</b></p>
+       <p>Page Design <a href="mailto:gw@actamail.com">G. Wolfgang</a> | Page content <a href="mailto:spice_developers@fides.fe.uni-lj.si">EDA Group</a></p>
+    </div>
+  </div>
+  
+
+ <script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script type="text/javascript">
+   try
+   {
+     var pageTracker = _gat._getTracker("UA-8305434-3");
+     pageTracker._trackPageview();
+   } catch(err)
+   {
+   }
+ </script>
+  
+  
+</body>
+</html>

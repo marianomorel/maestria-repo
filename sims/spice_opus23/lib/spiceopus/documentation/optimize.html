@@ -1,0 +1,823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="SPICE OPUS -- A SPICE engine for OPtimization UtilitieS" />
+  <meta name="keywords" content="analog circuit simulation, spice, opus, analog circuit optimization" />
+  <meta name="author" content="Faculty of Electircal Engineering, Ljubljana, Slovenia / Template design: G. Wolfgang" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style_screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="./css/style_print.css" />
+  <title>SPICE OPUS</title>
+</head>
+
+<body>
+<div class="bg-head"><div class="page-container-2">
+
+     <!-- Navigation Level 1 -->
+     <div class="nav1-container">
+    	<div class="nav1">
+			<ul>
+    	    	<li><a href="index.html">Home</a></li>
+         		<li><a href="contact.html">Contact</a></li>																		
+			</ul>
+		</div>
+    </div>			
+		<a href="index.html"><div class="site-name"></div></a>
+    
+    <!-- Site slogan -->
+	  <div class="site-slogan-container">
+		<div class="site-slogan">
+       		<p class="readmore">&rsaquo;&rsaquo;&rsaquo;&nbsp;<a href="img/screen-pll.png">Screenshot</a></p>
+    		<p class="title">THE SLIDE RULE OF SILICON DESIGN</p>
+	      	<p class="subtitle">Free Analog Circuit Simulation</p>  
+    	</div>
+	  </div>		 						    	
+       	 						
+    <!-- Header banner -->		 						    		 						
+	  <div class="img-header"></div>
+    
+    <!-- Navigation Level 2 -->												
+    <div class="nav2">			
+			<ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="license.html">License</a></li>
+        <li><a href="release.html">Release</a></li>
+        <li><a href="http://www.spiceopus.si/download/download.html">Download</a></li>			
+        <li><a href="documentation.html"class="selected">Documentation</a></li>		
+        <li><a href="links.html">Links</a></li>
+		  </ul>
+		</div>
+    
+    <!-- Buffer after header -->    
+		<div class="buffer"></div>
+
+		<!-- NAVIGATION -->				
+  	<!-- Navigation Level 3 -->
+		<div class="nav3">
+      <ul>
+        <li class="title">Menu</li>
+        <li class="group"><a href="index.html">About</a></li>		
+        <li class="group"><a href="license.html">License</a></li>
+        <li class="group"><a href="release.html">Release</a></li>
+        <li class="group"><a href="http://www.spiceopus.si/download/download.html">Download</a></li>       
+           <li><a href="http://www.spiceopus.si/download/downloadl.html">Linux</a></li>
+           <li><a href="http://www.spiceopus.si/download/downloadw.html">Windows</a></li>
+        <li class="group"><a href="documentation.html"class="selected">Documentation</a></li>
+        <li class="group"><a href="links.html">Links</a></li>       
+      </ul>
+    </div>				
+
+  	<!-- 	CONTENT -->
+		<div class="content2">
+
+  	  <!-- Page title -->		
+		  <div class="content2-pagetitle">Circuit Optimization with SPICE OPUS</div>			
+       
+       
+           				
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					Introduction
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          A new command named optimize has been added. It realises an optimisation loop in Spice Opus. 
+          When we run particular optimisation method on a given circuit with optimize command, a general 
+          optimisation loop is performed and it is always the same. Its algorithm is as follows:
+          
+          <font size="2"><PRE>
+do
+   if number of iterations > max break
+   change parameter values
+   verify explicit constraints and correct parameter values if necessary
+   execute all analysis commands (analysis 0, analysis 1, ..., analysis N)
+   number of iterations = number of iterations + 1
+   if not implicit constraint 0 or not implicit constraint 1 or ...
+       or not implicit constraint M continue
+   calculate the cost function
+while termination criteria not satisfied
+</PRE></font>
+
+        
+          <p>Number of iterations is checked in every iteration. This way the user has some kind of control 
+          over the optimisation algorithm and an infinitive optimisation loop (in case of no convergence) 
+          is avoided. The optimisation method, which was chosen, is hidden in the way of changing parameter 
+          values. If one parameter violate its explicit constraint, its value is corrected to the explicit 
+          border. More analyses lines can be defined with optimize analysis commands. They are performed in 
+          order and produce necessary results for verifying implicit constraints and evaluating the cost 
+          function. If at least one implicit constraint is violated, than algorithm continues with next 
+          iteration. Otherwise the cost function is calculated and terminating criteria decides whether the 
+          loop will continue or stop.
+          <p>The optimize command is placed on top of Nutmeg by its function. In fact it just prepares commands 
+          in Nutmeg language and executes them in an appropriate order, what leads to optimising process. But 
+          on the other hand optimize command is written as an additional Nutmeg command and can be used as one.
+          <p>The optimize command also generates special group of data (plot). It is named optimizex, where 
+          x repesents a plot number. It contains a vector called parameter with final parameter values, a 
+          vector called cost with values of the cost function in each iteration, and vectors with parameter 
+          values in each iteration.
+          <p>When the optimize command finishes and finds some optimal parameter values, which are better 
+          than initial values, the initial parameter values are changed to optimal ones. That way we can 
+          proceed with the next optimize command (maybe with some other method) on the same circuit from 
+          the best known point as initial guess.
+          <p>If the initial_guess option is set (equal or greater than 1), the above is not true. In this 
+          case the initial parameter values are set to the values where parameter space was not searched 
+          yet. This way many dimensional parameter spaces can be searched by successive optimisation processes. 
+          The value of initial_guess option gives the weight factor of the point with the greatest value of 
+          the cost function. The weight factor of the point with the smallest value is always 1. 
+          </p></div>
+        </div>
+      </div> 
+
+
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					Optimization methods
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          One can choose among several optimisation methods which are coded 
+          in the <I>optimize</I> command:
+<UL class="noindent">
+ <LI>steepest descent</LI>
+ <LI>Newton's method</LI>
+ <LI>Davidon-Fletcher-Powell's method</LI>
+ <LI>random search</LI>
+ <LI>grid search method</LI>
+ <LI>search along coordinate axes</LI>
+
+ <LI>Powell's method</LI>
+ <LI>Hooke-Jeeves's method</LI>
+ <LI>constrained simplex method</LI>
+ <LI>simple genetic algorithm</LI>
+ <LI>simulated annealing algorithm</LI>
+ <li>parallel simulated annealing with differential evolution</li>
+ <LI>checking cost function in axes directions through current point</LI>
+ <LI>evaluating cost function across whole parameter space</LI>
+</UL>
+
+          <p>Further description of a particular method can be found in the 
+          literature. Here are brief descriptions of optimisation methods 
+          and their parameters which can be manually adjusted.
+          
+          <p class="content-title-noshade-size2">
+					Steepest Descent (<I>steepest_descent</I>)</p>   
+          <p>If the expression for the i-th component of the 
+          gradient of the cost function is not given, then it is calculated 
+          numerically. All parameters, that are to be optimised, have to be 
+          given before this method is chosen. The parameters of the method 
+          are:
+          <TABLE class="table">
+          <TR><TD VALIGN=top><I>r</I></TD>
+          <TD>constant used in determining constraints where 
+          the minimum lies in the negative gradient direction. 
+          It must be between 1.5 and 2.</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>method</I></TD>
+          <TD>method used for searching in the negative gradient direction. Possible values are <I>quadratic</I>, 
+          <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>epsilon</I></TD>
+          <TD>satisfying relative distance (in percentage) between two points when searching in the negative gradient direction.</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+          <TD>maximum number of iterations when searching in the negative gradient direction.</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>transformation</I></TD>
+          <TD>type of transformation from explicitly constrained to unconstrained space. Possible values are <I>no</I>, 
+          <I>sin</I> and <I>arcctg</I>.</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>gradient0</I></TD>
+          <TD>expression of the first component of the gradient</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>gradient1</I></TD>
+          <TD>expression of the second component of the gradient</TD></TR>
+          <TR>
+          <TD VALIGN=top><I>gradient2</I></TD>
+          <TD>expression of the third component of the gradient etc.</TD></TR></TABLE>
+         
+<p class="content-title-noshade-size2"><A NAME="newton"></a>Newton's Method (<I>newton</I>)
+  <p>Gradient and Hesse matrix of the cost function are calculated numerically. The parameters of the method are:<TABLE class="table">
+  <TR>
+   <TD VALIGN=top><I>r</I></TD>
+   <TD>constant used in determining constraints where the minimum lies in the desired direction. It must be between 1.5 and 2.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>method</I></TD>
+   <TD>method used for searching in the desired direction. Possible values are <I>quadratic</I>, <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>epsilon</I></TD>
+
+   <TD>satisfying relative distance (in percentage) between two points when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+   <TD>maximum number of iterations when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>transformation</I></TD>
+   <TD>type of transformation from explicitly constrained to unconstrained space. Possible values are <I>no</I>, <I>sin</I> and <I>arcctg</I>.</TD></TR></TABLE>
+
+<p class="content-title-noshade-size2"><A NAME="davidon"></a>Davidon-Fletcher-Powell's method (<I>davidon_fletcher_powell</I>)
+<p>If the expression for the i-th component of the gradient of the cost function is not given, then it is calculated numerically. 
+All parameters, that are to be optimised, have to be given before this method is chosen. The parameters of the method are:<TABLE class="table">
+  <TR>
+   <TD VALIGN=top><I>r</I></TD>
+   <TD>constant used in determining constraints where the minimum lies in the desired direction. It must be between 1.5 and 2.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>method</I></TD>
+   <TD>method used for searching in the desired direction. Possible values are <I>quadratic</I>, <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>epsilon</I></TD>
+
+   <TD>satisfying relative distance (in percentage) between two points when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+   <TD>maximum number of iterations when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>modification</I></TD>
+   <TD>modification of the Davidon-Fletcher-Powell's method. Possible values are <I>no</I>, <I>modified</I>, <I>first</I> and <I>second</I>.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>transformation</I></TD>
+   <TD>type of transformation from explicitly constrained to unconstrained space. Possible values are <I>no</I>, <I>sin</I> and <I>arcctg</I>.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>gradient0</I></TD>
+   <TD>expression of the first component of the gradient</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>gradient1</I></TD>
+   <TD>expression of the second component of the gradient</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>gradient2</I></TD>
+
+   <TD>expression of the third component of the gradient etc.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="monte"></a>Random Search (<I>monte_carlo</I>)
+<p>Parameter <I>distribution</I> is regarded only if <I>direction</I> = <I>no</I>. On the other hand parameters <I>r</I>, 
+<I>epsilon</I> and <I>number_of_iterations</I> are taken into account when <I>direction</I> != <I>no</I>. The parameters 
+of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>direction</I></TD>
+   <TD>the direction of search is determined randomly. Possible values are <I>no</I>, <I>quadratic</I>, <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>distribution</I></TD>
+   <TD>the distribution of the random parameter values. Possible values are <I>linear</I> and <I>normal</I>.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>r</I></TD>
+
+   <TD>constant used in determining constraints where the minimum lies in the randomly determined direction. It must be between 1.5 and 2.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>epsilon</I></TD>
+   <TD>satisfying relative distance (in percentage) between two points when searching in the randomly determined direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+   <TD>maximum number of iterations when searching in the randomly determined direction.</TD></TR></TABLE>
+
+<p class="content-title-noshade-size2"><A NAME="grid"></a>Grid Search Method (<I>grid_search</I>)
+<p>The parameters of the method are:<TABLE class="table">
+  <TR>
+   <TD VALIGN=top><I>level</I></TD>
+   <TD>grid level used. Possible values are 2 and 3.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>alpha</I></TD>
+   <TD>the magnifying factor.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>epsilon</I>&nbsp;&nbsp;</TD>
+   <TD>satisfying relative grid size (in percentage).</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="axis"></a>Search Along Coordinate Axes (<I>axis_search</I>)
+<p> The parameters of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>r</I></TD>
+   <TD>constant used in determining constraints where the minimum lies in the desired direction. It must be between 1.5 and 2.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>method</I></TD>
+   <TD>method used for searching in the desired direction. Possible values are <I>quadratic</I>, <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>epsilon</I></TD>
+   <TD>satisfying relative distance (in percentage) between two points when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+   <TD>maximum number of iterations when searching in the desired direction.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="powell"></a>Powell's Method (<I>powell</I>)
+<p>The parameters of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>r</I></TD>
+   <TD>constant used in determining constraints where the minimum lies in the desired direction. It must be between 1.5 and 2.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>method</I></TD>
+   <TD>method used for searching in the desired direction. Possible values are <I>quadratic</I>, <I>golden</I> and <I>fibonacci</I>.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>epsilon</I></TD>
+   <TD>satisfying relative distance (in percentage) between two points when searching in the desired direction.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>number_of_iterations</I>&nbsp;&nbsp;</TD>
+   <TD>maximum number of iterations when searching in the desired direction.</TD>
+  <TR>
+
+   <TD VALIGN=top><I>transformation</I></TD>
+   <TD>type of transformation from explicitly constrained to unconstrained space. Possible values are <I>no</I>, <I>sin</I> and <I>arcctg</I>.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="hooke"></a>Hooke-Jeeves's Method (<I>hooke_jeeves</I>)
+<p>The parameters of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>alpha</I></TD>
+   <TD>the magnifying factor.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>epsilon</I>&nbsp;&nbsp;</TD>
+   <TD>satisfying relative step (in percentage).</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="complex"></a>Constrained Simplex Method (<I>complex</I>)
+<p>The parameters of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>k</I></TD>
+   <TD>number of points in constrained simplex. The default value is 2 times number of parameters. It should be greater than number of parameters.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>alpha</I></TD>
+   <TD>the mirroring factor.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>size</I></TD>
+   <TD>satisfying average relative distance (in percentage) of the points to the centre of the simplex.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>oscillation_detection</I>&nbsp;&nbsp;</TD>
+   <TD>detect and prevent an oscillation behavior around the lowest point of the constrained simplex.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>nmirror</I>&nbsp;&nbsp;</TD>
+
+   <TD>number of points mirrored in each iteration.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>width</I>&nbsp;&nbsp;</TD>
+   <TD>portion of explicitly constrained parameter space, where initial simplex will be chosen around the initial point.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="genetic"></A>Simple Genetic Algorithm (<I>genetic</I>)
+<p>The parameters of the method are:<TABLE class="table">
+
+  <TR>
+   <TD VALIGN=top><I>popsize</I></TD>
+   <TD>population size. Must be an even number.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>lchrom</I></TD>
+   <TD>chromosome length (number of bytes per dimension). Maximum length is 4 bytes per dimension.</TD></TR>
+  <TR>
+
+   <TD VALIGN=top><I>maxgen</I></TD>
+   <TD>number of generations.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>pcross</I></TD>
+   <TD>crossover probability.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>pmutation</I>&nbsp;&nbsp;</TD>
+
+   <TD>mutation probability.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>scaling</I></TD>
+   <TD>cost function scaling factor. Must be greater than 1.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>coding</I></TD>
+   <TD>parameter values coding. Possible values are <I>binary</I> and <I>gray</I>.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>elitism</I></TD>
+   <TD>the best individual in each generation is copied to the next one. Possible values are <I>yes</I> and <I>no</I>. The default is no.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="simulated"></A>Simulated Annealing Algorithm
+  (<I>simulated_annealing</I>)<p>The parameters of the method are:<TABLE class="table">
+
+   <TR>
+    <TD VALIGN=top><I>init_num_of_pts</I></TD>
+    <TD>number of points used for determining initial temperature.</TD></TR>
+   <TR>
+    <TD VALIGN=top><I>tmin</I></TD>
+    <TD>absolute final temperature value.</TD></TR>
+   <TR>
+
+    <TD VALIGN=top><I>range_min</I></TD>
+    <TD>maximum reduction of parameter range. Moves are constrained by parameter
+     range around current point. Parameter range is reduced during the optimisation
+     run. <I>range_min</I> defines maximum reduction of parameter range, which
+     always has to be greater than <I>range_min</I> * (upper_limit -
+     lower_limit).</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>moves</I></TD>
+
+   <TD>number of moves at initial temperature stage.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>alpha</I></TD>
+   <TD>cooling factor.</TD></TR></TABLE>
+<p class="content-title-noshade-size2">
+ <a name="psade"></a>Parallel Simulated Annealing with Differential Evolution Algorithm
+ (<em>psade</em>)
+ <p>Several simulated annealing processes in parallel interacting through differential evolution. The parameters of the method are:
+  <table class="table">
+   <tr>
+    <td valign=top>
+     <em>np</em></td>
+    <td>number of points in population.</td></tr>
+   <tr>
+    <td valign=top>
+     <em>tmin</em></td>
+    <td>minimum absolute temperature value.</td></tr>
+   <tr>
+    <td valign=top>
+     <em>rmin</em></td>
+    <td>minimum relative range for generating random moves.</td></tr>
+   <tr>
+    <td valign=top>
+     <em>sfreq</em></td>
+    <td>save frequency (save entire population after every
+     <em>sfreq</em> iterations).</td></tr>
+   <tr>
+    <td valign=top>
+     <em>minCF</em></td>
+    <td>stopping cost function value.</td></tr>
+   <tr>
+    <td valign=top>
+     <em>pL</em></td>
+    <td>local step probability.</td></tr></table>
+<p class="content-title-noshade-size2"><A NAME="scan"></A>Checking cost function in axes directions through current point (<I>cost_profile</I>)
+<p>The parameter of the method is:<TABLE class="table"><TR>
+
+  <TD VALIGN=top><I>resolution</I>&nbsp;&nbsp;</TD>
+  <TD>number of points in each axis direction.</TD></TR></TABLE>
+<p class="content-title-noshade-size2"><A NAME="search"></A>Evaluating cost function across whole parameter space (<I>parameter_space</I>)
+<p>The parameters of the method are:<TABLE class="table">
+  <TR>
+   <TD VALIGN=top><I>outfile</I>&nbsp;&nbsp;</TD>
+
+   <TD>output filename, where the results are stored.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>npts0</I></TD>
+   <TD>number of points in the grid along the first parameter.</TD></TR>
+  <TR>
+   <TD VALIGN=top><I>npts1</I></TD>
+   <TD>number of points in the grid along the second parameter.</TD></TR>
+
+  <TR>
+   <TD VALIGN=top><I>npts2</I></TD>
+   <TD>number of points in the grid along the third parameter etc.</TD></TR></TABLE>
+   
+
+
+          </p></div>
+        </div>
+      </div> 
+
+
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					The command syntax
+          </p>                            
+					<div class="content-txtbox-noshade">
+<P>optimize [<B><I>command</B></I>]</P>
+
+ <P>
+ <font size="2">
+ <TABLE>
+  <TR><TD COLSPAN=3><B><I>command</B></I> =</TD></TR>
+  <TR>
+   <TD WIDTH=25></TD>
+   <TD COLSPAN=2>analysis [<B><I>number</B></I> delete | <B><I>number</B></I> <B><I>expression</B></I>]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| cost [<B><I>expression</B></I>]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| implicit [<B><I>number</B></I> delete | <B><I>number</B></I> <B><I>expression</B></I>]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| method [<B><I>definition</B></I>]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| parameter [<B><I>number</B></I> delete | <B><I>number</B></I> [<B><I>name</B></I>] [low <B><I>value</B></I>] [high <B><I>value</B></I>] [initial <B><I>value</B></I>]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD WIDTH=25></TD>
+   <TD WIDTH=700>[increment <B><I>value</B></I>] [mean <B><I>value</B></I>] [deviation <B><I>value</B></I>] [abstol <B><I>value</B></I>] [reltol <B><I>value</B></I>]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD WIDTH=25></TD>
+   <TD WIDTH=700>[lin | log]]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| options [initial_guess <B><I>value</B></I>] [number_of_iterations <B><I>value</B></I>] [stop_cost <B><I>value</B></I>]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD WIDTH=25></TD>
+   <TD WIDTH=700>[centering off | on] [discrete_space off | on] [setparams]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| reset [analysis] [cost] [implicit] [method] [parameter] [options] [population]</TD></TR></TABLE></P>
+ <P> <font size="2"><TABLE>
+
+  <TR><TD COLSPAN=3><B><I>definition</B></I> =</TD></TR>
+  <TR>
+   <TD WIDTH=25></TD>
+   <TD COLSPAN=2>steepest_descent [r <B><I>value</B></I>{1.5}]</TD></TR>
+  <TR>
+   <TD></TD>
+
+   <TD WIDTH=25></TD>
+   <TD WIDTH=700>[method quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[transformation no | sin | atcctg]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[gradient0 <B><I>expression</B></I>]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[gradient1 <B><I>expression</B></I>]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[...]</TD></TR>
+  <TR>
+
+   <TD></TD>
+   <TD COLSPAN=2>| newton [r <B><I>value</B></I>{1.5}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[method quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[transformation no | sin | atcctg]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| davidon_fletcher_powell [r <B><I>value</B></I>{1.5}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[method quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[modification no | modified | first | second]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[transformation no | sin | atcctg]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[gradient0 <B><I>expression</B></I>]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[gradient1 <B><I>expression</B></I>]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[...]</TD></TR>
+  <TR>
+
+   <TD></TD>
+   <TD COLSPAN=2>| monte_carlo [direction no | quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[distribution linear | normal]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[r <B><I>value</B></I>{1.5}]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| grid_search [level 2 | 3]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[alpha <B><I>value</B></I>{1.3}]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| axis_search [r <B><I>value</B></I>{1.5}]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[method quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| powell [r <B><I>value</B></I>{1.5}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[method quadratic | golden | fibonacci]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[number_of_iterations <B><I>value</B></I>{100}]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[transformation no | sin | atcctg]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| hooke_jeeves [alpha <B><I>value</B></I>{1.3}]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[epsilon <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| complex [k <B><I>value</B></I>]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[alpha <B><I>value</B></I>{1.3}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[size <B><I>value</B></I>{0.1}]</TD></TR>
+  <TR>
+
+   <TD COLSPAN=2></TD>
+   <TD>[oscillation_detection off | on]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[nmirror <B><I>value</B></I>{1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[width <B><I>value</B></I>{1}]</TD></TR>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| genetic [popsize <B><I>value</B></I>{10}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[lchrom <B><I>value</B></I>{1}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[maxgen <B><I>value</B></I>{10}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[pcross <B><I>value</B></I>{0.6}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[pmutation <B><I>value</B></I>{0.03}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+
+   <TD>[scaling <B><I>value</B></I>{2}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[coding binary | gray]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[elitism no | yes]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| simulated_annealing
+    [init_num_of_pts <B><I>value</B></I>{10}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[tmin <B><I>value</B></I>{1e-6}]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[range_min <B><I>value</B></I>{1e-4}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[moves <B><I>value</B></I>{10}]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[alpha <B><I>value</B></I>{0.985}]</TD></TR>
+  <tr>
+   <td></td>
+   <td colspan="2">| psade [np
+    <strong>
+     <em>value</em></strong>{20}]</td></tr>
+  <tr>
+   <td colspan="2"></td>
+   <td>[tmin
+    <strong>
+     <em>value</em></strong>{1e-6}]</td></tr>
+  <tr>
+   <td colspan="2"></td>
+   <td>[rmin
+    <strong>
+     <em>value</em></strong>{1e-6}]</td></tr>
+  <tr>
+   <td colspan="2"></td>
+   <td>[sfreq
+    <strong>
+     <em>value</em></strong>{100}]</td></tr>
+  <tr>
+   <td colspan="2"></td>
+   <td>[minCF
+    <strong>
+     <em>value</em></strong>{-1e30}]</td></tr>
+  <tr>
+   <td colspan="2"></td>
+   <td>[pL
+    <strong>
+     <em>value</em></strong>{0.1}]</td></tr>
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| cost_profile [resolution <B><I>value</B></I>{3}]</TD></TR>
+
+  <TR>
+   <TD></TD>
+   <TD COLSPAN=2>| parameter_space [outfile <B><I>filename</B></I>{opt.out}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[npts0 <B><I>value</B></I>{2}]</TD></TR>
+
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[npts1 <B><I>value</B></I>{2}]</TD></TR>
+  <TR>
+   <TD COLSPAN=2></TD>
+   <TD>[...]</TD></TR></TABLE></P>
+ 
+
+
+ 
+
+
+          </p></div>
+        </div>
+      </div> 
+
+
+
+
+
+
+     </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+       <p><b>Copyright &copy; 2008 Faculty of Electrical Engineering, Ljubljana, Slovenia | All Rights Reserved</b></p>
+       <p>Page Design <a href="mailto:gw@actamail.com">G. Wolfgang</a> | Page content <a href="mailto:spice_developers@fides.fe.uni-lj.si">EDA Group</a></p>
+    </div>
+  </div>
+  
+
+ <script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script type="text/javascript">
+   try
+   {
+     var pageTracker = _gat._getTracker("UA-8305434-3");
+     pageTracker._trackPageview();
+   } catch(err)
+   {
+   }
+ </script>
+  
+  
+</body>
+</html>

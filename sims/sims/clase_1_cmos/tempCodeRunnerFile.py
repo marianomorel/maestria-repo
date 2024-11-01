@@ -1,0 +1,1 @@
+time = run.sim['v(D)'].time

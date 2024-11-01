@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="SPICE OPUS -- A SPICE engine for OPtimization UtilitieS" />
+  <meta name="keywords" content="analog circuit simulation, spice, opus, analog circuit optimization" />
+  <meta name="author" content="Faculty of Electircal Engineering, Ljubljana, Slovenia / Template design: G. Wolfgang" />
+  <link rel="stylesheet" type="text/css" media="screen,projection" href="./css/style_screen.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="./css/style_print.css" />
+  <title>SPICE OPUS</title>
+</head>
+
+<body>
+<div class="bg-head"><div class="page-container-2">
+
+     <!-- Navigation Level 1 -->
+     <div class="nav1-container">
+    	<div class="nav1">
+			<ul>
+    	    	<li><a href="index.html">Home</a></li>
+         		<li><a href="contact.html">Contact</a></li>																		
+			</ul>
+		</div>
+    </div>			
+		<a href="index.html"><div class="site-name"></div></a>
+    
+    <!-- Site slogan -->
+	  <div class="site-slogan-container">
+		<div class="site-slogan">
+       		<p class="readmore">&rsaquo;&rsaquo;&rsaquo;&nbsp;<a href="img/screen-pll.png">Screenshot</a></p>
+    		<p class="title">THE SLIDE RULE OF SILICON DESIGN</p>
+	      	<p class="subtitle">Free Analog Circuit Simulation</p>  
+    	</div>
+	  </div>		 						    	
+       	 						
+    <!-- Header banner -->		 						    		 						
+	  <div class="img-header"></div>
+    
+    <!-- Navigation Level 2 -->												
+    <div class="nav2">			
+			<ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="license.html">License</a></li>
+        <li><a href="release.html">Release</a></li>
+        <li><a href="http://www.spiceopus.si/download/download.html">Download</a></li>			
+        <li><a href="documentation.html"class="selected">Documentation</a></li>		
+        <li><a href="links.html">Links</a></li>
+		  </ul>
+		</div>
+    
+    <!-- Buffer after header -->    
+		<div class="buffer"></div>
+
+		<!-- NAVIGATION -->				
+  	<!-- Navigation Level 3 -->
+		<div class="nav3">
+      <ul>
+        <li class="title">Menu</li>
+        <li class="group"><a href="index.html">About</a></li>		
+        <li class="group"><a href="license.html">License</a></li>
+        <li class="group"><a href="release.html">Release</a></li>
+        <li class="group"><a href="http://www.spiceopus.si/download/download.html">Download</a></li>       
+           <li><a href="http://www.spiceopus.si/download/downloadl.html">Linux</a></li>
+           <li><a href="http://www.spiceopus.si/download/downloadw.html">Windows</a></li>
+        <li class="group"><a href="documentation.html"class="selected">Documentation</a></li>
+        <li class="group"><a href="links.html">Links</a></li>       
+      </ul>
+    </div>				
+
+  	<!-- 	CONTENT -->
+		<div class="content2">
+
+  	  <!-- Page title -->		
+		  <div class="content2-pagetitle">Installation</div>			
+       
+       
+           				
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					Windows95/98/NT/XP
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          After downloading the <em>zip</em> file extract it into the temporary directory of your choice. Then run setup.exe. 
+          The installation script will ask you where would you like to install <em>SpiceOpus</em> and will copy all the files 
+          there for you. It will also add the <em>SpiceOpus</em> executable and a link to this documentation to Start/Programs 
+          menu. After the installation is complete you can delete the temporary directory.
+          <p>The directory where you installed <em>SpiceOpus</em> should contain following subdirectories:
+          <table class="table">
+          <tr valign="top">       
+          <td><em>bin</em></td>
+          <td>directory with executable files, the <em>spice3</em> simulator and the <em>cmpp</em> code model source preprocessor</td>
+          </tr> 
+          <tr valign="top">       
+          <td><em>build</em></td>
+          <td>directory with MSVC project files needed for building the
+          <em>.cm</em> modules from sources. 
+          </tr> 
+          <td><em>documentation</em></td>
+          <td>documentation files in <em>html</em> format</td>
+          </tr>
+          <tr valign="top">
+          <td><em>lib</em></td>
+          <td>library files, scripts (<em>lib/scripts</em>), help files (<em>lib/helpdir</em>),
+          and precompiled code models (<em>lib/cm</em>) 
+          </td>
+          </tr>
+          <tr valign="top">
+          <td><em>source</em></td>
+          <td>source files of code models (<em>source/cmlib</em>) and 
+          include files for compiling the code models (<em>source/include</em>) </td>
+          </tr>
+          </table></p>
+ 
+          <p>Several environment variables can be set to direct
+          <em>SpiceOpus</em> where to search for files. Those variables are:
+          <table class="table">
+          <tr valign="top">
+          <td><em>OPUSHOME</em></td>
+          <td>path to the <em>SpiceOpus</em> home directory (default:<em>c:/spiceopus</em>)</td>
+          </tr>
+          <tr valign="top">
+          <td><em>SPICE_EXEC_DIR</em></td>
+          <td>path to the executable directory, valid only if<em>OPUSHOME</em> variable is not defined, otherwise
+          <em>SPICE_EXEC_DIR</em> =<em>OPUSHOME/bin</em> (default:<em>c:/spiceopus/bin</em>)</td></tr>
+          <tr valign="top">
+          <td><em>SPICE_LIB_DIR</em></td>
+          <td>path to the library directory, valid only if <em>OPUSHOME</em> variable is not defined, otherwise
+          <em>SPICE_LIB_DIR</em> =<em>OPUSHOME/lib</em> (default:<em>c:/spiceopus/lib</em>)</td>
+          </tr>
+          <tr valign="top">
+          <td><em>SPICE_LOCK_NAME</em></td>
+          <td>lock file name (default:<em>lock</em>)</td>
+          </tr>
+          <tr valign="top">
+          <td><em>SPICE_HELP_DIR</em></td>
+          <td>path to the help directory (default:<em>SPICE_LIB_DIR/helpdir</em>, or if
+          <em>SPICE_LIB_DIR</em> not defined:<em>c:/spiceopus/lib/helpdir</em>)</td></tr>
+          <tr valign="top">
+          <td><em>SPICE_SCRIPTS</em></td>
+          <td>path to the scripts directory default:<em>SPICE_LIB_DIR/scripts</em>, or if
+          <em>SPICE_LIB_DIR</em> not defined:<em>c:/spiceopus/lib/scripts</em>)</td>
+          </tr>
+          <tr valign="top">
+          <td><em>SPICE_PATH</em></td>
+          <td>path to the main<em>SpiceOpus</em> program (default:<em>SPICE_EXEC_DIR/spice3</em>, or if
+          <em>SPICE_EXEC_DIR</em> not defined:<em>c:/spiceopus/bin/spice3</em>)</td></tr>
+          <tr valign="top">
+          <td><em>SPICE_EDITOR</em></td>
+          <td>path to the editor of your choice (default:
+          <em>c:/windows/notepad.exe</em>)</td>
+          </tr>
+          </table>
+          <p>
+          If you move any group of files to some other location you should change the appropriate environment variable.
+          </p></div>
+        </div>
+      </div> 
+
+      
+			<!-- Text container -->
+			<div class="content2-container line-box">
+				<div class="content2-container-1col">				
+					<p class="content-title-noshade-size3">
+					Linux
+          </p>                            
+					<div class="content-txtbox-noshade"><p>
+          Become root. Unpack the tar.gz file. Enter the directory created by unpacking the archive and type 
+          <p class="showcode">
+          ./install /usr/local
+          <P>
+          The installation program will detect and remove existing <em>SPICE OPUS</em> installations in the 
+          specified tree (in our case <em>/usr/local</em>) and then install <em>SPICE OPUS</em> in the specified 
+          tree (<em>/usr/local</em>). Following directories will contain the <em>SPICE OPUS</em> files:
+          <TABLE class="table">
+          <TR VALIGN=top>
+          <TD><em>/usr/local/bin</em></td>
+          <TD>directory with executable files, the <em>spice3</em> simulator and the <em>cmpp</em> code model source preprocessor</td>
+          </TR>
+          <TR VALIGN=top>
+          <td><em>/usr/local/lib/spiceopus</em></td>
+          <td>precompiled code models
+          (<em>/usr/local/lib/spiceopus/cm</em>), 
+          documentation files in <em>html</em> format
+          (<em>/usr/local/lib/spiceopus/documentation</em>),
+          help files (<em>/usr/local/lib/spiceopus/helpdir</em>), and
+          scripts (<em>/usr/local/lib/spiceopus/scripts</em>),
+          </td>
+          </TR>
+          <TR VALIGN=top>
+          <td><em>/usr/local/src/spiceopus</em></td>
+          <td>sources of code models (<em>/usr/local/src/spiceopus/cmlib</em>)
+          and the include files needed for compiling the sources
+          (<em>/usr/local/src/spiceopus/include</em>)
+          </td>
+          </TR>
+          </TABLE>
+          <P>
+          <em>SPICE OPUS</em> requires a working X-Window installation.
+          You can install <em>SPICE OPUS</em> in some other tree by specifying it as a command line parameter 
+          for spice.install. The environmental variables are set in the <em>/usr/local/bin/spice-config</em> shell script. 
+          When you run <em>spice3</em> you actually start this script which sets up the environmental variables and starts the 
+          <em>spice3.bin</em> executable.
+          </p></div>
+        </div>
+      </div> 
+
+      
+		
+		
+     
+     </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+       <p><b>Copyright &copy; 2008 Faculty of Electrical Engineering, Ljubljana, Slovenia | All Rights Reserved</b></p>
+       <p>Page Design <a href="mailto:gw@actamail.com">G. Wolfgang</a> | Page content <a href="mailto:spice_developers@fides.fe.uni-lj.si">EDA Group</a></p>
+    </div>
+  </div>
+  
+
+ <script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script type="text/javascript">
+   try
+   {
+     var pageTracker = _gat._getTracker("UA-8305434-3");
+     pageTracker._trackPageview();
+   } catch(err)
+   {
+   }
+ </script>
+  
+  
+</body>
+</html>
