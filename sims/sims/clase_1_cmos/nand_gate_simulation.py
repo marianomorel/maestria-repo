@@ -82,7 +82,7 @@ for j in range(0, len(cg_a)):
     
     der_t_a = delta_va / delta_t
     # der_t_b = delta_vb / delta_t
-    cg_a[j] = I / der_t_a * 10E15
+    cg_a[j] = I / der_t_a * 1E15
     # cg_b[j] = I / der_t_b * 10E15
 
 fig, ax = plt.subplots()
