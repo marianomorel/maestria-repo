@@ -1,0 +1,95 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe5e5;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 10px 20px;
+}
+header img {
+    width: 50px;
+    height: 50px;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+}
+.search-box {
+    padding: 5px;
+    border: 1px solid #900;
+    border-radius: 5px 0 0 5px;
+    width: 200px;
+}
+.search-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #900;
+    color: white;
+    cursor: pointer;
+}
+nav {
+    background-color: #900;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.producto {
+    text-align: center;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+}
+.producto img {
+    width: 250px;
+    height: 250px;
+}
+.producto a {
+    color: #900;
+    text-decoration: underline solid #900;
+    text-align: center;
+}
+.producto p {
+    font-weight: bold;
+}
+footer{
+    color:grey;
+    border-top: 1px solid grey;
+    padding: 1vh 0;
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
