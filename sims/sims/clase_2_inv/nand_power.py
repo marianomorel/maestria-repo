@@ -93,7 +93,7 @@ for i in range(len(ivdd) - 1):
     energy_supply += p * delta_t
 
 # Calculate energy stored in the capacitor
-energy_cap = 0.5 * cap_picof * 1e-12 * 2.5 ** 2  # 1/2 * C_L * VDD^2
+energy_cap = 0.5 * cap_picof * 1e-12 * 2.5 ** 2.5  # 1/2 * C_L * VDD^2
 
 print(f"\n\nEnergía entregada por la fuente    (C_L={cap_picof}p): {energy_supply}")
 print(f"Energía almacenada en el capacitor (C_L={cap_picof}p): {energy_cap}")
