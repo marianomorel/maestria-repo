@@ -1,0 +1,49 @@
+FALTA CANO, NICOLÁS GASTÓN Y CASAIS, SOFÍA, DE LOS CUALES 
+TENGO LAS DEVOLUCIONES EN LA OTRA MAQUINA. A LA TARDE LO AGREGO
+
+Thiago casal
+La pagina no esta replicada con exactitud. Hay problemas con los margenes y las imagenes de los productos, no están correctamente contenidos
+La etiqueta nav, no está bien utilizada. 
+Si bien no había restricciones, para el campo de búsqueda, debió ser del tipo “search”
+Para los enlaces, se recomienda utilizar listas.  
+No se pedía que las imágenes de los productos tuvieran enlace
+Hay clases, insertas en otras clases, es confusa la forma de escritura, al margen de su funcionamiento. 
+
+Mia Casanovas Di Sera
+Referencia mal la ubicacion de las imagenes y el archivo css. No se tomará como mal, pero es para tener en cuenta
+La pagina no cumple en apariencia con el modelo pedido. 
+Hay problema con los margenes y la distribucion de los productos. 
+El logo está deformado.
+A etiquetas como header, le agrega una clase, cosa que no sería necesario. Se repite en varias partes del código
+El campo de busqueda debería ser tipo search 
+Demuestra conocimiento pero la pagina está malograda (VER)
+
+Victoria Cherepakhin
+La pagina, no cumple en apariencia. 
+No linkea correctamente.
+Hay problemas con los margenes. 
+Se podría haber omitido alguna etiqueta section
+El formulario no cumple en apariencia. 
+
+Gonzalo Ciancio
+Confunde precios con nombre del producto,
+Las imagenes no estan bien referenciadas
+Deja campos sin completar. 
+Mejorar margenes y bordes
+
+Agostina Cipolla
+Linkea los productos cuando no se pide. 
+Modelo de caja mal utilizado
+Problemas con los margenes y espacios
+Problemas con el fondo de las imagenes
+No utiliza negrita
+El encabezado y el buscador no cumplen con lo pedido. 
+
+CLEMENCEAU, PETER IAGO
+Linkea los productos pero no se pedía
+En general, la apariencia es correcta
+El codigo en general es correcto. 
+Producto y productos como clases puede traer confunsión.
+La clase header h1 no se utiliza pero está como estilo
+Se acepta uso de grid 
+Bajo puntos por uso de br
