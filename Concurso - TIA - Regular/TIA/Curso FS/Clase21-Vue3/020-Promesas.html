@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas (I)</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Promesas (I)</h1>
+    <p>Una <mark>promesa (promise)</mark>en JS es similar a una promesa en la vida real.
+        Tiene <b>2 resultados posibles</b>: se mantendrá cuando llegue el momento, o no.
+        Cuando definimos una promesa en JavaScript, se resolverá cuando llegue el momento,
+        o será rechazada.</p>
+    <hr>
+
+    <p><b>Hay 3 estados (state) para un objeto promise:</b><br><br>
+        <b>Pendiente</b> (pending): estado inicial, antes de que la promesa tenga éxito o falle.<br>
+        <b>Resuelto</b> (resolved): promesa completada.<br>
+        <b>Rechazado</b> (rejected): promesa fallida.
+    </p>
+    
+    <p><b>Hay 2 valores (value) para un objeto promise:</b><br><br>
+        <b>No definido</b> (undefined): estado inicial, antes de que la promesa tenga éxito o falle.<br>
+        <b>Valor</b> (value): promesa completada.
+    </p>
+    <hr>
+
+
+
+    <script>
+        // Creamos un objeto "promesa"
+        // Contiene una funcion ("executor) con dos parámetros,
+        // uno para el éxito (resolve) y otro para el error (rejected):
+        let miPromesa = new Promise(function (resolve, rejected) {
+            // La promesa se resolverá o será rechazada.
+            //resolve("Promesa cumplida.")
+            rejected("Ocurrió un error.")
+        })
+
+        // Aqui termina la definición de la promesa.
+
+
+        // Ahora utilizamos la promesa:
+        //      Importante: la sintaxis es
+        //           promesa.then().catch().finally
+        //      pero se puede utilizar en varias lineas para que sea mas claro.
+        miPromesa
+            // Se llama al método then( ) después de que se resuelva la Promesa
+            // Por ejemplo, mostramos el mensaje que obtuvimos de la Promesa:
+            //(Este código se ejecuta si la promesa se resolvio ok).
+            .then(function (respuesta) {
+                document.write("Respuesta: ", respuesta)
+                document.write("<br>")
+            })
+
+            // ¿Qué pasa si la Promesa falla? Se usa el método catch().
+            // Este código se ejecuta solo su la promesa falló
+            .catch(function (error) {
+                document.write("Error: ", error)
+                document.write("<br>")
+            })
+
+
+            // Este código se ejecuta SIEMPRE, no importa que
+            // resultado haya tenido la ejecución de la promesa.
+            .finally(function () {
+                document.write("Promesa procesada.")
+                document.write("<br>")
+            })
+
+    </script>
+
+</body>
+
+</html>

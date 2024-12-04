@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensiones en modelo de cajas</title>
+    <style>
+        .contenedor {
+            width: 400px;
+            height: 200px;
+            border: 2px solid blue;
+            background-color: darkseagreen;
+        }
+
+        .contenido {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+            background-color: darksalmon;
+        }
+
+        .spanauto {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            border: 2px solid green;
+            background-color:aquamarine
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dimensiones en modelo de cajas</h1>
+    <p>Proporcionamos tamaños específicos a los diferentes elementos de un documento HTML asignando valores a las
+        propiedades <b>width</b> (ancho) y <b>height</b> (alto).</p>
+    <p>Por ejemplo, a los div y a los span:</p>
+
+    <div class="contenedor">
+        <p>Div 400px x 200px</p>
+        <span class="contenido">Span 1 100px x 100px</span>
+        <span class="contenido">Span 2 100px x 100px</span>
+        <span class="contenido">Span 3 100px x 100px</span>
+    </div>
+
+    <p>En el caso de utilizar el valor <b>auto</b> en las propiedades anteriores (valor por defecto), el navegador se
+        encarga de calcular el ancho o alto necesario, dependiendo del contenido del elemento. El tamaño automático dado
+        a un elemento depende del tipo de elemento que se trate (en bloque o en línea). </p>
+
+    <div class="contenedor">
+        <p>Div 400px x 200px</p>
+        <span class="spanauto">El tamaño de este span se adapta al tamaño de su contenido y contenedor, ya que tiene sus
+            dimensiones fijadas como <b>auto</b>, que es la opción por defecto.</span>
+    </div>
+
+    <h1>Desbordamiento</h1>
+    <p>Si en lugar de utilizar la opción auto, o simplemente no indicamos valores para ancho y alto, el tamaño de la
+        caja suele acomodarse al contenido sin problemas. Pero cuando asignamos valores a estos atributos, forzamos al
+        elemento a tener un aspecto concreto, obteniendo resultados inesperados si su contenido es más grande que el
+        tamaño que hemos definido.</p>
+
+    <div class="contenido">
+        <p>Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un area mayor, y se desborda.</p>
+    </div>
+
+    <p>Podemos modificar este comportamiento con las propiedades de CSS <b>overflow</b>, <b>overflow-x</b> o
+        <b>overflow-y</b>. Estas propiedades adminten valores de <b>visible</b>, <b>hidden</b>, <b>scroll</b> y
+        <b>auto</b>: </p>
+    <div>
+        <span class="contenido" style="overflow:hidden">
+            <p><b>overflow:hidden</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+        <span class="contenido" style="overflow-x:hidden">
+            <p><b>overflow-x:hidden</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+        <span class="contenido" style="overflow-y:hidden">
+            <p><b>overflow-y:hidden</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+    </div>
+
+    <div>
+        <span class="contenido" style="overflow:scroll">
+            <p><b>overflow:scroll</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+        <span class="contenido" style="overflow:auto">
+            <p><b>overflow:auto</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+    </div>
+
+    <div>
+        <span class="contenido" style="overflow-y:scroll">
+            <p><b>overflow-y:scroll</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+        <span class="contenido">
+            <p><b>Sin nada...</b> Este div tiene tamaño fijado en 100px x 100px, pero su contenido ocupa un
+                area mayor, y se desborda.</p>
+        </span>
+    </div>
+</body>
+
+</html>

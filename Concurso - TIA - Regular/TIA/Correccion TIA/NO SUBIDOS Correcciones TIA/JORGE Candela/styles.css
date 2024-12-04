@@ -1,0 +1,35 @@
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    color: blue
+}
+h2{
+    color: green;
+}
+img{
+    width: 200px;
+}
+.tit{
+    color: red;
+}
+.fam{
+    color: yellow;
+}
+.yellow{
+    color: yellow;
+}
+.red{
+    color: red;
+}
+li{
+    color: grey;
+    list-style-type: circle;
+    background-color: yellow;
+}

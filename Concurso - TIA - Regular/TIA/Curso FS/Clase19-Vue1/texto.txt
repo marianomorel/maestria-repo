@@ -1,0 +1,3 @@
+    <hr>
+    <h3>Texto anexado.</h3>
+    <p>Este texto  está en un archivo externo (texto.txt) y se ha agregado al DOM, utilizando <b>fetch</b></p>

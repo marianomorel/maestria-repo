@@ -1,0 +1,12 @@
+* {
+    color: blue;
+}
+
+#importante {
+    color: green;
+    background-color: antiquewhite;
+}
+
+p:first-child {
+    color: red;
+}

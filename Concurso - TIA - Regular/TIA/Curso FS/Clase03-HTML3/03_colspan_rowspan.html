@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas en HTML</title>
+</head>
+
+<body>
+    <h1>Unificación de celdas</h1>
+    <p>En algunas ocasiones puede ser necesario <b>unificar dos o más celdas en una sola</b>, que pasará a ocupar el lugar de aquellas afectadas. Estas unificaciones pueden ser llevadas a cabo con los atributos <i>rowspan</i> (para unificación vertical) y <i>colspan</i> (para unificación horizontal).</p>
+
+    <h1>Unificación horizontal (colspan)</h1>
+
+    <p>Para la unificación <b>horizontal</b> de celdas, utilizaremos el atributo de celda <i>colspan</i>:</p>
+
+    <table border="1">
+        <caption>Tipos de archivos utilizados:</caption>
+            <tr>
+                <td>Icono</td>
+                <td><img src="img/icon_pdf.png" width="40px"></td>
+                <td><img src="img/icon_doc.png" width="40px"></td>
+                <td><img src="img/icon_xls.png" width="40px"></td>
+                <td><img src="img/icon_png.png" width="40px"></td>
+                <td><img src="img/icon_rar.png" width="40px"></td>
+                <td><img src="img/icon_zip.png" width="40px"></td>
+                <td><img src="img/icon_txt.png" width="40px"></td>
+            </tr>
+            <tr>
+                <td>Tipo</td>
+                <td>Adobe</td>
+                <td colspan="2">MS Office</td>
+                <td>Imágen</td>
+                <td colspan="2">Comprimido</td>
+                <td>Texto</td>
+            </tr>
+    </table>
+    <br>
+
+    <h1>Unificación vertical (rowspan)</h1>
+
+    <p>Para la unificación <b>vertical</b> de celdas, utilizaremos el atributo de celda <i>colspan</i>:</p>
+
+
+    <table border="1">
+        <caption>Tipos de archivos utilizados:</caption>
+            <tr>
+                <td>Icono</td>
+                <td>Tipo de archivo</td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_pdf.png" width="40px"></td>
+                <td>Documento PDF</td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_doc.png" width="40px"></td>
+                <td rowspan="2">Documentos de<br>MS Office</td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_xls.png" width="40px"></td>
+            </tr>
+
+            <tr>
+                <td><img src="img/icon_png.png" width="40px"></td>
+                <td rowspan="2">Contenedores de<br>archivos comprimidos</td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_rar.png" width="40px"></td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_zip.png" width="40px"></td>
+                <td>Documento ZIP</td>
+            </tr>
+            <tr>
+                <td><img src="img/icon_txt.png" width="40px"></td>
+                <td>Documento TXT</td>
+            </tr>
+
+    </table>
+    <br>
+
+    <h1>Unificación múltiple</h1>
+
+    <p>Por supuesto, nada impide utilizar en una misma tabla la unificación <b>vertical</b> de celdas junto a la unificación <b>horizontal</b>:</p>
+
+
+
+    <table border="1">
+        <tr>
+            <td colspan="3">Una fila por tres columnas</td>
+            <td>ABC</td>
+            <td rowspan="2">dos<br>filas</b></td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>5678</td>
+            <td>1x1</td>
+            <td>DEF</td>
+        </tr>
+        <tr>
+            <td>1x1</td>
+            <td colspan="3" rowspan="2">Dos filas por tres<br>columnas.</td>
+            <td>HTML</td>
+        </tr>
+        <tr>
+            <td>1x1</td>
+            <td>CSS</td>
+        </tr>
+        <tr>
+            <td>1x1</td>
+            <td>Codo</td>
+            <td>a</td>
+            <td>Codo</td>
+            <td>PYTHON</td>
+        </tr>
+    </table>
+
+        <p>Para entender la estructura HTML de la tabla anterior es conveniente tener presente que la estructura básica posee 5 filas y 5 columnas. Y luego ver como algunas de esas 25 celdas se fusionan entre si.</p>
+
+
+</body>
+</html>

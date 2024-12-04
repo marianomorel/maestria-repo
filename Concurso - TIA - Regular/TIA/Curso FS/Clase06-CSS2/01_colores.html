@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <link rel="stylesheet" href="01_colores.css">
+</head>
+<body>
+    <h1>Formas de determinar colores usando CSS</h1>
+
+    <p>En <a href="https://htmlcolorcodes.com/es/">este link</a> podés ver una herramienta para seleccionar colores para tus elementos web.</p>
+
+    <h2>Por su nombre</h2>
+
+    <p>Podemos referirnos a los colores por su nombre (<a href="https://htmlcolorcodes.com/es/nombres-de-los-colores/">aqui está la lista</a> de los 140 colores disponibles mediante este método)</p>
+    <h3 style= "color: Crimson"> Color Crimson</h3>
+    <h3 style= "color: Red"> Color Red</h3>
+    <h3 style= "color: SlateBlue"> Color SlateBlue</h3>
+    <h3 style= "color: SeaGreen"> Color SeaGreen</h3>
+
+    <h2>Por su valor RGB (Red Green Blue o Rojo Verde Azul)</h2>
+    <p>Este método utiliza valores comprendidos <b>entre 0 y 255</b> para la <b>intensidad</b> de cada uno de los tres colores utilizados como base para determinar el color final: <b>rojo, verde y azul</b> (en ese orden).</p>
+    <h3 style= "color: rgb(140, 71, 7)">Color rgb(140, 71, 7)</h3>
+    <h3 style= "color: rgb(0, 4, 255)">Color rgb(0, 4, 255)</h3>
+    <h3 style= "color: rgb(170, 187, 51)">Color rgb(170, 187, 51)</h3>
+    <h3 style= "color: rgb(46, 139, 87)">Color rgb(46, 139, 87)</h3>
+
+    <h2>Por su valor hexadecimal</h2>
+    <p>Este método utiliza valores <b>en base 16 (hexadecimal)</b> comprendidos <b>entre 00 y FF</b> para la intensidad de cada uno de los tres colores utilizados como base para determinar el color final: rojo, verde y azul (en ese orden).</p>
+    <h3 style= "color: #8c4707">Color #8c4707</h3>
+    <h3 style= "color: #0004ff">Color #0004ff</h3>
+    <h3 style= "color: #AABB33">Color #AABB33</h3>
+    <h3 style= "color: #2E8B57">Color #2E8B57</h3>
+
+    <h2>Por su valor RGBA (rgb + transparencia o canal alfa)</h2>
+    <p>Este método es similar al rgb, pero <b>agregando un cuarto valor que va de 0 a 1</b> para indicar que el color es completamente transparente o completamente opaco.</p>
+    <h3 style= "color: rgba(255, 30, 0, 1)">Color rgba(255, 30, 0, 1)</h3>
+    <h3 style= "color: rgba(255, 30, 0, 0.7)">Color rgba(255, 30, 0, 0.7)</h3>
+    <h3 style= "color: rgba(255, 30, 0, 0.4)">Color rgba(255, 30, 0, 0.4)</h3>
+
+    <h2>Por su valor RGBA (rbb + transparencia o canal alfa en %)</h2>
+    <p>Este método es similar al anterior, pero <b>el cuarto valor va de 0% a 100%</b> para indicar que el color es completamente transparente o completamente opaco.</p>
+    <h3 style= "color: rgba(100%, 20%, 0%, 100%)">Color rgba(100%, 20%, 0%, 100%)</h3>
+    <h3 style= "color: rgba(100%, 20%, 0%, 80%)">Color rgba(100%, 20%, 0%, 80%)</h3>
+    <h3 style= "color: rgba(100%, 20%, 0%, 60%)">Color rgba(100%, 20%, 0%, 60%)</h3>
+    <h3 style= "color: rgba(100%, 20%, 0%, 40%)">Color rgba(100%, 20%, 0%, 40%)</h3>
+
+    <h2>Todo esto se puede hacer usando CSS en un archivo separado, usando la etiqueta STYLE, etc.</h2>
+</body>
+</html>

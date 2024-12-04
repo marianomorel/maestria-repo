@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays - Método sort(func)</h1>
+    <p><b>sort(func)</b> ordena un array según el CRITERIO definido por <b>func</b> (La función debe devolver un valor negativo, cero o positivo).</p>
+
+    <p>(Inspecciona el código de este HTML para analizar el <b>script</b>)</p>
+    <br><hr>
+    <script>
+
+        //----------------------------------------------
+        // Creamos un array con valores numéricos:
+        let a = [4, 2, 6, 1, 9, 8, 14]
+        imprimir("a.................................: [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Lo ordenamos de menor a mayor (Cuidado!):
+        a.sort()
+        imprimir("a.sort()..........................: [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Lo ordenamos de menor a mayor:
+        a.sort(function(a, b){return a-b})
+        imprimir("a.sort(function(a, b){return a-b}): [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Lo ordenamos de mayor a menor:
+        a.sort(function(a, b){return b-a})
+        imprimir("a.sort(function(a, b){return b-a}): [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Lo ordenamos de mayor a menor, con funcion flecha!:
+        a.sort( (a, b) => b-a )
+        imprimir("a.sort( (a, b) => b-a )...........: [ "+a+" ]")
+        imprimir("<hr>", false)
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con formularios - II</title>
+</head>
+<body>
+    <h3>Formulario - Segundo ejemplo</h3>
+
+    <form action="mostrar_datos.html" method="POST" target="_blank">
+        <!-- Ingreso del nombre -->
+        <label for="nombre">Nombre: </label>
+        <input size="30" type="text" name="nombre"
+            placeholder="Ingrese su nombre aqui...">
+        <br><br>
+
+        <!-- Ingreso del apellido -->
+        <label for="apellido">Apellido: </label>
+        <input size="30" type="text" name="apellido"
+            placeholder="Ingrese su apellido aqui...">
+        <br><br>
+
+        <!-- Ingreso de la dirección -->
+        <label for="direccion">Dirección: </label>
+        <input size="30" type="text" name="direccion"
+            placeholder="Ingrese su direccion aqui...">
+
+        <br><br>
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar datos">
+    </form>
+
+
+</body>
+</html>

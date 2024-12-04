@@ -1,0 +1,32 @@
+:root{
+    --color-principal: darkred;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+.texto-1::before{
+    content: "IMPORTANTE: ";
+    color: var(--color-principal,red);
+}
+.texto-1::after{
+    content: " FIN";
+    color: var(--color-principal);
+}
+.texto-2::first-line{
+    background-color: yellowgreen;
+    text-transform: uppercase;
+}
+.texto-3::first-letter{
+    color: blue;
+    font-size: 400%;
+    float:left;
+}
+.texto-3::selection {
+    color: darkblue;   
+    background-color: aquamarine;
+}
+div {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-principal, dar);
+}

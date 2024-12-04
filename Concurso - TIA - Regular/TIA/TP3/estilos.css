@@ -1,0 +1,43 @@
+strong {
+    font-weight: 400;
+}
+
+strong > strong {
+    color:blue;
+
+}
+
+.clase1 {
+    color: chocolate;
+    letter-spacing: 1cm;
+}
+
+.clase2 {
+    color:blueviolet;
+    word-spacing: 50%;
+}
+
+.clase3 {
+    line-height: 1cm;
+}
+
+/*
+body{
+    background-image: url("./imagen/fondo.jpeg");
+    background-attachment: fixed;
+}
+
+*/
+
+
+ul li {
+    list-style-type: "\1f640";
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+thead{
+    background-color: aqua;
+}

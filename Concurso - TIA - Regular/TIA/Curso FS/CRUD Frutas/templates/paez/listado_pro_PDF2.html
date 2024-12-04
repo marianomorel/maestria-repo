@@ -1,0 +1,52 @@
+{% include 'paez/header.html' %}
+
+<h4>LISTA DE PRECIOS en PDF<BR>(por DESCRIPCION)</h4>
+
+<form method="post" action="/listado_precios_PDF2" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="txtPro_Ven_Id">Codigo del vendedor:</label>
+    <div class="col-sm-6 col-md-6">
+      <select name="txtPro_Ven_Id" id="txtPro_Ven_Id" class="form-control">
+        <option>0 - TODOS</option>
+        {% for proveedor in proveedores %}
+        <option>{{proveedor[0]}} - {{proveedor[1]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="txtPro_Cat_Id">Codigo de categoría:</label>
+    <div class="col-sm-6 col-md-4">
+      <select name="txtPro_Cat_Id" id="txtPro_Cat_Id" class="form-control">
+        <option>0 - TODAS</option>
+        {% for categoria in categorias %}
+        <option>{{categoria[0]}} - {{categoria[1]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="txtPro_Sub_Id">Codigo de Sub-categoría:</label>
+    <div class="col-sm-6 col-md-4">
+      <select name="txtPro_Sub_Id" id="txtPro_Sub_Id" class="form-control">
+        <option>0 - TODAS</option>
+        {% for subcategoria in subcategorias %}
+        <option>{{subcategoria[0]}} - {{subcategoria[1]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  
+
+  <br />
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" value="Ver listado" />
+    <a href="{{url_for('inicio')}}" class="btn btn-primary">Cancelar</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

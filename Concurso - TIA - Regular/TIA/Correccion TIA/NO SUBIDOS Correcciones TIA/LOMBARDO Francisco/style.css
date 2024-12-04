@@ -1,0 +1,37 @@
+.nombres{
+    color: red;
+}
+.carrera {
+    color: orange;
+}
+table{
+    border-color: red;
+}
+mark{
+    padding-right: 50px;
+}
+li{
+    margin: 8px;
+    background-color: yellow;
+}
+button{
+    border: none;
+    background-color: white;
+}
+img{
+    width: 60px;
+    margin: auto;
+}
+h1 {
+    color:blue ;
+}
+h2{
+    color: green;
+}
+table,tr{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.nombrest {
+    color: red;
+}

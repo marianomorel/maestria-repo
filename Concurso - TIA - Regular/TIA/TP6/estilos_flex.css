@@ -1,0 +1,56 @@
+.flexbox {
+    background-color: wheat;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+/*
+    flex-wrap: nowrap;
+    align-items: baseline;
+*/
+/*  align-items alinea los elementos hijos de una misma fila entre sí mientras que align-content lo hace respecto del padre.
+    adjunto dos imágenes (align-items.png y align-content.png) que muestran la diferencia.
+
+    En clase no se veía porque el contendero era del mismo alto que los items hijos.
+    Agregando la propiedad height: 500px; se ve la diferencia.
+*/
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: center;
+
+    height: 300px;      /* agregado para poder probar la propiedad align-content */
+
+}
+.items {
+    width: 300px;
+/*    height: 100px;    */
+    border: 1px solid #000;
+    padding: 10px;
+
+}
+.primero {
+    background-color: red;
+    font-size: 30px;
+}
+.segundo {
+    background-color: blue;
+    font-size: 10px;
+/*    align-self: start; */
+}
+.tercero {
+    background-color:green;
+    font-size: 80px;
+}
+.cuarto {
+    background-color: yellow;
+    font-size: 50px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

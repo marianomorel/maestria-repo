@@ -1,0 +1,32 @@
+Insanti - Sánchez Bonaldo
+
+
+Mínimo para aprobar (30 puntos):
+Tener correctamente:
+  Encabezados
+  Tablas
+  Listas
+  Enlaces
+  Imágenes
+Menos que esto: 0 puntos.
+Si usan un framework: 0 puntos.
+
+
+A partir de ahí, Subir si:
+  Se ve tal cual la imagen.
+  Los documentos sean válidos y estén bien formados.
+  Emplean correctamente los elementos.
+  CSS correctos.
+  CSS usan clases.
+
+Considerar mal:
+  Si no se ve tal cual la imagen o no funcionan los enlaces.
+  Errores sintácticos o semánticos.
+  CSS incrustados
+  CSS en archivo html
+  CSS si no usan ninguna clase
+  CSS si definen varias clases u hojas de estilo con estilos repetidos
+  Si utilizan etiquetas como <b>, <i>, <u> en lugar de estilos CSS
+  Si usan elementos que no se dieron todavía de forma incorrecta.
+
+

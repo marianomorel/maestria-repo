@@ -1,0 +1,36 @@
+:root {
+    font-size: 50px;
+}
+
+.abs {
+    width: 3cm;
+    height: 3cm;
+    background-color: blueviolet;
+}
+
+.padre {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+}
+.hijo  {
+    width: 20%;
+    height: 50%;
+    background-color: yellowgreen;
+}
+
+.padre-em {
+    font-size: 38px;
+    background-color: red;
+}
+.hijo-em {
+    width: 2em;
+    height: 3em;
+    background-color: yellowgreen;
+}
+.padre-vw {
+    width: 20vw;
+    height: 20vh;
+    background-color: green;
+}

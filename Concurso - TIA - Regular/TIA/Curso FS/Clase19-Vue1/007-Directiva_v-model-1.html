@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Vue.js: Directiva v-model</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <h3>Uson de v-model</h3>
+        <p>La directiva <mark>v-model</mark> establece un enlace bidireccional, es decir, vincula el valor de los
+            elementos HTML a los datos de la aplicación.</p>
+        <p>Crea un enlace bidireccional en un elemento de formulario o componente. Limitado a: input, select, textarea y
+            componentes.</p>
+
+        <p>Tamaño de la fuente:
+            <input type="range" v-model="fontSize" min=10 max=50>( {{fontSize}} px)
+        </p>
+        <p>Color:
+            <input type="color" v-model="colorTxt">
+        </p>
+
+        <p v-bind:style="{'font-size':fontSize +'px', 'color': colorTxt}">Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Harum, veniam.</p>
+
+        <br><br><br><br><br>
+    </div>
+
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Nuestro script -->
+    <script>
+        // Creamos nuestra aplicacion.
+        const { createApp } = Vue
+        const miApp = createApp({
+            // DATOS de la aplicacion
+            data() {
+                // Definimos los valores que posee la aplicación
+                // En este caso, es un ARREGLO de OBJETOS
+                return {
+                    fontSize: 20,
+                    colorTxt: '#000000'
+                }
+            }
+        })
+
+        //Montamos la aplicacion en el div que tiene id="app":
+        miApp.mount('#app')
+    </script>
+</body>
+
+</html>

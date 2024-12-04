@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 3</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- El contenedor en el que se va a mostrar la app Vue.js -->
+    <h1>Atributos dinámicos en Vue.js con v-bind</h1>
+    <p>La directiva <mark>v-bind:</mark> es una de las directivas más utilizadas y populares de Vue.</p>
+    <p>Esta directiva permite <b>enlazar (<i>bindear</i>)</b> una variable de Vue con un <b>atributo</b> específico de
+        una etiqueta HTML.</p>
+    <p>De esta forma, <b>podemos colocar como valor de un atributo HTML el contenido que tengamos almacenado en una
+            variable</b> de la lógica de JavaScript.</p>
+    <hr>
+    <div class="container">
+        <script>
+            // Este pequeño script arma la "lista" con las imágenes
+            // en la pantalla.
+            // Creamos un div de la clase container, y colocamos en
+            // su interior las imágenes, para que queden centradas.
+            const div = document.createElement("div");
+            div.className = "container"
+            for (let i = 1; i < 6; i++) {
+                // Creamos un objeto del tipo tag <img> en img1
+                const img1 = document.createElement("img");
+                // Modifico los atributos de ese objeto
+                img1.alt = "img/foto" + i + ".png"
+                img1.src = "img/foto" + i + ".png"
+                img1.height = "40"
+                img1.id = "foto" + i
+                // Agrego el objeto en el div.
+                div.appendChild(img1)
+            }
+            //Finalmente, colocamos el div en el body
+            document.body.appendChild(div)
+        </script>
+    </div>
+    <hr>
+    <!-- Este es el contenedor donde va a funcionar Vue.js -->
+    <div id="app" class="container">
+        <!-- Esta imagen se puede cambiar presionando el boton-->
+        <img v-bind:src="imagen" v-bind:title="titulo" alt="No encontré la imágen!" height="100" class="glowon">
+        <br>
+        <button type="button" v-on:click="cambiarImagenAnt">Anterior</button>
+        <button type="button" v-on:click="cambiarImagenSig">Siguiente</button>
+    </div>
+    <hr>
+
+    <!-- CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Nuestro script -->
+    <script>
+
+
+        //Creamos nuestra aplicacion.
+        const {createApp} = Vue
+        const miApp = createApp({
+            //DATOS de la aplicacion
+            data() {
+                // Definimos que devuelve nuestra aplicación
+                return {
+                    titulo: "",                            // Texto del tooltip
+                    indice: 3,                             // Nro de imagen a mostrar
+                    imagen: "img/foto" + this.indice + ".png", // Ruta y nombre de la foto
+                    ultimaImagen: 5,                       // Ultima foto disponible.
+                    textoBoton: "Cambiar imágen",          // Texto del botón
+                }
+            },
+            // El evento  mounted() se dispara al montar la aplicación
+            mounted() {
+                //Al cargar la página, muestro la primer imágen
+                let imagen = document.createElement("img")
+                // Modifico los atributos de ese objeto
+                imagen.src = "img/foto1.png"
+                imagen.height = "60px";
+                // Agrego el objeto en el cuerpo del documento.
+                document.body.appendChild(imagen)
+                this.imagen = "img/foto" + this.indice + ".png"     // Ruta y nombre de la foto
+                this.titulo = "Imagen mostrada: " + this.imagen  // Texto del tooltip
+
+            },
+            // Defino metodos:
+            methods: {
+                cambiarImagenSig() {
+                    //Veo si es la última imagen:
+                    if (this.indice < this.ultimaImagen) {
+                        // Paso a la imágen siguiente
+                        this.indice++     // Nro de imagen a mostrar
+                    }
+                    this.imagen = "img/foto" + this.indice + ".png"    // Ruta y nombre de la foto
+                    this.titulo = "Imagen mostrada: " + this.imagen // Texto del tooltip
+                },
+                cambiarImagenAnt() {
+                    //Veo si es la última imagen:
+                    if (this.indice > 1) {
+                        // Paso a la imágen anterior
+                        this.indice--     // Nro de imagen a mostrar
+                    }
+                    this.imagen = "img/foto" + this.indice + ".png"    // Ruta y nombre de la foto
+                    this.titulo = "Imagen mostrada: " + this.imagen // Texto del tooltip
+                }
+            }
+        }).mount('#app')
+
+    </script>
+
+</body>
+
+</html>

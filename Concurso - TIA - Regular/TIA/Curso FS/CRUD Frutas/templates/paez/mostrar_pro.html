@@ -1,0 +1,73 @@
+{% include 'paez/header.html' %}
+
+<h4>CONSULTA DE PRODUCTOS</h4>
+
+<table style="border: hidden">
+    <tbody>
+        <tr> 
+            <td colspan=2 align="center">(Id: {{productos[0][ 0]}})&nbsp;-&nbsp;Código: {{productos[0][15]}}</td>
+        </tr>
+
+        <tr> 
+            <td colspan=2 align="center"><b>{{productos[0][ 4]}}</b> </td>
+        </tr>
+
+        <tr>
+            <td align="right">Precio Venta:&nbsp; </td>
+            <td align="left" ><b>$ {{"%.2f"|format(productos[0][ 8])}}</b> &nbsp;&nbsp; [ {{productos[0][13]}}]</td>
+        </tr>
+        <tr>
+            <td align="right">Stock disponible:&nbsp; </td>
+            <td align="left" > {{productos[0][14]}} unidades</td>
+        </tr>        
+        <tr> 
+            <td colspan=2>&nbsp </td>
+        </tr>
+        <tr>
+            <td align="right">Proveedor:&nbsp; </td>
+            <td align="left" >{{ven}} - {{ ven_name}}</td>
+        </tr>
+
+        </tr>
+            <td align="right">Categoría:&nbsp; </td>
+            <td align="left" >{{cat}} - {{ cat_name}}</td>
+        </tr> 
+
+        </tr>
+            <td align="right">Subcategoría:&nbsp; </td>
+            <td align="left" >{{sub}} - {{ sub_name}}</td>
+        </tr>
+
+        <tr> 
+            <td colspan=2>&nbsp </td>
+        </tr>
+        <tr>
+            <td align="right">Precio Compra:&nbsp; </td>
+            <td align="left" >$ {{"%.2f"|format(productos[0][ 5])}} &nbsp;&nbsp; [ {{productos[0][ 6]}}]</td>
+        </tr>
+
+        <tr>
+            <td align="right">Precio Lista 1:&nbsp; </td>
+            <td align="left" >$ {{"%.2f"|format(productos[0][ 8])}} &nbsp;&nbsp; [ {{productos[0][ 7]}}%]</td>
+        </tr>
+
+        <tr>
+            <td align="right">Precio Lista 2:&nbsp; </td>
+            <td align="left" >$ {{"%.2f"|format(productos[0][10])}} &nbsp;&nbsp; [ {{productos[0][ 9]}}%]</td>
+        </tr>
+
+        <tr>
+            <td align="right">Precio Lista 3:&nbsp; </td>
+            <td align="left" >$ {{"%.2f"|format(productos[0][12])}} &nbsp;&nbsp; [ {{productos[0][11]}}%]</td>
+        </tr>        
+
+    </tbody>
+</table>
+
+<form>
+  <div class="form-group" align="center">
+    <a href="javascript:history.back()" class="btn btn-success" >&nbsp;&nbsp;Volver&nbsp;&nbsp;</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>LocalStorage</h1>
+    <p>El objeto <b>localStorage</b> almacena datos sin fecha de vencimiento. Los datos no se eliminarán cuando se cierre el navegador y estarán disponibles en cualquier momento futuro.</p>
+    <p><b>localStorage</b> puede realizar esta tarea mediante los métodos <b>setItem</b> y <b>getItem</b>, que permiten guardar y recuperar información. Los datos se almacenan en formato de texto, como pares clave / valor.
+    </p>
+    <p>No todos los navegadores soportan estas tecnologías. Si proporciona soporte, la condición <mark>(typeof(Storage) !== "undefined")</mark> es verdadera (true). Esto puede utilizarse para determinar si es posible grabar los datos o no.</p>
+    <script src="script.js"></script>
+    <script src="06_localstorage.js"></script>
+    <p>Si se modifica el script para que no almacene datos en la sesión actual, se puede ver como se recuperan valores guardados en una sesión anterior.</p>
+
+</body>
+</html>

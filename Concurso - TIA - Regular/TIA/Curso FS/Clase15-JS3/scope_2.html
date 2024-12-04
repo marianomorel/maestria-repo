@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope (Alcance)</title>
+
+    <link rel="stylesheet" href="scope_2.css">
+
+
+</head>
+<body>
+    <h3>Scope (Alcance)</h3>
+
+    <script>
+
+        var a = 4   // ¿si cambio por let?
+
+        // Función que "imprime" una tabla de multiplicar
+        function ejemplo(parametro) {
+            console.log("Valor de a (en f): ", a)
+            console.log("Parametro: ", parametro)
+
+            //Realizamos un bucle for 
+            for ( i = 0; i < 3; i++) {      // ¿Que ocurre si var i=0 o let i = 0
+                console.log("Valor de a (en bucle): ", a)
+                //a = 1
+            }
+        } // Fin de la función.
+
+
+        ejemplo(25)
+        console.log("Valor de i: ", i)
+        console.log("Valor de a: ", a)
+        console.log("Parametro: ", parametro) //No existe fuera de la funcion.
+
+    </script>
+
+
+</body>
+
+</html>

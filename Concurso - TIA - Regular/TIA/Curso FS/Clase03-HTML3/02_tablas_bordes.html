@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas en HTML</title>
+</head>
+
+<body>
+    <h1>Tabla con borde en HTML</h1>
+    <p>Una tabla HTML puede tener sus celdas separadas por un <b>borde</b>. Se utiliza el atributo <i>border</i> y como valor el número de píxeles de ancho que tendrá ese borde: </p>
+
+    <table border="1"> <!--Nro de px del borde-->
+        <tr>
+            <th>R</th>
+            <th>G</th>
+            <th>B</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>33</td>
+            <td>FF</td>
+            <td><font color="#3333FF">#3333FF</font></td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>AA</td>
+            <td>33</td>
+            <td><font color="#33AA33">#33AA33</font></td>
+        </tr>
+        <tr>
+            <td>FF</td>
+            <td>33</td>
+            <td>33</td>
+            <td><font color="#FF3333">#FF3333</font></td>
+        </tr>
+    </table>
+
+    <p>(En HTML5 el atributo <i>border</i> está desaconsejado, y se utiliza CSS para crear bordes)</p>
+    
+    <p>Además, la tabla puede tener una leyenda (<i>caption</i>). La leyenda es un texto explicativo opcional que se muestra fuera de la tabla (normalmente, arriba). La leyenda no puede incluir párrafos ni otros elementos de bloque, aunque sí etiquetas en línea (b, i, u, imágenes, etc).</p>
+
+    <p>Los navegadores dan a la leyenda el mismo ancho que a la tabla, por lo que si una leyenda es larga y la tabla estrecha, la leyenda ocupará varias líneas, como muestra el ejemplo siguiente:</p>
+
+    <table border="1"> <!--Nro de px del borde-->
+        <caption>Algunos <b>colores</b> con su <i>código RGB</i>:</caption>
+        <tr>
+            <th>R</th>
+            <th>G</th>
+            <th>B</th>
+            <th>Color</th>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>33</td>
+            <td>FF</td>
+            <td><font color="#3333FF">#3333FF</font></td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>AA</td>
+            <td>33</td>
+            <td><font color="#33AA33">#33AA33</font></td>
+        </tr>
+        <tr>
+            <td>FF</td>
+            <td>33</td>
+            <td>33</td>
+            <td><font color="#FF3333">#FF3333</font></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones en 3D</title>
+    <style>
+        body {background-color: lightskyblue;  }
+
+
+        #envoltura {        /* Este div contiene todo el cubo */
+            width: 400px;   /* El cubo debe girar aqui dentro   */
+            height: 400px;
+            perspective: 1000px;  /* "Distancia focal" al cubo */
+            margin: 100px 100px;  /* Margenes del contenedor   */
+        }
+
+        .cubo {
+            width: 100px;                              /* Tamaño del cubo */
+            height: 100px;
+            transform-style: preserve-3d;              /* Sin esto, los divs quedan en 2D */
+            transform: rotateY(225deg) rotateX(25deg);  /* Posición inicial*/
+            transition: 3s ease-in;
+        }
+
+        .cubo div:nth-child(1) { /* Frente, lo acerco 50px en Z */
+            transform: translateZ(50px);
+            background-color: brown;
+        }
+        .cubo div:nth-child(2) { /* Lo giro 180 en X, y como se va hacia atrás, lo traigo 50px en Z */
+            transform: rotateX(180deg) translateZ(50px);
+            background-color: pink;
+        }
+        .cubo div:nth-child(3) { /* Lo giro -90 en X, y como se va hacia atrás, lo traigo 50px en Z */
+            transform: rotateY(-90deg) translateZ(50px);
+            background-color: lightcoral;
+        }
+        .cubo div:nth-child(4) { /* Lo giro 90 en Y, y como se va hacia atrás, lo traigo 50px en Z */
+            transform: rotateY(90deg) translateZ(50px);
+            background-color: lightgreen;
+        }
+        .cubo div:nth-child(5) { /* Lo giro 90 en X, y como se va hacia atrás, lo traigo 50px en Z */
+            transform: rotateX(90deg) translateZ(50px);
+            background-color: orange;
+        }
+        .cubo div:nth-child(6) { /* Lo giro -90 en X, y como se va hacia atrás, lo traigo 50px en Z */
+            transform: rotateX(-90deg) translateZ(50px);
+            background-color: red;
+        }
+
+        .cubo:hover{ /* Al pasar el mouse, lo roto sobre X e Y */
+            transform: rotateY(25deg) rotateX(13deg);
+        }
+
+        .cubo div {              /*Caras del cubo*/
+            position: absolute;
+            width: 100px;        /*El cubo será de 100x100x100px */
+            height: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Transformaciones en 3D</h3>
+    <div id="envoltura">
+        <div class="cubo">
+            <!-- Frente-->
+            <div>Frente</div>
+            <!-- Fondo-->
+            <div>Fondo</div>
+            <!-- Izquierda-->
+            <div>Izquierda</div>
+            <!-- Derecha-->
+            <div>Derecha</div>
+            <!-- Arriba-->
+            <div>Arriba</div>
+            <!-- Abajo-->
+            <div>Abajo</div>
+        </div>
+    </div>
+</body>
+
+</html>

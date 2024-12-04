@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Incluimos la referencia al archivo CSS-->
+    <link rel="stylesheet" href="css_04.css">
+
+    <title>CSS4</title>
+</head>
+<body>
+    <h1>Etiqueta H1</h1>
+    <p>Un párrafo corto.</p>
+    <p>Otro párrafo, con un break. <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo a illum similique harum assumenda sint, alias aperiam veritatis molestias quas.</p>
+    <br>
+    <p class="verde">Párrafo con texto verde sobre amarillo</p>
+    <p id="violeta">Parrafo id="violeta"</p>
+
+
+    <table border="1">
+        <tr id="violeta">
+            <td>Celda 1.1</td>
+            <td>Celda 1.2</td>
+            <td>Celda 1.3</td>
+            <td>Celda 1.4</td>
+        </tr>
+
+        <tr>
+            <td >Celda 2.1</td>
+            <td>Celda 2.2</td>
+            <td>Celda 2.3</td>
+            <td  id="violeta">Celda 2.4</td>
+        </tr>
+
+        <tr>
+            <td >Celda 3.1</td>
+            <td class="verde">Celda 3.2</td>
+            <td>Celda 3.3</td>
+            <td>Celda 3.4 (última celda de la tabla)</td>
+        </tr>
+    </table>
+
+    <br><br>
+    <form action="">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="ape_cliente" id="apellido" ><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nom" id="nombre" class="form_input"><br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="text" name="email_cliente" class="form_input" id="correo" >  <br><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="dir_cliente" class="form_input" id="direccion">  <br><br>
+
+        <input type="reset" value="Borrar">
+    </form>
+
+</body>
+</html>

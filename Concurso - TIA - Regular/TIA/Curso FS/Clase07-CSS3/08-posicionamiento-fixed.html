@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento (Fixed)</title>
+    <link rel="stylesheet" href="08-posicionamiento-fixed.css">
+</head>
+<body>
+    <h1>Propiedades del posicionamiento</h1>
+
+    <h2>position: fixed;</h2>
+    <p>El elemento "Padre4" tiene una posición <b>fixed</b> y NO permanecerá en el flujo natural de la página.<br>
+        Se posicionará de acuerdo con la ventana gráfica (viewport).<br>
+        También actuará como punto de anclaje para el elemento "Hijo4", que posee un posicionamiento del tipo <b>absolute</b>.<br>
+        La referencia es el <b>viewport</b>.<br><br><br>Veritatis fuga incidunt placeat, quasi iste consequatur ducimus nostrum officia nobis? Voluptatum hic nam quos culpa sed perspiciatis quo dicta debitis facere, ex eligendi laborum ratione inventore cum minus dolore suscipit voluptas in, doloremque non? Fuga perspiciatis aliquid dolor aliquam magnam natus dolores odio eum reiciendis commodi aspernatur ex qui doloribus dignissimos ab quasi, exercitationem cupiditate non! Impedit quod necessitatibus reiciendis minus nam Delectus dignissimos qui repellendus necessitatibus deleniti sapiente iusto obcaecati ducimus! Consequatur praesentium veniam quisquam, error alias asperiores voluptatem veritatis et cum omnis dolore.
+    </p>
+
+
+    <div id="padre4">
+        <b>Padre4:</b> <br>
+        position: fixed;<br>
+        bottom: 20px;<br>
+        left: 30px; <br><br>
+
+        <div id="hijo4"><b>Hijo4:</b><br>
+            position: absolute;<br>
+            top: -120px;<br>
+            left: 15px;<br><br>
+            Posición absoluta respecto del Padre4.
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+</body>
+
+</html>

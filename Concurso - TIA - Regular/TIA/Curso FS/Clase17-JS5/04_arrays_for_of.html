@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays (for .. of)</h1>
+    <p>Inspecciona el código de este HTML para analizar el <b>script</b>.</p>
+    <br><hr>
+    <script>
+        //----------------------------------------------
+        // Creamos un array con valores numéricos enteros:
+        let numeros = [1,4,6,2,7,-4,0,2,6,10]
+        imprimir("numeros: [ "+numeros+" ]")
+
+        //----------------------------------------------
+        // Usamos for..of para determinar cuál es el 
+        // elemento menor, el mayor y su suma:
+        imprimir("<hr>", false)
+        // Valores iniciales de los tres resultados:
+        let mayor = -Infinity, menor = +Infinity, suma = 0
+
+        // Realizo la suma, y busco el máximo y el mínimo:
+        for (let numero of numeros){
+            suma = numero + suma
+            if (numero < menor) menor = numero
+            if (numero > mayor) mayor = numero
+        }
+        // Muestro los resultados:
+        imprimir("Mayor: "+mayor)
+        imprimir("Menor: "+menor)
+        imprimir("Suma : "+suma )
+
+    </script>
+    <hr>
+</body>
+
+</html>

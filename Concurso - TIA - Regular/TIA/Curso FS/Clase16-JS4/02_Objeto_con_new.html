@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos - new Object()</title>
+</head>
+
+<body>
+    <h1>Objetos en JS</h1>
+    <p>Un objeto se puede crear usando el operador de asignación. Y puedes definir propiedades simplemente asignándoles
+        un valor. Si miras el código de este documento HTML, veras como crear un objeto llamado miAuto y como asignar
+        propiedades denominadas marca, tipo, y modelo.</p>
+    <script>
+        // Creamos una CLASE, que es una suerte de "molde"
+        // que usaremos para crear nuevos OBJETOS de ese tipo:
+
+        // Creamos el objeto
+        var miAuto = new Object()
+        // Creamos las propiedades
+        miAuto.marca = 'Ford'
+        miAuto.tipo = 'Ranger'
+        miAuto.modelo = 2019
+        console.log("El auto es:", miAuto.marca, miAuto.tipo, "y el modelo es", miAuto.modelo)
+
+
+    </script>
+</body>
+
+</html>

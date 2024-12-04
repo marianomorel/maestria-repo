@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async + Await con Axios</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--CDN de Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>Async + Await con Axios</h1>
+    <p><mark>Axios</mark> es una librería JavaScript que permite hacer las operaciones
+        como cliente HTTP de manera simple. Podemos configurar y realizar solicitudes a
+        un servidor, y recibir respuestas en un formato más fácil de procesar.</p>
+    <p>Al igual que otras librerías y frameworks, para utilizar Axios en nuestros
+        proyectos debemos incluir un enlace a su CDN y otro a un script JS. </p>
+    <hr>
+    <p>(Para <mark>Axios</mark> en acción, abre la consola con F12)</i></p>
+    <hr>
+
+
+    <!-- Nuestro script ------------------------------>
+    <script>
+        // async indica que la función es asincrónica
+        const getNombre = async (idPost) => {
+            // El bloque try se intenta ejecutar. En caso de error, se pasa a la sección catch(error)
+            try {
+                // await hace que axios espere por la respuesta
+                const resPost = await axios(`https://jsonplaceholder.typicode.com/posts/${idPost}`)
+                console.log(resPost);              //Mostramos el objeto (el post) completo
+                console.log(resPost.data.userId)   //Mostramos el userID, contenido en data.userId
+
+                const resUser = await axios(`https://jsonplaceholder.typicode.com/users/${resPost.data.userId}`)
+                console.log(resUser)               //Mostramos el objeto (el usuario) completo
+                console.log(resUser.data.name)     //Mostramos el nombre del usuario, que está en data.name
+            } catch (error) {
+                console.log('Ocurrió un error grave', error)
+            }
+        }
+        getNombre(99);  // El llamado a la función se hace de la forma habitual.
+
+    </script>
+</body>
+
+</html>

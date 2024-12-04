@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <h1>Fetch (Archivo) - Usando Vue.js</h1>
+    <p>En este ejemplo leemos un archivo local, utilizando <mark>fetch y Vue.js</mark>.</p>
+    <p>La <mark>API fetch</mark> permite acceder a recursos de un servidor de manera <b>asíncrona</b>.
+        Este tipo de peticiones permiten realizar solicitudes HTTP <b>sin necesidad de recargar toda la página.</b>
+        Para utilizar esta API no es necesario usar ninguna librería.
+        Funcionan haciendo uso del código nativo del navegador.</p>
+    <p>La API fetch utiliza <mark>promesas</mark>, es decir, devuelve un <b>objeto</b> con dos métodos,
+        uno <mark>then()</mark> y otro <mark>catch()</mark> a los que podemos pasar una función
+        que se invoca cuando se obtiene una respuesta a esa promesa o se produce un error.</p>
+    <hr>
+
+    <!-- Este es el contenedor donde va a funcionar Vue.js -->
+    <div id="app" class="container">
+        <button v-on:click="traerDatosArchivo()">Obtener datos</button>
+        <!-- Aquí insertaremos contenido del archivo de texto1.txt -->
+        <div v-html="HTML_a_mostrar" class="container2"></div>
+    </div>
+
+    <!-- Nuestro script -->
+    <script>
+        const miAplicacion = Vue.createApp({
+            // DATOS de la aplicacion
+            data() {
+                return {HTML_a_mostrar: ""}
+            },
+
+            methods: {
+                traerDatosArchivo() {
+                    fetch('texto1.txt') // Archivo a leer
+                        // Cuando ha finalizado la lectura
+                        //guardo en data el texto leido:
+                        .then(data => data.text())
+                        // Y luego copio ese texto en #contenido.
+                        .then(datos => this.HTML_a_mostrar = datos)
+                }
+            }
+
+        }).mount("#app")
+
+    </script>
+
+
+</body>
+
+</html>

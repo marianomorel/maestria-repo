@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays - Método forEach()</h1>
+    <p><b>forEach(funcion, var)</b> Realiza la operación definida en <b>función</b> PARA CADA elemento del array. <b>var</b> , opcional, es una variable contendrá el índice del elemento que estamos iterando.</p>
+
+    <p>(Inspecciona el código de este HTML para analizar el <b>script</b>)</p>
+    <br><hr>
+    <script>
+
+        //----------------------------------------------
+        // Creamos un array con valores numéricos:
+        let a = [4, 3, 6, 1, 9, 8, 14]
+        imprimir("a.................: [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Recorro el arreglo mostrando sus indices/elementos:
+        a.forEach( (elemento, indice) => imprimir('Indice: ' + indice + ' Valor: ' + elemento))
+        imprimir("<hr>", false)
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+.formulario {
+    background-color: aqua;
+    color: black;
+}
+
+.select {
+    background-color: greenyellow;
+    color: black;
+}
+
+.titulo{
+    color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    font-size: large;
+    text-align: center;
+    background-color: black;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    overflow: auto;
+    grid-template: 
+    "header" 100px
+    "nav" 100px
+    "article" auto
+    "aside" auto
+    "footer" 50px /
+    auto;
+}
+
+grid-container > *{ /*repasar esto*/
+    box-shadow: -1px 1px 7px 0px black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.header{
+    background-color: orange;
+    grid-area: header;
+}
+
+.nav{
+    background-color: white;
+    grid-area: nav; 
+}
+
+.article{
+    background-color: orange;
+    grid-area: article;
+}
+
+.aside{
+    background-color: white;
+    grid-area: aside;
+    background-image: url(img/css.PNG);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer{
+    background-color: orange;
+    grid-area: footer;
+}
+
+@media(min-width:900px){
+    .grid-container{
+    grid-template: 
+    "header header header" 100px
+    "nav article aside " auto
+    "footer footer footer" 50px /
+    150px auto auto;
+    }
+}

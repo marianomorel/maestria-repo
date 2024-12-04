@@ -1,0 +1,14 @@
+
+body{
+    font-family: Arial;
+}
+h1, h2{
+    border: 2px;
+    border-style: solid;
+    border-color:  black;
+    padding: 5px;
+    background-color: lightsalmon;
+}
+h2{
+    background-color: lightgreen;
+}

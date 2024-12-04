@@ -1,0 +1,77 @@
+{% include 'paez/header.html' %}
+
+<h4>MODIFICACIÓN DE PROVEEDORES<br /><br />CODIGO {{ proveedores[0][0] }}</h4>
+
+<form method="post" action="/update_ven" enctype="multipart/form-data">
+  <div class="form-group">
+    <input
+      type="hidden"
+      value="{{proveedores[0][0]}}"
+      name="txtVen_Id"
+      id="txtVen_Id"
+    />
+    <label for="txtVen_Name">Proveedor:</label>
+    <input
+      id="txtVen_Name"
+      class="form-control"
+      type="text"
+      name="txtVen_Name"
+      value="{{proveedores[0][1]}}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="txtVen_Desc">Descripción:</label>
+    <input
+      id="txtVen_Desc"
+      class="form-control"
+      type="text"
+      name="txtVen_Desc"
+      value="{{proveedores[0][2]}}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="txtVen_Direc">Dirección:</label>
+    <input id="txtVen_Direc" class="form-control" type="text" name="txtVen_Direc" value="{{proveedores[0][3]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_Loca">Localidad - Provincia:</label>
+    <input id="txtVen_Loca" class="form-control" type="text" name="txtVen_Loca" value="{{proveedores[0][4]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_Telef">Teléfono fijo:</label>
+    <input id="txtVen_Telef" class="form-control" type="text" name="txtVen_Telef" value="{{proveedores[0][5]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_Telec">Teléfono móvil:</label>
+    <input id="txtVen_Telec" class="form-control" type="text" name="txtVen_Telec" value="{{proveedores[0][6]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_Email">Correo eléctrónico:</label>
+    <input id="txtVen_Email" class="form-control" type="text" name="txtVen_Email" value="{{proveedores[0][7]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_CBU">CBU:</label>
+    <input id="txtVen_CBU" class="form-control" type="text" name="txtVen_CBU" value="{{proveedores[0][8]}}"/>
+</div>
+
+<div class="form-group">
+    <label for="txtVen_Contacto">Persona de contacto:</label>
+    <input id="txtVen_Contacto" class="form-control" type="text" name="txtVen_Contacto" value="{{proveedores[0][9]}}"/>
+</div>
+
+
+  <br />
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" value="Guardar cambios" />
+    <a href="javascript:history.back()" class="btn btn-primary">Cancelar</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

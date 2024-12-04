@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+    <h1>Reactividad con Vue.js (I)</h1>
+    <p>Creamos una app con Vue, y utilizamos <mark>setInterval()</mark> para configurar un contador.</p>
+    <p>El contador simplemente avanza, sumando 1 en cada segundo.</p>
+    
+    <hr>
+
+    <!-- Este es el contenedor donde funcionar Vue.js -->
+    <div id="app">
+        <p></b>Contador...: <b> {{contador}} </p>
+    </div>
+
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+        
+    <!-- Nuestro script -->
+    <script>
+        //Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            //DATOS de la aplicacion
+            data() {
+                // Definimos que devuelve nuestra aplicación
+                return { contador: 11110 }
+            },
+            // El evento  mounted() se dispara al montar la aplicación
+            mounted(){
+                //Suma 1 en contador cada 1000ms (1 segundo)
+                setInterval(()=> { this.contador ++ }, 1000 )
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+</html>

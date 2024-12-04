@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Watchers (Observadores) (I)</h1>
+    <p>Creamos una app con Vue, y utilizamos <mark>setInterval()</mark> para configurar un contador, y <mark>clearInterval()</mark> para detenerlo.</p>
+    <p>Los <mark>Watchers</mark> se aplican a los datos que cambian.
+         Por ejemplo, elementos de <b>input</b> en formularios. 
+         No tenemos que agregar ningún evento adicional. Los <mark>watchers</mark>
+         se encargan de manejar cualquier cambio de datos haciendo que
+         el código sea simple y rápido de escribir.</p>
+    <hr>
+
+    <!-- Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <p>Kilometros:</p><input type="text" v-model="kilometros">
+        <p>Metros:</p><input type="text" v-model="metros">
+    </div>
+
+
+
+    <!-- CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <!-- Nuestro script -->
+    <script>
+    //Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            //DATOS de la aplicacion
+            data() {
+                // Definimos que devuelve nuestra aplicación
+                return { kilometros: 0,
+                            metros: 0 }
+            },
+            // Defino watch:
+            watch: {
+                kilometros(valor) {
+                    this.kilometros = valor
+                    this.metros = valor * 1000
+                    },
+                metros(valor) {
+                    this.kilometros = valor / 1000
+                    this.metros = valor
+                    }
+                }
+        }).mount("#app")
+
+    </script>
+</body>
+</html>

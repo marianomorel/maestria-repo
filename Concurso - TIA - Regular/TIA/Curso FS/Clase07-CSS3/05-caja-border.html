@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de caja</title>
+    <link rel="stylesheet" href="05-caja-border.css">
+</head>
+
+<body>
+    <h3>Border</h3>
+    <p>En CSS es posible especificar el aspecto que tendrán los bordes de cualquier elemento HTML, pudiendo incluso, dar
+        diferentes características a zonas particulares del borde, como por ejemplo, el borde superior, el borde
+        izquierdo, el
+        borde derecho o el borde inferior.</p>
+
+    <h4>Definimos un borde de 4px, solido y color negro
+        para todos los lados de la caja</h3>
+        <div class="contenedor">
+            <b>Contenedor</b>
+            <p class="p1">
+                border: 4px;<br>
+                border-style: solid;<br>
+                border-color: orangered;<br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur officia maxime velit sed
+                eius, placeat praesentium quasi beatae molestias tenetur tempore ex quia quam, ipsum harum ducimus iusto
+                dolorem?</p>
+        </div>
+
+
+        <div class="espaciador"></div>
+
+        <h4>Definimos un borde de 4px, dotted y color negro para todos los lados de la caja <mark>usando atajos</mark>
+            </h3>
+            <div class="contenedor">
+                <b>Contenedor</b>
+                <p class="p2">border: 5px dotted red;<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti aspernatur officia maxime velit sed eius, placeat praesentium quasi beatae molestias
+                    tenetur tempore ex quia quam, ipsum harum ducimus iusto dolorem?</p>
+            </div>
+
+
+
+            <div class="espaciador"></div>
+
+            <h4>Borde inferior (unicamente) de estilo "double", de 10px y color verde </h4>
+            <div class="contenedor">
+                <b>Contenedor</b>
+                <p class="p3">
+                    border-bottom-width: 10px;<br>
+                    border-bottom-style: double;<br>
+                    border-bottom-color: green;<br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur officia maxime velit
+                    sed eius, placeat praesentium quasi beatae molestias tenetur tempore ex quia quam, ipsum harum
+                    ducimus iusto dolorem?</p>
+            </div>
+
+
+
+            <div class="espaciador"></div>
+
+            <h4>Bordes específicos</h4>
+            <div class="contenedor">
+                <b>Contenedor</b>
+                <p class="p4">
+                    border: 25px solid green;<br>
+                    border-top-width: 15px;<br>
+                    border-top-color: blue;<br>
+                    border-top-style: solid;<br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur officia maxime velit
+                    sed eius, placeat praesentium quasi beatae molestias tenetur tempore ex quia quam, ipsum harum
+                    ducimus iusto dolorem?</p>
+
+
+            </div>
+
+
+            <div class="espaciador"></div>
+
+            <h4>Bordes Bordes redondeados con border-radius </h4>
+            <div class="contenedor">
+                <b>Contenedor</b>
+                <p class="p5">
+                    border: 5px dashed black;<br>
+                    border-radius: 25px;<br>
+                    border-top-color: blue;<br>
+                    border-left-color: red;<br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur officia maxime velit
+                    sed eius, placeat praesentium quasi beatae molestias tenetur tempore ex quia quam, ipsum harum
+                    ducimus iusto dolorem?</p>
+
+
+            </div>
+
+
+            <div class="espaciador"></div>
+
+            <h4>Bordes con diversos estilos. </h4>
+            <div class="contenedor">
+                <b>style="border-style: double"</b>
+                <p class="p6" style="border-style: double">Lorem ipsum dolor sit amet consectetur tempore ex quia quam,
+                    ipsum harum ducimus iusto dolorem?</p>
+            </div>
+            <div class="contenedor">
+                <b>style="border-style: groove"</b>
+                <p class="p6" style="border-style: groove">Lorem ipsum dolor sit amet consectetur tempore ex quia quam,
+                    ipsum harum ducimus iusto dolorem?</p>
+            </div>
+            <div class="contenedor">
+                <b>style="border-style: ridge"</b>
+                <p class="p6" style="border-style: ridge">Lorem ipsum dolor sit amet consectetur tempore ex quia quam,
+                    ipsum harum ducimus iusto dolorem?</p>
+            </div>
+            <div class="contenedor">
+                <b>style="border-style: inset"</b>
+                <p class="p6" style="border-style: inset">Lorem ipsum dolor sit amet consectetur tempore ex quia quam,
+                    ipsum harum ducimus iusto dolorem?</p>
+            </div>
+            <div class="contenedor">
+                <b>style="border-style: outset"</b>
+                <p class="p6" style="border-style: outset">Lorem ipsum dolor sit amet consectetur tempore ex quia quam,
+                    ipsum harum ducimus iusto dolorem?</p>
+            </div>
+</body>
+
+</html>

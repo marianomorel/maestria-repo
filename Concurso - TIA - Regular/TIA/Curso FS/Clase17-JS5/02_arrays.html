@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Arrays (Arreglos o vectores)</h1>
+    <p>Inspecciona el código de este HTML para analizar el <b>script</b>.</p>
+    <br><hr>
+    <script>
+        // Creamos un array con cinco colores cualquiera:
+        let colores = ["verde", "rojo", "azul", "amarillo", "naranja"]
+        imprimir("colores: [ "+colores+" ]")
+
+        // Almacenamos en otra variable el valor del
+        // tercer elemento, que se corresponde a la posición 2:
+        let guardaColor = colores[2]
+        imprimir("colores[2]: "+guardaColor)
+
+        // Podemos obtener la cuarta letra del segundo elemento así:
+        imprimir("colores[1][3]: "+colores[1][3])
+
+        // O también así:
+        imprimir("colores[1].charAt(3): "+colores[1].charAt(3));
+    </script>
+    <hr>
+</body>
+
+</html>

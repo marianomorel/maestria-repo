@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Vue.js: Directiva key.up</h1>
+    <p><b>Vue.js</b> ofrece modificadores de teclas mediante los cuales se manejan los
+        eventos. Si necesitamos que un <b>input</b> llame a un método definido en una
+        instancia <b>Vue</b> sólo cuando se pulsa/suelta la tecla <b>enter</b>
+        podemos agregar un modificador como el siguiente:</p>
+        <p><mark>&lt;input type = "text" v-on:keyup.enter = "...."/&gt;</mark></p>
+
+        <p>Esto funciona con prácticamente cualquier tecla.</p>
+    <hr>
+
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app" class="container">
+        <p>Escribe algo y presiona Enter</p>
+        <!-- En keyup.enter invertimos el valor lógico de "data"-->
+        <input v-on:keyup.enter="data1 = !data1" v-on:keydown.esc="data2 = !data2"></input><br><br>
+        <span v-if="data1" class="tituloTabla">Soltaste Enter</span>
+        <span v-if="data2" class="tituloTabla">presionaste Esc</span>        
+    </div>
+
+    <br><br><br><br>
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+
+    <!-- Nuestro script -->
+    <script>
+        // Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            // DATOS de la aplicacion
+            data() {
+                // Definimos los valores que posee la aplicación
+                // (Son similares a las propiedades de un objeto)
+                return {data1: false, data2: false}
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

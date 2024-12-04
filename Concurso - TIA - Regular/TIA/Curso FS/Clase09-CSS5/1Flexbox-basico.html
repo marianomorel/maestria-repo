@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 1 - Contenedor </title>
+
+    <style>
+        /*Contenedor: Es el elemento padre que tendrá en su interior 
+        cada uno de los ítems "flexibles".
+        La mayor parte de las características de Flexbox se aplican 
+        mediante un contenedor */
+        .flex-container {
+            display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
+            /* ¿qué ocurre si uso inline-flex; ? */
+            background-color: yellowgreen;
+            height: 300px;  /* Importante: por defecto, los elementos "hijos" van a tener la altura del contenedor */
+        }
+
+        /*Cada uno de los hijos "flexibles" que tendrá el contenedor en su interior. */
+        .flex-container > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Creación de un contenedor Flex (Flex Container)</h3>
+
+    <p>Los contenedores flexibles tendrán una orientación principal específica. Por defecto, es en horizontal (en fila).</p>
+   
+    <p>De la misma forma, los contenedores flexibles tendrán una orientación secundaria, perpendicular a la principal. Si la principal es en horizontal, la secundaria será en vertical, y viceversa.</p>
+   
+    <div class="flex-container">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <p>Los DIV "Itemx" son los hijos flexibles que tendrá el contenedor en su interior.</p>
+
+    <p>Importante: por defecto, los elementos "hijos" van a tener la altura del contenedor padre</p>
+</body>
+
+</html>

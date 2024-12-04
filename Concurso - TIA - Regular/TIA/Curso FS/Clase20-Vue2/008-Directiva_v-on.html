@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Vue.js: Directiva v-on</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+    <p><mark>v-on</mark> es el atributo agregado a los elementos DOM para escuchar los eventos en Vue.JS.</p>
+    <p>Técnicamente, es un <b>manejador de eventos</b> (<i>event handling</i>).</p>
+    <hr>
+
+    <p>Presiona los botones para modificar el estado del contador:</p>
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <button v-on:click="contador +=1">Sumar uno</button>
+        <button v-on:click="contador -=1">Restar uno</button>
+        <button v-on:click="contador = 0">Poner a cero</button>
+        <p>El contador tiene un valor de <b>{{contador}}</b>.</p>
+    </div>
+
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- Nuestro script -->
+    <script>
+        // Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            // DATOS de la aplicacion
+            data() {
+                // Definimos los valores que posee la aplicación
+                // (Son similares a las propiedades de un objeto)
+                return { contador: 5}
+            }
+
+        }).mount("#app")        
+    </script>
+</body>
+
+</html>

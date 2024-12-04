@@ -1,0 +1,17 @@
+.sticky1 {
+    position: sticky;
+    top: 15px;
+    /*Probar con otros bordes y ver que ocurre! */
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+}
+
+.sticky2 {
+    position: sticky;
+    bottom: 0;
+    /*Probar con otros bordes y ver que ocurre! */
+    padding: 5px;
+    background-color: #cadce8;
+    border: 2px solid #635eef;
+}

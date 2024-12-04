@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays - Método .splice()</h1>
+    <p><b>splice()</b> cambia el contenido de un arreglo eliminando o reemplazando elementos existentes y/o agregando nuevos elementos en su lugar.</p>
+    <h3>Sintaxis:</h3>
+    <p>splice(start)<br>
+        splice(start, deleteCount)<br>
+        splice(start, deleteCount, item1)<br>
+        splice(start, deleteCount, item1, item2, itemN)<br><br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">Todo sobre la sintaxis de .splice</a></p>
+    <p>(Inspecciona el código de este HTML para analizar el <b>script</b>)</p>
+    <br><hr>
+    <script>
+
+        //----------------------------------------------
+        // Creamos un array:
+        let a = [4, 2, 6, 1, 9, 8, 14]
+        imprimir("a...........................: [ "+a+" ]")
+        imprimir("<hr>", false)
+
+        //----------------------------------------------
+        // Eliminamos los elementos [2] y [3]
+        a.splice(2, 2)
+        imprimir("a.splice(2, 2)..............: [ "+a+" ]")
+        imprimir("<hr>", false)        
+
+        //----------------------------------------------
+        // Agregamos 8 y 9 a partir de [3]
+        a.splice(3, 0, 8, 9)
+        imprimir("a.splice(3, 0, 8, 9)........: [ "+a+" ]")
+        imprimir("<hr>", false)        
+
+        //----------------------------------------------
+        // Agregamos eliminamos 4 elementos a partir de [1],
+        // y ponemos en su lugar A, B y C
+        a.splice(1, 4, 'A', 'B','C')
+        imprimir("a.splice(1, 4, 'A', 'B','C'): [ "+a+" ]")
+        imprimir("<hr>", false)        
+    </script>
+
+</body>
+
+</html>

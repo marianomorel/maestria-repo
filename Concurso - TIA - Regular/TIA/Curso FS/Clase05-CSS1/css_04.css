@@ -1,0 +1,55 @@
+/* Vamos a usar el SELECTOR * (universal) para 
+asignarle a la PROPIEDAD text-align el VALOR center */
+* {
+    text-align: center;
+}
+
+/* Vamos a usar el SELECTOR h1 para asignarle a la
+PROPIEDAD text-align el VALOR left */
+h1 {
+	text-align: left;
+}
+
+/* Vamos a definir el SELECTOR de clase .verde*/
+.verde {
+	color: green;
+    background-color: yellow;
+    font-size: 24px;
+}
+
+/* Creamos un SELECTOR de ID llamado
+violeta, que define texto blanco sobre fondo violeta,
+alineadoa la derecha pero con un margen del 10% del 
+ancho del viewport sobre la derecha */
+#violeta {
+    background: rgb(111, 8, 180);
+    color: white;
+    text-align: right;
+    margin-right: 10%;
+}
+
+
+/* Vamos a definir el SELECTOR de clase .form_input
+para algunos campos input del formulario */
+.form_input {
+    background: rgb(4, 156, 17);
+    color: rgb(242, 247, 241);
+    text-align: left;
+    border-style: solid;        
+    border-width: 2px;
+    border-color: rgb(6, 29, 1);
+    border-radius: 5px;
+}
+
+/* Por último creamos un SELECTOR de ID llamado
+apellido, que define el formato para ese campo
+del formulario */
+#apellido {
+    background: rgb(100, 236, 111);
+    color: rgb(10, 8, 8);
+    text-align: left;
+    border-style: solid;        
+    border-width: 2px;
+    border-color: blue;
+    border-radius: 5px;
+}

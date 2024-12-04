@@ -1,0 +1,32 @@
+{% include 'paez/header.html' %}
+
+<h4>LISTA DE CATEGORIAS</h4>
+
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Cod.</th>
+            <th>Nombre de la categoria</th>
+            <th>Descripción.</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+            {% if (loop.index) % 2 != 0 %}   <tr style="background-color: rgb(253, 253, 253);">  {% endif %}  
+            {% if (loop.index) % 2 == 0 %}   <tr style="background-color: rgb(205, 228, 250);">  {% endif %}  
+            <td>{{categoria[ 0]}}</td>
+            <td>{{categoria[ 1]}}</td>
+            <td>{{categoria[ 2]}}</td>
+
+            <td><a class="boton_Edit" href="/edit_cat/{{categoria[0]}}">&nbsp;Editar&nbsp;</a>&nbsp; 
+                <a class="boton_Del" onclick="return confirm('¿Desea borrar la categoría?')" href="/destroy_cat/{{categoria[0]}}">&nbsp;Borrar&nbsp;</a>  
+            </td>   
+            
+        </tr>                                                 
+
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'paez/footer.html' %}

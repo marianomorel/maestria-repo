@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de caja</title>
+    <link rel="stylesheet" href="03-caja-margin.css">
+</head>
+
+<body>
+    <h3>Margin (Margenes)</h3>
+    <p>En el modelo de cajas, los márgenes (margin) son los espacios exteriores de un elemento. El espacio que hay entre
+        el
+        borde de un elemento y el borde de otros elementos adyacentes es lo que se considera margen.</p>
+
+    <h4>Mismo margin en top-right-bottom-left (fijo en px)</h3>
+        <div class="bloque"></div>
+        <p class="p1">Este es un párrafo que tiene márgenes.<br><br>
+            margin: 20px;<br><br></p>
+        <div class="bloque"></div>
+
+
+        <div class="espaciador"></div>
+
+        <h4>Margenes determinados determinados con margin-top, margin-left, margin-right y margin-bottom.</h4>
+        <div class="bloque"></div>
+        <p class="p2">Este es un párrafo que tiene márgenes.<br><br>
+            margin-top: 30px;<br>
+            margin-right: 50px;<br>
+            margin-bottom: 10px;<br>
+            margin-left: 5px;<br><br>
+        </p>
+        <div class="bloque"></div>
+
+
+
+        <div class="espaciador"></div>
+
+        <h4>Margenes con tres valores (top, laterales, bottom)</h4>
+        <div class="bloque"></div>
+        <p class="p3">Este es un párrafo que tiene márgenes.<br><br>
+            margin: 30px 50px 10px;<br><br></p>
+        <div class="bloque"></div>
+
+
+        <div class="espaciador"></div>
+
+        <h4>Margen con dos valores (vertical, horizontal). Vertical en "auto"</h4>
+        <div class="bloque"></div>
+        <p class="p4">Este es un párrafo que tiene márgenes.<br><br>
+            margin: auto 30px;<br><br></p>
+        <div class="bloque"></div>
+
+
+        <div class="espaciador"></div>
+
+        <p>Algo muy interesante ocurre cuando dos elementos adyacentes tienen márgenes:</p>
+
+        <div class="span1">
+            <p>Soy un div<br><br>
+                width: 150px;<br>
+                height: 150px;<br>
+                margin: 50px;<br></p>
+        </div>
+        <div class="span1">
+            <p>Soy un div<br><br>
+                width: 150px;<br>
+                height: 150px;<br>
+                margin: 50px;<br></p>
+        </div>
+
+        <p> Por defecto, si tenemos dos elementos adyacentes con, por ejemplo, margin: 50px cada uno, ese espacio de margen se solapará y tendremos 50px en total, y no 100px (la suma de cada uno) como podríamos pensar en un principio. </p>
+        <p><a href="https://www.w3schools.com/css/css_margin.asp">Más información sobre márgenes</a></p>
+        <br><br>
+</body>
+
+</html>

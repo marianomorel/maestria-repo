@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+    <h1>Campos computados con Vue.js (I)</h1>
+    <p>Los <mark>campos computados</mark> son unas variables pre-calculadas que puedes reutilizar en
+        Vue sin calcularlas cada vez que las utilices, por lo que pueden ser especialmente
+        interesantes para cálculos u operaciones costosas. Dichos campos computados <b>sólo se
+            vuelven a recalcular si alguno de los parámetros implicados cambia</b>, de modo
+        que al calcularse una vez, suele cachear los resultados.</p>
+    <hr>
+    <p>En este ejemplo, se vinculan los dos campos <b>input</b> con la
+        <mark>instancia Vue</mark> utilizando <mark>v-model</mark>. Y se 
+        utiliza un <mark>campo computado</mark> para mostrar en el párrafo 
+        de abajo el valor de ambos <b>inputs</b> concatenados.</p>
+
+    <hr>
+
+    <!-- Este es el contenedor donde funcionar Vue.js -->
+    <div id="app">
+        <p><b>Escribe tu nombre y apellido:</b></p>
+        <p>Nombre..:<input type="text" v-model="nombre" name="nombre"></p>
+        <p>Apellido:<input type="text" v-model="apellido"></p>
+        <p>Tu nombre completo es: <b>{{nomyape}}</b></p>
+
+    </div>
+
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- Nuestro script -->
+    <script>
+        //Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            //DATOS de la aplicacion
+            data() {
+                return {
+                    nombre: "",
+                    apellido:""
+                        }
+            },
+            computed: {
+                nomyape() {
+                    return this.nombre + " " + this.apellido;
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

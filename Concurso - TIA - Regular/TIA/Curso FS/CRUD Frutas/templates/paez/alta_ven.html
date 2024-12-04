@@ -1,0 +1,60 @@
+{% include 'paez/header.html' %}
+
+ <h4>ALTA DE PROVEEDORES</h4>
+
+
+<form method="post" action="/store_ven" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="txtVen_Name">Nombre de la empresa proveedora:</label>
+        <input id="txtVen_Name" class="form-control" type="text" name="txtVen_Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Descrip">Descripción:</label>
+        <input id="txtVen_Descrip" class="form-control" type="text" name="txtVen_Descrip" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Direc">Dirección:</label>
+        <input id="txtVen_Direc" class="form-control" type="text" name="txtVen_Direc" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Loca">Localidad - Provincia:</label>
+        <input id="txtVen_Loca" class="form-control" type="text" name="txtVen_Loca" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Telef">Teléfono fijo:</label>
+        <input id="txtVen_Telef" class="form-control" type="text" name="txtVen_Telef" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Telec">Teléfono móvil:</label>
+        <input id="txtVen_Telec" class="form-control" type="text" name="txtVen_Telec" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Email">Correo eléctrónico:</label>
+        <input id="txtVen_Email" class="form-control" type="text" name="txtVen_Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_CBU">CBU:</label>
+        <input id="txtVen_CBU" class="form-control" type="text" name="txtVen_CBU" />
+    </div>
+
+    <div class="form-group">
+        <label for="txtVen_Contacto">Persona de contacto:</label>
+        <input id="txtVen_Contacto" class="form-control" type="text" name="txtVen_Contacto" />
+    </div>
+
+    <br />
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Agregar" />
+        <a href="{{url_for('inicio')}}" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>
+
+{% include 'paez/footer.html' %}

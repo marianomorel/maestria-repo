@@ -1,0 +1,29 @@
+ul li {
+	list-style-type: square;
+}
+
+ol li {
+	list-style: upper-roman;
+}
+
+.tabla{
+	margin-left: 3cm;
+	border-collapse: collapse;
+	caption-side: top;
+	
+}
+
+thead, .fila{
+	background-color: aqua;
+	font-weight: 700;
+}
+
+.vacio {
+	border: none;
+	background-color: white;
+}
+
+td {
+	border: 1px solid black;
+	text-align: center;
+}

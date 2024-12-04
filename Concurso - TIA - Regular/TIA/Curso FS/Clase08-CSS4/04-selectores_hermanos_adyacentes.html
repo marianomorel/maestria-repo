@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores avanzados</title>
+
+    <style>
+        div+p {
+            background-color: yellowgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Selector de hermano adyacente</h3>
+
+    <p>El signo + (mas) permite aplicar estilos a elementos que siguen a otros, es decir que está directamente después
+        de otro elemento específico. Los elementos hermanos deben tener el mismo elemento padre y "adyacente" significa
+        "inmediatamente siguiente". No puede haber ningún otro hermano que los separe o se interponga entre ellos.</p>
+
+    <p>El color de fondo verde <b>se aplica sólo al párrafo que está inmediatamente despues del div, y a ninguno de los
+            otros</b> .</p>
+    <div>
+        <p>Parrafo 1, dentro del div.</p>
+        <p>Parrafo 2, dentro del div.</p>
+    </div>
+
+    <p>Parrafo 3, inmediatamente despues del div.</p>
+    <p>Parrafo 4, después del div, pero con el parrafo 3 en medio.</p>
+
+    <div>
+        <p>Parrafo 5, dentro de otro div.</p>
+    </div>
+
+    <a href="#">Un link a ninguna parte.</a>
+    <p>Parrafo 6, después del div, pero con el link en medio.</p>
+
+
+
+</body>
+
+</html>

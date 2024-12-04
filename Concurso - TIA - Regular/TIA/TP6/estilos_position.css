@@ -1,0 +1,57 @@
+/* posicionamiento relativo */
+.r-contenedor {
+    border: 5px solid #000;
+    width: 200px;
+    height: 100px;
+}
+.r-hijo {
+    border: 5px solid indigo;
+    background-color: wheat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.r-hijo-des{
+    background-color: yellowgreen;
+    position: relative;
+    top: 10px;
+    left: 30px;
+    z-index: -1;
+}
+/* posicionamiento absoluto */
+.a-contenedor {
+    border: 5px solid #000;
+    width: 200px;
+    height: 100px;
+    position:relative;
+}
+.a-hijo {
+    border: 5px solid blue;
+    background-color: blueviolet;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.a-hijo-des{
+    background-color: red;
+    position:absolute;
+    top:50px;
+    left: 20px;
+}
+.f-contenedor {
+    border: 1px solid #000;
+    background-color: burlywood;
+    width: 100px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    left: 250px;
+}
+.s-contenedor {
+    border: 5px solid #000;
+    background-color: gainsboro;
+    width: 200px;
+    height: 50px;
+    position:sticky;
+    top: 10px;
+}
