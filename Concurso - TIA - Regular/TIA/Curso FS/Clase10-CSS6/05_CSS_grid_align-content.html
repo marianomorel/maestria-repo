@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Propiedad align-content</title>
+    <link rel="stylesheet" href="05_CSS_grid_align-content.css">
+</head>
+<body>
+    <h2>CSS Grid | Propiedad align-content</h2>
+
+    <p>La propiedad <mark><code>align-content</code></mark> se utiliza para alinear verticalmente toda la cuadrícula dentro del contenedor.</p>
+    <p>Nota: la altura total de la cuadrícula debe ser menor que la correspondiente al contenedor para que la propiedad <mark><code>align-content</code></mark> tenga algún efecto.</p>  
+
+    <h3>start</h3>
+    <p>Coloca los elementos al comienzo, y todo el espacio sobrante dentro del contenedor queda al final.</p>
+    <div class="grid-container" style="align-content: start;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+
+    <h3>end</h3>
+    <p>Coloca los elementos al final,  y todo el espacio sobrante dentro del contenedor queda al inicio.</p>
+    <div class="grid-container" style="align-content: end;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+
+    <h3>center</h3>
+    <p>Coloca los elementos al centro, y reparte todo el espacio sobrante entre el top y el bottom del contenedor.</p>
+    <div class="grid-container" style="align-content: center;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+
+    <h3>space-between</h3>
+    <p>Reparte todo el espacio disponible en el contenedor entre todas las filas de elementos, sin dejar espacio entre ellas y los bordes del contenedor.</p>
+    <div class="grid-container" style="align-content: space-between;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+
+    <h3>space-around</h3>
+    <p>Reparte todo el espacio disponible en el contenedor entre todas las filas, dejando el mismo espacio antes y despues de cada una de ellas.</p>
+    <div class="grid-container" style="align-content: space-around;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+
+    <h3>space-evenly</h3>
+    <p>Reparte todo el espacio disponible en el contenedor entre todas las filas de elementos.</p>
+    <div class="grid-container" style="align-content: space-evenly;">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div><br>
+</body>
+</html>

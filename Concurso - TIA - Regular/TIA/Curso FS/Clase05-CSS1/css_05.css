@@ -1,0 +1,13 @@
+/* Creamos un SELECTOR de CLASE llamado
+negro-gris, que define texto negro sobre fondo gris*/
+.negro-gris {
+    background: grey;
+    color: black;
+}
+
+/* Creamos un SELECTOR de CLASE llamado
+blanco-negro, que define texto blanco sobre fondo negro*/
+.blanco-negro {
+    background: black;
+    color: white;
+}

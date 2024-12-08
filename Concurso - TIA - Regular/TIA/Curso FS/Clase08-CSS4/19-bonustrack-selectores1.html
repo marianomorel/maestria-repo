@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de selectores descendientess</title>
+    <style>
+        li a {
+            color:brown;
+            background-color: bisque;
+            font-size: 20px;
+        }
+
+
+        #sector mark {
+            background-color: rgb(250, 120, 14);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejemplo de selectores descendientes</h1>
+    <p>Las etiquetas <b>LI</b> son descendientes de la etiqueta <b>UL</b>. La etiqueta <b>A</b> es descendiente de las etiquetas <b>LI</b> (descendiente de un hijo) y <b>UL</b> (descendiente de un nieto). <br>
+    Si piensas en esto usando el ejemplo de un árbol genealógico, el hijo de ese elemento sería el padre, el hijo de ese elemento, y el nieto del nieto.</p>
+
+    <p> Entonces, ¿cómo dirigirías elementos específicos en una página web utilizando estos selectores de descendientes? En primer lugar, se deben definir los selectores de descendientes utilizando dos (o más) selectores de tipo separados por espacios:</p>
+
+    <pre>li a {
+        color:brown;
+        background-color: bisque;
+        font-size: 20px;
+    }</pre>
+
+    <ul>
+        <li><a href="#">Primer Enlace</a></li>
+        <li><a href="#">Segundo Enlace</a></li>
+        <li><a href="#">Tercer Enlace</a></li>
+    </ul>
+    <p>Y este es un enlace que está fuera de la lista: <a href="#">Cuarto Enlace</a></p>
+
+    <div id="sector">
+        <p>Aqui tenemos un parrafo dentro de un DIV con un ID, y los textos con etiqueta  MARK <mark> aparecen resaltados con un tono naranja </mark> en lugar el amarillo estandar.</p>
+    </div>
+    <p>Aqui, fuera del DIV, la etiqueta  MARK <mark> tiene el comportamiento habitual </mark>.</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+#padre4 {
+    position: fixed;
+    border: 1px solid blue;
+    background-color: lightblue;
+    width: 300px;
+    height: 100px;
+    bottom: 20px;
+    left: 30px;
+    right: 0;
+}
+
+#hijo4 {
+    position: absolute;
+    border: 1px solid red;
+    background-color: rgba(255, 200, 200, 0.5);
+    top: -120px;
+    left: 15px;
+}

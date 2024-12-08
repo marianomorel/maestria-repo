@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <h1>Try - Catch</h1>
+    <p>Presionando el botón <mark>Ejecutar código</mark> se invoca al método 
+    <b>ejecutarCodigo</b> definido en la instancia <mark>Vue</mark></p>
+    <p>Puedes modificar el script dentro de este <b>documento HTML</b> para
+    producir algun error de manera intencional dentro del bloque <mark>try{ }</mark>. <br>
+    Si ello ocurre, verás en el documento HTML el mensaje de error que se encuentra
+    en el bloque <mark>cath{ }</mark>. <br>
+    También puedes utilizar la consola presionando <b>F12</b> para ver el contenido
+    de la variable <b>a</b> . Te va a sorprender lo dificil que es generar un error en <b>JavaScript</b>.</p>
+    <hr>
+
+    <!-- Este es el contenedor donde va a funcionar Vue.js -->
+    <div id="app" class="container">
+        <button @click="ejecutarCodigo">Ejecutar código</button>
+        <hr>
+        <!-- Aquí insertaremos contenido del archivo de texto1.txt -->
+        <div v-html="HTML_a_mostrar" class="container2"></div>
+    </div>
+
+
+    <!-- Nuestro script ------------------------------>
+    <script>
+        const miAplicacion = Vue.createApp({
+            // DATOS de la aplicacion
+            data() { return { HTML_a_mostrar: "" }  },
+
+            methods: {
+                // Esta función se ejecuta al presionar el botón
+                ejecutarCodigo() {
+                    // Esto se ejecuta siempre
+                    this.HTML_a_mostrar = "Ejecutando funcion.<br>"
+
+                    //El bloque dentro de try solo se ejecuta si no tiene errores
+                    try {
+                        //let a = 5 / "x"
+                        //let a = 5 / 0
+                        //let a = c
+                        console.log(a)
+                        this.HTML_a_mostrar += "<br>El bloque <mark>try{ }</mark> se ejecutó correctamente."
+                    }
+
+                    // Este bloque solo se ejecuta si hay un error en catch {}.
+                    // error_producido contiene el tipo de error que tuvo lugar-
+                    catch(error_producido){
+                        this.HTML_a_mostrar += "<br>Error producido en el bloque <mark>try{ }</mark><br>"
+                        this.HTML_a_mostrar += "Se ejecuta el bloque <mark>catch{ }</mark>: <br>"
+                        this.HTML_a_mostrar += "<br>Se produjo un error:<br>"
+                        this.HTML_a_mostrar += error_producido
+                    }
+
+                    finally{
+                        this.HTML_a_mostrar += "<br><br><br>*** Ejecución finalizada ***<br>"
+
+                    }
+                }
+            }
+
+        }).mount("#app")
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.izquierda {
+    float: left;
+    border: 4px double green;
+    background-color: cadetblue;
+    font-size: 24px;
+    margin: 20px;
+    width: 150px;
+}
+
+.derecha {
+    float: right; 
+    border: 4px double red;
+    background-color: orange;
+    font-size: 24px;
+    margin: 20px;
+    width: 150px;
+}
+p {
+    text-align:justify;
+}

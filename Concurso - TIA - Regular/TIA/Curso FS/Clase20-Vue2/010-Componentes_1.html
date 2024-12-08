@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Vue.js: Componentes</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="miApp">
+        <!-- La etiqueta <component>  la proporciona Vue para
+            poder enlazar mediante v-bind un componente
+            que se declara dentro de la propia instancia
+            de vue. -->
+        <component v-bind:is="vista"></component>
+    </div>
+
+    <hr><br><br><br><br>
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+
+    <!-- Nuestro script -->
+    <script>
+        const miApp = Vue.createApp({
+            //La propiedad vista hace de nexo entre el componente 
+            //y la etiqueta <component> con su v-bind
+            data() { return { vista: 'miComponente' } },
+            
+            // Defino mis componentes
+            components: {
+                // Este es el componente que se enlaza dinamicamente
+                // con la etiqueta <component>
+                'miComponente': {
+                    template:
+                        `<div><span style = "font-size:3rem;color:red;">
+                                Codo a codo  </span></div>`}
+            }
+        }).mount("#miApp")
+
+    </script>
+</body>
+
+</html>

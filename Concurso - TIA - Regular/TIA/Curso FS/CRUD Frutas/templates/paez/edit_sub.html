@@ -1,0 +1,41 @@
+{% include 'paez/header.html' %}
+
+<h4>MODIFICACIÓN DE SUBCATEGORIAS<br /><br />CODIGO {{ subcategorias[0][0] }}</h4>
+
+<form method="post" action="/update_sub" enctype="multipart/form-data">
+  <div class="form-group">
+    <input
+      type="hidden"
+      value="{{subcategorias[0][0]}}"
+      name="txtSub_Id"
+      id="txtSub_Id"
+    />
+    <label for="txtSub_Name">Subcategoría:</label>
+    <input
+      id="txtSub_Name"
+      class="form-control"
+      type="text"
+      name="txtSub_Name"
+      value="{{subcategorias[0][1]}}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="txtSub_Desc">Descripción:</label>
+    <input
+      id="txtSub_Desc"
+      class="form-control"
+      type="text"
+      name="txtSub_Desc"
+      value="{{subcategorias[0][2]}}"
+    />
+  </div>
+
+  <br />
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" value="Guardar cambios" />
+    <a href="javascript:history.back()" class="btn btn-primary">Cancelar</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

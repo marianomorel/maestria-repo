@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 7 - Propiedades de elementos hijos</title>
+
+    <style>
+        code {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+        .flex-containerh {
+            display: flex;   /* Esta propiedad define al div como contenedor flex*/
+            flex-direction: row;
+            /* flex-wrap: wrap; */ /*¿que ocurre si utilizamos esta opcion? */
+            background-color: yellowgreen;
+            align-items: stretch;
+        }
+
+        /*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+        .flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 20px;
+            width: 120px;
+
+            /* Para ver mejor como funciona flex-basis, quitar paddin, margin, etc */
+            flex-basis:1vwpx; /*Podemos usar content, px, %, em, vw, etc */
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Flexbox | Propiedades de hijos</h3>
+
+    <h4>flex-grow</h4>
+    <p>En primer lugar, tenemos la propiedad  <code>flex-grow</code> para indicar el factor de crecimiento de los ítems en el caso de que no tengan un ancho específico. Por ejemplo, si con <code>flex-grow</code> indicamos un valor de 1 a todos sus ítems, tendrían el mismo tamaño cada uno de ellos. Pero si colocamos un valor de 1 a todos los elementos, salvo a uno de ellos, que le indicamos 2, ese ítem será más grande que los anteriores. Los ítems a los que no se le especifique ningún valor, tendrán por defecto valor de 0.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div style="background-color: orange; flex-grow: 2">Item2 (2)</div>
+        <div>Item3</div>
+    </div><br>
+
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div style="background-color: coral; flex-grow: 1">Item2 (1)</div>
+        <div style="background-color: orange; flex-grow: 2">Item3 (2)</div>
+    </div><br>
+
+
+    <h4>flex-shrink</h4>   https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#propiedades-de-hijos
+    <p>En segundo lugar, tenemos la propiedad  <code>flex-shrink</code> que es la opuesta a <code>flex-grow</code>. Mientras  que la anterior indica un factor de crecimiento,  <code>flex-shrink</code> hace justo lo contrario, aplica un factor de decrecimiento. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes, justo al contrario de como funciona la propiedad <code>flex-grow</code>.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div style="background-color: orange; flex-shrink: 8">Item2 (8)</div>
+        <div style="background-color: orange; flex-shrink: 3">Item3 (3)</div>
+    </div><br>
+
+
+    <h4>flex-basis</h4>
+    <p>Por último, tenemos la propiedad <code>flex-basis</code>, que define el tamaño por defecto (de base) que tendrán los ítems antes de aplicarle la distribución de espacio. Generalmente, se aplica un tamaño (unidades, porcentajes, etc...), pero también se puede aplicar la palabra clave <code>content</code> que ajusta automáticamente el tamaño al contenido del ítem, que es su valor por defecto.</p>
+    <div class="flex-containerh">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div><br>
+
+
+    <h4>Atajo: Propiedades de hijos</h4>
+    <p>Existe una propiedad llamada <code>flex-basis</code>, que sirve de atajo para estas tres propiedades de los ítems hijos (En el aula virtual tienes material para seguir aprendiendo sobre este tema)</p>
+</body>
+
+</html>

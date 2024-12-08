@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 7</title>
+
+    <link rel="stylesheet" href="funciones_6.css">
+
+
+</head>
+<body>
+    <h3>Funciones 7: flecha</h3>
+    <p>También es posible crear funciones anónimas conocidas como función flecha, que constan de una sintaxis más compacta, <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions">en el siguiente link</a>  podrás encontrar mayor información sobre este tipo de funciones.</p>
+    <p>Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional, pero es limitada y no se puede utilizar en todas las situaciones.
+
+    </p>
+    <script>
+        // función "flecha":
+        var cuadrado = x =>  x*x
+        var cubo = x =>  x**3
+        var saludo = nombre => "Hola "+nombre
+
+        document.write(cuadrado(3))
+        document.write("<br>")
+        document.write(cubo(3))
+        document.write("<br>")
+        document.write(saludo("Juan"))
+    </script>
+
+</body>
+
+</html>

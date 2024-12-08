@@ -1,0 +1,31 @@
+.trasladar {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: translateX(150px);
+}
+
+.escalar {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border: 1px solid black;
+    transform: scale(1, .25);
+}
+
+.rotar {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border: 1px solid black;
+    transform: rotateY(1deg);
+}
+
+.deformar {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    border: 1px solid black;
+    transform: skewX(-20deg);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario en HTML5 (sin CSS)</title>
+</head>
+
+<body>
+    <!-- No es una buena práctica, pero usamos <center> para centrar el form-->
+    <center>
+        <form action="mostrar_datos.html" target="_blank">
+            <!-- y empleamos una tabla para alinear los controles.
+                No es la mejor manera de hacerlo, pero funciona utilizando
+                solamente las etiquetas y conceptos vistos hasta aqui,
+                sin utilizar CSS -->
+            <table>
+                <tr>
+                    <td align="right"><label for="name">Nombre:</label></td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="mail">Correo electrónico:</label></td>
+                    <td><input type="email" name="user_mail"></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="msg">Mensaje:</label></td>
+                    <td> <textarea id="msg" rows="5" cols="21" name="user_message"
+                            placeholder="Deje su mensaje..."></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <!-- Botones para controlar el formulario -->
+
+                        <input type="reset" value="Borrar">
+                        <input type="submit" value="Enviar datos">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </center>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{% include 'paez/header.html' %}
+
+<h4>LISTA DE PRODUCTOS</h4>
+<code>
+Proveedor: {{ven}}<br>
+Categoría: {{cat}}<br>
+Sub Categ: {{sub}}<br>
+</code>
+
+<table class="table table-light">
+    <thead class="thead-light">
+
+        <tr>
+            <th>Cod.</th>
+            <th>Descripción.</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+       
+            {% if (loop.index) % 4 != 0 %}   <tr style="background-color: rgb(253, 253, 253);">  {% endif %}  
+            {% if (loop.index) % 4 == 0 %}   <tr style="background-color: rgb(205, 228, 250);">  {% endif %}  
+            <td align="right">{{producto[ 0]}}&nbsp; </td>
+            <td>              {{producto[ 4]}} </td>
+            <td align="right">$ {{"%.2f"|format(producto[ 8])}}&nbsp;</td>           
+            <td><a class="boton_Ok" href="/mostrar_pro/{{producto[0]}}">&nbsp;Ver&nbsp;</a>&nbsp; 
+                <a class="boton_Edit" href="/edit_pro/{{producto[0]}}">&nbsp;Editar&nbsp;</a>&nbsp; 
+                <a class="boton_Del"  onclick="return confirm('¿Desea borrar el producto?')" href="/destroy_pro/{{producto[0]}}">&nbsp;Borrar&nbsp;</a>  
+            </td>
+        </tr>
+   {% endfor %}
+
+    </tbody>
+</table>
+{% include 'paez/footer.html' %}

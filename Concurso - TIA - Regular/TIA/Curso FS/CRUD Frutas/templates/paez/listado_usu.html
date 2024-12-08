@@ -1,0 +1,22 @@
+{% include 'paez/header.html' %}
+
+<h4>LISTADO de USUARIOS<BR><BR>(por NOMBRE)</h4>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Nombre del usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+            {% if (loop.index) % 2 != 0 %}   <tr style="background-color: rgb(253, 253, 253);">  {% endif %}  
+            {% if (loop.index) % 2 == 0 %}   <tr style="background-color: rgb(205, 228, 250);">  {% endif %}  
+            <td>{{usuario[ 0]}}</td>
+           
+        </tr>                                                 
+
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'paez/footer.html' %}

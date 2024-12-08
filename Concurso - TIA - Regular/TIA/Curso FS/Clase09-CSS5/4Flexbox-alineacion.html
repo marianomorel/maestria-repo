@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 4 - Propiedades de alineación</title>
+
+    <style>
+        code {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+        .flex-containerh {
+            display:flex;   /* Esta propiedad define al div como contenedor flex*/
+            flex-direction: row;
+            flex-wrap: wrap; /*No olvidar! (permite el "desbordamiento" hacia la linea siguiente) */
+            background-color: yellowgreen;
+            height: 300px;  /*Le damos espacio al contenedor para que el contenido fluya en su interior */
+        }
+
+        /*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+        .flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Flexbox | Propiedades de alineación</h3>
+
+    <p>Una vez entendido <code>justify-content</code>, podemos pasar a <code>align-content</code>, que es un caso particular del anterior. Nos servirá cuando estemos tratando con un contenedor flex multilínea, que es un contenedor en el que los ítems no caben en el ancho disponible, y por lo tanto, el eje principal se divide en múltiples líneas (por ejemplo, usando flex-wrap: wrap). </p>
+       
+    <h4>align-content</h4>   
+    
+    <p>Los valores que puede tomar son los siguientes:</p>
+    
+    
+    <p><b>align-content:flex-start</b>: Agrupa los items al principio de eje principal (opción por defecto).</p>
+    <div class="flex-containerh" style="align-content:flex-start;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>        
+    </div><br>
+
+    <p><b>align-content:flex-end</b>: Agrupa los items al final de eje principal.</p>
+    <div class="flex-containerh"  style="align-content:flex-end;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>    
+    </div><br>
+
+    <p><b>align-content: center</b>: Agrupa los items al centro del eje principal.</p>
+    <div class="flex-containerh" style="align-content: center;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>    
+    </div><br>
+
+    <p><b>align-content: space-between</b>: Distribuye los items desde el principio hasta el final.</p>
+    <div class="flex-containerh" style="align-content: space-between;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>    
+    </div><br>    
+
+    <p><b>align-content: space-around</b>: Distribuye los items dejando el mismo espacio a los lados de cada uno.</p>
+    <div class="flex-containerh" style="align-content: space-around;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>    
+    </div><br>    
+
+    <p><b>align-content: space-evenl</b>: Estira los items para ocupar de forma equitativa todo el espacio. <br>
+    (Modificar a align-content: strech; para ver el cambio)</p>
+    <div class="flex-containerh" style="align-content: space-evenly;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>    
+    </div><br>        
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 6</title>
+
+    <link rel="stylesheet" href="funciones_6.css">
+
+
+</head>
+<body>
+    <h3>Funciones 6: Función anónima</h3>
+    <p>Cuando una función se define sin un nombre, se le llama como una función anónima. La función se almacena en la memoria. 
+        Un uso muy común de las funciones anónimas es asignarlas a una variable.</p>
+
+    <script>
+        // función "anónima":
+        var saludar = function (nombre) {
+            var mensaje = "Hola " + nombre + "<br>"
+            return mensaje
+        } // Fin de la función.
+        
+        
+        document.write( saludar("Juana") )
+        document.write( saludar("Codo a Codo") )
+
+     </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Vue.js: Componentes</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <!--<saludo> es un componente que hemos creado en el script.  -->
+        <saludo></saludo>
+        <hr>
+        <!--<cambio> también es un componente creado en Vue.js  -->
+        <cambio></cambio>
+    </div>
+
+    <hr><br><br><br><br>
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+
+    <!-- Nuestro script -->
+    <script>
+        // Creamos un componente:
+        const componente1 = {
+            template: `<h4>Hola {{usuario}}</h4>
+                      <p>Un <mark>componente de Vue</mark> es una pieza de código
+                         que permite crear nuevas <b>etiquetas HTML</b>.</p>
+                      <p>Estos componentes se crean, se les asigna un <b>template</b>,
+                        <b>data()</b>, <b>métodos</b>, etc y luego se agregan a
+                        cualquier instancia de <b>Vue.js</b></p>
+                      <p><mark> Todo el texto que ves entre las dos líneas proviene
+                        de un <b>componente de Vue.js</b></p>`   ,
+            data() {
+                return { usuario: "Codo a Codo" }
+            }
+        }
+
+        // Creamos otro componente:
+        const componente2 = {
+            template: `<div v-on:mouseover = "cambiarNombre()" v-on:mouseout = "reestablecerNombre()">
+                             <h4><span id="nombre">{{titulo}}</span></h4>
+                             <p>Si pasas el mouse sobre el contenido de este <b>div</b>, que es
+                                un componente de <b>Vue.js</b>, parte de su contenido cambia
+                                gracias al uso de <mark>v-on:mouseover y v-on:mouseout</mark>, que
+                                invocan a las funciones <b>"cambiarNombre()"</b> y <b>"reestablecerNombre()"</b>,
+                                que son métodos dentro del mismo componente.
+                       </div>`,
+            data() {
+                return { titulo: "Componentes en Vue.js" }
+            },
+            methods: {
+                cambiarNombre() { this.titulo = "¡El mouse está sobre el contenido del DIV!" },
+                reestablecerNombre() { this.titulo = "Componentes en Vue.js" }
+            }
+        }
+
+        // Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            // DATOS de la aplicacion
+            data() {
+                // Definimos los valores que posee la aplicación
+                // (Son similares a las propiedades de un objeto)
+                return {}
+            },
+            components: {
+                'saludo': componente1,
+                'cambio': componente2
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>

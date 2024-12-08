@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Incluimos la referencia al archivo CSS-->
+    <link rel="stylesheet" href="css_05.css">
+
+    <title>CSS5</title>
+</head>
+<body>
+
+    <span class="negro-gris">Un texto en span</span>
+    <span class="blanco-negro">Otro texto en span</span>
+    <div class="negro-gris">Un texto con div</div>
+    <div class="blanco-negro">Otro texto con div</div>
+
+    <br>
+
+    <!-- Todo lo que queda dentro del div va a tener los atributos de class-->
+    <div class="negro-gris">
+        <p>Párrafo 1 dentro del div</p>
+        <p>Párrafo 2 dentro del div</p>
+    </div>
+
+    <!-- Pero puedo hacer excepciones....-->
+    <div class="negro-gris">
+        <p>Párrafo 1 dentro del div</p>
+        <p>Párrafo 2 dentro del div</p>
+        <p class="blanco-negro">Párrafo 3 dentro del div</p>
+        <p style="font-size: 24px; background-color: yellow;">Párrafo 4 dentro del div</p>
+        <p style="background-color: orange;">Párrafo 5 dentro del div</p>
+        <p>Párrafo 6 dentro del div</p>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+h3  {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18;
+    color: white;
+    background-color:forestgreen; 
+    padding: 5px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#tabla  {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18;
+    color:darkgreen;
+    font-weight: 800; 
+    background-color:yellowgreen ;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}

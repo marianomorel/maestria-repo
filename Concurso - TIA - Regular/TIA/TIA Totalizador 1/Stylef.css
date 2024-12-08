@@ -1,0 +1,77 @@
+header{
+    background-color: blue;
+    padding: 10px;
+}
+.fondo2{
+    background-color: skyblue;
+}
+main{
+    padding: 20px;
+}
+h1{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+nav li{
+    display: inline;
+    list-style-type: none;
+    margin: 50px 50px;    
+}
+nav ol{
+    padding: 5px;
+    text-align: center;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}
+h4{
+    color: darkblue;
+    text-align: center;
+}
+.separador1{
+    border: 2px solid rgb(215, 126, 126);
+}
+.separador2{
+    border: 1px solid red;
+}
+.subtitulo{
+  text-decoration: underline;
+}
+footer{
+    font-style: italic;
+    color: red ;
+    padding: 10px;
+}
+table,th,tr,td{
+    border: 3px solid green;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-collapse: collapse;
+}
+td>a{
+    color: rgb(199, 88, 88);
+    font-weight: bold;
+}
+form{
+    text-align: center;
+}
+input[type=submit]{
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border: none;
+}
+input[type=text]{
+    margin-left: 20px;
+}
+button{
+    background-color: yellow;
+    font-style: italic;
+    color: black;
+}
+img{
+    width: 100px;
+    height: 100px;
+}

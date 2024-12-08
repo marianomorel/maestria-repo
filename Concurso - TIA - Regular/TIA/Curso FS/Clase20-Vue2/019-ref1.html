@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Acceder a elementos mediante $ref</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+    <p>Si necesitamos acceder a elementos del DOM, las instancias de Vue.JS cuentan con 
+        diversas propiedades, una de ellas es <mark>$refs</mark>.</p>
+    <p><mark>$refs</mark> es un objeto, dentro de él se van a almacenar todos los 
+        elementos del DOM que cuenten con el atributo “ref”. El atributo “ref” 
+        vendría a ser algo así cómo proporcionarle un ID al elemento.</p>
+    <hr>
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <p>Escribe algo en el cuadro, y presiona el botón "Agregar":</p>
+        <input type="text" ref="texto"><br><br>
+        <button type="button" v-on:click="addText">Guardar</button>
+        <button type="button" v-on:click="delText">Borrar</button>
+        <p ref="textField"></p>
+    </div>
+
+
+    <hr><br><br><br><br>
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+
+    <!-- Nuestro script -->
+    <script>
+    // Creamos nuestra aplicacion.
+    const miAplicacion = Vue.createApp({
+        methods: {
+            addText(){
+                const texto = this.$refs.texto.value
+                const textField = this.$refs.textField
+                if (textField.innerHTML !=""){
+                    textField.innerHTML = textField.innerHTML + "<br>" + texto
+                } else {
+                    textField.innerHTML = texto
+                }
+
+                this.$refs.texto.value = ""
+            },
+            delText() {
+                const textField = this.$refs.textField
+                textField.innerHTML =""
+
+            }
+        }
+    }).mount("#app")
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores avanzados</title>
+
+    <style>
+        div ~ p {
+            background-color: yellowgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>Selector general de hermanos</h3>
+
+    <p>El signo ~ (virgulilla o tilde de la ñ) selecciona todos los elementos que son hermanos de un elemento  especificado, sin la necesidad de que sean adyacentes. Por ejemplo: seleccionar todos los elementos p que son hermanos de los elementos div:</p>
+    <p><b>Todos los parrafos que siguen al div tienen el fondo verde, sin importar que se iterponga entre el div y los parráfos siguientes.</b></p>
+    
+    <p>Parrafo 0, ANTES del div.</p>
+    <div>
+        <p>Parrafo 1, dentro del div.</p>
+        <p>Parrafo 2, dentro del div.</p>
+    </div>
+
+    <p>Parrafo 3, inmediatamente despues del div.</p>
+    <p>Parrafo 4, después del div, pero con el parrafo 3 en medio.</p>
+
+    <div>
+        <p>Parrafo 5, dentro de otro div.</p>
+    </div>
+
+    <a href="#">Un link a ninguna parte.</a>
+    <p>Parrafo 6, después del div, pero con el link  en medio.</p>
+    <p>Parrafo 7, después del div, pero con el link  en medio.</p>
+    <span>Un texto fuera de parrafo</span><br>
+    <p>Parrafo 8, después del div, sin importar que tenga en medio, sigue con el formato asignado.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+h2 {
+    color: blue;
+}
+
+#padre1 {
+    position: static;
+    /*si lo quitamos, no cambia su comportamiento*/
+    border: 4px solid blue;
+    background-color: lightblue;
+    width: 300px;
+    height: 130px;
+    padding:4px;
+}
+
+#hijo1 {
+    position: absolute;
+    /*si se cambia a relative...¿a donde se mueve? */
+    border: 4px solid red;
+    width: 250px;
+    height: 200px;
+    background-color: rgba(255, 200, 200, 0.5);
+    top: 70px;
+    right: 15px;
+    padding:4px;
+}

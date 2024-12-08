@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento (static + absolute)</title>
+    <link rel="stylesheet" href="06-posicionamiento-static-absolute.css">
+</head>
+
+<body>
+    <h1>Propiedades del posicionamiento</h1>
+    <!--Viene por defecto cuando trabajamos con HTML-->
+    <h2>position: static;</h2>
+    <p>El elemento "Padre1" tiene una posición <b> static</b>, y permanecerá en el flujo natural de la página.<br>No
+        actuará como punto de anclaje para el elemento <b>Hijo1</b> que tiene un posicionamiento del tipo
+        <b>absolute</b>
+    </p>
+    <div id="padre1">
+        <b>Padre1:</b> position: static.<br><br>
+        Contenedor <b>Padre1</b> NO ESTÁ posicionado con CSS. Su comportamiento es el normal, por defecto.<br>
+        <!--Contenido por el div padre-->
+        <div id="hijo1"> <b>Hijo1:</b> position: absolute, right: 15px, top: 70px <br><br>
+            Aunque no lo parezca, está dentro del contenedor <b>Padre1</b>. <br>
+            tiene una posición absoluta respecto del <i>body</i>, en este caso
+            <br> a 70 px desde el borde superior (top) <br> y a 15 px desde la derecha (right)
+        </div>
+        <!--Esta posición absoluta ignora la posición de su contenedor-->
+    </div>
+
+
+    <br><br><br><br><br><br>
+</body>
+
+</html>

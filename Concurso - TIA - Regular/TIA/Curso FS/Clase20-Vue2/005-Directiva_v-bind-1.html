@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 3</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- El contenedor en el que se va a mostrar la app Vue.js -->
+    <h1>Atributos dinámicos en Vue.js con v-bind</h1>
+    <p>La directiva <mark>v-bind:</mark> es una de las directivas más utilizadas y populares de Vue.</p>
+    <p>Esta directiva permite <b>enlazar (<i>bindear</i>)</b> una variable de Vue con un <b>atributo</b> específico de
+        una etiqueta HTML.</p>
+    <p>De esta forma, <b>podemos colocar como valor de un atributo HTML el contenido que tengamos almacenado en una
+            variable</b> de la lógica de JavaScript.</p>
+    <hr>
+
+    <!-- Este es el contenedor donde va a funcionar Vue.js -->
+    <div id="app">
+        <div class="container">
+        <br>
+        <button type="button" v-on:click="cambiarImagen">{{textoBoton}}</button><br>
+        <button type="button" v-on:click="agrandar">Agrandar</button>
+        <button type="button" v-on:click="achicar">Achicar</button>
+        <button type="button" v-on:click="cambiarBrillo">Glow</button><br>
+        <!-- Esta imagen se puede modificar con los botones anteriores-->
+        <img v-bind:src="imagen" v-bind:title="titulo" v-bind:height="alto" v-bind:class="clase" alt="No encontré la imágen!" >
+        </div>
+    </div>
+    
+    <!-- CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Nuestro script -->
+    <script>
+        //Creamos nuestra aplicacion.
+        const {createApp} = Vue
+        const miApp = createApp({
+            //DATOS de la aplicacion
+            data() {
+                // Definimos que devuelve nuestra aplicación
+                return {
+                    titulo: "",                            // Texto del tooltip
+                    indice: 1,                             // Nro de imagen a mostrar
+                    imagen: "img/foto" + this.indice + ".png", // Ruta y nombre de la foto
+                    ultimaImagen: 5,                       // Ultima foto disponible.
+                    textoBoton: "Cambiar imágen",          // Texto del botón
+                    alto: 100,                             // Altura de la imágen
+                    clase: "glowon"                        // Efecto
+                }
+            },
+            // El evento  mounted() se dispara al montar la aplicación
+            mounted() {
+                //Al cargar la página, muestro la primer imágen
+                this.imagen = "img/foto" + this.indice + ".png"     // Ruta y nombre de la foto
+                this.titulo = "Imagen mostrada: " + this.imagen  // Texto del tooltip
+            },
+            // Defino metodos:
+            methods: {
+                cambiarImagen() {
+                    //Veo si es la última imagen:
+                    if (this.indice < this.ultimaImagen) {
+                        // Paso a la imágen siguiente
+                        this.indice++     // Nro de imagen a mostrar
+                    } else {
+                        this.indice = 1   // Nro de imagen a mostrar
+                    }
+                    this.imagen = "img/foto" + this.indice + ".png"    // Ruta y nombre de la foto
+                    this.titulo = "Imagen mostrada: " + this.imagen // Texto del tooltip
+                },
+                agrandar() {
+                    //Veo si puedo agrandar más:
+                    if (this.alto < 200) {
+                        // Paso a la imágen siguiente
+                        this.alto = this.alto+10
+                    }
+                },
+                achicar() {
+                    //Veo si puedo agrandar más:
+                    if (this.alto >50) {
+                        // Paso a la imágen siguiente
+                        this.alto = this.alto-10
+                    }
+                },
+                cambiarBrillo() {
+                    //Cambio el brillo on/off
+                    if (this.clase == "glowon") {
+                        this.clase = "glowoff"
+                    } else {
+                        this.clase = "glowon"
+                    }
+                }
+            }
+        }).mount('#app')
+        //Montamos la aplicacion en el div con id=#app
+
+    </script>
+</body>
+
+</html>

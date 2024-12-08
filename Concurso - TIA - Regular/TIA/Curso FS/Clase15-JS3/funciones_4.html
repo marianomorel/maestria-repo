@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 4</title>
+
+    <link rel="stylesheet" href="funciones_4.css">
+
+
+</head>
+<body>
+    <h3>Funciones 4: Función "flecha"</h3>
+    <p><a href="https://www.w3schools.com/js/js_arrow_function.asp">Aprende mas sobre funciones "flecha"!</a></p>
+    <script>
+        
+        // Función que retorna el volúmen de una caja de x*y*z cm. 
+        //(Escrita en formato "compacto")
+        var volumen = (x,y,z) => x*y*z
+
+
+        //Calculo y muestro el volúmen de la caja
+        x = 10
+        y = 5
+        z = 6
+        document.write("El volúmen de una caja de ")
+        document.write(x + " cm por " + y + " cm por " + z + " cm es de ")
+        document.write(volumen(10,5,6))
+        document.write(" cm<sup>3</sup>.")        
+     </script>
+
+</body>
+
+</html>

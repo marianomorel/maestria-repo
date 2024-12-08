@@ -1,0 +1,120 @@
+body {
+    background-color: rgb(253, 253, 143);
+}
+
+h1 {
+    color: brown;
+    text-decoration: underline double blueviolet;
+    text-align: center;
+}
+
+span {
+    padding: 15% 30%;
+    border: 2px dashed white;
+    border-radius: 10px 10px;
+    display: inline-block;
+    margin-top: 100%;
+}
+
+h3 {
+    font-weight: 400;
+    font-style: italic;
+}
+
+li {
+    color: green;
+    font-weight: 700;
+}
+
+.expo {
+    text-decoration: none;
+    color: green;
+}
+
+aside {
+    background-color: rgb(247, 138, 22);
+    width: 4%;
+    padding: 5%;
+}
+
+.cuerpo {
+    display: flex;
+}
+
+.contenido {
+    width: 60%;
+    margin-left: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.formulario {
+    padding: 15px;
+    margin-left: 50%;
+    color: white;
+    background-color: rgb(162, 0, 0);
+    border-radius: 10px 10px;
+}
+
+form {
+    color: white;
+    font-weight: 700;
+}
+
+.contacto {
+    text-decoration: underline;
+    text-align: center;
+    font-size: large;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+}
+
+textarea {
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    margin-left: 84%;
+    background-color: black;
+    color: white;
+    border-radius: 5px 5px;
+    padding: 8px;
+    border: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    border-radius: 20px 20px;
+    margin: 2%;
+    margin-left: 5%;
+}
+
+.foto1 {
+    width: 512px;
+    height: 384px;
+    border-radius: 0;
+    margin-left: 100px;
+}
+
+.caja {
+    width: 75%;
+}
+
+.pie {
+    text-align: right;
+    font-style: italic;
+    font-weight: 300;
+}

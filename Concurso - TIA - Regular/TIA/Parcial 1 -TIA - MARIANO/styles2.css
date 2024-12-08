@@ -1,0 +1,64 @@
+
+body {
+    margin: 50px;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding-left: 40vw;
+}
+
+.remote-control {                 /*Dejar esta clase tal cual, no se debe completar*/
+    background-color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    width: 130px;
+    color: white;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px;
+    margin: 4px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.power {
+    background-color: #ff4d4d; 
+    color: white;
+    height: 60px;
+}
+
+.channel {
+    background-color: #af984c;
+}
+
+.volume{
+    background-color: #4CAF50; 
+}
+
+.button:hover {            /*Dejar esta clase tal cual, no se debe completar*/
+    background-color: #666;
+}
+
+.fondo-img {
+    background-color: white; 
+    padding: 0;
+}
+
+.logo {
+    width: 100%; 
+    height: auto;
+    border-radius: 5px;
+}
+
+.remote-brand {
+    text-align: center;        /*Dejar text align tal cual, no se debe completar*/
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+

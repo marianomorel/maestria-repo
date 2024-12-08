@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <h1>Vue.js: Directiva v-if</h1>
+    <p>Creamos una app con Vue, y utilizamos un contenedor <b>div</b> para renderizar dinámicamente los datos
+        proporcionados por esta app.</p>
+    <hr>
+
+    <!--Este es el contenedor donde funciona Vue.js -->
+    <div id="app">
+        <h3>Contenido "filtrado" con v-if:</h3>
+        <p>La directiva <mark>v-if</mark> es similar a <b>if</b> utilizado en JavaScript.</p>
+        <p>La lista siguiente se genera a partir de las <b>propiedades</b> de los <b>objetos</b> contenidos en el
+            <b>array</b> que es parte de los <b>datos</b> de la <b>app</b> creada con Vue.
+        </p>
+        <p>Se recorre con un bucle <mark>v-for</mark> y con <mark>v-if</mark> se muestran en color a los mayores de
+            edad:</p>
+
+        <!-- El código siguiente genera una lista a partir
+             de los valores del arreglo de objetos provisto
+             por vue.js -->
+        <li v-for="i in personas">
+            <span v-if="i.edad>=18" class="mayor">{{i.apellido}}, {{i.nombre}} ({{i.edad}} años)</span>
+            <span v-if="i.edad<18" class="menor">{{i.apellido}}, {{i.nombre}} ({{i.edad}} años)</span>
+        </li>
+
+        <br>
+        <hr>
+
+        <p>Se puede hacer lo mismo, pero mas fácil, usando <mark>v-if</mark> y <mark>v-else</mark>:</p>
+        <li v-for="i in personas">
+            <span v-if="i.edad>=18" class="mayor">{{i.apellido}}, {{i.nombre}} ({{i.edad}} años)</span>
+            <span v-else class="menor">{{i.apellido}}, {{i.nombre}} ({{i.edad}} años)</span>
+        </li>
+
+        <br>
+        <hr>
+
+        <p>La tabla siguiente muestra solo los objetos que tengan una edad igual o mayor a 18 años:</p>
+        <table border=1 class="container">
+            <!-- Esta es el encabezado de la tabla. No se repite-->
+            <tr class="tituloTabla">
+                <td> Nro de cliente </td>
+                <td> Apellido(s) </td>
+                <td> Nombre(s) </td>
+                <td> Edad (años) </td>
+            </tr>
+            <!-- Cada iteracion del bucle for genera una nueva
+                 fila dentro de la tabla.-->
+
+            <tr v-for="(i, indice) in personas" :key="i.nombre">
+                <td v-if="i.edad>=18">{{indice}}</td>
+                <td v-if="i.edad>=18">{{i.apellido}}</td>
+                <td v-if="i.edad>=18">{{i.nombre}}</td>
+                <td v-if="i.edad>=18">{{i.edad}}</td>
+            </tr>
+            <!-- Fin de la tabla.-->
+        </table>
+
+
+        <br>
+        <hr>
+
+        <p>Al igual que en JavaScript, <b>Vue</b> tiene la directiva <mark>v-elseif</mark>, que junto a las ya
+            mencionadas <mark>v-if</mark> y <mark>v-else</mark> permiten realizar un más eficiente control del flujo del
+            programa.</p>
+        <p>La tabla siguiente muestra la lista de personas y agrega información a partir de su edad:</p>
+        <table border=1 class="container">
+            <!-- Esta es el encabezado de la tabla. No se repite-->
+            <tr class="tituloTabla">
+                <td> Nro de cliente </td>
+                <td> Apellido(s) </td>
+                <td> Nombre(s) </td>
+                <td> Edad (años) </td>
+                <td> Grupo etario</td>
+            </tr>
+            <!-- Cada iteracion del bucle for genera una nueva
+                     fila dentro de la tabla.-->
+
+            <tr v-for="(i, indice) in personas" :key="i.nombre">
+                <td>{{indice}}</td>
+                <td>{{i.apellido}}</td>
+                <td>{{i.nombre}}</td>
+                <td>{{i.edad}}</td>
+                <!-- Utilizo condicionales para determinar el grupo etario:-->
+                <td>
+                    <span v-if="i.edad<=18">Menor de edad</span>
+                    <span v-else-if="i.edad>18 && i.edad<65">Adulto</span>
+                    <span v-else="i.edad=>65">Adulto mayor</span>
+                </td>
+            </tr>
+            <!-- Fin de la tabla.-->
+        </table>
+
+        <br><br><br><br><br>
+
+
+
+        <!-- Nuestro script -->
+        <script>
+            // Creamos nuestra aplicacion.
+            const {createApp} = Vue
+            const miApp = createApp({
+                // DATOS de la aplicacion
+                data() {
+                    // Definimos los valores que posee la aplicación
+                    // En este caso, es un ARREGLO de OBJETOS
+                    return {
+                        personas: [
+                            { nombre: "Juan", apellido: "Ramirez", edad: 20 },
+                            { nombre: "Carlos", apellido: "González", edad: 18 },
+                            { nombre: "Mauricio", apellido: "Pelliza", edad: 42 },
+                            { nombre: "Ana María", apellido: "Fernandez", edad: 12 },
+                            { nombre: "Iván", apellido: "Alvarez", edad: 33 },
+                            { nombre: "Ana", apellido: "Varela", edad: 43 },
+                            { nombre: "Sol", apellido: "Crespo Arias", edad: 15 },
+                            { nombre: "Ramiro", apellido: "Lopez", edad: 81 },
+                            { nombre: "Ana Laura", apellido: "Morrone", edad: 21 },
+                            { nombre: "Florencia", apellido: "Perez Puente", edad: 17 },
+                            { nombre: "Pedro", apellido: "Flores Hutz", edad: 77 }
+                        ]
+
+                    }
+                }
+            })
+
+            //Montamos la aplicacion en el div que tiene id="app":
+            miApp.mount('#app')
+        </script>
+</body>
+
+</html>

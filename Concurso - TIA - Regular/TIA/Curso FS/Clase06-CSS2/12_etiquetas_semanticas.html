@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Diseño con HTML5</title>
+    <style>
+        header {
+            padding: 20px;
+            background-color: rgb(81, 81, 240);
+        }
+
+        nav {
+            padding: 5px;
+            height: 40px;
+            background-color: rgb(0, 255, 242);
+        }
+
+        article {
+            width: 65%;
+            height: 100%;
+            float: left;
+            display: block;
+            /* La explicación detallada de como funciona esto la ecuentras en 
+            https://www.jasoft.org/Blog/post/css-como-igualar-la-altura-de-dos-cajas-flotadas-para-que-sean-iguales */
+            padding-bottom:100%;
+            margin-bottom: -100%;
+            background-color: rgb(108, 189, 243);
+        }
+
+        aside {
+            width: 35%;
+            height: 100%;
+            float: right;
+            display: block;
+            /* La explicación detallada de como funciona esto la ecuentras en 
+            https://www.jasoft.org/Blog/post/css-como-igualar-la-altura-de-dos-cajas-flotadas-para-que-sean-iguales */
+            padding-bottom:100%;
+            margin-bottom: -100%;
+            
+            color: beige;
+            background-color: rgb(20, 8, 122);
+        }
+
+        section {
+            padding: 20px;
+            background-color: rgb(141, 144, 146);
+        }
+
+        footer {
+            width: 100%;
+            float: left;
+            text-align: center;
+            display: block;
+            color: rgb(250, 246, 244);
+            background-color: rgb(53, 53, 1);
+        }
+
+        .menu_item {
+            float: left;
+            padding: 5px;
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            /* La explicación detallada de como funciona esto la ecuentras en 
+            https://www.jasoft.org/Blog/post/css-como-igualar-la-altura-de-dos-cajas-flotadas-para-que-sean-iguales */
+            overflow: hidden;
+            }
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>Diseño con HTML5</h1>
+            <h2>Usando etiquetas semánticas</h2>
+        </header>
+
+        <nav>
+            <ul>
+                <li class="menu_item"><a href="#">Inicio</a></li>
+                <li class="menu_item"><a href="#">Sobre nosotros</a></li>
+                <li class="menu_item"><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <aside>
+                <h4>Aside</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius laboriosam consequuntur vero
+                    voluptatem doloribus, reiciendis amet voluptate deleniti impedit!</p>
+            </aside>
+
+            <article>
+                <section>
+                    <h4>Sección 1</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius laboriosam consequuntur
+                        vero
+                        voluptatem doloribus, reiciendis amet voluptate deleniti impedit!</p>
+                </section>
+                <section>
+                    <h4>Sección 2</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius laboriosam consequuntur
+                        vero
+                        voluptatem doloribus.</p>
+                </section>
+            </article>
+        </div>
+    </div>
+    <footer>
+        <p> -.- Footer -.-</p>
+    </footer>
+    </div>
+</body>
+
+</html>

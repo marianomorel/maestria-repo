@@ -1,0 +1,57 @@
+/* Bloque gris que usamos para tener una
+referencia de la distancia que hay entre
+una caja y su entorno */
+.bloque {
+    background-color: lightgray;
+    width: auto;
+    height: 50px;
+    border: 1px solid blue;
+    /*margin: 20px;*/
+}
+
+/* Creamos un estilo para separar una caja de otra */
+.espaciador {
+    height: 30px;
+}
+
+/* definimos diferentes estilos de "margin"
+   para los parrafos. */
+.p1 {
+    border: 4px solid rgb(215, 60, 78);
+    margin: 20px; /* Un solo valor para los 4 lados */
+    background-color: orange;
+}
+
+/* Margenes determinados
+   con margin-top, margin-left,
+   margin-right y margin-bottom. */
+.p2 {
+    border: 4px solid rgb(128, 4, 186);
+    margin-top: 30px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    background-color: rgb(198, 168, 235);
+}
+
+/* Margen con tres valores
+  (top, laterales, bottom) */
+.p3 {
+    border: 4px solid darkolivegreen;
+    margin: 30px 50px 10px;
+    background-color: rgb(166, 255, 0);
+}
+
+.p4 {
+    border: 4px solid blue;
+    margin: auto 30px;
+    background-color: rgb(0, 208, 255);
+}
+
+.span1 {
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    background-color: coral;
+    border: 4px solid rgb(226, 47, 73);
+}

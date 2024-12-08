@@ -1,0 +1,35 @@
+/* Estilos para los ejemplos de esta clase */
+* {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+h1, h3 {
+    font-size: 1.6em;
+    color: white;
+    background-color: darkslateblue;
+    border-radius: 3px;
+    border: 1px solid #303030;
+    padding: 5px;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+
+.container {
+    margin:0px auto;
+    justify-content: center;
+    text-align:center
+}
+
+
+.tarjeta2 {
+    float: left;
+    border: 1px solid red;
+    margin:4px; padding: 2px;
+    width:300px;
+    height:500px;
+    overflow: hidden;
+}

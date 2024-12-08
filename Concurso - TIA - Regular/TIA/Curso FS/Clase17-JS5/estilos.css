@@ -1,0 +1,14 @@
+/* Estilos para los ejemplos de esta clase */
+* {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+h1 {font-size: 18px;
+    padding: 5px;
+    background-color: coral;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #303030;
+}
+

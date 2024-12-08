@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;                          /*Convierte el contenedor en una grilla */
+ /* display: inline-grid; */
+    grid-template-columns: auto auto auto;  /*Forma en que se distribuyen los elementos*/
+    gap: 10px;                              /*Espacios entre los hijos*/
+    background-color: salmon;              /*Color de fondo del contenedor */
+    padding: 10px;                          /*Coloco un espacio alrededor del conjunto de hijos*/
+    height: 240px;                          /* Necesitamos altura suficiente para que estos ejemplos funcionen */
+    justify-content: space-evenly;          /*Repartimos el espacio horizontal entre todas las columnas */
+    border: 2px solid black;              /*Borde de contenedor */
+    border-radius: 10px;
+}
+
+.grid-item {
+    background-color: orange; /*Color de fondo de los hijos */
+    padding:10px;
+    border: 2px solid black;  /*Borde de los elementos hijos */
+    text-align: center;         /*Contenido de los hijos centrado en x */
+    width: 60px;
+    height: 15px;
+    border-radius: 10px;
+}

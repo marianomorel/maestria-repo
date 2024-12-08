@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 9 - Orden de los ítems</title>
+
+    <style>
+        code {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+        .flex-containerh {
+            display:flex;   /* Esta propiedad define al div como contenedor flex*/
+            flex-direction: row;
+            background-color: yellowgreen;
+        }
+
+        /*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+        .flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Flexbox | Orden de los ítems</h3>
+
+    <p>Por último, y quizás una de las propiedades más interesantes, es <code>order</code>, que modifica y establece el orden de los ítems según una secuencia numérica.
+        Por defecto, todos los ítems flex tienen un <code>order: 0</code> implícito, aunque no se especifique. Si indicamos un <code>order</code> con un valor numérico, irá recolocando los ítems según su número, colocando antes los ítems con número más pequeño (incluso valores negativos) y después los ítems con números más altos. <mark>De esta forma podemos recolocar fácilmente los ítems incluso utilizando media queries o responsive design.</mark></p>
+
+    <h4>Orden por defecto:</h4>
+    <div class="flex-containerh" >
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+    </div><br>
+
+    <h4>Orden alterado: 3 2 1 4 5</h4>
+    <div class="flex-containerh" >
+        <div style="order: 4">Item1</div>
+        <div style="order: 3;">Item2</div>
+        <div style="order: 2;">Item3</div>
+        <div style="order: 5;">Item4</div>
+        <div style="order: 6;">Item5</div>
+    </div><br>
+
+    <h4>Orden alterado (parcial)</h4>
+    <div class="flex-containerh" >
+        <div style="order: 3;">Item1</div>
+        <div style="order: 2;">Item2</div>
+        <div style="order: 1;">Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+    </div><br>
+
+    <h4>Orden alterado (valor negativo)</h4>
+    <div class="flex-containerh" >
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="order: -1;">Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+    </div><br>
+
+</body>
+
+</html>

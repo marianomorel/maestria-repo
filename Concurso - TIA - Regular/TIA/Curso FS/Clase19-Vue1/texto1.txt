@@ -1,0 +1,6 @@
+    <hr>
+    <h3>Texto anexado.</h3>
+    <p>Este texto  está en un archivo externo (texto1.txt) y se ha agregado al DOM mediante Vue, utilizando <b>fetch</b></p>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. In, quasi maiores perspiciatis nesciunt fugit facere quas reiciendis commodi consequuntur architecto?
+    <p></p>

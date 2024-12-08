@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntos de control</title>
+    <style>
+        .example {
+            padding: 20px;
+            color: white;
+        }
+
+        .responsivo {
+            font-size: 3vw;
+        }
+
+        /* Pantallas de menos de 600 píxeles
+        (Ancho máximo hasta 600px)*/
+        @media only screen and (max-width: 600px) {
+            .example {background: red;}
+            h1 {font-size: 16px;}
+            .responsivo { font-size: 14px;}
+        }
+
+        /* Pantallas a partir de 600 píxeles
+        (Ancho como mínimo de 600px)*/
+        @media only screen and (min-width: 600px) {
+            .example {background: green;}
+            h1 {font-size: 18px;}
+        }
+
+        /* Pantallas de mas de 600 y menos de 768 píxeles */
+        /*(Ancho como mínimo de 768px)*/
+        @media only screen and (min-width: 768px) {
+            .example {background: blue;}
+            h1 {font-size: 22px;}
+        }
+
+        /* Pantallas de mas de 768 y menos de 992 píxeles */
+        /*(Ancho como mínimo de 992px)*/
+        @media only screen and (min-width: 992px) {
+            .example {background: orange;}
+            h1 {font-size: 26px;}
+        }
+
+        /* Pantallas de mas de 992 y menos de 1200 píxeles */
+        /*(Ancho como mínimo de 1200px)*/
+        @media only screen and (min-width: 1200px) {
+            .example {background: pink;}
+            h1 {font-size: 36px;}
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Puntos de control</h1>
+    <div class="example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptatem facilis officiis sit incidunt repellat error. Recusandae reiciendis repellendus repellat!</div>
+
+    <p class="responsivo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio sed eligendi assumenda quia optio quibusdam enim. Illum suscipit aliquid accusamus.</p>
+</body>
+</html>

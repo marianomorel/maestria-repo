@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 5</title>
+
+    <link rel="stylesheet" href="funciones_5.css">
+
+
+</head>
+<body>
+    <h3>Funciones 5: Tabla de multiplicar</h3>
+
+    <script>
+        // Función que "imprime" una tabla de multiplicar
+        // en el documento HTML 
+        function generarTabla(tablaAMostrar ) {
+            //Mostramos el mensaje inicial:
+            document.write("<h4>Tabla de multiplicar por " + tablaAMostrar + "</h4>")
+            
+            //Realizamos un bucle for para generar la tabla.
+            for (var i = 0; i < 11; i++) {
+                document.write('<div class="linea">')
+                document.write(tablaAMostrar + " * " + i + " = " + (i * tablaAMostrar))
+                document.write("</div>")
+            }
+        } // Fin de la función.
+        
+        
+        generarTabla(5 )
+        generarTabla(6 )
+
+     </script>
+
+</body>
+
+</html>

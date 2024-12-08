@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | Media Queries</title>
+    <link rel="stylesheet" href="06_CSS_grid_breakpoints.css">
+</head>
+
+<body>
+    <h2>CSS Grid con Media Queries</h2>
+
+    <p>Este ejemplo posee un <mark><code>punto de corte</code></mark> en 800px. Cuando la pantalla tiene un ancho menor,
+        el grid tiene 2 columnas con tres elementos. Si el ancho es mayor a ese valor, el grid posee dos filas de tres
+        elementos. </p>
+
+    <p>El párrafo siguiente cambia en el punto de corte:</p>
+    <p class="chico">Nota: los elementos 5 y 6 modifican quedan sobre el <b>borde inferior</b> de la grilla.</p>
+
+    <p class="grande">Nota: los elementos 5 y 6 cambian su orden dentro de la lista de elementos del grid para quedar
+        sobre el <b>lateral izquierdo</b>.</p>
+
+    <div class="grid-container">
+        <div class="grid-item">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita minus fugit,
+            nam at inventore cum, et repellendus fuga eius, ipsam quasi voluptates necessitatibus omnis distinctio
+            aliquam iste perspiciatis vero!</div>
+        <div class="grid-item">2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus assumenda, odio
+            asperiores officiis quos id.</div>
+        <div class="grid-item">3 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum at fuga perspiciatis
+            animi vel quidem ducimus. Rem mollitia magni eveniet!</div>
+        <div class="grid-item">4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, quibusdam.</div>
+        <div class="grid-item" style="background-color:coral">5 Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. Eius, nam.</div>
+        <div class="grid-item" style="background-color:orange">6 Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eos, pariatur.</div>
+    </div><br>
+
+
+</body>
+
+</html>

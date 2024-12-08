@@ -1,0 +1,110 @@
+*{ /*selecor universal*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*define margen en forma auto*/
+}
+
+html{ /*selector etiqueta*/
+    height: 100%; /*para que ocupe mismo ancho en la pantalla*/
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 130%;
+    min-height: 100%; /*para que ocupe el mismo ancho en la pantalla */
+    text-align: center;
+    background-color: black;
+}
+
+ul {
+    list-style: none;
+    background-color: chocolate;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: darkred;
+}
+
+div{
+    background-color: white;
+}
+
+.grid-container > * { /*lo hace en cada seccion. tambien da propiedades a los hijos*/ /*selector de clase*/
+    box-shadow: -1px 1px 7px 0px black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+    .header{
+    grid-area: header; /* le damos propiedades grid*/
+    background-color: aqua;
+    
+}
+
+    .navbar{
+    grid-area: navbar; /*en flex esto se lo saca*/
+    background-color: chocolate;
+    
+    }
+
+    .aside{
+        grid-area: aside;
+        background-color: brown;
+    }
+    
+    
+    .article{
+    grid-area: article;
+    color: red;
+    background-color: black;
+    
+    background-image: url('img/css.PNG'); /* Añadir imagen de fondo desde la misma carpeta */
+    background-size: cover; /* Ajustar la imagen al contenedor */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    background-repeat: no-repeat; /* Repetir la imagen en caso de que el contenedor sea más grande que la imagen */
+    /*flex-grow: 1; /* Ajuste para que ocupe el espacio disponible */
+    }
+
+    .footer{
+    grid-area: footer;
+    background-color: blue;
+    }
+
+    .grid-container{ /*desarrollado por defecto para celular*/
+    display: grid; /*trabaja en forma responsive*/
+    gap: 10px; /*podría no ir, da una separacion*/
+    overflow: auto; 
+    grid-template: 
+    "header" 100px
+    "navbar" 75px
+    "article" auto
+    "aside" auto
+    "footer" 150px;
+
+    /*flex-direction: column;  Cambiado a columna para que sea un diseño vertical */
+}
+
+    @media(min-width: 600px){ /*para tablet*/ /*media queris*/
+      .grid-container{
+        /*flex-direction: row; todo lo de abajo lo omite en flex*/
+        grid-template: /*idem a lo anterior pero solo funciona para valores mayores a los 600px*/
+    "header header" 100px /*seccionado en dos columnas*/
+    "navbar navbar" 75px
+    "article aside" auto
+    "footer footer" 150px /
+    50% 50%;
+      }  
+    }
+
+    @media(min-width: 900px){ /*para escritorio*/ /*media queris*/ 
+        .grid-container{ 
+            /*idem flex*/
+          grid-template: /*idem a lo anterior pero solo funciona para valores mayores a los 900px*/
+      "header header header" 100px /* seccionado en tres columnas*/
+      "navbar article aside " auto
+      "footer footer footer" 150px /
+      200px auto 200px;
+        }  
+      }

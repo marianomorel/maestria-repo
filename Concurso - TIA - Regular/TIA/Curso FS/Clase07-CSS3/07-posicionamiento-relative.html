@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento (Relative))</title>
+    <link rel="stylesheet" href="07-posicionamiento-relative.css">
+</head>
+
+<body>
+    <h1>Propiedades del posicionamiento</h1>
+
+    <h2>position: relative;</h2>
+    <!--Es en relación a "algo"-->
+    <p> El elemento "Padre2" tiene una posición <b>relative</b>, y permanecerá en el flujo natural de la página.<br>
+        En este caso se ubica debajo del <b>p</b> que estás leyendo.<br>
+        Pero al tener un posicionamiento del tipo <b>relative</b>, también actúa como punto de anclaje para el elemento <b>Hijo2</b>, que tiene un posicionamiento del tipo
+        <b>absolute</b>. <br>
+        <b>En el ejemplo anterior, el elemento padre era del tipo static y no servía como anclaje</b>.
+    </p>
+    <div id="padre2">
+        <b>Padre2:</b><br> position: relative. top: 10px; left: 50px; <br>
+
+        <div id="hijo2"><b>Hijo2:</b> position: absolute, right: 30px, top: 40px<br>
+            Dentro del contenedor <b>Padre2</b> tiene una posición absoluta respecto del Padre2, en este caso a 65 px
+            desde <b>su</b> borde superior (top) y a 30 px desde <b>su</b> izquierda (left)
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 6 - Alineación de elementos hijos</title>
+
+    <style>
+        code {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+        .flex-containerh {
+            display:flex;   /* Esta propiedad define al div como contenedor flex*/
+            flex-direction: row;
+            flex-wrap: wrap; /*No olvidar! (permite el "desbordamiento") */
+            background-color: yellowgreen;
+            height: 200px;  /*Le damos espacio al contenedor para que el contenido fluya en su interior */
+        }
+
+        /*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+        .flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Flexbox | Alineación de elementos hijos</h3>
+
+    <p>La propiedad  <code>align-self</code> actúa exactamente igual que <code>align-items</code>, <b>sin embargo es la primera propiedad de flexbox que vemos que se utiliza sobre un ítem hijo específico y no sobre el elemento contenedor. </b> Gracias a ese detalle, align-self nos permite cambiar el comportamiento de <code>align-items</code> y sobreescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto.</p>
+
+    <h4>align-items</h4>
+
+    <p>Los valores que puede tomar son los siguientes:</p>
+
+
+    <p><b>align-self: flex-start</b>: Alinea los items al principio del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: orange; align-self: start">Item3</div>
+        <div>Item4</div>
+    </div><br>
+
+    <p><b>align-self: flex-end</b>: Alinea los items al principio del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: orange; align-self: flex-end">Item3</div>
+        <div>Item4</div>
+    </div><br>
+
+    <p><b>align-self: center</b>: Alinea los items al centro del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: orange; align-self: center">Item3</div>
+        <div>Item4</div>
+    </div><br>
+
+    <p><b>align-self: stretch</b>: Alinea los items estirandolos al tamaño del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: orange;  align-self: stretch">Item3</div>
+        <div>Item4</div>
+    </div><br>
+
+    <p><b>align-items: baseline</b>: Alinea los items en el contenedor según la linea base de los items.</p>
+    <div class="flex-containerh" style="align-items: baseline;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: orange; font-size: 60px;">Item3</div>
+        <div style="background-color: red; font-size: 10px;">Item4</div>
+    </div><br>
+
+</body>
+
+</html>

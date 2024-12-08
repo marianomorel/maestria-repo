@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays y función flecha</h1>
+    <p>En este ejemplo veremos como usar funciones "flecha" con arreglos.</p>
+    <p>Inspecciona el código de este HTML para analizar el <b>script</b>.</p>
+    <br><hr>
+    <script>
+
+        //----------------------------------------------
+        // Creamos un array con valores numéricos:
+        let enteros = [-2, -1, 0, 1, 2, 3, 4]
+
+        // Función flecha que devuelve el cuadrado de un número:
+        let cuadrado = x => x**2
+
+        // Función flecha que devuelve el cubo de un número:
+        let cubo = x => x**3
+
+        //----------------------------------------------
+        // Recorremos el arreglo y mostramos sus elementos:
+        imprimir("Enteros....: [ ", false)
+        for (entero of enteros) {
+            imprimir(entero+" ", false)
+        }
+        imprimir("]", false)
+
+        //----------------------------------------------
+        // Recorremos el arreglo y mostramos el cuadrado
+        // de sus elementos:
+        imprimir("<hr> Cuadrados..: [ ", false)
+        for (entero of enteros) {
+            imprimir(cuadrado(entero)+" ", false)
+        }
+        imprimir("]", false)        
+        //----------------------------------------------
+        // Recorremos el arreglo y mostramos el cubo
+        // de sus elementos:
+        imprimir("<hr> Cubos......: [ ", false)                
+        for (entero of enteros) {
+            imprimir(cubo(entero)+" ", false)
+        }
+        imprimir("]", false)        
+    </script>
+    <hr>
+</body>
+
+</html>

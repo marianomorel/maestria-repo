@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    background-color: lightyellow;
+}
+
+h1 {
+  color:red; 
+}
+
+#ultimo {
+    color: green;
+}
+
+/*ESPECIFICIDAD*/
+/*p {
+    background-color: blue;
+}
+*/
+.importante {
+    background-color: yellow;
+}
+
+#parrafo1 {
+    background-color: gray;
+}
+/*ORDEN*/
+h6 {
+    color: red;
+}
+
+h6 {
+    color: lime;
+}
+
+h1 + p { 
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+

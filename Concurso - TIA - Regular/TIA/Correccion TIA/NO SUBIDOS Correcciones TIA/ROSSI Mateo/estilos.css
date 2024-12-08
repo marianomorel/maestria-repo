@@ -1,0 +1,45 @@
+main{
+    align-items: center;
+}
+
+body{
+    align-items: center;
+    text-align: center;
+}
+
+td{
+    border: 1px solid black;
+    border-collapse: collapse ;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: blue;
+    color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    margin-left: 320px;
+}
+
+img{
+    height: 5%;
+    width: 50px;
+}
+
+h3{
+    color: red;
+    font-size: 20px;
+}
+
+
+
+h2{
+    color: blue;
+    font size: 20px;
+}
+
+.chubut img{
+
+    width: 50px;
+    height: 4%;
+}

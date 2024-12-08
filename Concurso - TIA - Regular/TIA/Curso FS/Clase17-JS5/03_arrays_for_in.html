@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos con Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Arrays (for .. in)</h1>
+    <p>Inspecciona el código de este HTML para analizar el <b>script</b>.</p>
+    <br><hr>
+    <script>
+
+        //----------------------------------------------
+        // Creamos un array con cinco colores cualquiera:
+        let colores = ["verde", "rojo", "azul", "amarillo", "naranja"]
+        imprimir("colores: [ "+colores+" ]")
+
+        //----------------------------------------------
+        // Recorremos el arreglo y mostramos el índice
+        // de sus elementos:
+        imprimir("<hr>", false)
+        for (color in colores) {
+            imprimir(color)
+        }
+
+        //----------------------------------------------
+        // Recorremos el arreglo y mostramos el índice
+        // y valor de sus elementos:
+        imprimir("<hr>", false)
+        for (color in colores) {
+            imprimir("Elemento "+color+" : "+colores[color])
+        }
+
+    </script>
+    <hr>
+</body>
+
+</html>

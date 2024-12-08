@@ -1,0 +1,66 @@
+.contenedor {
+    background-color: honeydew;
+    padding: 10px;
+    border: 1px solid black
+    /*margin: 20px;*/
+}
+
+/* Creamos un estilo para separar una caja de otra */
+.espaciador {
+    height: 20px;
+}
+
+/* Definimos un borde de 4px, solido y color negro
+para todos los lados de la caja */
+.p1 {
+    border: 4px;
+    border-style: solid;
+    border-color: orangered;
+    padding: 10px;
+    background-color: orange;
+}
+
+/* Definimos un borde de 4px, dotted y color negro
+para todos los lados de la caja usando atajos */
+.p2 {
+    border: 5px dotted red;
+    padding: 10px;
+    background-color: orange;
+}
+
+/* Borde inferior (unicamente) de estilo "double",
+de 10px y color verde */
+.p3 {
+    border-bottom-width: 10px;
+    border-bottom-style: double;
+    border-bottom-color: green;
+    padding: 10px;
+    background-color: lightgreen
+}
+
+/* Bordes específicos */
+.p4 {
+    border: 25px solid green;
+    border-top-width: 15px;
+    border-top-color: blue;
+    border-top-style: solid;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Bordes Bordes redondeados con border-radius */
+.p5 {
+    border: 5px dashed black;
+    border-radius: 25px;
+    border-top-color: blue;
+    border-left-color: red;
+    padding: 10px;
+    background-color: lightgreen;
+}
+
+/* border "basico"*/
+.p6 {
+    border: 20px;
+    padding: 10px;
+    background-color: rgb(163, 235, 144);
+}

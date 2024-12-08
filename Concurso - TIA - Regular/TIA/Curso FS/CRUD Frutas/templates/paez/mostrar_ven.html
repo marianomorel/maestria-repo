@@ -1,0 +1,66 @@
+{% include 'paez/header.html' %}
+
+<h4>CONSULTA DE PROVEEDORES</h4>
+
+<table style="border: hidden">
+    <tbody>
+        <tr> 
+            <td colspan=2 align="center">(Id: {{proveedores[0][ 0]}})&nbsp;-&nbsp;<b> {{proveedores[0][1]}}</b></td>
+        </tr>
+
+        <tr>
+            <td colspan=2 align="center">{{proveedores[0][2]}} </td>
+        </tr>
+
+        <tr> 
+            <td colspan=2>&nbsp </td>
+        </tr>
+
+        <tr>
+            <td align="right">Dirección:&nbsp; </td>
+            <td align="left" >{{proveedores[0][3]}} &nbsp; </td>
+        </tr>
+        <tr>
+            <td align="right">Localidad:&nbsp; </td>
+            <td align="left" >{{proveedores[0][4]}} &nbsp; </td>
+        </tr>
+
+        <tr> 
+            <td colspan=2>&nbsp </td>
+        </tr>
+
+        <tr>
+            <td align="right">Teléfono fijo:&nbsp; </td>
+            <td align="left" >{{proveedores[0][5]}}&nbsp; </td>
+        </tr>
+        <tr>
+            <td align="right">Teléfono móvil:&nbsp; </td>
+            <td align="left" >{{proveedores[0][6]}}&nbsp;  </td>
+        </tr>
+        <tr>
+            <td align="right">Correo electrónico:&nbsp; </td>
+            <td align="left" >{{proveedores[0][7]}}&nbsp;  </td>
+        </tr>
+        <tr>
+            <td align="right">C.B.U.:&nbsp; </td>
+            <td align="left" >{{proveedores[0][8]}}&nbsp;  </td>
+        </tr>
+        <tr>
+            <td align="right">Contacto:&nbsp; </td>
+            <td align="left" >{{proveedores[0][9]}}&nbsp;  </td>
+        </tr>
+        <tr> 
+            <td colspan=2>&nbsp </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+<form>
+  <div class="form-group" align="center">
+    <a href="javascript:history.back()" class="btn btn-success" >&nbsp;&nbsp;Volver&nbsp;&nbsp;</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clase 8 - Formularios</title>
+    <link rel="stylesheet" href="clase8-forms.css">
+</head>
+<body>
+
+    <form name="busqueda" method="get" target="_blank">
+        <label for="busqueda">Busqueda:</label>
+        <input id="busqueda" type="search" name="busq-form">
+    </form>
+
+    <br>
+    <hr>
+    <br>
+
+    <form name="formulario" method="post" target="_blank" action="https://formtester.goodbytes.be/post.php">
+
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" name="nombre-form" placeholder="nombre" required> <br>
+
+        <label for="apellido">Apellido:</label>
+        <input id="apellido" type="text" name="apellido-form" placeholder="apellido"> <br>
+
+        <label for="telefono">Telefono:</label>
+        <input id="telefono" type="tel" name="telefono-form"><br>
+
+        <label for="sitio">Sitio Web:</label>
+        <input id="sitio" type="url" name="sitio-form"><br>
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email-form"><br>
+
+        <label for="clave">Clave:</label>
+        <input id="clave" type="password" name="clave-form"><br>
+
+        <input type="hidden" name="oculto" value="chuma"><br>
+
+        <label for="text">Texto:</label>
+        <textarea id="texto" name="texto-form">texto</textarea> <br>
+
+        <label for="edad">Edad:</label>
+        <input id="edad" type="number" name="edad-form" min="18" max="110"> <br>
+
+        <label for="fecha">Fecha:</label>
+        <input id="fecha" type="date" name="fecha-form" min="2024-10-21" max="2024-11-30"><br>
+
+        <label for="hora">Hora:</label>
+        <input id="hora" type="time" name="hora-form"><br>
+
+        <label for="casilla">Casilla de verificación:</label>
+        <input id="casilla" type="checkbox" name="checkbox-fom"><br>
+
+        <label for="radio">Elija una ciudad:</label><br>
+        <input id="radio-1" type="radio" name="radio-form" value="MDP"><label for="radio-1">Mar del Plata</label><br>
+        <input id="radio-2" type="radio" name="radio-form" value="BsAs"><label for="radio-2">Buenos Aires</label><br>
+        <input id="radio-3" type="radio" name="radio-form" value="Cba"><label for="radio-3">Córdoba</label><br>
+        <input id="radio-4" type="radio" name="radio-form" value="Mza"><label for="radio-4">Mendoza</label><br>
+
+        <label for="select">Elija una opción:</label>
+        <select id="select"name="select-form">
+            <option value="0" disabled selected>--Elija una opción--</option>
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 3</option>
+            <option value="3">Opción 3</option>
+            <option value="4">Opción 4</option>
+            <option value="5">Opción 5</option>
+        </select> <br>
+
+        <label for="color">Seleccione un color:</label>
+        <input id="color" type="color" name="color-form" value="#ff7800" ><br>
+
+        <label for="archivo">Seleccione un archivo:</label>
+        <input id="archivo" type="file" name="archivo-form" accept=".pdf, .odt, image/*"><br>
+
+        <br>
+        <input type="submit" value="Enviar formulario">
+        <input type="image" src="send.png"> 
+        <input type="reset" value="Limpiar formulario">
+        <button>Botón</button> 
+
+    </form>
+
+    
+</body>
+</html>

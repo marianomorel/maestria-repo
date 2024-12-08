@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 5 - Alineación sobre el eje secundario</title>
+
+    <style>
+        code {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+        .flex-containerh {
+            display:flex;   /* Esta propiedad define al div como contenedor flex*/
+            flex-direction: row;
+            flex-wrap: wrap; /*No olvidar! (permite el "desbordamiento") */
+            background-color: yellowgreen;
+            height: 200px;  /*Le damos espacio al contenedor para que el contenido fluya en su interior */
+        }
+
+        /*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+        .flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+            color: white;
+            background-color: green;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h3>Flexbox | Alineación sobre el eje secundario</h3>
+
+    <p>Otra propiedad importante de este apartado es <code>align-items</code>, que se encarga de alinear los ítems en el eje secundario del contenedor. Hay que tener cuidado de no confundirla con <code>align-content</code>, puesto que el primero actúa sobre cada una de las líneas de un contenedor multilínea (no tiene efecto sobre contenedores de una sola línea), mientras que <code>align-items</code> lo hace sobre la línea actual.</p>
+       
+    <h4>align-items</h4>   
+    
+    <p>Los valores que puede tomar son los siguientes:</p>
+    
+    
+    <p><b>align-items: flex-start</b>: Agrupa los items al principio de eje secundario.</p>
+    <div class="flex-containerh" style="align-items:flex-start;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div><br>
+
+    <p><b>align-items:flex-end</b>: Agrupa los items al final de eje secundario.</p>
+    <div class="flex-containerh"  style="align-items:flex-end;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div><br>
+
+    <p><b>align-items: center</b>: Agrupa los items al centro del eje secundario.</p>
+    <div class="flex-containerh" style="align-items: center;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div><br>
+
+ 
+    <p><b>align-items: strech</b>: Alinea los items estirándolos de modo que cubran desde el inicio hasta el final del contenedor.</p>
+    <div class="flex-containerh" style="align-items: strech;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div><br>    
+    
+    <p><b>align-items: baseline</b>: Alinea los items en el contenedor según la base del contenido de los ítems del contenedor.</p>
+    <div class="flex-containerh" style="align-items: baseline;">
+        <div style="font-size: 60px;">Item1</div>
+        <div>Item2</div>
+        <div style="font-size: 6px;">Item3</div>
+    </div><br>       
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limites al tamaño</title>
+</head>
+
+<style>
+    .contenedor1 {
+        width: 200px;
+        height: 200px;
+        background: rgb(206, 230, 129);
+        max-width: 50%;
+    }
+
+    .contenedor2 {
+        width: 200px;
+        height: 200px;
+        background: rgb(230, 203, 129);
+        min-width: 50%;
+    }
+</style>
+
+<body>
+    <h1>Limites al tamaño</h1>
+    <p>Con las propiedades hermanas de width (min-width y max-width) y las propiedades hermanas de height (min-height y max-height), en lugar de establecer un tamaño fijo, establecemos límites máximos y mínimos, donde el ancho o alto de la caja queda comprendido entre esos valores.</p>
+
+    <div class="contenedor1">
+        <p>Este div tiene un ancho de hasta 200px, pero nunca supera el 50% del ancho del body (que es su elemento padre)</p>
+        width: 200px; <br>
+        height: 200px;<br>
+        max-width: 35%;<br>
+    </div>
+
+    <div class="contenedor2">
+        <p>Este div tiene un ancho de 200px, pero nunca sera MENOR al 50% del ancho del body (que es su elemento padre)</p>
+        width: 200px; <br>
+        height: 200px;<br>
+        min-width: 35%;<br>
+    </div>
+
+    <p>Las propiedades de mínimos (min-width y min-height) por defecto tienen valor 0, mientras que las propiedades de máximos (max-width y max-height) tienen por defecto valor none.
+    </p>
+
+</body>
+
+</html>

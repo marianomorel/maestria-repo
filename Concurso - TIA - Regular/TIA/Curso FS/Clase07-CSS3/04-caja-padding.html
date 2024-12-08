@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de caja</title>
+    <link rel="stylesheet" href="04-caja-padding.css">
+</head>
+
+<body>
+    <h3>Padding</h3>
+    <p>Se utiliza para generar espacio alrededor del contenido de un elemento dentro de los
+        bordes definidos.</p>
+
+    <h4>Mismo padding en top-right-bottom-left (fijo en px)</h3>
+        <div class="contenedor">
+            <b>Contenedor principal</b>
+            <p class="p1">Este es un párrafo que está dentro del DIV
+                <br><br>padding: 30px;
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed vero, rem est quas ipsa adipisci
+                asperiores ad ratione iure!
+            </p>
+        </div>
+
+
+        <div class="espaciador"></div>
+
+        <h4>Padding vertical fijo en px, horizontal en vw</h4>
+        <div class="contenedor">
+            <b>Contenedor</b>
+            <p class="p2">Este es un párrafo que está dentro del DIV
+                <br><br>padding: 30px 20vw;
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed vero, rem est quas ipsa adipisci
+                asperiores ad ratione iure!
+            </p>
+        </div>
+
+
+
+        <div class="espaciador"></div>
+
+        <h4>Padding con tres valores (top, laterales, bottom)</h4>
+        <div class="contenedor">
+            <b>Contenedor</b>
+            <p class="p3">Este es un párrafo que está dentro del DIV<br><br>
+                padding: 30px 80px 10px; <br>
+                /* top, laterales, bottom */
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed vero, rem est quas ipsa adipisci
+                asperiores ad ratione iure!
+            </p>
+
+            <div>
+                Este texto está dentro de un DIV dentro del DIV anterior
+            </div>
+        </div>
+
+
+        <div class="espaciador"></div>
+
+        <h4>Padding con cuatro valores (top, right, bottom, left)</h4>
+        <div class="contenedor">
+            <b>Contenedor</b>
+            <p class="p4">Este es un párrafo que está dentro del DIV<br><br>
+                padding: 30px 5px 10px 80px;<br>
+                /* top, right, bottom, left */
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sed vero, rem est quas ipsa adipisci
+                asperiores ad ratione iure!
+            </p>
+
+        </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con formularios - III</title>
+</head>
+
+<body>
+    <h3>Formulario - Tercer ejemplo</h3>
+
+    <form action="mostrar_datos.html" target="_blank">
+        <!-- Ingreso del nombre -->
+
+        <fieldset>
+            
+            <label for="nombre">Nombre: </label>
+            <input size="30" type="text" name="nombre" placeholder="Ingrese su nombre aqui..." >
+            <br><br>
+
+            <!-- Ingreso del apellido -->
+            <label for="apellido">Apellido: </label>
+            <input size="30" type="text" name="apellido" placeholder="Ingrese su apellido aqui..." >
+            <br><br>
+
+            <!-- Ingreso del DNI -->
+            <label for="dni">Nro DNI: </label>
+            <input type="number" name="dni">
+
+            <!-- Ingreso Fecha de nacimiento -->
+            <label for="fecha">Fecha de nacimiento: </label>
+            <input type="date" name="fecha">
+            <br><br>
+
+            <!-- Usuario y contraseña -->
+            <label for="user">Usuario: </label>
+            <input size="10" type="text" name="user" >
+            <label for="pass">Clave: </label>
+            <input size="10" type="password" name="pass">
+            <br><br>
+
+
+            <!-- Ingreso de la dirección -->
+            <label for="campodir">Calle: </label>
+            <input size="20" type="text" name="direccion" id="campodir">
+            <label for="dirnumero">Número: </label>
+            <input type="number" name="dirnumero">
+            <br><br>
+
+            <!-- Seleccion de la zona -->
+            Seleccione zona geográfica:
+            <select name="zona">
+                <option>Centro</option>
+                <option>Norte</option>
+                <option>Sur</option>
+                <option>Otros</option>
+            </select>
+            <br><br>
+
+            <!-- Ingreso de la dirección de correo-->
+            <label for="email">email: </label>
+            <input type="email" name="email">
+            <br><br>
+
+            <!-- Ingreso de un archivo-->
+            <label for="foto">Foto: </label>
+            <input type="file" name="foto">
+            <br><br>
+
+            <!-- Selector de color-->
+            <label for="color">Color favorito:</label>
+            <input name="color" type="color">
+        </fieldset>
+
+        <!-- Seleccion de intereses -->
+        <fieldset>
+            <legend>Intereses personales:</legend>
+            <input type="checkbox"  name="intereses" value="Software" id="01">
+            <label for="01">Software</label>
+
+            <input type="checkbox"  name="intereses" value="Hardware"id="02">
+            <label for="02">Hardware</label>
+
+            <input type="checkbox"  name="intereses" value="D. Grafico"id="03">
+            <label for="03">Diseño gráfico</label>
+
+            <input type="checkbox" name="intereses" value="Otros" id="04">
+            <label for="04">Otros</label>
+        </fieldset>
+
+        <!-- Seleccion de Lenguaje de programacion -->
+        <fieldset>
+            <legend>Lenguaje de programación favorito</legend>
+            <input type="radio" id="html" name="leng_prog" value="HTML">
+            <label for="html">HTML</label><br>
+
+            <input type="radio" id="css" name="leng_prog" value="CSS">
+            <label for="css">CSS</label><br>
+
+            <input type="radio" id="javascript" name="leng_prog" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+        </fieldset>
+        <br>
+
+        <!-- Comentario -->
+        <label for="comentario">Comentario:</label><br>
+        <textarea name="comentario" id="comentario" cols="40" rows="3"></textarea>
+
+        <!-- Botones para controlar el formulario -->
+        <br><br>
+        <input type="reset" value="Borrar formulario">
+        <input type="submit" value="Enviar datos">
+    </form>
+
+
+</body>
+</html>

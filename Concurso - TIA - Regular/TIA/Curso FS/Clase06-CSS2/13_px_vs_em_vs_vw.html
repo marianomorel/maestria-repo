@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>px vs. em vs. vw</title>
+    <style>
+        /* Esta clase es para el div que va a contener a todos
+        los demas elementos de este ejemplo. En el se declara
+        que el tamaño "base" de la tipografía */
+        .contenedor {
+            font-size: 2em;
+        }
+
+        /* Esta clase define las propiedades referidas al 
+        estilo de los bordes de los elementos que vamos a mostrar */
+        .box {
+            border-style: solid;
+            border-width: 1px;
+            border-color: blue;
+            background-color: aqua;
+            color: blue;
+            margin: 10px;
+        }
+
+        /* Ancho expresado como un número de píxeles*/
+        .px {
+            width: 200px;
+
+        }
+
+        /* Ancho expresado como un porcentaje del ancho del
+        viewport*/
+        .vw {
+            width: 10vw;
+        }
+
+        /* Ancho expresado como un número de "em's"
+        (Va a depender el tamaño de la tipografía del 
+        contenedor "padre".*/
+        .em {
+            width: 10em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="px box">Yo tengo 200px de ancho</div>
+        <div class="box vw">Yo tengo 10vw de ancho</div>
+        <div class="box em">Yo tengo 10em de ancho</div>
+    </div>
+</body>
+
+</html>

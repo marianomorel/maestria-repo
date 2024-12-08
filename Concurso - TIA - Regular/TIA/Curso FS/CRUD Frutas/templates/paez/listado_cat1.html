@@ -1,0 +1,26 @@
+{% include 'paez/header.html' %}
+
+<h4>LISTADO de CATEGORIAS<BR><BR>(por CODIGO)</h4>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Cod.</th>
+            <th>Nombre de la categoría</th>
+            <th>Descripción.</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+            {% if (loop.index) % 4 != 0 %}   <tr style="background-color: rgb(253, 253, 253);">  {% endif %}  
+            {% if (loop.index) % 4 == 0 %}   <tr style="background-color: rgb(205, 228, 250);">  {% endif %}  
+            <td>{{categoria[ 0]}}</td>
+            <td>{{categoria[ 1]}}</td>
+            <td>{{categoria[ 2]}}</td>
+        </tr>                                                    
+
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'paez/footer.html' %}

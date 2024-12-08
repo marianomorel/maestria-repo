@@ -1,0 +1,26 @@
+{% include 'paez/header.html' %}
+
+<h4>CONSULTA DE PRODUCTOS<BR>(por ID)</h4>
+
+<form method="post" action="/listado_prod_ed_id" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="txtPro_Codigo">ID del producto buscado:</label>
+    <input
+      id="txtPro_Id"
+      class="form-control"
+      type="text"
+      name="txtPro_Id"
+    />
+  </div>
+
+  
+
+  <br />
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" value="Buscar" />
+    <a href="{{url_for('inicio')}}" class="btn btn-primary">Cancelar</a>
+  </div>
+</form>
+
+{% include 'paez/footer.html' %}

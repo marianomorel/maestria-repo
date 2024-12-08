@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope (Alcance)</title>
+    <link rel="stylesheet" href="scope_2.css">
+
+</head>
+
+<body>
+    <h3>Scope (Alcance)</h3>
+    <script>
+        // Declaramos una variable x usando 'var' en el cuerpo del programa.
+        // Luego le cambiamos su valor dentro de la funcion varTest()
+        // Dentro de esa función hay un "if" en el que se modifica su valor.
+        // Luego del if, aún dentro de la funcion, la variable mantiene el
+        // valor que se le asignó en ese "if".
+
+        var x = 2
+        //----------------------------------------//
+        function varTest() {
+            // Declaramos la variable 'x' con var:
+            x = 31
+            document.write("Valor de 'x' en varTest(): ")
+            document.write(x)
+            document.write("<br>")
+
+            if (true) {
+                x = 71;  // ¡misma variable!
+                document.write("Valor de 'x' en el 'if' dentro de varTest(): ")
+                document.write(x)
+                document.write("<br>")
+            }
+
+            // El valor de X fue modificado dentro del if:
+            document.write("Valor de 'x' en varTest(), luego del 'if': ")
+            document.write(x)
+            document.write("<br>")
+        }
+
+        //----------------------------------------//
+        // Declaramos una variable y usando 'let' en el cuerpo del programa.
+        // Luego le cambiamos su valor dentro de la funcion letTest()
+        // Dentro de esa función hay un "if" en el que se modifica su valor.
+        // Luego del if, aún dentro de la funcion, la variable mantiene el
+        // valor que se le asignó en ese "if".
+
+        let y = 9
+        function letTest() {
+            // Declaramos la variable 'y' con let:
+            let y = 31
+            document.write("Valor de 'y' en letTest(): ")
+            document.write(y)
+            document.write("<br>")
+
+            if (true) {
+                // Declaramos la variable 'y' con let:
+                let y = 71;  // variable diferente, alcance de bloque
+                document.write("Valor de 'y' en el 'if' dentro de letTest(): ")
+                document.write(y)
+                document.write("<br>")
+            }
+            document.write("Valor de 'y' en letTest(), luego del 'if': ")
+            document.write(y)
+            document.write("<br>")
+        }
+
+        //----------------------------------------//
+        // llamamos a las funciones
+
+        varTest()  //Vemos las var en la consola.
+        document.write("Valor de 'x' luego de llamar a varTest(), en el cuerpo del programa: ")
+        document.write(x)
+        document.write("<br><hr><br>")
+        letTest()
+        document.write("Valor de 'y' luego de llamar a letTest(), en el cuerpo del programa: ")
+        document.write(y)
+    </script>
+</body>
+
+</html>

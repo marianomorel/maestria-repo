@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuentes en em y rem</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+        .parent {
+            font-size: 10px;
+        }
+        .child-em {
+            font-size: 1.2em;
+            margin: 1.5em;
+        }
+        .child-rem {
+            font-size: 1.2rem;
+            margin: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tamaño de fuentes en "em" y "rem"</h1>
+
+    <p>Especificar el tamaño de fuente en <b>em</b>/<b>rem</b> permite a todos los navegadores cambiar el tamaño del
+        texto. </p>
+
+    <p>Podemos confundirnos entre las unidades relativas, especialmente entre las unidades <b>em</b> y <b>rem</b>. Analicemos la diferencias entre ellas. </p>
+
+    <p>Básicamente, tanto <b>rem</b> como <b>em</b> son unidades de tamaño escalables y relativas, pero con <b>em</b>, la unidad es relativa al tamaño de fuente de su elemento principal, mientras que la unidad <b>rem</b> es sólo relativa al tamaño de fuente raíz del documento HTML. La “r” en <b>rem</b> significa “raíz”.</p>
+
+    <h2>Veamos un par de ejemplos:</h2>
+
+    <div class="parent">
+        Este es el elemento padre.
+        <p class="child-em">Este parráfo es el hijo. Tiene un tamaño expresado en "em". </p>
+        <p class="child-em">Su tamaño es relativo al tamaño de fuente de su elemento padre.</p>
+    </div>
+
+    <div class="parent">
+        Este es el elemento padre.
+        <p class="child-rem">Este parráfo es el hijo. Tiene un tamaño expresado en "rem".</p>
+        <p class="child-rem">El tamaño es <b>relativo al tamaño de fuente raíz del documento HTML.</b></p>
+    </div>
+
+</body>
+
+</html>

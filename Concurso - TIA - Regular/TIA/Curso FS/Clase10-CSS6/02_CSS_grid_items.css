@@ -1,0 +1,32 @@
+.grid-container {
+    display: grid;                           /*Convierte el contenedor en una grilla */
+    /* display: inline-grid; */
+    grid-template-columns: auto auto auto ;   /*Forma en que se distribuyen los elementos*/
+    gap: 10px;                               /*Espacios entre los hijos*/
+    background-color: lightseagreen;           /*Color de fondo del contenedor */
+    padding: 10px;                           /*Coloco un espacio alrededor del conjunto de hijos*/
+    border: 2px solid black;           /*El borde no se ve */
+    border-radius: 5px;
+}
+
+.grid-item {
+    background-color: lightgrey;  /* Color de fondo de los hijos */
+    color:black;               /* Color del texto de los hijos */
+    padding:10px;
+    border: 2px solid black;   /* Borde de los elementos hijos */
+    border-radius: 5px;
+    text-align: center;          /* Contenido de los hijos centrado en x */
+}
+
+.item1 {
+    background-color: white;   /* Color de fondo del hijo */
+    grid-column-start: 1;        /* Comienza en la linea 1 */
+    grid-column-end: 4;          /* Finaliza en la linea 4 */
+}
+
+
+.itemarea {
+    background-color: white;   /* Color de fondo del hijo  */
+    /*El area comienza en fila=3 columna=2 y ocupa 3 filas, 2 columnas */
+    grid-area: 3 / 2 / span 3 / span 2;
+}

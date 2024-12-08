@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+
+    <style>
+        /* Todos los elementos tienen el color claro...*/
+         li {
+          background-color: lightblue;
+        }
+        /* Excepto los que "sobreescribimos" con este selector */
+        li:nth-child(2n+1) {
+          background-color:antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Pseudoclases</h3>
+
+    <p>Una pseudoclase es un selector que marca los elementos que están en un estado específico o tienen un comportamiento determinado. Todas las pseudoclases son una palabra precedida por dos puntos y todas se comportan del mismo modo. Seleccionan un fragmento del documento que está en un estado determinado y se comportan como si se hubiera añadido una clase a su HTML.</p>
+    <p>Algunas opciones disponibles son:</p>
+    <code>
+        :first-child <br>
+        :last-child<br>
+        :nth-child(n)<br>
+    </code>
+    <p>Esta última posee un gran potencial. Puedes probar, por ejemplo, hacer:</p>
+    <code>
+        :nth-child(2n)<br>
+        :nth-child(3n)<br>
+        :nth-child(2n+1)<br>
+        :nth-child(n)<br>
+        :nth-child(even)<br>
+        :nth-child(odd)<br>
+    </code>
+
+    <ul>
+        <li>Item 1 de la lista</li>
+        <li>Item 2 de la lista</li>
+        <li>Item 3 de la lista</li>
+        <li>Item 4 de la lista</li>
+        <li>Item 5 de la lista</li>
+        <li>Item 6 de la lista</li>
+        <li>Item 7 de la lista</li>
+        <li>Item 8 de la lista</li>
+        <li>Item 9 de la lista</li>
+        <li>Item 10 de la lista</li>
+        <li>Item 11 de la lista</li>
+        <li>Item 12 de la lista</li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+{ width: round(124.75px, 1px); }     /* 125px */
+{ width: round(124.75px, 10px); }    /* 120px */
+{ width: round(124.75px, 100px); }   /* 100px */
+{ width: round(124.75px, 0.1px); }   /* 124.7px */
+{ width: round(124.75px, 0.01px); }  /* 124.75px */
+{ width: round(124.75px, 0.001px); } /* 124.75px */
+

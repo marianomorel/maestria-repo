@@ -1,0 +1,58 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+                                    
+h1, h2 {
+    color: #2C3E50;
+    text-align: center;       /*Dejar text-align tal cual, no se debe completar*/
+    text-decoration: underline;
+}
+
+.nav {
+    text-align: center;       /*Dejar text-align tal cual, no se debe completar*/
+    margin: 10px 0;
+}
+
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #2980B9;
+    font-weight: bold;
+}
+
+.intro {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 20px;
+    color: #34495E;
+    background-color: #ECF0F1;
+    margin: 20px;
+}
+
+.logo {
+    text-align: center;     /*Dejar esta clase tal cual, no se debe completar*/
+}
+
+.logo img {
+    width: 250px; 
+    height: auto;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #27AE60;
+}
+
+.programa {
+    font-size: 1.2em;
+    color: #2C3E50;
+    text-align: center;    /*Dejar text-align tal cual, no se debe completar*/
+    margin: 5px 0;
+}

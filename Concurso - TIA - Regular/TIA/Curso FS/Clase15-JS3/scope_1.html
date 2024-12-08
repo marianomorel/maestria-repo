@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope (Alcance)</title>
+    <link rel="stylesheet" href="scope_2.css">
+</head>
+
+<body>
+    <h3>Scope (Alcance) - Ejemplo 1</h3>
+    <script>
+        // Declaramos la variable 'a' con var:
+        var a = 1
+        document.write("Valor de 'a' en el ámbito global: ")
+        document.write(a)
+        document.write("<br>")
+
+        // Definimos la funcion test, que modifica el valor de 'a'
+        function test() {
+           a = 3
+           document.write("Valor de 'a' en la función TEST: ")
+           document.write(a)
+           document.write("<br>")
+        }
+
+        // llamamos a la función
+        test();
+
+        document.write("Valor de 'a' en el ámbito global luego de ejecutar la función TEST: ")
+        document.write(a)
+        document.write("<br>")
+    </script>
+
+</body>
+
+</html>

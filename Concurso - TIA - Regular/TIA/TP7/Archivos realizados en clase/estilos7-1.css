@@ -1,0 +1,56 @@
+.clase-hover:hover{
+    background-color: lightgreen;
+}
+.clase-active:active {
+    background-color: lightsteelblue;
+}
+.clase-focus:focus {
+    background-color: lightcoral;
+}
+ul {
+    list-style-type: none;
+}
+.items:first-child{
+    color: blue;
+}
+.items:last-child {
+    color: red;
+}
+.items:nth-last-child(5) {
+    background-color: aqua;
+}
+.items:nth-child(odd){
+    background-color: wheat;
+}
+.items-est:first-of-type {
+    color: blueviolet;
+}
+.items-est:nth-last-child(3) {
+    background-color: yellowgreen;
+}
+.solito:empty{
+    border: 1px solid #000;
+    width: 50px;
+    height: 50px;
+}
+.items-est:only-child{
+    background-color: yellow;
+    border: 1px solid #000;
+}
+.enlace-1:any-link{
+    background-color: lime;
+}
+.enlace-2:link{
+    background-color: wheat;
+}
+.enlace-2:visited {
+    background-color: lightseagreen;
+}
+/*
+:is()
+:not()
+:has()
+*/
+.items-est:is(p){
+    font-style: italic;
+}
