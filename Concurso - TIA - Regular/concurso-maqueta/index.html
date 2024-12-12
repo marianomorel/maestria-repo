@@ -14,6 +14,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#busqueda-normas">Búsqueda de Normas</a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +35,7 @@
                     <li><a href="https://www.openai.com" target="_blank">OpenAI</a></li>
                 </ul>
                 <h1>Visita el artículo - BLACK FRIDAY</h1>
-            <a href="https://www.google.com" target="_blank"><img src="i3.jpg" alt="Tester" class="tester"></a>
+                <a href="https://www.google.com" target="_blank"><img src="i3.jpg" alt="Tester" class="tester"></a>
             </aside>
         </section>
 
@@ -73,7 +74,7 @@
                 <input type="text" id="nombre" name="nombre" placeholder="mariano morel" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="marianomorel@fi.mdp.edu.ar"  required>
+                <input type="email" id="email" name="email" placeholder="marianomorel@fi.mdp.edu.ar" required>
 
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="5" placeholder="escriba aquí su mensaje" maxlength="200" autocomplete="on"></textarea>
@@ -81,8 +82,30 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
-    </main>
 
+        <section id="busqueda-normas">
+            <h1>Búsqueda de Normas</h1>
+            <form action="https://example.com/search_normas.php" method="GET">
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio">
+                
+                <label for="fecha_fin">Fecha de Fin:</label>
+                <input type="date" id="fecha_fin" name="fecha_fin">
+                
+                <label for="organismo">Órgano Emisor:</label>
+                <select id="organismo" name="organismo">
+                    <option value="ministerio">Ministerio de Justicia</option>
+                    <option value="congreso">Congreso Nacional</option>
+                    <option value="tribunal">Tribunal Suprema</option>
+                </select>
+                
+                <label for="palabras_clave">Frase o Palabras a Buscar:</label>
+                <input type="text" id="palabras_clave" name="palabras_clave" required>
+                
+                <input type="submit" value="Buscar">
+            </form>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
     </footer>
