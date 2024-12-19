@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <div class="cabecera">
+            <h1 class="titulo">VIAJ</h1>
+            <img src="logo.png" alt="logo">
+            <h1 class="titulo">R</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="destinos.html">Nuestros destinos</a></li>
+                <li><a href="viajes.html">Próximos viajes</a></li>
+                <li><a href="contratar.html">Contratar servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="subtitulo">Contratar servicios</h2>
+        <form action="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="mail">Email:</label>
+            <input type="email" name="email" id="mail" required>
+            <label for="tel">Teléfono:</label>
+            <input type="tel" name="telefono" id="tel" required>
+            <label for="des">Destino:</label>
+            <select name="destino" id="des">
+                <option value="Playa paraiso">Playa Paraíso</option>
+                <option value="Montañas del Alba">Montañas del Alba</option>
+                <option value="Valle de la Luna">Valle de la Luna</option>
+            </select>
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" id="fecha" required>
+            <label for="cantPer">Cantidad de Personas:</label>
+            <input type="number" name="cant-Personas" id="cantPer" required min="1" max="10">
+            <input type="submit">
+        </form>
+    </main>
+    <footer>
+        <p class="piePagina">© 2024 Viajar Argentina SRL. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
