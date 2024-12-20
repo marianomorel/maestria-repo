@@ -70,4 +70,5 @@ ax.set_xlabel('Time [S]')
 ax.set_ylabel('VY [V]')
 ax.legend(["VA","VB","VY"])
 plt.savefig('nand_trans_2_iputs_different_risetime.pdf')
+plt.show()
 

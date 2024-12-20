@@ -9,8 +9,7 @@ sim_spice = f"""
 *****************************************************
 * Description
 * -----------
-*
-* NMOS output resistance.
+
 *
 *****************************************************
 
@@ -121,17 +120,17 @@ print(f"Energy_cap/Energy_supply           (C_L={cap_picof}p): {energy_cap/energ
 
 
 
-#vy2  = run.sim['v(Y2)'].value
+# vy2  = run.sim['v(Y2)'].value
 
-#fig, ax = plt.subplots()
+# fig, ax = plt.subplots()
 
-#ax.plot(time,va,linewidth=2.0)
-#ax.plot(time,vy1,linewidth=2.0)
-#ax.plot(time,vy2,linewidth=2.0)
+# ax.plot(time,va,linewidth=2.0)
+# ax.plot(time,vy1,linewidth=2.0)
+# ax.plot(time,vy2,linewidth=2.0)
 
 
-#ax.set_xlabel('Time [S]')
-#ax.set_ylabel('VY [V]')
-#ax.legend(["VA","VY1", "VY2"])
-#plt.savefig(f'inv_tran_v_y2.pdf')
-#plt.show()
+# ax.set_xlabel('Time [S]')
+# ax.set_ylabel('VY [V]')
+# ax.legend(["VA","VY1", "VY2"])
+# plt.savefig(f'inv_tran_v_y2.pdf')
+# plt.show()

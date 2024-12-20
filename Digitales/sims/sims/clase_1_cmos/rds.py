@@ -77,6 +77,7 @@ az.plot(vd[10:],rds,linewidth=2.0)
 az.set_xlabel('vd [V]')
 az.set_ylabel('rds [Ohm]')
 plt.savefig('rds.pdf')
+# plt.show()
 
 rds_av = 0
 for r in rds:
