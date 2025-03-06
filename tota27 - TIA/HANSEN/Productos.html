@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html leng="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tecnologias Informaticas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Tecnologias Informaticas</h1>
+    <p>Tu tienda de confianza</p>
+    <nav>
+        <ul>
+         <li><a href="index.html">Inicio</a></li>
+         <li><a href="Productos.html">Productos</a></li>
+         <li><a href="Sucursales.html">Sucursales</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+  <section id="Productos">
+    <div class="ordenador>
+        <img src="ordenador.png" alt="ordenador">
+        <h3>Ordenador</h3>
+        <h4>Este ordenador es el más potente del mercado, vas a poder hacer todo lo que quieras sin problemas.
+        <p>$1500000 </p>
+
+     </div>
+    <div class="portatil">
+        <h3>Portatil</h3>
+        <h4> Este portátil es perfecto para trabajar o estudiar, es muy ligero y fácil de transportar.</h4>
+        <p>$1000000</p>
+        <img src="portatil.jpg"alt="portatil">
+    </div>
+    <div class="tablet">
+        <h3>Tablet</h3>
+        <h4>Esta tablet es ideal para ver películas y series, posee una enorme pantalla y un sonido espectacular</h4>
+        <p>$500000</p>
+        <img src="tablet.jpg" alt="tablet">
+    </div>
+    <div class="smartphone">
+        <h3> Smartphone</h3>
+        <h4>Este smartphone último modelo cuenta con una cámara de gran calidad y una pantalla de alta resolución.</h4>
+        <p> $750000</p>
+        <img src="smartphone.jpg alt="Celular">
+    </div>
+    <div class="Impresora">
+        <h3>Impresora</h3>
+        <h4>Esta impresora es perfecta para imprimir documentos en casa o en la oficina, es muy rápida y silenciosa.</h4>
+        <p>$200000</p>
+        <img src="impresora.jpg" alt="Impresora">
+
+    </div>
+</section>
+    <section id="Filtros">
+        <h2>Filtros</h2>
+        <h2>Categoria</h2>
+        <input list="Categoria" name="List-Categoria">
+        <datalist id="Categoria">
+            <option value="Todas">Todas</option>
+            <option value="Ordenador">Ordenador</option>
+            <option value="Portatil">Portatil</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Smartphone">Smartphone</option>
+            <option value="Impresora">Impresora</option>
+        </datalist>
+        <h2>Marca</h2>
+       
+        <h2> Precio </h2>
+
+        <label for="Desde">Desde</label>
+        <input type="number" id="desde" name="Desde"    min="0" max="200000" required>
+        <label for="Hasta">Hasta</label>
+        <input type="number" id="hasta" name="Hasta"    min="0" max="200000" required>
+
+
+        <button type="submit">Enviar </button>
+
+        <button>Filtrar</button>
+    
+
+    </section>
+
+</main>
+
+</body>
+<footer>"© 2024 Tecnologías Informáticas - Todos los derechos reservados"</footer>
+</html>

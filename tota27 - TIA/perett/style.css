@@ -1,0 +1,162 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.contenedor-1{
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+}
+.texto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: white;
+    color: black;
+}
+.contenedor-principal{
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+.contenedor-2{
+background-color: grey;
+justify-content: center;
+display: flex;
+flex-direction: column;
+margin: 0;
+width: 25%;
+text-align: center;
+}
+.titulo,.titulon{
+    text-align: left;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.negro,.titulon{
+    color: white;
+    background-color: black;
+    margin: 0;
+}
+.blanco,.negro,.titulo,.titulon{
+   font-style: italic;
+}
+.blanco,.negro{
+    margin: 0;
+    padding-bottom: 15px;
+}
+footer{
+    background-color: white;
+    text-align:center;
+    text-decoration: underline;
+}
+.informacion-I{
+    text-align: center;
+    background-color: black;
+    color: white;
+     margin: 0;
+     padding: 20px;
+     font-style: italic;
+}
+.invertir-T{
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-style: italic;
+    background-color: black;
+}
+button{
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
+    margin-bottom: 20px;
+
+}
+.Invertir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black; 
+}
+.grafico{
+    background-color: white;
+    text-align: center;
+    font-style: italic;
+}
+.grafico,.torta{
+    margin: 0;
+    width: 100%;
+}
+.inicio{
+    width:100%;
+}
+.info{
+    width: 75%;
+    text-align: center;
+}
+table{
+    color: white;
+    background-color: black;
+}
+form{
+    background-color: black;
+    justify-content: center;
+    display: flex;  
+    margin: 0;
+    padding: 10px;
+}
+.titulo-t{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+input{
+    width: 200px;
+}
+select{
+    width: 208px;
+}
+.formb{
+    width: 105px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 10px;
+    height: 22px;
+    color: white;
+}
+label{
+    padding: 10px;
+}
+td,tr {
+ text-align: right;
+}
+.idea{
+    height: 50px;
+}
+.botoncito{
+    text-align: center;
+}
+.publi {
+    font-size: larger;
+    font-weight: bold;
+}

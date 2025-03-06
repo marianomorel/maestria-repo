@@ -1,0 +1,79 @@
+body {
+    background-color: rgb(34, 236, 118);
+}
+
+header h1 {
+    color: darkgreen;
+    text-decoration: underline;
+    text-align: center;
+}
+
+header p {
+    color: darkgreen;
+    text-align: center;
+}
+
+nav {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.tienda img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.info h2 {
+    text-decoration: underline;
+}
+
+.filtros {
+    display: block;
+    float: left;
+}
+
+.productos {
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+.producto {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    max-width: 500px;
+}
+
+.producto img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.mapa img {
+    max-height: 400px;
+    align: right;
+}

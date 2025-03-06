@@ -1,0 +1,104 @@
+
+.contenedor{
+    display: flex;
+    background-size: cover;
+    height: 500px;
+    justify-content: center; 
+    align-items: center; 
+    background-image: url(facultad.png);
+    background-repeat: no-repeat;
+}
+.caja{
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+}  
+.menu{
+    width: 100vw;
+    height: 80px;
+    background-color: white;
+    margin: 0;
+    left: 0;
+    width: 100%;
+    position: relative;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+    padding: 5px 60px 5px;
+    gap: 400px;
+    align-items: center;
+}
+.menu a{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+section:nth-child(odd){
+    display: flexbox;
+    width: 70%;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+section:nth-child(even){
+    width: 70%;
+    display: flexbox;
+    padding: 20px;
+}
+
+h2{
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.division{
+    display: grid;
+    grid-template-columns: 90% 10%;
+
+}
+.grid{
+    background-color: grey;
+    text-align: center;
+    background-size: cover;
+    margin: 0;
+}
+
+.inversion{
+    text-align: center;
+    text-wrap:pretty;
+}
+aside{
+    float: right;
+    display: grid;
+    grid-template-columns: 10%;
+}
+ form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: black;
+ }
+ input, select{
+    width:30%;
+    height: 30px;
+    
+  }
+  label{
+    display: block;
+    width: 50%; 
+    font-size: x-large;
+    text-align: left;
+    color: white;
+  }
+footer{
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
