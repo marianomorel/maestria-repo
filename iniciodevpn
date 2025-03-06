@@ -1,4 +1,4 @@
+1- 
 cd /home/mariano/Descargas/gangnam-UDP4-1195-mmorel
-
-sudo openvpn --config gangnam-UDP4-1195-mmorel.ovp
-
+2-
+sudo openvpn --config gangnam-UDP4-1195-mmorel.ovpn
