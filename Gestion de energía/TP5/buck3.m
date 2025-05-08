@@ -11,7 +11,7 @@ Resr = 30e-3;             % ESR (Ohm)
 Vg = 12;                  % Tensión de entrada (V)
 R = 6;                    % Resistencia de carga (Ohm)
 VM = 1;                   % Amplitud de rampa PWM (V)
-Vref = 6;                 % Tensión de referencia (V)
+Vref = 1;                 % Tensión de referencia (V)
 VREG = 6;                 % Tensión regulada de salida (V)
 H = Vref / VREG;
 
